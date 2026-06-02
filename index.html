@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIMI Store | Global Innovation Management Institute</title>
+<style>
+:root {
+  --teal:        #2AACB5;
+  --teal-dark:   #1E8A93;
+  --teal-light:  #E6F6F7;
+  --yellow:      #C9D940;
+  --pink:        #E15A78;
+  --orange:      #F0871E;
+  --navy:        #1B1F3B;
+  --navy-dark:   #13162C;
+  --gray:        #6B7280;
+  --gray-light:  #F0F4F6;
+  --text:        #1F2937;
+  --border:      #E5E7EB;
+  --white:       #FFFFFF;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family:'Calibri','Segoe UI',system-ui,sans-serif; color:var(--text); background:var(--white); line-height:1.6; font-size:16px; }
+
+/* NAV */
+.nav { background:var(--navy); position:sticky; top:0; z-index:200; box-shadow:0 2px 8px rgba(0,0,0,0.18); }
+.nav-inner { max-width:1280px; margin:0 auto; padding:12px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.logo img { height:52px; width:auto; display:block; }
+.nav-links { display:flex; gap:4px; list-style:none; }
+.nav-links a { color:rgba(255,255,255,0.85); text-decoration:none; padding:9px 15px; border-radius:6px; font-size:14px; font-weight:500; transition:all 0.2s; white-space:nowrap; }
+.nav-links a:hover { background:rgba(255,255,255,0.1); color:#fff; }
+.nav-links a.active { background:var(--teal); color:#fff; }
+.nav-cta { background:var(--teal); color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:14px; font-weight:600; transition:background 0.2s; white-space:nowrap; }
+.nav-cta:hover { background:var(--teal-dark); }
+
+/* HERO */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); padding:60px 32px 64px; }
+.hero-inner { max-width:1280px; margin:0 auto; }
+.hero h1 { font-size:42px; line-height:1.15; color:#fff; font-weight:700; max-width:780px; margin-bottom:16px; letter-spacing:-0.5px; }
+.hero h1 span { color:var(--teal); }
+.hero p { font-size:17px; color:rgba(255,255,255,0.72); max-width:660px; margin-bottom:32px; }
+.hero-stats { display:flex; gap:48px; flex-wrap:wrap; }
+.hero-stat strong { display:block; font-size:30px; font-weight:800; color:var(--yellow); line-height:1; }
+.hero-stat span { font-size:13px; color:rgba(255,255,255,0.6); }
+
+/* STORE */
+.store { max-width:1280px; margin:0 auto; padding:36px 32px 80px; display:grid; grid-template-columns:260px 1fr; gap:36px; align-items:start; }
+
+/* SIDEBAR */
+.sidebar { position:sticky; top:84px; }
+.sidebar-card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:20px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.04); }
+.sidebar-title { font-size:11px; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:1.2px; margin-bottom:12px; }
+.search-input { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:9px; font-size:14px; font-family:inherit; color:var(--text); background:var(--gray-light); }
+.search-input:focus { outline:none; border-color:var(--teal); background:#fff; box-shadow:0 0 0 3px var(--teal-light); }
+.filter-btn { display:flex; align-items:center; justify-content:space-between; width:100%; padding:10px 12px; border-radius:8px; border:none; background:none; font-family:inherit; font-size:13.5px; color:var(--text); cursor:pointer; text-align:left; transition:background 0.15s; line-height:1.3; }
+.filter-btn:hover { background:var(--gray-light); }
+.filter-btn.active { background:var(--teal-light); color:var(--teal); font-weight:700; }
+.filter-btn .count { background:var(--gray-light); color:var(--gray); font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; flex-shrink:0; margin-left:8px; }
+.filter-btn.active .count { background:var(--teal); color:#fff; }
+.filter-divider { height:1px; background:var(--border); margin:6px 0; }
+
+/* GRID */
+.grid-header { margin-bottom:8px; }
+.grid-header h2 { font-size:24px; color:var(--navy); font-weight:700; }
+.result-count { font-size:14px; color:var(--gray); }
+.grid-section { margin-top:36px; }
+.grid-section:first-child { margin-top:20px; }
+.grid-section-label { font-size:18px; font-weight:800; color:var(--navy); padding-bottom:10px; border-bottom:2px solid var(--teal); margin-bottom:18px; display:flex; align-items:baseline; gap:12px; }
+.grid-section-label .sec-sub { font-size:13px; font-weight:500; color:var(--gray); }
+
+/* SUB-CLUSTER */
+.cluster-label { font-size:13px; font-weight:700; color:var(--teal-dark); text-transform:uppercase; letter-spacing:1px; margin:24px 0 12px; padding-left:2px; }
+.cluster-label:first-child { margin-top:0; }
+
+.product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+
+/* CARD */
+.product-card { background:#fff; border:1.5px solid var(--border); border-radius:14px; padding:20px 18px 18px; cursor:pointer; transition:all 0.22s; display:flex; flex-direction:column; position:relative; }
+.product-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(27,31,59,0.10); border-color:var(--teal); }
+.product-card.flagship { border-color:var(--teal); border-width:2px; }
+.flagship-tag { position:absolute; top:0; left:0; background:var(--teal); color:#fff; font-size:10px; font-weight:800; letter-spacing:1.2px; text-transform:uppercase; padding:4px 11px; }
+.card-badge { height:118px; margin-bottom:14px; display:flex; align-items:center; justify-content:center; background:#FAFBFC; border:1px solid var(--border); border-radius:10px; }
+.card-badge img { max-height:100px; max-width:100px; width:auto; object-fit:contain; display:block; }
+.badge-svg { width:100px; height:100px; }
+.card-code { font-size:10.5px; font-weight:800; letter-spacing:1px; color:var(--teal-dark); margin-bottom:5px; }
+.card-title { font-size:15px; font-weight:700; color:var(--navy); line-height:1.3; margin-bottom:7px; }
+.card-blurb { font-size:12.5px; color:var(--gray); line-height:1.5; margin-bottom:14px; flex:1; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.card-meta { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.card-price { font-size:17px; font-weight:800; color:var(--teal-dark); }
+.card-price.free { color:#22863a; }
+.card-price.tbd { color:var(--gray); font-size:13px; font-weight:600; }
+.card-cpe { font-size:11.5px; color:var(--gray); display:flex; align-items:center; gap:4px; }
+/* dual-price chips */
+.price-chips { display:flex; flex-wrap:wrap; gap:6px; }
+.price-chip { display:inline-flex; flex-direction:column; line-height:1.15; padding:4px 9px; border-radius:7px; }
+.price-chip .pc-label { font-size:8.5px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; opacity:0.85; }
+.price-chip .pc-value { font-size:15px; font-weight:800; }
+.price-chip.cert  { background:var(--teal-light); color:var(--teal-dark); }
+.price-chip.train { background:#FDF1E3; color:#B5651D; }
+.price-chip.solo  { background:var(--teal-light); color:var(--teal-dark); }
+.price-chip.free  { background:#E6F6EC; color:#22863a; }
+.price-chip.tbd   { background:var(--gray-light); color:var(--gray); }
+.card-cta { display:block; text-align:center; padding:9px 0; border-radius:8px; font-size:13px; font-weight:700; border:2px solid var(--teal); color:var(--teal); background:none; font-family:inherit; cursor:pointer; width:100%; transition:all 0.18s; }
+.product-card:hover .card-cta, .card-cta:hover { background:var(--teal); color:#fff; }
+
+.no-results { grid-column:1/-1; text-align:center; padding:60px 0; color:var(--gray); }
+.no-results h3 { font-size:20px; margin-bottom:8px; color:var(--navy); }
+
+/* MODAL */
+.modal-overlay { display:none; position:fixed; inset:0; background:rgba(13,16,40,0.65); z-index:1000; padding:20px; overflow-y:auto; }
+.modal-overlay.open { display:flex; align-items:flex-start; justify-content:center; }
+.modal { background:#fff; border-radius:18px; max-width:860px; width:100%; margin:auto; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.22); }
+.modal-header { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); padding:32px 36px 28px; position:relative; display:flex; gap:24px; align-items:center; }
+.modal-badge { flex-shrink:0; width:120px; height:120px; background:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; }
+.modal-badge img { max-width:108px; max-height:108px; object-fit:contain; }
+.modal-badge .badge-svg { width:108px; height:108px; }
+.modal-header-content { flex:1; }
+.modal-code { font-size:11px; font-weight:700; letter-spacing:1px; color:var(--yellow); margin-bottom:6px; }
+.modal-title { font-size:24px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:8px; }
+.modal-tagline { font-size:14.5px; color:rgba(255,255,255,0.72); line-height:1.5; }
+.modal-close { position:absolute; top:16px; right:20px; background:rgba(255,255,255,0.12); border:none; color:#fff; width:34px; height:34px; border-radius:50%; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1; }
+.modal-close:hover { background:rgba(255,255,255,0.22); }
+.modal-stat-strip { background:var(--navy-dark); display:flex; }
+.modal-stat { flex:1; padding:13px 16px; text-align:center; border-right:1px solid rgba(255,255,255,0.08); }
+.modal-stat:last-child { border-right:none; }
+.modal-stat strong { display:block; font-size:16px; font-weight:800; color:#fff; line-height:1.2; }
+.modal-stat span { font-size:11px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.8px; }
+.modal-body { padding:32px 36px; }
+.modal-section { margin-bottom:24px; }
+.modal-section-title { font-size:12px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:11px; display:flex; align-items:center; gap:8px; }
+.modal-section-title::after { content:''; flex:1; height:1px; background:var(--border); }
+.modal-desc { font-size:15px; color:var(--text); line-height:1.7; }
+.modal-list { list-style:none; padding:0; }
+.modal-list li { padding:7px 0 7px 22px; position:relative; font-size:14.5px; color:var(--text); border-bottom:1px solid var(--border); }
+.modal-list li:last-child { border-bottom:none; }
+.modal-list li::before { content:''; position:absolute; left:0; top:15px; width:8px; height:8px; border-radius:50%; background:var(--teal); }
+.modal-info-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+.modal-info-item { background:var(--gray-light); border-radius:10px; padding:12px 14px; }
+.modal-info-item dt { font-size:11px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:3px; }
+.modal-info-item dd { font-size:14px; color:var(--text); font-weight:500; }
+.modal-footer { padding:22px 36px 28px; background:var(--gray-light); border-top:1px solid var(--border); display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+.modal-price-display { font-size:26px; font-weight:900; color:var(--navy); flex:1; }
+.modal-price-display small { display:block; font-size:12px; font-weight:400; color:var(--gray); margin-top:2px; }
+.btn-enroll { background:var(--teal); color:#fff; padding:13px 30px; border-radius:10px; font-size:14.5px; font-weight:700; text-decoration:none; border:none; cursor:pointer; font-family:inherit; transition:all 0.2s; }
+.btn-enroll:hover { background:var(--teal-dark); transform:translateY(-1px); box-shadow:0 6px 18px rgba(42,172,181,0.3); }
+.btn-learn { background:transparent; color:var(--teal); border:2px solid var(--teal); padding:11px 22px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; font-family:inherit; }
+.btn-learn:hover { background:var(--teal-light); }
+
+/* FOOTER */
+footer { background:var(--navy-dark); color:rgba(255,255,255,0.55); padding:40px 32px; text-align:center; font-size:13.5px; }
+footer a { color:var(--teal); text-decoration:none; }
+footer strong { color:rgba(255,255,255,0.85); }
+
+@media (max-width:1024px) {
+  .store { grid-template-columns:1fr; }
+  .sidebar { position:static; }
+  .product-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:640px) {
+  .hero h1 { font-size:28px; }
+  .product-grid { grid-template-columns:1fr; }
+  .modal-header { flex-direction:column; padding:24px 22px 22px; }
+  .modal-body { padding:22px; }
+  .modal-footer { padding:18px 22px 24px; }
+  .modal-info-grid { grid-template-columns:1fr; }
+  .nav-links { display:none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://www.giminstitute.org" class="logo"><img src="gimi-store-assets/gimi-logo-white.png" alt="GIMI"></a>
+    <ul class="nav-links">
+      <li><a href="https://www.giminstitute.org/about-us/">About Us</a></li>
+      <li><a href="https://www.giminstitute.org/individuals/">Individuals</a></li>
+      <li><a href="https://www.giminstitute.org/organizations/">Organizations</a></li>
+      <li><a href="https://www.giminstitute.org/knowledge/">Knowledge</a></li>
+      <li><a href="https://www.giminstitute.org/store/" class="active">Store</a></li>
+    </ul>
+    <a href="https://www.giminstitute.org/store/" class="nav-cta">Enroll Now</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Build Your <span>Innovation</span> Career</h1>
+    <p>Certifications, programs, and tools trusted by 18,000+ innovators in 60+ countries. Find what you need by discipline.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>60+</strong><span>Countries</span></div>
+      <div class="hero-stat"><strong>140+</strong><span>Universities</span></div>
+      <div class="hero-stat"><strong>1,600+</strong><span>Corporations</span></div>
+      <div class="hero-stat"><strong>18,000+</strong><span>Innovators</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="store">
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">Search</div>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search by name or code..." oninput="applyFilters()">
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-title">Groups</div>
+      <button class="filter-btn active" data-track="all" onclick="setTrack('all', this)">All Products <span class="count" id="cnt-all">65</span></button>
+      <div class="filter-divider"></div>
+      <button class="filter-btn" data-track="icore" onclick="setTrack('icore', this)">Innovation Core <span class="count">10</span></button>
+      <button class="filter-btn" data-track="ielec" onclick="setTrack('ielec', this)">Innovation Elective <span class="count">10</span></button>
+      <button class="filter-btn" data-track="ff" onclick="setTrack('ff', this)">Future Foresight <span class="count">5</span></button>
+      <button class="filter-btn" data-track="lead" onclick="setTrack('lead', this)">Leadership Core <span class="count">2</span></button>
+      <button class="filter-btn" data-track="cons" onclick="setTrack('cons', this)">Consulting Core <span class="count">4</span></button>
+      <button class="filter-btn" data-track="books" onclick="setTrack('books', this)">Books &amp; Guides <span class="count">13</span></button>
+      <button class="filter-btn" data-track="tools" onclick="setTrack('tools', this)">Programs &amp; Tools <span class="count">14</span></button>
+      <button class="filter-btn" data-track="memb" onclick="setTrack('memb', this)">Memberships <span class="count">7</span></button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="grid-header">
+      <h2>Programs &amp; Certifications</h2>
+      <span class="result-count" id="resultCount">Showing all 65 products</span>
+    </div>
+    <div id="productsContainer"></div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-badge" id="modalBadge"></div>
+      <div class="modal-header-content">
+        <div class="modal-code" id="modalCode"></div>
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-tagline" id="modalTagline"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    </div>
+    <div class="modal-stat-strip" id="modalStats"></div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">About This Product</div>
+        <div class="modal-desc" id="modalDesc"></div>
+      </div>
+      <div class="modal-section" id="modalIncludesSection">
+        <div class="modal-section-title">What's Included</div>
+        <ul class="modal-list" id="modalIncludes"></ul>
+      </div>
+      <div class="modal-section" id="modalPrereqSection">
+        <div class="modal-section-title">Prerequisites</div>
+        <div class="modal-desc" id="modalPrereq"></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Details</div>
+        <div class="modal-info-grid" id="modalDetails"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="modal-price-display" id="modalFooterPrice"></div>
+      <a href="#" class="btn-learn" id="modalLearnLink" target="_blank">Learn More</a>
+      <a href="#" class="btn-enroll" id="modalEnrollLink" target="_blank">Enroll Now</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>Global Innovation Management Institute (GIMI)</strong><br>
+  110 Cambridge Street, Cambridge MA 02141 &nbsp;|&nbsp;
+  <a href="mailto:info@giminstitute.org">info@giminstitute.org</a> &nbsp;|&nbsp;
+  <a href="https://www.giminstitute.org">giminstitute.org</a><br><br>
+  ISO/IEC 17024 Accredited Certification Body. Certifying innovation professionals in 60+ countries since 2009.
+</footer>
+
+<script>
+/* ============================================================
+   TRACKS — top-level groups with optional clusters
+   ============================================================ */
+const TRACKS = [
+  { id:'icore', label:'Innovation Core',     sub:'The flagship innovation management pathway and its delivery formats',
+    color:'#2AACB5',
+    clusters:[
+      {id:'cip',          label:'CIP series'},
+      {id:'cip-mc',       label:'CIP-Masterclass'},
+      {id:'ccio',         label:'CCIO series'},
+      {id:'ccio-mc',      label:'CCIO-Masterclass'},
+      {id:'impact',       label:'GIMI Impact'},
+      {id:'icore-train',  label:'Train the Trainer'}
+    ]},
+  { id:'ielec', label:'Innovation Elective', sub:'Specialist tracks: Design Thinking, ISO, AI, Tech, Longevity, Audit',
+    color:'#F0871E', clusters:null },
+  { id:'ff',    label:'Future Foresight',    sub:'Foresight professional and trainer certifications',
+    color:'#E15A78',
+    clusters:[
+      {id:'ff-series',  label:'Foresight series'},
+      {id:'ff-train',   label:'Train the Trainer'}
+    ]},
+  { id:'lead',  label:'Leadership Core',     sub:'Leadership-oriented certifications', color:'#C9D940', clusters:null },
+  { id:'cons',  label:'Consulting Core',     sub:'The full Management Consulting pathway from Analyst to Leader', color:'#1B1F3B', clusters:null },
+  { id:'books', label:'Books & Guides',      sub:'Published books, guides, and reference materials',
+    color:'#6B7280',
+    clusters:[
+      {id:'imbok',   label:'IMBOK'},
+      {id:'ffbok',   label:'Future Foresight Body of Knowledge'},
+      {id:'iso-bk',  label:'ISO Standards'},
+      {id:'stories', label:'Innovation Stories'},
+      {id:'tool-bk', label:'Practitioner Tools'},
+      {id:'journal', label:'Journal'}
+    ]},
+  { id:'tools', label:'Programs & Tools',    sub:'Assessments, software, programs, and engagements',
+    color:'#1E8A93',
+    clusters:[
+      {id:'indiv-ass', label:'Individual Assessments'},
+      {id:'org-ass',   label:'Organizational Assessments'},
+      {id:'software',  label:'Software & Digital Tools'},
+      {id:'engage',    label:'Programs & Engagements'}
+    ]},
+  { id:'memb',  label:'Memberships',         sub:'Annual access tiers for individuals, companies, and academia',
+    color:'#003645', clusters:null }
+];
+
+/* ============================================================
+   PRODUCTS — 65 items
+   ============================================================ */
+const STORE = 'https://www.giminstitute.org/store/';
+
+function mk(o) {
+  return Object.assign({
+    modality: 'Online Self-Paced',
+    target: 'Professionals',
+    storeUrl: STORE,
+    flagship: false,
+    details: {}
+  }, o, { tagline: o.tagline || '', description: o.description || o.tagline || '' });
+}
+
+const PRODUCTS = [
+
+  /* ========== INNOVATION CORE ========== */
+  mk({ id:'cip-0', track:'icore', cluster:'cip', code:'CIP-0',
+      title:'Certified Innovation Professional Level 0: Innovation Champion',
+      tagline:'Professionals take their first structured step into innovation, learning its core tools and mindset',
+      price:200, priceDisplay:'$200', certDisplay:'$200', trainDisplay:'$700', duration:'20h', target:'Professionals (Level 0)',
+      badge:'gimi-store-assets/v2/cip-0.png',
+      includes:['Innovation Champion Certificate','Online examination fee','Self-paced course access','Remote proctor fee'],
+      description:'The Certified Innovation Professional - Innovation Champion certification is designed for professionals beginning their innovation journey. Participants get acquainted with business innovation and learn the key tools and techniques of innovation management to take their first step toward becoming innovation practitioners.',
+      details:{ 'Exam Format':'Online proctored MCQ', 'Pass Threshold':'70%', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital certificate' }}),
+
+  mk({ id:'cip-1', track:'icore', cluster:'cip', code:'CIP-1', flagship:true,
+      title:'Certified Innovation Professional Level 1: Associate',
+      tagline:'Professionals learn to generate and apply breakthrough ideas, the only innovation management course accredited as 17024',
+      price:560, priceDisplay:'$560', certDisplay:'$560', trainDisplay:'$1,000', duration:'32-40h', target:'Professionals (Level 1)',
+      badge:'gimi-store-assets/v2/cip-1.png',
+      eligibilityIntro:'Candidates must satisfy at least one of the following routes to certification:', eligibility:['Completion of GIMI\'s Level 1 in-house training','Completion of a Certified Training Provider\'s (CTP) authorized preparatory training','Reading of the GIMI Innovation Management Book of Knowledge (Level 1)','Holding an MBA from a recognized institution','Completion of other recognized innovation training programs'], eligNote:'Completing a training program does not guarantee certification and confers no advantage in the examination process. The certification decision is based solely on examination performance.',
+      description:'The Certified Innovation Professional Level 1: Associate certification is designed for individuals who want to understand business innovation and the processes needed to generate breakthrough ideas. Participants learn idea generation tools and how to apply them to create more and better ideas for their organizations.',
+      includes:['Level 1 Certificate (upon passing)','Online examination fee','IMBOK Level 1 Guide (e-copy)','Remote proctor fee'],
+      prereqs:'No formal prerequisites.',
+      details:{ 'Exam Format':'Online proctored MCQ', 'Pass Threshold':'70%', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cip-2', track:'icore', cluster:'cip', code:'CIP-2',
+      title:'Certified Innovation Professional Level 2: Master',
+      tagline:'Candidates prove mastery by applying Level 1 tools to a real growth challenge in their organisation',
+      price:560, priceDisplay:'$560', certDisplay:'$560', trainDisplay:'$1,000', duration:'32-40h', target:'Professionals (Level 2)',
+      badge:'gimi-store-assets/v2/cip-2.png',
+      includes:['Level 2 Certificate (upon project approval)','Project guideline (e-copy)','Expert project review','Activity workbook'],
+      description:'The Certified Innovation Professional Level 2: Master certification is designed for individuals ready to apply Associate Level 1 learnings to a real-world challenge. Participants build a case study on generating new growth ideas or opportunities for their organization, document their process and learnings, and submit it for expert evaluation and feedback.',
+      prereqs:'CIP-1 required.',
+      details:{ 'Exam Format':'Case study + expert review', 'Pass Threshold':'Panel approval', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cip-mc', code:'CIP-MC', track:'icore', cluster:'cip-mc',
+      title:'CIP Masterclass',
+      tagline:'A live cohort fast-tracks working professionals to CIP certification, the only innovation management course accredited as 17024',
+      price:2000, priceDisplay:'$2,000', certDisplay:'$2,000', trainDisplay:null, duration:'8 weeks', target:'Professionals', modality:'Live Virtual Cohort',
+      badge:'gimi-store-assets/v2/cip-mc.png',
+      description:'The Certified Innovation Professional (CIP) program by GIMI helps professionals build practical innovation knowledge, tools, and methodologies to drive innovation within organizations. It includes two levels: Level 1 Associate: Covers innovation fundamentals, tools, and skills to develop effective innovation ideas and results. Level 2 Master: Focuses on applying these skills to solve real-world challenges and create innovation opportunities for organizations.',
+      includes:['Level 1: 8 × 3hr live online sessions with experts','Level 2: 4 weeks mentoring session','CIP Level 1 + Level 2 certifications','Online exam fees + remote proctor','IMBOK Level 1 Guide (e-copy)','Level 2 project review and guideline'],
+      details:{ 'Exam Format':'MCQ + Level 2 project review', 'Pass Threshold':'70% + panel approval', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'ccio-1', track:'icore', cluster:'ccio', code:'CCIO-1',
+      title:'Certified Chief Innovation Officer Level 3: Manager',
+      tagline:'Leaders learn to manage innovation end-to-end across the organisation',
+      price:560, priceDisplay:'$560', certDisplay:'$560', trainDisplay:'$1,500', duration:'32-40h', target:'Mid-Level Leaders',
+      badge:'gimi-store-assets/v2/ccio-1.png',
+      includes:['Level 3 Certificate (upon passing)','Online examination fee','IMBOK Level 3 Guide (e-copy)','Remote proctor fee'],
+      description:'The Certified Chief Innovation Officer Level 3: Manager certification is designed for managers taking their first step toward becoming a Certified Chief Innovation Officer. Participants gain an advanced understanding of business innovation strategy, capacity, and discipline to manage innovation effectively within their organizations.',
+      details:{ 'Exam Format':'Online proctored MCQ', 'Pass Threshold':'70%', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'ccio-2', track:'icore', cluster:'ccio', code:'CCIO-2',
+      title:'Certified Chief Innovation Officer Level 4: Leader',
+      tagline:'Leaders build the capability to design and run an enterprise-wide innovation ecosystem',
+      price:560, priceDisplay:'$560', certDisplay:'$560', trainDisplay:'$1,100', duration:'3-4 months', target:'Senior Leaders',
+      badge:'gimi-store-assets/v2/ccio-2.png',
+      includes:['Level 4 Certificate (upon project approval)','Project guideline (e-copy)','Panel review by GIMI experts','Innovation Management System Audit'],
+      description:'The Certified Chief Innovation Officer Level 4: Leader certification is designed for senior professionals ready to apply Manager Level 3 learnings to real organizational challenges. Participants submit a documented experience on an Innovation Ecosystem or Innovation Portfolio Management initiative, generating insights and solutions for managing innovation within organizations.',
+      prereqs:'CCIO-1 required.',
+      details:{ 'Exam Format':'Project + expert panel', 'Pass Threshold':'Panel approval', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'ccio-mc', code:'CCIO-MC', track:'icore', cluster:'ccio-mc',
+      title:'CCIO Masterclass',
+      tagline:'Senior leaders earn the premier executive designation for driving organisational innovation',
+      price:2600, priceDisplay:'$2,600', certDisplay:'$2,600', trainDisplay:null, duration:'4 weeks plus 3-4 months mentoring sessions', target:'Senior Executives', modality:'Live Virtual Cohort',
+      badge:'gimi-store-assets/v2/ccio-mc.png',
+      includes:['21+ hours live online with experts','3-4 months mentoring sessions to close the gaps on the innovation management system','CCIO Level 3 + Level 4 certifications','Online exam fees + remote proctor','IMBOK Level 3 Guide (e-copy)','Level 4 project review and guideline'],
+      description:'The CCIO Masterclass is a 4-week virtual masterclass led by globally recognized innovation experts followed by a 3-4 month mentoring program to build their innovation management system. It certifies a professional has the broad range of knowledge required to function as a successful manager and leader of enterprise-wide innovation programmes.',
+      details:{ 'Exam Format':'MCQ + Level 4 project review', 'Pass Threshold':'70% + panel approval', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cgis-1', track:'icore', cluster:'impact', code:'CGIS-1',
+      title:'Certified GIMI Impact: Students',
+      tagline:'High-school students learn to think more innovatively and solve problems with empathy',
+      price:100, priceDisplay:'$100', certDisplay:'$100', trainDisplay:null, duration:'12h', target:'High School Students',
+      badge:'gimi-store-assets/v2/cgis-1.png',
+      includes:['GIMI Impact Student Certificate','Self-paced course access','Activity workbook','Remote proctor fee'],
+      description:'The Certified GIMI Impact: Students certification is designed for high school students who want to be more innovative and compassionate. Participants learn how to apply creativity and structured problem-solving to address complex challenges around the world.',
+      details:{ 'Exam Format':'Online MCQ', 'Pass Threshold':'60%', 'Recertification':'Not required', 'Certificate':'Digital certificate' }}),
+
+  mk({ id:'cgit', track:'icore', cluster:'impact', code:'CGIT',
+      title:'Certified GIMI Impact: Teachers',
+      tagline:'Teachers gain the tools to instil an innovation mindset in their students',
+      price:250, priceDisplay:'$250', certDisplay:'$250', trainDisplay:null, duration:'12h', target:'Teachers',
+      badge:'gimi-store-assets/v2/cgit.png',
+      includes:['GIMI Impact Teacher Certificate','Self-paced course access','Teaching toolkit','Remote proctor fee'],
+      description:'The Certified GIMI Impact Teacher is a certificate designed to empower high school teachers to teach students in high school to be more innovative, compassionate, and solve complex problems around the world.',
+      details:{ 'Exam Format':'Online MCQ + lesson plan', 'Pass Threshold':'70%', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cgt', track:'icore', cluster:'icore-train', code:'CGT',
+      title:'Certified GIMI Trainer',
+      tagline:'Experienced innovators become certified to train and develop others',
+      price:510, priceDisplay:'$510', certDisplay:'$510', trainDisplay:null, duration:'8h', target:'Trainers',
+      badge:'gimi-store-assets/v2/cgt.png',
+      includes:['Certified GIMI Trainer Certificate','Trainer materials and slides','Mastery assessment','Remote proctor fee'],
+      description:'The Certified GIMI Trainer certification is designed for certified GIMI individuals who want to train others on GIMI methodologies, whether inside or outside their organization. Participants develop mastery in delivering GIMI frameworks and tools, learn to explain key innovation concepts clearly, and use GIMI\'s materials to build a training and certification business in innovation management.',
+      prereqs:'CIP-1, CIP-2, CCIO-1 required.',
+      details:{ 'Exam Format':'Live demonstration + MCQ', 'Pass Threshold':'Demonstration approval', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
+
+  /* ========== INNOVATION ELECTIVE ========== */
+  mk({ id:'ip', track:'ielec', code:'IP',
+      title:'Innovation Primer',
+      tagline:'Anyone can shift from passively watching change to proactively driving value',
+      price:0, priceDisplay:'Free', certDisplay:'Free', trainDisplay:null, duration:'2h', target:'Anyone',
+      badge:'gimi-store-assets/v2/ip.png',
+      includes:['6 self-paced modules','Innovation Primer Certificate','Foundational vocabulary toolkit','Free public access'],
+      description:'The Innovation Primer certification is designed for individuals who want to shift from passive observers of change into proactive drivers of value. Participants learn that innovation is a disciplined capability, not a spark of genius, and build the skills to connect disparate dots of knowledge, research, and perspective. Across six self-paced modules, they explore a Case for Change, a shared language of value, mechanisms like Lean and Protected Innovation Teams, and the practical tools of creativity and dot-connecting.',
+      details:{ 'Exam Format':'Module completion', 'Pass Threshold':'Completion-based', 'Recertification':'Not required', 'Certificate':'Digital certificate of completion' }}),
+
+  mk({ id:'pbcc', track:'ielec', code:'PBCC',
+      title:'Problem Solving Certified Catalyst',
+      tagline:'Practitioners master a repeatable five-step method to turn problems into breakthrough ideas',
+      price:200, priceDisplay:'$200', certDisplay:'$200', trainDisplay:'$600', duration:'16h', target:'College Students',
+      badge:'gimi-store-assets/v2/pbcc.png',
+      includes:['PBCC Catalyst Certificate','Self-paced course access','5-step ideation workbook','Remote proctor fee'],
+      description:'The Problem Solving Certified Catalyst is designed for individuals from all backgrounds who want to develop a structured approach to creative problem-solving. Participants learn innovation tools, techniques, and an innovative mindset through a purpose-driven, five-step ideation process — Setup, Diverge, Connect, Converge, and Emerge — moving from challenge selection to actionable solution concepts and pitch-ready brochures.',
+      details:{ 'Exam Format':'Online MCQ + workbook submission', 'Pass Threshold':'70%', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cdt-1', track:'ielec', code:'CDT-1',
+      title:'Certified Design Thinking: Level 1',
+      tagline:'Professionals build human-centred design skills through the Immerse, Invent, Implement method',
+      price:410, priceDisplay:'$410', certDisplay:'$410', trainDisplay:'$1,000', duration:'32h', target:'Professionals',
+      badge:'gimi-store-assets/v2/cdt-1.png',
+      includes:['CDT Level 1 Certificate','Self-paced course access','Design Thinking toolkit','Remote proctor fee'],
+      description:'The Certified Design Thinking Level 1 certification is designed for individuals who want to master human-centered design to solve complex problems and improve user experiences. Participants build a strong foundation in Design Thinking through its three stages: Immerse (capturing user insights and building empathy), Invent (defining problem statements and generating creative solutions), and Implement (prototyping, testing, and iterating).',
+      details:{ 'Exam Format':'Online MCQ + design exercise', 'Pass Threshold':'70%', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cdt-2', track:'ielec', code:'CDT-2',
+      title:'Certified Design Thinking: Level 2',
+      tagline:'Practitioners apply Design Thinking methods to a real organisational challenge',
+      price:410, priceDisplay:'$410', certDisplay:'$410', trainDisplay:'$1,000', duration:'24h', target:'Professionals',
+      badge:'gimi-store-assets/v2/cdt-2.png',
+      includes:['CDT Level 2 Certificate','Project guideline (e-copy)','Expert white paper review','Activity workbook'],
+      description:'The Certified Design Thinking Level 2 certification is designed for individuals ready to apply Design Thinking methods to real organizational challenges. Participants document their process, insights, and outcomes in a white paper that showcases how they used the Immerse, Invent, and Implement stages, gaining the skills and confidence to lead Design Thinking across diverse contexts.',
+      prereqs:'CDT-1 required.',
+      details:{ 'Exam Format':'White paper submission', 'Pass Threshold':'Expert review approval', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cdtt-3', track:'ielec', code:'CDTT-3',
+      title:'Certified Design Thinking Trainer',
+      tagline:'Certified designers earn the credentials to train others in human-centred design',
+      price:410, priceDisplay:'$410', certDisplay:'$410', trainDisplay:'$700', duration:'40h', target:'Trainers',
+      badge:'gimi-store-assets/v2/cdtt-3.png',
+      includes:['CDTT Trainer Certificate','3-session online masterclass','Facilitator materials','Mastery assessment'],
+      description:'The Certified Design Thinking Trainer certification is designed for certified Design Thinking individuals who want to train others on the methodology. Through a 3-session online masterclass, participants master facilitation of the Immerse, Invent, and Implement stages and learn to guide teams through each phase, creating a collaborative and innovative environment.',
+      prereqs:'CDT-1; CDT-2 required.',
+      details:{ 'Exam Format':'Live facilitation + mastery test', 'Pass Threshold':'Demonstration approval', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'caap', track:'ielec', code:'CAAP',
+      title:'Certified AI Agent Practitioner',
+      tagline:'Practitioners learn to operationalise AI by building a working agent through Innovation 5.0',
+      price:495, priceDisplay:'$495', certDisplay:'$495', trainDisplay:'$495', duration:'4h', target:'Practitioners',
+      badge:'gimi-store-assets/v2/caap.png',
+      includes:['CAAP Practitioner Certificate','Innovation 5.0 framework','AI agent mock-up build','Workshop facilitation'],
+      description:'The Certified AI Agent Practitioner certification is designed for teams and individuals ready to operationalize AI in their organizations. Through a hands-on, executive-ready workshop, participants identify a real business need, design an AI-powered solution, and build a functional agent mock-up — moving from intuition to structured decision-making using Innovation 5.0 to explore multiple solutions, reduce bias, and focus on execution-ready outcomes.',
+      details:{ 'Exam Format':'Live mock-up demonstration', 'Pass Threshold':'Demonstration approval', 'Recertification':'2-year cycle', 'Certificate':'Digital certificate' }}),
+
+  mk({ id:'cga', track:'ielec', code:'CGA',
+      title:'Certified GIMI Auditor',
+      tagline:'Professionals gain the skills to audit innovation management systems against ISO 56001',
+      price:2000, priceDisplay:'$2,000', certDisplay:'$2,000', trainDisplay:'$2,000', duration:'20h', target:'Auditors',
+      badge:'gimi-store-assets/v2/cga.png',
+      includes:['Certified GIMI Auditor Certificate','ISO 56001 audit toolkit','GIMI auditor handbook','Mastery assessment'],
+      description:'The Certified GIMI Auditor certification is designed for professionals who conduct or oversee audits of innovation management systems aligned with global standards like ISO 56001. Participants gain an in-depth understanding of GIMI and ISO 56001 standards and practical tools to assess the innovation maturity of different organizations. The pathway requires completing the Certified Innovation Management (CIM) Level 3 Certification before pursuing the GIMI Certified Auditor (GCA) Certification.',
+      prereqs:'CCIO-1 required.',
+      details:{ 'Exam Format':'Online MCQ + audit simulation', 'Pass Threshold':'80%', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cime', track:'ielec', code:'CIME',
+      title:'Certified ISO Innovation Management Expert',
+      tagline:'Experts learn to establish and improve innovation management systems across the ISO 56000 family',
+      price:1200, priceDisplay:'$1,200', certDisplay:'$1,200', trainDisplay:'$1,200', duration:'20h', target:'Leaders & Managers',
+      badge:'gimi-store-assets/v2/cime.png',
+      includes:['CIME Expert Certificate','ISO 56000 framework deep-dive','Implementation playbook','Delivered by ISO committee members'],
+      description:'The ISO Innovation Management Expert certification is designed for leaders who want to establish, implement, and improve Innovation Management Systems (IMS) in full alignment with the ISO 56000 family. Participants gain a complete framework to design and systematize innovation management, moving beyond sporadic creativity to disciplined performance.',
+      details:{ 'Exam Format':'Online MCQ', 'Pass Threshold':'70%', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'ctc', track:'ielec', code:'CTC',
+      title:'Certified Technology Catalyst',
+      tagline:'Leaders learn to turn 130+ breakthrough technologies into future-ready strategies',
+      price:200, priceDisplay:'$200', certDisplay:'$200', trainDisplay:null, duration:'20h', target:'Professionals',
+      badge:'gimi-store-assets/v2/ctc.png',
+      includes:['CTC Catalyst Certificate','130+ technology profiles','Technovate companion app','Self-paced course access'],
+      description:'The Technology Catalyst certification is designed for individuals who want to thrive in a world where innovation is essential. Participants leverage over 130 breakthrough technologies to identify emerging trends, make sense of disruption, and craft strategies that position themselves or their organizations as future-ready leaders.',
+      details:{ 'Exam Format':'Online MCQ', 'Pass Threshold':'70%', 'Recertification':'2-year cycle', 'Certificate':'Digital certificate' }}),
+
+  mk({ id:'clc', track:'ielec', code:'CLC',
+      title:'Certified Longevity Catalyst',
+      tagline:'Leaders prepare to drive the shift from an aging society to a longevity society',
+      price:200, priceDisplay:'$200', certDisplay:'$200', trainDisplay:null, duration:'12h', target:'Professionals',
+      badge:'gimi-store-assets/v2/clc.png',
+      includes:['CLC Catalyst Certificate','GIMI Think Tank Longevity Series','Breakthrough innovations catalog','Self-paced course access'],
+      description:'The Certified Longevity Catalyst is designed for individuals who want to lead the shift from an aging society to a longevity society, using innovation to enhance both lifespan and healthspan. Drawing on the 2025 GIMI Think Tank Longevity Series, participants explore brain health and cognitive longevity, the societal and economic implications of longevity, breakthrough innovations across robotics, nutrition, AI, technology, design, and policy, and mindsets that redefine aging as a phase of purpose and contribution.',
+      details:{ 'Exam Format':'Online MCQ', 'Pass Threshold':'70%', 'Recertification':'2-year cycle', 'Certificate':'Digital certificate' }}),
+
+  /* ========== FUTURE FORESIGHT ========== */
+  mk({ id:'cff-1', track:'ff', cluster:'ff-series', code:'CFF-1',
+      title:'Certified Foresight Professional: Level 1',
+      tagline:'Professionals sharpen the analytical skills to question assumptions and read weak signals',
+      price:560, priceDisplay:'$560', certDisplay:'$560', trainDisplay:'$1,650', duration:'Self-paced', target:'Professionals',
+      badge:'gimi-store-assets/v2/cff-1.png',
+      includes:['CFF Level 1 Certificate','Future Foresight Body of Knowledge Level 1','Online examination','Remote proctor fee'],
+      description:'The Certified Foresight Professional Level 1 certification is designed for individuals who want to question current assumptions and strengthen analytical and intuitive mindsets. Participants gain essential knowledge of future foresight, including fundamentals and literacy, key premises and principles, and a comprehensive immersion into the main schools of thought and practice.',
+      details:{ 'Exam Format':'Online MCQ', 'Pass Threshold':'70%', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cff-2', track:'ff', cluster:'ff-series', code:'CFF-2',
+      title:'Certified Foresight Leader: Level 2',
+      tagline:'Leaders master the S4 Futures framework for rigorous, structured scenario work',
+      price:560, priceDisplay:'$560', certDisplay:'$560', trainDisplay:'$1,950', duration:'Self-paced', target:'Professionals',
+      badge:'gimi-store-assets/v2/cff-2.png',
+      includes:['CFF Level 2 Certificate','S4 Futures framework toolkit','Future Foresight Body of Knowledge Level 2','Online examination'],
+      description:'The Certified Foresight Leader Level 2 certification is designed for individuals who want to master the end-to-end foresight process. Participants learn the S4 Futures framework — Scoping, Scanning, Scenarios, and Strategy — and explore multiple foresight methodologies and tools to manage foresight projects.',
+      prereqs:'CFF-1 required.',
+      details:{ 'Exam Format':'Online MCQ', 'Pass Threshold':'70%', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cff-3', track:'ff', cluster:'ff-series', code:'CFF-3',
+      title:'Certified Foresight Officer: Level 3',
+      tagline:'Officers develop the capability to lead a full foresight project for a real organisation',
+      price:560, priceDisplay:'$560', certDisplay:'$560', trainDisplay:'$1,250', duration:'Self-paced', target:'Leaders',
+      badge:'gimi-store-assets/v2/cff-3.png',
+      includes:['CFF Level 3 Certificate','Foresight project guideline','Expert panel review','Foresight officer toolkit'],
+      description:'The Certified Chief Foresight Officer Level 3 certification is designed for individuals ready to apply Levels 1 and 2 knowledge to a relevant organizational challenge. Participants demonstrate the capacity to lead a Foresight Project, integrating methodological phases and the appropriate tools.',
+      prereqs:'CFF-2 required.',
+      details:{ 'Exam Format':'Project + expert panel', 'Pass Threshold':'Panel approval', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cff-4', track:'ff', cluster:'ff-train', code:'CFF-4',
+      title:'Certified Trainer In Future Foresight Level 1',
+      tagline:'Foresight professionals become certified to train others at Level 1',
+      price:2000, priceDisplay:'$2,000', certDisplay:null, trainDisplay:'$2,000', duration:'Self-paced', target:'Trainers',
+      badge:'gimi-store-assets/v2/cff-4.png',
+      includes:['CFF Trainer Level 1 Certificate','Trainer materials and slides','Train-the-trainer methodology','Mastery assessment'],
+      description:'The Certified Future Foresight Trainer Level 1 certification is designed for Future Foresight certified individuals (Levels 1 and 2) who want to train others. Participants develop the ability to prepare candidates inside or outside their organization to obtain the FF Certification Level 1.',
+      prereqs:'CFF-1 required.',
+      details:{ 'Exam Format':'Live demonstration + MCQ', 'Pass Threshold':'Demonstration approval', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'cff-5', track:'ff', cluster:'ff-train', code:'CFF-5',
+      title:'Certified Trainer In Future Foresight Level 2',
+      tagline:'Foresight leaders become certified to train others at advanced Level 2',
+      price:2000, priceDisplay:'$2,000', certDisplay:null, trainDisplay:'$2,000', duration:'Self-paced', target:'Trainers',
+      badge:'gimi-store-assets/v2/cff-5.png',
+      includes:['CFF Trainer Level 2 Certificate','Advanced trainer materials','Train-the-trainer methodology','Mastery assessment'],
+      description:'The Certified Future Foresight Trainer Level 2 certification is designed for Future Foresight certified individuals (Levels 1, 2, and 3) who want to train others at an advanced level. Participants develop the ability to prepare candidates inside or outside their organization to obtain the FF Certification Level 2.',
+      prereqs:'CFF-2 required.',
+      details:{ 'Exam Format':'Live demonstration + MCQ', 'Pass Threshold':'Demonstration approval', 'Recertification':'3-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  /* ========== LEADERSHIP CORE ========== */
+  mk({ id:'clf-1', track:'lead', code:'CLF-1',
+      title:'Certified Leader for the Future',
+      tagline:'Leaders develop collaborative leadership powered by the Powers of AND',
+      price:510, priceDisplay:'$510', certDisplay:'$510', trainDisplay:'$1,000', duration:'24h', target:'Leaders',
+      badge:'gimi-store-assets/v2/clf-1.png',
+      includes:['CLF-1 Certificate','Powers of AND framework','Self-paced course access','Remote proctor fee'],
+      description:'The Certified Leader for the Future certification is designed for individuals who want to lead collaboratively and become the best version of themselves. Participants develop strong leadership values that support their vision and learn to use the Powers of AND to drive effective results and navigate the ambiguity and volatility of the business environment.',
+      details:{ 'Exam Format':'Online MCQ', 'Pass Threshold':'70%', 'Recertification':'2-year cycle', 'Certificate':'Digital certificate' }}),
+
+  mk({ id:'cil', track:'lead', code:'CIL',
+      title:'Certified Innovation Leader',
+      tagline:'Leaders turn innovation into a repeatable competency through the SCD framework',
+      price:200, priceDisplay:'$200', certDisplay:'$200', trainDisplay:'$1,000', duration:'1.5h', target:'Leaders',
+      badge:'gimi-store-assets/v2/cil.png',
+      includes:['CIL Certificate','SCD Framework toolkit','3-module micro-course','Leadership playbook'],
+      description:'The Certified Innovation Leader is designed for leaders who want to turn innovation from a chaotic event into a repeatable leadership competency. Recognizing that innovation fails from a lack of system, not ideas, participants use the SCD Framework to gain the mental models and tactical tools to drive measurable change. Across three modules — Strategy (the North Star and when to innovate), Capacity (the people, processes, and resources to turn ideas into reality), and Discipline (the culture, habits, and metrics that sustain growth) — they learn to lead innovation as a structured, repeatable practice.',
+      details:{ 'Exam Format':'Module completion', 'Pass Threshold':'Completion-based', 'Recertification':'Not required', 'Certificate':'Digital certificate of completion' }}),
+
+  /* ========== CONSULTING CORE ========== */
+  mk({ id:'mci-1', track:'cons', code:'MCI-1',
+      title:'Certified Management Consulting Level 1: Analyst',
+      tagline:'Professionals build a solid grounding in the fundamentals of management consulting',
+      price:510, priceDisplay:'$510', certDisplay:'$510', trainDisplay:'$1,000', duration:'20h', target:'Analysts',
+      badge:'gimi-store-assets/v2/mci-1.png',
+      includes:['MCI Level 1 Certificate','Consulting fundamentals course','Analyst toolkit','Online examination'],
+      description:'The Management Consulting Level 1: Analyst certification focuses on the fundamentals of management consulting. Analysts will develop key skills in analytical techniques, problem-solving methodologies, and the foundational knowledge required to tackle complex business challenges. It targets students and professionals aiming to develop foundational skills to think and act like a consultant, delivering structured, quality output. Content covers thinking, acting, researching, and presenting like a consultant.',
+      details:{ 'Exam Format':'Online MCQ', 'Pass Threshold':'70%', 'Recertification':'2-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'mci-2', track:'cons', code:'MCI-2',
+      title:'Certified Management Consulting Level 2: Consultant',
+      tagline:'Consultants apply the fundamentals to real-world client projects',
+      price:510, priceDisplay:'$510', certDisplay:'$510', trainDisplay:'$1,000', duration:'30h', target:'Consultants',
+      badge:'gimi-store-assets/v2/mci-2.png',
+      includes:['MCI Level 2 Certificate','SCQ analysis framework','Senior-sponsored team project','Expert panel review'],
+      description:'The Management Consulting Level 2: Consultant certification is designed for individuals ready to apply Level 1 learnings to real-world consulting projects. Participants work on a team project sponsored by a senior-level sponsor within 12 months of earning Level 1, learning Situation–Complication–Question analysis, issue analysis, project presentation, and peer feedback to transform insights into actionable, measurable solutions.',
+      prereqs:'MCI-1 required.',
+      details:{ 'Exam Format':'Project + panel review', 'Pass Threshold':'Panel approval', 'Recertification':'2-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'mci-3', track:'cons', code:'MCI-3',
+      title:'Certified Management Consulting Level 3: Manager',
+      tagline:'Managers learn to bridge strategy and execution with the REALIZE methodology',
+      price:510, priceDisplay:'$510', certDisplay:'$510', trainDisplay:'$1,000', duration:'40h', target:'Managers',
+      badge:'gimi-store-assets/v2/mci-3.png',
+      includes:['MCI Level 3 Certificate','REALIZE methodology playbook','Strategy execution toolkit','Online examination'],
+      description:'The Management Consulting Level 3: Manager certification is designed for professionals aspiring to take on strategic consulting roles. Participants learn Strategy Formulation, Strategy Execution Planning, Strategy Execution, and the REALIZE Strategy Execution Methodology to bridge the gap between strategy formulation and execution with precision and impact.',
+      prereqs:'MCI-2 required.',
+      details:{ 'Exam Format':'Online MCQ', 'Pass Threshold':'75%', 'Recertification':'2-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  mk({ id:'mci-4', track:'cons', code:'MCI-4',
+      title:'Certified Management Consulting Level 4: Leader',
+      tagline:'Leaders develop visionary leadership and advanced strategy execution',
+      price:510, priceDisplay:'$510', certDisplay:'$510', trainDisplay:'$1,000', duration:'Variable', target:'Senior Consultants',
+      badge:'gimi-store-assets/v2/mci-4.png',
+      includes:['MCI Level 4 Certificate','Senior-sponsored team project','Visionary leadership toolkit','Expert panel review'],
+      description:'The Management Consulting Level 4: Certified Leader certification is designed for Management Consultant Managers ready to shape the future of the industry. Participants build on Level 3 by working on a team project sponsored by a senior-level sponsor within 12 months of earning Level 3, focusing on visionary leadership, advanced strategy execution, and driving organizational impact.',
+      prereqs:'MCI-3 required.',
+      details:{ 'Exam Format':'Project + panel review', 'Pass Threshold':'Panel approval', 'Recertification':'2-year cycle', 'Certificate':'Digital + optional hard copy' }}),
+
+  /* ========== BOOKS & GUIDES ========== */
+  mk({ id:'imbok-1', track:'books', cluster:'imbok',
+      title:'IMBOK Level 1 Guide',
+      tagline:'The Innovation Management Body of Knowledge, Level 1.',
+      price:45, priceDisplay:'$45', duration:'Reference', target:'Professionals',
+      badge:'gimi-store-assets/v2/imbok-1.png',
+      description:'The IMBOK Level 1 extends the existing knowledge of business professionals around Innovation Strategy, Capacity, and Discipline at the foundation level.'}),
+
+  mk({ id:'imbok-3', track:'books', cluster:'imbok',
+      title:'IMBOK Level 3 Guide',
+      tagline:'The Innovation Management Body of Knowledge, Level 3.',
+      price:45, priceDisplay:'$45', duration:'Reference', target:'Managers',
+      badge:'gimi-store-assets/v2/imbok-3.png',
+      description:'The IMBOK Level 3 extends the existing knowledge around innovation management for chief innovation officers and managers.'}),
+
+  mk({ id:'ffbok-1', track:'books', cluster:'ffbok',
+      title:'Future Foresight Body of Knowledge – Level 1',
+      tagline:'The reference text for the foresight professional pathway.',
+      price:45, priceDisplay:'$45', duration:'Reference', target:'Foresight Professionals',
+      badge:'gimi-store-assets/v2/ffbok-1.png',
+      description:'The reference text for foresight professional certification at Level 1.'}),
+
+  mk({ id:'ffbok-2', track:'books', cluster:'ffbok',
+      title:'Future Foresight Body of Knowledge – Level 2',
+      tagline:'The reference text for the foresight leader pathway.',
+      price:45, priceDisplay:'$45', duration:'Reference', target:'Foresight Leaders',
+      badge:'gimi-store-assets/v2/ffbok-2.png',
+      description:'The reference text for foresight professional certification at Level 2.'}),
+
+  mk({ id:'iso-book', track:'books', cluster:'iso-bk',
+      title:'ISO Book – ISO 56000 Series',
+      tagline:'Reference compilation of the ISO 56000 series.',
+      price:50, priceDisplay:'$50', duration:'Reference', target:'Leaders',
+      badge:'gimi-store-assets/v2/iso-book.png',
+      description:'A consolidated reference covering the ISO 56000 family of standards: Fundamentals, Systems Guidance, Innovation Partnership, Assessment, and IP Management.'}),
+
+  mk({ id:'game-changers', track:'books', cluster:'stories',
+      title:'Game Changers',
+      tagline:'How game-changing business concepts adapt to a fast-changing economic world.',
+      price:20, priceDisplay:'$20', duration:'Reference', target:'Anyone',
+      badge:'gimi-store-assets/v2/game-changers.png',
+      description:'Shows how game-changing business concepts aren\'t only about creative destruction, but much more about skilful adaptation to an economic world in flux.'}),
+
+  mk({ id:'connectivate', track:'books', cluster:'stories',
+      title:'Connectivate!',
+      tagline:'Stories of fifty innovative companies whose breakthroughs are changing the world.',
+      price:20, priceDisplay:'$20', duration:'Reference', target:'Anyone',
+      badge:'gimi-store-assets/v2/connectivate.png',
+      description:'A collection of stories of more than fifty innovative companies whose breakthroughs are changing the world.'}),
+
+  mk({ id:'healthovate', track:'books', cluster:'stories',
+      title:'Healthovate!',
+      tagline:'Innovation breakthroughs changing the health and wellness industry.',
+      price:20, priceDisplay:'$20', duration:'Reference', target:'Anyone',
+      badge:'gimi-store-assets/v2/healthovate.png',
+      description:'Compiles vignettes from innovative companies whose breakthroughs are changing the health and wellness industry.'}),
+
+  mk({ id:'greenovate', track:'books', cluster:'stories',
+      title:'Greenovate!',
+      tagline:'Green innovation breakthroughs changing sustainable growth.',
+      price:20, priceDisplay:'$20', duration:'Reference', target:'Anyone',
+      badge:'gimi-store-assets/v2/greenovate.png',
+      description:'Stories from innovative companies whose green innovation breakthroughs are changing sustainable growth alternatives.'}),
+
+  mk({ id:'squiggly', track:'books', cluster:'stories',
+      title:'Squiggly Lines',
+      tagline:'Innovation is team sport: managing stakeholders through the journey.',
+      price:25, priceDisplay:'$25', duration:'Reference', target:'Anyone',
+      badge:'gimi-store-assets/v2/squiggly.png',
+      description:'Squiggly Lines provides the reader with guidelines on how to manage various stakeholders throughout the journey of innovation.'}),
+
+  mk({ id:'idex', track:'books', cluster:'tool-bk',
+      title:'GIMI iDeX – Ideation Techniques for Idea Excellence',
+      tagline:'The practitioner\'s toolkit for ideation excellence.',
+      price:15, priceDisplay:'$15', duration:'Reference', target:'Practitioners',
+      badge:'gimi-store-assets/v2/idex.png',
+      description:'A practitioner reference for ideation techniques used to generate, develop, and refine ideas at scale.'}),
+
+  mk({ id:'technovate', track:'books', cluster:'tool-bk',
+      title:'Technovate (Book + App)',
+      tagline:'Book plus companion app for technology-driven innovation.',
+      price:99, priceDisplay:'$99', duration:'Reference', target:'Practitioners',
+      badge:'gimi-store-assets/v2/technovate.png',
+      description:'Book and companion application that helps practitioners apply technology-driven innovation methods.'}),
+
+  mk({ id:'ijis', track:'books', cluster:'journal',
+      title:'International Journal of Innovation Science',
+      tagline:'Peer-reviewed articles on innovation science and practice.',
+      priceDisplay:'TBD', duration:'Subscription', target:'Researchers',
+      badge:'gimi-store-assets/v2/ijis.png',
+      description:'A peer-reviewed journal compiled from a range of innovation experts on the developments and applications of innovation science.'}),
+
+  /* ========== PROGRAMS & TOOLS ========== */
+  mk({ id:'ipa-individual', track:'tools', cluster:'indiv-ass',
+      title:'IPA Individual',
+      tagline:'Understand your innovation mindset and your growth path.',
+      price:50, priceDisplay:'$50', duration:'45 min', target:'Individuals',
+      badge:'gimi-store-assets/v2/ipa-individual.png',
+      description:'The Innovation Potential Assessment Individual reveals an individual\'s level of innovation Mindset and mastery of Knowledge and Tools, with an automated report and tailored training recommendations.',
+      details:{ Duration:'45 min', Modality:'Online Self-Assessment', Language:'English' }}),
+
+
+  mk({ id:'awards-individual', track:'tools', cluster:'indiv-ass',
+      title:'GIMI Innovation Awards – Individual Ticket',
+      tagline:'Attend the annual GIMI Innovation Awards ceremony.',
+      price:400, priceDisplay:'$400', duration:'Event', target:'Professionals',
+      badge:'gimi-store-assets/v2/awards-individual.png',
+      description:'Individual attendance ticket for the annual GIMI Innovation Awards ceremony.',
+      details:{ Modality:'In-Person Event', Frequency:'Annual' }}),
+
+  mk({ id:'ipa-corporate', track:'tools', cluster:'org-ass',
+      title:'IPA Corporate',
+      tagline:'Map your team\'s collective innovation mindset.',
+      price:5000, priceDisplay:'from $5,000', duration:'45 min / person', target:'Corporate Teams',
+      badge:'gimi-store-assets/v2/ipa-corporate.png',
+      description:'Team-level Innovation Potential Assessment. Tiered pricing by company or business unit size.',
+      includes:['Individual self-assessments','Aggregate organisation report','Team training roadmap'],
+      details:{ Modality:'Online Self-Assessment', Pricing:'Tiered by size', Output:'Individual + aggregate reports' }}),
+
+  mk({ id:'oia-self', track:'tools', cluster:'org-ass',
+      title:'OIA Self-Assessment',
+      tagline:'Instant visibility into your innovation maturity with an automated roadmap.',
+      price:2500, priceDisplay:'$2,500', duration:'1 hour', target:'Organizations',
+      badge:'gimi-store-assets/v2/oia-self.png',
+      description:'Web-based digital tool for organisations to independently assess current and desired innovation maturity across Strategy, Capacity, Discipline, and Performance.',
+      details:{ Duration:'1 hour', Modality:'Online Digital Platform', Language:'English' }}),
+
+  mk({ id:'full-oia', track:'tools', cluster:'org-ass',
+      title:'Full Organizational Innovation Assessment (Full OIA)',
+      tagline:'Expert-led audit producing a Company Certificate at Level 1–4.',
+      price:40000, priceDisplay:'$40,000 audit', duration:'4-12 weeks', target:'Organizations',
+      badge:'gimi-store-assets/v2/full-oia.png',
+      description:'Comprehensive professional evaluation conducted by GIMI auditors. The audit produces a formal Company Certificate at Level 1, 2, 3, or 4, with the certification fee determined by the outcome level.',
+      includes:[
+        'Phase 1 Assessment: surveys, interviews, documentation review',
+        'Phase 2 Leadership Workshop: validation and case for change',
+        'Phase 3 Report: maturity scoring and transformation roadmap',
+        'Company Certificate at the outcome level'
+      ],
+      details:{ 'Audit Fee':'$40,000', 'Certificate L1':'$2,500', 'Certificate L2':'$5,000', 'Certificate L3':'$7,500', 'Certificate L4':'$10,000', Duration:'4–12 weeks' }}),
+
+  mk({ id:'akaio', track:'tools', cluster:'software',
+      title:'AKAIO – AI-Powered Innovation Platform',
+      tagline:'Explore hidden trends, envision future scenarios, match with partners.',
+      priceDisplay:'Contact Us', duration:'Ongoing', target:'Organizations',
+      badge:'gimi-store-assets/v2/akaio.png',
+      description:'A unique AI-powered Innovation Ecosystem Platform with intelligent partner matchmaking and AI-generated scenario exploration.',
+      details:{ Modality:'Software Platform', Availability:'Web-based' }}),
+
+  mk({ id:'eureka', track:'tools', cluster:'software',
+      title:'Eureka – Online Subscription',
+      tagline:'Idea management and innovation portfolio software.',
+      price:500, priceDisplay:'$500 / year', duration:'Annual', target:'Organizations',
+      badge:'gimi-store-assets/v2/eureka.png',
+      description:'Eureka provides a collaborative environment to manage innovation portfolios, run lean experiments, iterate ideas rapidly, and develop artefacts at scale.',
+      details:{ Modality:'Software Subscription', Cycle:'Annual' }}),
+
+  mk({ id:'service-tool', track:'tools', cluster:'software',
+      title:'Service Innovation Tool',
+      tagline:'Diagnose service innovation gaps.',
+      priceDisplay:'TBD', duration:'Ongoing', target:'Organizations',
+      badge:'gimi-store-assets/v2/service-tool.png',
+      description:'A tool for organisations to diagnose service innovation gaps and design improvements across the service portfolio.',
+      details:{ Modality:'Software', Status:'Pricing TBD' }}),
+
+  mk({ id:'quickgrowth', track:'tools', cluster:'software',
+      title:'QuickGrowth',
+      tagline:'Software-enabled strategic planning platform for SMEs.',
+      price:5000, priceDisplay:'$5,000', duration:'Custom', target:'SMEs',
+      badge:'gimi-store-assets/2x.jpeg',
+      description:'QuickGrowth is a software-enabled strategic planning programme that helps SME owners assess operations, identify improvement opportunities, and develop actionable plans for immediate results.',
+      details:{ Modality:'Software + Facilitated Workshops', Focus:'SME Strategic Planning' }}),
+
+  mk({ id:'academy', track:'tools', cluster:'engage',
+      title:'Innovation Academy',
+      tagline:'Transform your organisation into a self-sustaining learning hub.',
+      price:50000, priceDisplay:'$50,000', duration:'4 weeks setup', target:'Organizations',
+      badge:'gimi-store-assets/v2/academy.png',
+      description:'A strategic capability-building engine that transforms an organisation into a Learning Hub for innovation, standardising the language and building internal mentors.',
+      details:{ Modality:'Online Custom Academy', Output:'Custom learning paths + mentor certification' }}),
+
+  mk({ id:'coaching', track:'tools', cluster:'engage',
+      title:'GIMI Innovation Coaching',
+      tagline:'Personalised coaching with innovation experts.',
+      priceDisplay:'From $700', duration:'Tiered', target:'Individuals & Companies',
+      badge:'gimi-store-assets/v2/coaching.png',
+      description:'A personalised coaching experience to boost individual and company innovation approaches. Available per session, per month, or per year.',
+      details:{ 'Per Session':'$700', 'Per Month':'$2,000', 'Per Year':'$12,000', Modality:'1-on-1 Coaching' }}),
+
+  mk({ id:'awards-org', track:'tools', cluster:'engage',
+      title:'GIMI Innovation Awards – Organization',
+      tagline:'International recognition for groundbreaking innovation initiatives.',
+      price:350, priceDisplay:'$350–$600', duration:'Annual cycle', target:'Organizations',
+      badge:'gimi-store-assets/v2/awards-org.png',
+      description:'An international recognition programme to identify and celebrate groundbreaking innovation initiatives. 10 award categories across public, private, and social sectors.',
+      details:{ Frequency:'Annual', Categories:'10 (8 organisational + 2 individual)' }}),
+
+  mk({ id:'speech', track:'tools', cluster:'engage',
+      title:'Innovation Keynote Speech',
+      tagline:'Inspire leadership alignment and spark innovation mindset.',
+      price:25000, priceDisplay:'$25,000', duration:'1-2 hours', target:'Leadership Teams',
+      badge:'gimi-store-assets/v2/speech.jpg',
+      description:'A keynote engagement designed to generate executive alignment and organisational excitement around innovation, with current trends, technologies, and real case studies.',
+      details:{ Duration:'1–2 hours', Modality:'Online, In-Person, or Recorded' }}),
+
+  /* ========== MEMBERSHIPS ========== */
+  mk({ id:'memb-student', track:'memb',
+      title:'Student Membership',
+      tagline:'Annual access for students.',
+      price:70, priceDisplay:'$70', duration:'Annual', target:'Students',
+      badge:'gimi-store-assets/v2/memb-student.png',
+      description:'Annual membership for students providing access to GIMI community, learning resources, and Think Tank sessions.'}),
+
+  mk({ id:'memb-pro', track:'memb',
+      title:'Professional Membership',
+      tagline:'Annual access for professionals.',
+      price:200, priceDisplay:'$200', duration:'Annual', target:'Professionals',
+      badge:'gimi-store-assets/v2/memb-pro.png',
+      description:'Professional Membership provides individuals access to active leadership and influence, lifelong learning, career opportunities, and a global innovation community.'}),
+
+  mk({ id:'memb-gold', track:'memb',
+      title:'Corporate Membership – Gold',
+      tagline:'Corporate access at the Gold tier.',
+      price:10000, priceDisplay:'$10,000', duration:'Annual', target:'Companies',
+      badge:'gimi-store-assets/v2/memb-gold.png',
+      description:'Corporate membership at the Gold tier including community access, learning resources, and discounted assessments and engagements.'}),
+
+  mk({ id:'memb-silver', track:'memb',
+      title:'Corporate Membership – Silver',
+      tagline:'Corporate access at the Silver tier.',
+      price:7000, priceDisplay:'$7,000', duration:'Annual', target:'Companies',
+      badge:'gimi-store-assets/v2/memb-silver.png',
+      description:'Corporate membership at the Silver tier including community access and learning resources.'}),
+
+  mk({ id:'memb-plat', track:'memb',
+      title:'Corporate Membership – Platinum',
+      tagline:'Corporate access at the Platinum tier.',
+      price:15000, priceDisplay:'$15,000', duration:'Annual', target:'Companies',
+      badge:'gimi-store-assets/v2/memb-plat.png',
+      description:'Corporate membership at the Platinum tier including premium community access, learning resources, and priority access to GIMI engagements.'}),
+
+  mk({ id:'memb-plat-plus', track:'memb',
+      title:'Corporate Membership – Platinum +',
+      tagline:'GIMI\'s top enterprise tier for organisations scaling innovation at the largest scale.',
+      price:100000, priceDisplay:'$100,000', duration:'Annual', target:'Enterprises',
+      badge:'gimi-store-assets/v2/memb-plat.png',
+      includes:['10 free masterclass seats','1000 individual innovation potential assessments','1 free organisational assessment + action roadmap','1 free coaching session + 30% off future','10 free award entries + 2 ceremony tickets','5 yearly CoE reports + 1 committee seat','Both innovation platforms free + AKAIO software','Open Innovation Challenge included'],
+      description:'The Platinum + Corporate Membership is GIMI\'s top enterprise tier. It bundles 10 masterclass seats, 1000 individual assessments, a full organisational assessment with action roadmap, coaching, award entries, Centers of Excellence access, both innovation platforms with AKAIO software, and the Open Innovation Challenge.'}),
+
+  mk({ id:'memb-academia', track:'memb',
+      title:'Organizational Membership – Academia',
+      tagline:'For universities and academic institutions.',
+      price:5000, priceDisplay:'$5,000', duration:'Annual', target:'Universities',
+      badge:'gimi-store-assets/v2/memb-academia.png',
+      description:'Organisational membership for universities and academic institutions, supporting innovation research, student programmes, and the GIMI community.'}),
+
+  mk({ id:'thinktank', track:'memb',
+      title:'GIMI Think Tank',
+      tagline:'Monthly access to global innovation experts and 18,000+ innovators.',
+      price:0, priceDisplay:'Free', duration:'1h / month', target:'All Professionals',
+      badge:'gimi-store-assets/v2/thinktank.jpeg',
+      description:'Open access to the monthly GIMI Think Tank Webinar, discussion sessions with industry leading experts, and networking with C-level executives.',
+      details:{ Modality:'Virtual Monthly Sessions', Frequency:'Monthly', Community:'18,000+ innovators' }})
+];
+
+/* ============================================================
+   FILTER + RENDER
+   ============================================================ */
+let activeTrack = 'all';
+
+function setTrack(track, btn) {
+  activeTrack = track;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const filtered = PRODUCTS.filter(p => {
+    if (activeTrack !== 'all' && p.track !== activeTrack) return false;
+    if (q) {
+      const hay = (p.title + ' ' + (p.tagline||'') + ' ' + (p.code||'')).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+  renderGrid(filtered);
+  document.getElementById('resultCount').textContent =
+    `Showing ${filtered.length} of ${PRODUCTS.length} products`;
+}
+
+function buildBadge(p) {
+  if (p.badge) {
+    return `<img src="${p.badge}" alt="${p.title}"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <svg class="badge-svg" viewBox="0 0 100 100" style="display:none">${badgeSVG(p)}</svg>`;
+  }
+  return `<svg class="badge-svg" viewBox="0 0 100 100">${badgeSVG(p)}</svg>`;
+}
+function badgeSVG(p) {
+  const tr = TRACKS.find(t => t.id === p.track) || { color:'#2AACB5' };
+  const col = tr.color;
+  const text = p.code || p.title.replace(/[^A-Za-z0-9 ]/g,'').split(' ').filter(Boolean).map(w => w[0]).join('').slice(0,4);
+  return `
+    <circle cx="50" cy="50" r="47" fill="${col}" stroke="#C9D940" stroke-width="3"/>
+    <circle cx="50" cy="50" r="39" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <text x="50" y="42" text-anchor="middle" font-family="Calibri,sans-serif" font-size="11" font-weight="900" fill="white" letter-spacing="2">GIMI</text>
+    <text x="50" y="64" text-anchor="middle" font-family="Calibri,sans-serif" font-size="${text.length>4?14:18}" font-weight="900" fill="white">${text}</text>
+  `;
+}
+
+function renderGrid(products) {
+  const container = document.getElementById('productsContainer');
+  if (!products.length) {
+    container.innerHTML = `<div class="no-results"><h3>No products found</h3><p>Try a different search term or group.</p></div>`;
+    return;
+  }
+  let html = '';
+  TRACKS.forEach(tr => {
+    const inTrack = products.filter(p => p.track === tr.id);
+    if (!inTrack.length) return;
+    inTrack.sort((a,b) => (b.flagship===true) - (a.flagship===true));
+    html += `<div class="grid-section">
+      <div class="grid-section-label">${tr.label}<span class="sec-sub">${tr.sub}</span></div>`;
+
+    if (tr.clusters) {
+      // group by cluster, in declared order
+      tr.clusters.forEach(cl => {
+        const inCluster = inTrack.filter(p => p.cluster === cl.id);
+        if (!inCluster.length) return;
+        html += `<div class="cluster-label">${cl.label}</div>
+                 <div class="product-grid">${inCluster.map(cardHTML).join('')}</div>`;
+      });
+      // any leftover (no cluster set) at the end
+      const stray = inTrack.filter(p => !p.cluster);
+      if (stray.length) html += `<div class="product-grid">${stray.map(cardHTML).join('')}</div>`;
+    } else {
+      html += `<div class="product-grid">${inTrack.map(cardHTML).join('')}</div>`;
+    }
+    html += `</div>`;
+  });
+  container.innerHTML = html;
+}
+
+/* Build the price chips: two when cert & training differ, one otherwise. */
+function priceChipsHTML(p) {
+  const cert  = p.certDisplay  || null;
+  const train = p.trainDisplay || null;
+  // Both present and different -> two chips
+  if (cert && train && cert !== train) {
+    return `<div class="price-chips">
+      <div class="price-chip cert"><span class="pc-label">Cert</span><span class="pc-value">${cert}</span></div>
+      <div class="price-chip train"><span class="pc-label">Cert + Training</span><span class="pc-value">${train}</span></div>
+    </div>`;
+  }
+  // Single price (cert, or training-only, or equal)
+  const single = cert || train || p.priceDisplay || '—';
+  let cls = 'solo';
+  if (single === 'Free') cls = 'free';
+  else if (single === 'TBD' || single === 'Contact Us') cls = 'tbd';
+  // Training-only products labelled accordingly
+  const label = (!cert && train) ? 'Cert + Training' : 'Price';
+  return `<div class="price-chips">
+    <div class="price-chip ${cls}"><span class="pc-label">${label}</span><span class="pc-value">${single}</span></div>
+  </div>`;
+}
+
+/* Title-case a duration for display (first letter of each word), leaving
+   numbers, unit suffixes (32-40h) and acronyms (TBD) intact. Source data
+   stays deck-faithful; this only affects display. */
+function fmtDuration(s) {
+  if (!s) return s;
+  return s.replace(/(^|[\s\-/])([a-z])/g, (m, sep, c) => sep + c.toUpperCase());
+}
+
+function cardHTML(p) {
+  // "CPE" suffix only applies to hour-based durations (e.g. "32-40h", "2h").
+  // Week/month/self-paced/variable durations are shown as-is.
+  const isHours = p.duration && /h$/.test(p.duration);
+  const durDisp = fmtDuration(p.duration);
+  const cpe = !p.duration ? ''
+    : `<div class="card-cpe">${isHours ? durDisp + ' CPE' : durDisp}</div>`;
+  return `
+    <div class="product-card ${p.flagship ? 'flagship' : ''}" onclick="openModal('${p.id}')">
+      ${p.flagship ? '<div class="flagship-tag">Flagship</div>' : ''}
+      <div class="card-badge">${buildBadge(p)}</div>
+      ${p.code ? `<div class="card-code">${p.code}</div>` : ''}
+      <div class="card-title">${p.title}</div>
+      <div class="card-blurb">${p.tagline || ''}</div>
+      <div class="card-meta">
+        ${priceChipsHTML(p)}
+        ${cpe}
+      </div>
+      <button class="card-cta">View Details</button>
+    </div>`;
+}
+
+/* ============================================================
+   TYPE-AWARE MODAL TEMPLATES
+   Every product gets the SAME shape of information. Process /
+   examination details are identical across certifications.
+   ============================================================ */
+function getType(p) {
+  if (p.cluster === 'cip-mc' || p.cluster === 'ccio-mc') return 'masterclass';
+  if (['icore','ielec','ff','lead','cons'].includes(p.track)) return 'cert';
+  if (p.track === 'books') return 'book';
+  if (p.track === 'memb') return p.id === 'thinktank' ? 'community' : 'membership';
+  if (p.cluster === 'indiv-ass' || p.cluster === 'org-ass') return 'assessment';
+  if (p.cluster === 'software') return 'software';
+  if (p.cluster === 'engage') return 'program';
+  return 'product';
+}
+
+function standardIncludes(p, type) {
+  if (p.includes && p.includes.length) return p.includes;
+  if (type === 'cert') return [
+    'Certificate awarded upon passing',
+    'Online proctored examination fee',
+    'Body of Knowledge / Study Guide (e-copy)',
+    'Remote proctor fee',
+    'Online self-paced coursework',
+    'Access to GIMI alumni community'
+  ];
+  if (type === 'masterclass') return [
+    'Live virtual cohort sessions across 7 weeks',
+    'Final examination fee',
+    'Official Study Guide',
+    'ISO Panel Webinar with global ISO committee members',
+    'Certificate awarded upon passing',
+    'Access to GIMI alumni community'
+  ];
+  if (type === 'assessment') return [
+    'Self-assessment or auditor-led survey',
+    'Automated personalised report',
+    'Strengths, gaps, and persona / maturity profile',
+    'Actionable improvement roadmap'
+  ];
+  if (type === 'software') return [
+    'Platform access for the subscription period',
+    'User onboarding and documentation',
+    'Email support and product updates',
+    'Periodic feature releases'
+  ];
+  if (type === 'program') return [
+    'Tailored engagement scope agreed at kickoff',
+    'Structured methodology and timeline',
+    'Documented outputs and deliverables',
+    'GIMI expert facilitation and review'
+  ];
+  if (type === 'membership') return [
+    'Annual community access',
+    'Member-only webinars and content',
+    'Discounted assessments and engagements',
+    'Networking with GIMI\'s 18,000+ innovators'
+  ];
+  if (type === 'community') return [
+    'Open monthly Think Tank webinar',
+    'Discussion sessions with industry experts',
+    'Access to research papers and reports',
+    'Networking across 18,000+ innovators'
+  ];
+  if (type === 'book') return [
+    'Digital edition delivered after purchase',
+    'Innovation case studies and methodologies',
+    'Reference material for practitioners'
+  ];
+  return null;
+}
+
+function standardDetails(p, type) {
+  const base = Object.assign({}, p.details || {});
+  if (type === 'cert' || type === 'masterclass') {
+    // Process & Examination grid is fully sourced from the deck per product
+    // (Exam Format, Pass Threshold, Recertification, Certificate). Duration,
+    // Format and audience live in the stat strip above, so they are NOT repeated
+    // here. Return the product's details as-is to avoid any drift.
+    return base;
+  }
+  if (type === 'assessment') {
+    if (!base.Modality && p.modality) base.Modality = p.modality;
+    if (!base.Duration && p.duration)  base.Duration = p.duration;
+    if (!base.Language)        base.Language = 'English';
+    if (!base.Output)          base.Output = 'Automated PDF report';
+  }
+  if (type === 'membership' || type === 'community') {
+    if (!base.Cycle)           base.Cycle = type === 'community' ? 'Monthly sessions' : 'Annual renewal';
+    if (!base.Language)        base.Language = 'English';
+  }
+  if (type === 'book') {
+    if (!base.Format)          base.Format = 'Digital';
+    if (!base.Language)        base.Language = 'English';
+  }
+  return base;
+}
+
+const SECTION_TITLES = {
+  cert:        { incl:"What's Included",   prereq:'Prerequisites', det:'Process & Examination' },
+  masterclass: { incl:"What's Included",   prereq:'Prerequisites', det:'Process & Examination' },
+  assessment:  { incl:"What's Included",   prereq:null,            det:'How It Works' },
+  software:    { incl:'Features',          prereq:null,            det:'Subscription Details' },
+  program:     { incl:"What's Included",   prereq:null,            det:'Engagement Details' },
+  book:        { incl:"What's Included",   prereq:null,            det:'Format & Details' },
+  membership:  { incl:'Member Benefits',   prereq:null,            det:'Membership Terms' },
+  community:   { incl:'What You Get',      prereq:null,            det:'How It Works' }
+};
+
+function openModal(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  const type = getType(p);
+  const labels = SECTION_TITLES[type] || SECTION_TITLES.cert;
+
+  document.getElementById('modalCode').textContent = p.code || '';
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalTagline').textContent = p.tagline || '';
+  document.getElementById('modalBadge').innerHTML = buildBadge(p);
+  document.getElementById('modalDesc').textContent = p.description || p.tagline || '';
+
+  // Includes (always shown if template exists)
+  const inclSec = document.getElementById('modalIncludesSection');
+  const inclTitle = inclSec.querySelector('.modal-section-title');
+  const incl = standardIncludes(p, type);
+  if (incl && incl.length) {
+    inclTitle.firstChild.textContent = labels.incl;
+    document.getElementById('modalIncludes').innerHTML = incl.map(i => `<li>${i}</li>`).join('');
+    inclSec.style.display = '';
+  } else inclSec.style.display = 'none';
+
+  // Prerequisites / Eligibility (only for cert + masterclass)
+  const prereqSec = document.getElementById('modalPrereqSection');
+  const prereqEl = document.getElementById('modalPrereq');
+  if (labels.prereq) {
+    if (p.eligibility && p.eligibility.length) {
+      // Structured eligibility: intro + bulleted routes + note
+      const prereqTitle = prereqSec.querySelector('.modal-section-title');
+      if (prereqTitle) prereqTitle.firstChild.textContent = 'Eligibility Requirements';
+      let html = '';
+      if (p.eligibilityIntro) html += `<div style="margin-bottom:8px">${p.eligibilityIntro}</div>`;
+      html += '<ul class="modal-list">' + p.eligibility.map(e => `<li>${e}</li>`).join('') + '</ul>';
+      if (p.prereqs) html += `<div style="margin-top:10px;font-weight:600;color:var(--navy)">Prerequisite: ${p.prereqs}</div>`;
+      if (p.eligNote) html += `<div style="margin-top:10px;font-size:13px;font-style:italic;color:var(--gray)">Note: ${p.eligNote}</div>`;
+      prereqEl.innerHTML = html;
+    } else {
+      const prereqTitle = prereqSec.querySelector('.modal-section-title');
+      if (prereqTitle) prereqTitle.firstChild.textContent = 'Prerequisites';
+      prereqEl.textContent = p.prereqs || 'None — open to anyone meeting the target audience.';
+    }
+    prereqSec.style.display = '';
+  } else prereqSec.style.display = 'none';
+
+  // Details
+  const detTitle = document.querySelector('#modal .modal-body .modal-section:last-child .modal-section-title');
+  if (detTitle) detTitle.firstChild.textContent = labels.det;
+  document.getElementById('modalDetails').innerHTML = Object.entries(standardDetails(p, type))
+    .map(([k,v]) => `<div class="modal-info-item"><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+
+  // Stat strip — show Cert / Cert+Training split when both exist
+  const hasBoth = p.certDisplay && p.trainDisplay && p.certDisplay !== p.trainDisplay;
+  const priceStat = hasBoth
+    ? `<div class="modal-stat"><strong>${p.certDisplay} / ${p.trainDisplay}</strong><span>Cert / +Training</span></div>`
+    : `<div class="modal-stat"><strong>${p.certDisplay || p.trainDisplay || p.priceDisplay}</strong><span>Investment</span></div>`;
+  document.getElementById('modalStats').innerHTML = `
+    ${priceStat}
+    <div class="modal-stat"><strong>${fmtDuration(p.duration) || '—'}</strong><span>Duration</span></div>
+    <div class="modal-stat"><strong>${(p.modality||'').split('(')[0].trim() || '—'}</strong><span>Format</span></div>
+    <div class="modal-stat"><strong>${p.target || '—'}</strong><span>For</span></div>`;
+
+  // Footer — dual price chips + type-appropriate CTA
+  document.getElementById('modalFooterPrice').innerHTML = priceChipsHTML(p);
+  document.getElementById('modalLearnLink').href = p.storeUrl;
+  const enrollLink = document.getElementById('modalEnrollLink');
+  enrollLink.href = p.storeUrl;
+  const CTA = {
+    cert: 'Enroll Now', masterclass: 'Enroll Now',
+    book: 'Get the Book',
+    assessment: 'Request Access', software: 'Request a Demo', program: 'Request Info',
+    membership: 'Become a Member', community: 'Join for Free'
+  };
+  enrollLink.textContent = CTA[type] || 'Learn More';
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); document.body.style.overflow = ''; }
+function closeModalOnOverlay(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* INIT — counts and grid */
+TRACKS.forEach(tr => {
+  const n = PRODUCTS.filter(p => p.track === tr.id).length;
+  const btn = document.querySelector(`.filter-btn[data-track="${tr.id}"] .count`);
+  if (btn) btn.textContent = n;
+});
+document.getElementById('cnt-all').textContent = PRODUCTS.length;
+renderGrid(PRODUCTS);
+</script>
+</body>
+</html>
