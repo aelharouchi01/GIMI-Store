@@ -1,0 +1,176 @@
+{
+ "CIP-0": {
+  "cert": "$200",
+  "train": "$700",
+  "duration": "20h",
+  "desc": "The Certified Innovation Professional - Innovation Champion certification is designed for professionals beginning their innovation journey. Participants get acquainted with business innovation and learn the key tools and techniques of innovation management to take their first step toward becoming innovation practitioners."
+ },
+ "CIP-1": {
+  "cert": "$560",
+  "train": "$1,000",
+  "duration": "32-40h",
+  "desc": "The Certified Innovation Professional Level 1: Associate certification is designed for individuals who want to understand business innovation and the processes needed to generate breakthrough ideas. Participants learn idea generation tools and how to apply them to create more and better ideas for their organizations."
+ },
+ "CIP-2": {
+  "cert": "$560",
+  "train": "$1,000",
+  "duration": "32-40h",
+  "desc": "The Certified Innovation Professional Level 2: Master certification is designed for individuals ready to apply Associate Level 1 learnings to a real-world challenge. Participants build a case study on generating new growth ideas or opportunities for their organization, document their process and learnings, and submit it for expert evaluation and feedback."
+ },
+ "CCIO-1": {
+  "cert": "$560",
+  "train": "$1,500",
+  "duration": "32-40h",
+  "desc": "The Certified Chief Innovation Officer Level 3: Manager certification is designed for managers taking their first step toward becoming a Certified Chief Innovation Officer. Participants gain an advanced understanding of business innovation strategy, capacity, and discipline to manage innovation effectively within their organizations."
+ },
+ "CCIO-2": {
+  "cert": "$560",
+  "train": "$1,100",
+  "duration": "6 months",
+  "desc": "The Certified Chief Innovation Officer Level 4: Leader certification is designed for senior professionals ready to apply Manager Level 3 learnings to real organizational challenges. Participants submit a documented experience on an Innovation Ecosystem or Innovation Portfolio Management initiative, generating insights and solutions for managing innovation within organizations."
+ },
+ "CGIS-1": {
+  "cert": "$100",
+  "train": null,
+  "duration": "12h",
+  "desc": "The Certified GIMI Impact: Students certification is designed for high school students who want to be more innovative and compassionate. Participants learn how to apply creativity and structured problem-solving to address complex challenges around the world."
+ },
+ "CGIT": {
+  "cert": "$250",
+  "train": null,
+  "duration": "12h",
+  "desc": "The Certified GIMI Impact Teacher is a certificate designed to empower high school teachers to teach students in high school to be more innovative, compassionate, and solve complex problems around the world."
+ },
+ "CGT": {
+  "cert": "$510",
+  "train": null,
+  "duration": "8h",
+  "desc": "The Certified GIMI Trainer certification is designed for certified GIMI individuals who want to train others on GIMI methodologies, whether inside or outside their organization. Participants develop mastery in delivering GIMI frameworks and tools, learn to explain key innovation concepts clearly, and use GIMI's materials to build a training and certification business in innovation management."
+ },
+ "IP": {
+  "cert": "Free",
+  "train": null,
+  "duration": "2h",
+  "desc": "The Innovation Primer certification is designed for individuals who want to transform from passive observers of change into proactive drivers of value. Participants learn that innovation is not a mysterious spark of genius but a disciplined capability, building the skills to connect disparate \"dots\" — knowledge, research, and diverse perspectives — to create a brighter future for their clients, organization, and career. Through six self-paced modules, participants commit to a Case for Change, align on a shared language of value, explore mechanisms like Lean and Protected Innovation Teams, dive into the cultural engine and global ecosystems of innovation, and master the practical tools of creativity and dot-connecting."
+ },
+ "PBCC": {
+  "cert": "$200",
+  "train": "$600",
+  "duration": "16h",
+  "desc": "The Problem Solving Certified Catalyst is designed for individuals from all backgrounds who want to develop a structured approach to creative problem-solving. Participants learn innovation tools, techniques, and an innovative mindset through a purpose-driven, five-step ideation process — Setup, Diverge, Connect, Converge, and Emerge — moving from challenge selection to actionable solution concepts and pitch-ready brochures."
+ },
+ "CDT-1": {
+  "cert": "$410",
+  "train": "$1,000",
+  "duration": "32h",
+  "desc": "The Certified Design Thinking Level 1 certification is designed for individuals who want to master human-centered design to solve complex problems and improve user experiences. Participants build a strong foundation in Design Thinking through its three stages: Immerse (capturing user insights and building empathy), Invent (defining problem statements and generating creative solutions), and Implement (prototyping, testing, and iterating)."
+ },
+ "CDT-2": {
+  "cert": "$410",
+  "train": "$1,000",
+  "duration": "24h",
+  "desc": "The Certified Design Thinking Level 2 certification is designed for individuals ready to apply Design Thinking methods to real organizational challenges. Participants document their process, insights, and outcomes in a white paper that showcases how they used the Immerse, Invent, and Implement stages, gaining the skills and confidence to lead Design Thinking across diverse contexts."
+ },
+ "CDTT-3": {
+  "cert": "$410",
+  "train": "$700",
+  "duration": "40h",
+  "desc": "The Certified Design Thinking Trainer certification is designed for certified Design Thinking individuals who want to train others on the methodology. Through a 3-session online masterclass, participants master facilitation of the Immerse, Invent, and Implement stages and learn to guide teams through each phase, creating a collaborative and innovative environment."
+ },
+ "CAAP": {
+  "cert": "$495",
+  "train": "$495",
+  "duration": "4h",
+  "desc": "The Certified AI Agent Practitioner certification is designed for teams and individuals ready to operationalize AI in their organizations. Through a hands-on, executive-ready workshop, participants identify a real business need, design an AI-powered solution, and build a functional agent mock-up — moving from intuition to structured decision-making using Innovation 5.0 to explore multiple solutions, reduce bias, and focus on execution-ready outcomes."
+ },
+ "CGA": {
+  "cert": "$2,000",
+  "train": "$2,000",
+  "duration": "20h",
+  "desc": "The Certified GIMI Auditor certification is designed for professionals who conduct or oversee audits of innovation management systems aligned with global standards like ISO 56001. Participants gain an in-depth understanding of GIMI and ISO 56001 standards and practical tools to assess the innovation maturity of different organizations. The pathway requires completing the Certified Innovation Management (CIM) Level 3 Certification before pursuing the GIMI Certified Auditor (GCA) Certification."
+ },
+ "CIME": {
+  "cert": "$1,200",
+  "train": "$1,200",
+  "duration": "20h",
+  "desc": "The ISO Innovation Management Expert certification is designed for leaders who want to establish, implement, and improve Innovation Management Systems (IMS) in full alignment with the ISO 56000 family. Participants gain a complete framework to design and systematize innovation management, moving beyond sporadic creativity to disciplined performance."
+ },
+ "CTC": {
+  "cert": "$200",
+  "train": null,
+  "duration": "20h",
+  "desc": "The Technology Catalyst certification is designed for individuals who want to thrive in a world where innovation is essential. Participants leverage over 130 breakthrough technologies to identify emerging trends, make sense of disruption, and craft strategies that position themselves or their organizations as future-ready leaders."
+ },
+ "CLC": {
+  "cert": "$200",
+  "train": null,
+  "duration": "12h",
+  "desc": "The Certified Longevity Catalyst is designed for individuals who want to understand and lead the global shift from an aging society to a longevity society — and how innovation can be used to enhance both lifespan and healthspan. Drawing on expert insights from the 2025 GIMI Think Tank Longevity Series, participants explore the science of brain health and strategies for cognitive longevity, the societal and economic implications of a longevity society, breakthrough innovations across robotics, nutrition, AI, technology, design, and policy, and new mindsets that redefine aging as a phase of purpose, contribution, and connection. By the end, participants are equipped to champion longevity innovation within their organization and community."
+ },
+ "CFF-1": {
+  "cert": "$560",
+  "train": "$1,650",
+  "duration": "TBD",
+  "desc": "The Certified Foresight Professional Level 1 certification is designed for individuals who want to question current assumptions and strengthen analytical and intuitive mindsets. Participants gain essential knowledge of future foresight, including fundamentals and literacy, key premises and principles, and a comprehensive immersion into the main schools of thought and practice."
+ },
+ "CFF-2": {
+  "cert": "$560",
+  "train": "$1,950",
+  "duration": "TBD",
+  "desc": "The Certified Foresight Leader Level 2 certification is designed for individuals who want to master the end-to-end foresight process. Participants learn the S4 Futures framework — Scoping, Scanning, Scenarios, and Strategy — and explore multiple foresight methodologies and tools to manage foresight projects."
+ },
+ "CFF-3": {
+  "cert": "$560",
+  "train": "$1,250",
+  "duration": "TBD",
+  "desc": "The Certified Chief Foresight Officer Level 3 certification is designed for individuals ready to apply Levels 1 and 2 knowledge to a relevant organizational challenge. Participants demonstrate the capacity to lead a Foresight Project, integrating methodological phases and the appropriate tools."
+ },
+ "CFF-4": {
+  "cert": null,
+  "train": "$2,000",
+  "duration": "TBD",
+  "desc": "The Certified Future Foresight Trainer Level 1 certification is designed for Future Foresight certified individuals (Levels 1 and 2) who want to train others. Participants develop the ability to prepare candidates inside or outside their organization to obtain the FF Certification Level 1."
+ },
+ "CFF-5": {
+  "cert": null,
+  "train": "$2,000",
+  "duration": "TBD",
+  "desc": "The Certified Future Foresight Trainer Level 2 certification is designed for Future Foresight certified individuals (Levels 1, 2, and 3) who want to train others at an advanced level. Participants develop the ability to prepare candidates inside or outside their organization to obtain the FF Certification Level 2."
+ },
+ "CLF-1": {
+  "cert": "$510",
+  "train": "$1,000",
+  "duration": "24h",
+  "desc": "The Certified Leader for the Future certification is designed for individuals who want to lead collaboratively and become the best version of themselves. Participants develop strong leadership values that support their vision and learn to use the Powers of AND to drive effective results and navigate the ambiguity and volatility of the business environment."
+ },
+ "CIL": {
+  "cert": "$200",
+  "train": "$1,000",
+  "duration": "1.5h",
+  "desc": "The Certified Innovation Leaders is designed for leaders who want to transform innovation from a chaotic event into a repeatable leadership competency. Recognizing that innovation often fails not from a lack of ideas but from a lack of system, participants use the SCD Framework to gain the mental models and tactical tools needed to drive measurable change and move from \"business as usual\" to the business of the future. Across three modules — Strategy (defining the North Star and the why, where, and when to innovate), Capacity (building the engine of processes, people, and resources to move ideas from whiteboard to reality), and Discipline (creating the culture, leadership habits, psychological safety, and metrics that sustain long-term growth) — participants build the skills to lead innovation as a structured, repeatable practice."
+ },
+ "MCI-1": {
+  "cert": "$510",
+  "train": "$1,000",
+  "duration": "20h",
+  "desc": "The Management Consulting Level 1: Analyst certification focuses on the fundamentals of management consulting. Analysts will develop key skills in analytical techniques, problem-solving methodologies, and the foundational knowledge required to tackle complex business challenges. It targets students and professionals aiming to develop foundational skills to think and act like a consultant, delivering structured, quality output. Content covers thinking, acting, researching, and presenting like a consultant."
+ },
+ "MCI-2": {
+  "cert": "$510",
+  "train": "$1,000",
+  "duration": "30h",
+  "desc": "The Management Consulting Level 2: Consultant certification is designed for individuals ready to apply Level 1 learnings to real-world consulting projects. Participants work on a team project sponsored by a senior-level sponsor within 12 months of earning Level 1, learning Situation–Complication–Question analysis, issue analysis, project presentation, and peer feedback to transform insights into actionable, measurable solutions."
+ },
+ "MCI-3": {
+  "cert": "$510",
+  "train": "$1,000",
+  "duration": "40h",
+  "desc": "The Management Consulting Level 3: Manager certification is designed for professionals aspiring to take on strategic consulting roles. Participants learn Strategy Formulation, Strategy Execution Planning, Strategy Execution, and the REALIZE Strategy Execution Methodology to bridge the gap between strategy formulation and execution with precision and impact."
+ },
+ "MCI-4": {
+  "cert": "$510",
+  "train": "$1,000",
+  "duration": "Variable",
+  "desc": "The Management Consulting Level 4: Certified Leader certification is designed for Management Consultant Managers ready to shape the future of the industry. Participants build on Level 3 by working on a team project sponsored by a senior-level sponsor within 12 months of earning Level 3, focusing on visionary leadership, advanced strategy execution, and driving organizational impact."
+ }
+}

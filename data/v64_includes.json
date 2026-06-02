@@ -1,0 +1,193 @@
+{
+ "CIP-0": [
+  "Innovation Champion Certificate",
+  "Online examination fee",
+  "Self-paced course access",
+  "Remote proctor fee"
+ ],
+ "CIP-1": [
+  "Level 1 Certificate (upon passing)",
+  "Online examination fee",
+  "IMBOK Level 1 Guide (e-copy)",
+  "Remote proctor fee"
+ ],
+ "CIP-2": [
+  "Level 2 Certificate (upon project approval)",
+  "Project guideline (e-copy)",
+  "Expert project review",
+  "Activity workbook"
+ ],
+ "CIP-MC": [
+  "Level 1: 8",
+  "× 3hr live online sessions with experts",
+  "Level 2: 4 weeks mentoring session",
+  "CIP Level 1 + Level 2 certifications",
+  "Online exam fees + remote proctor",
+  "IMBOK Level 1 Guide (e-copy)",
+  "Level 2 project review and guideline"
+ ],
+ "CCIO-1": [
+  "Level 3 Certificate (upon passing)",
+  "Online examination fee",
+  "IMBOK Level 3 Guide (e-copy)",
+  "Remote proctor fee"
+ ],
+ "CCIO-2": [
+  "Level 4 Certificate (upon project approval)",
+  "Project guideline (e-copy)",
+  "Panel review by GIMI experts",
+  "Innovation Management System Audit"
+ ],
+ "CCIO-MC": [
+  "21+ hours live online with experts",
+  "3-4 months mentoring sessions to close the gaps on the innovation management system",
+  "CCIO Level 3 + Level 4 certifications",
+  "Online exam fees + remote proctor",
+  "IMBOK Level 3 Guide (e-copy)",
+  "Level 4 project review and guideline"
+ ],
+ "CGIS-1": [
+  "GIMI Impact Student Certificate",
+  "Self-paced course access",
+  "Activity workbook",
+  "Remote proctor fee"
+ ],
+ "CGIT": [
+  "GIMI Impact Teacher Certificate",
+  "Self-paced course access",
+  "Teaching toolkit",
+  "Remote proctor fee"
+ ],
+ "CGT": [
+  "Certified GIMI Trainer Certificate",
+  "Trainer materials and slides",
+  "Mastery assessment",
+  "Remote proctor fee"
+ ],
+ "IP": [
+  "6 self-paced modules",
+  "Innovation Primer Certificate",
+  "Foundational vocabulary toolkit",
+  "Free public access"
+ ],
+ "PBCC": [
+  "PBCC Catalyst Certificate",
+  "Self-paced course access",
+  "5-step ideation workbook",
+  "Remote proctor fee"
+ ],
+ "CDT-1": [
+  "CDT Level 1 Certificate",
+  "Self-paced course access",
+  "Design Thinking toolkit",
+  "Remote proctor fee"
+ ],
+ "CDT-2": [
+  "CDT Level 2 Certificate",
+  "Project guideline (e-copy)",
+  "Expert white paper review",
+  "Activity workbook"
+ ],
+ "CDTT-3": [
+  "CDTT Trainer Certificate",
+  "3-session online masterclass",
+  "Facilitator materials",
+  "Mastery assessment"
+ ],
+ "CAAP": [
+  "CAAP Practitioner Certificate",
+  "Innovation 5.0 framework",
+  "AI agent mock-up build",
+  "Workshop facilitation"
+ ],
+ "CGA": [
+  "Certified GIMI Auditor Certificate",
+  "ISO 56001 audit toolkit",
+  "GIMI auditor handbook",
+  "Mastery assessment"
+ ],
+ "CIME": [
+  "CIME Expert Certificate",
+  "ISO 56000 framework deep-dive",
+  "Implementation playbook",
+  "Delivered by ISO committee members"
+ ],
+ "CTC": [
+  "CTC Catalyst Certificate",
+  "130+ technology profiles",
+  "Technovate companion app",
+  "Self-paced course access"
+ ],
+ "CLC": [
+  "CLC Catalyst Certificate",
+  "GIMI Think Tank Longevity Series",
+  "Breakthrough innovations catalog",
+  "Self-paced course access"
+ ],
+ "CFF-1": [
+  "CFF Level 1 Certificate",
+  "Future Foresight Body of Knowledge Level 1",
+  "Online examination",
+  "Remote proctor fee"
+ ],
+ "CFF-2": [
+  "CFF Level 2 Certificate",
+  "S4 Futures framework toolkit",
+  "Future Foresight Body of Knowledge Level 2",
+  "Online examination"
+ ],
+ "CFF-3": [
+  "CFF Level 3 Certificate",
+  "Foresight project guideline",
+  "Expert panel review",
+  "Foresight officer toolkit"
+ ],
+ "CFF-4": [
+  "CFF Trainer Level 1 Certificate",
+  "Trainer materials and slides",
+  "Train-the-trainer methodology",
+  "Mastery assessment"
+ ],
+ "CFF-5": [
+  "CFF Trainer Level 2 Certificate",
+  "Advanced trainer materials",
+  "Train-the-trainer methodology",
+  "Mastery assessment"
+ ],
+ "CLF-1": [
+  "CLF-1 Certificate",
+  "Powers of AND framework",
+  "Self-paced course access",
+  "Remote proctor fee"
+ ],
+ "CIL": [
+  "CIL Certificate",
+  "SCD Framework toolkit",
+  "3-module micro-course",
+  "Leadership playbook"
+ ],
+ "MCI-1": [
+  "MCI Level 1 Certificate",
+  "Consulting fundamentals course",
+  "Analyst toolkit",
+  "Online examination"
+ ],
+ "MCI-2": [
+  "MCI Level 2 Certificate",
+  "SCQ analysis framework",
+  "Senior-sponsored team project",
+  "Expert panel review"
+ ],
+ "MCI-3": [
+  "MCI Level 3 Certificate",
+  "REALIZE methodology playbook",
+  "Strategy execution toolkit",
+  "Online examination"
+ ],
+ "MCI-4": [
+  "MCI Level 4 Certificate",
+  "Senior-sponsored team project",
+  "Visionary leadership toolkit",
+  "Expert panel review"
+ ]
+}

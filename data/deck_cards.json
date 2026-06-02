@@ -1,0 +1,188 @@
+{
+ "CIP-0": {
+  "exam": "Online proctored MCQ",
+  "pass": "70%",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital certificate"
+ },
+ "CIP-1": {
+  "exam": "Online proctored MCQ",
+  "pass": "70%",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CIP-2": {
+  "exam": "Case study + expert review",
+  "pass": "Panel approval",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CIP-MC": {
+  "exam": "MCQ + Level 2 project review",
+  "pass": "70% + panel approval",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CCIO-1": {
+  "exam": "Online proctored MCQ",
+  "pass": "70%",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CCIO-2": {
+  "exam": "Project + expert panel",
+  "pass": "Panel approval",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CCIO-MC": {
+  "exam": "MCQ + Level 4 project review",
+  "pass": "70% + panel approval",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CGIS-1": {
+  "exam": "Online MCQ",
+  "pass": "60%",
+  "recert": "Not required",
+  "certificate": "Digital certificate"
+ },
+ "CGIT": {
+  "exam": "Online MCQ + lesson plan",
+  "pass": "70%",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CGT": {
+  "exam": "Live demonstration + MCQ",
+  "pass": "Demonstration approval",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital + optional hard copy"
+ },
+ "IP": {
+  "exam": "Module completion",
+  "pass": "Completion-based",
+  "recert": "Not required",
+  "certificate": "Digital certificate of completion"
+ },
+ "PBCC": {
+  "exam": "Online MCQ + workbook submission",
+  "pass": "70%",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CDT-1": {
+  "exam": "Online MCQ + design exercise",
+  "pass": "70%",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CDT-2": {
+  "exam": "White paper submission",
+  "pass": "Expert review approval",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CDTT-3": {
+  "exam": "Live facilitation + mastery test",
+  "pass": "Demonstration approval",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CAAP": {
+  "exam": "Live mock-up demonstration",
+  "pass": "Demonstration approval",
+  "recert": "2-year cycle",
+  "certificate": "Digital certificate"
+ },
+ "CGA": {
+  "exam": "Online MCQ + audit simulation",
+  "pass": "80%",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CIME": {
+  "exam": "Online MCQ",
+  "pass": "70%",
+  "recert": "3-year cycle · 60 CPE hrs",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CTC": {
+  "exam": "Online MCQ",
+  "pass": "70%",
+  "recert": "2-year cycle",
+  "certificate": "Digital certificate"
+ },
+ "CLC": {
+  "exam": "Online MCQ",
+  "pass": "70%",
+  "recert": "2-year cycle",
+  "certificate": "Digital certificate"
+ },
+ "CFF-1": {
+  "exam": "Online MCQ",
+  "pass": "70%",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CFF-2": {
+  "exam": "Online MCQ",
+  "pass": "70%",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CFF-3": {
+  "exam": "Project + expert panel",
+  "pass": "Panel approval",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CFF-4": {
+  "exam": "Live demonstration + MCQ",
+  "pass": "Demonstration approval",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CFF-5": {
+  "exam": "Live demonstration + MCQ",
+  "pass": "Demonstration approval",
+  "recert": "3-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "CLF-1": {
+  "exam": "Online MCQ",
+  "pass": "70%",
+  "recert": "2-year cycle",
+  "certificate": "Digital certificate"
+ },
+ "CIL": {
+  "exam": "Module completion",
+  "pass": "Completion-based",
+  "recert": "Not required",
+  "certificate": "Digital certificate of completion"
+ },
+ "MCI-1": {
+  "exam": "Online MCQ",
+  "pass": "70%",
+  "recert": "2-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "MCI-2": {
+  "exam": "Project + panel review",
+  "pass": "Panel approval",
+  "recert": "2-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "MCI-3": {
+  "exam": "Online MCQ",
+  "pass": "75%",
+  "recert": "2-year cycle",
+  "certificate": "Digital + optional hard copy"
+ },
+ "MCI-4": {
+  "exam": "Project + panel review",
+  "pass": "Panel approval",
+  "recert": "2-year cycle",
+  "certificate": "Digital + optional hard copy"
+ }
+}

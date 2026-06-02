@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+scripts/node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build / temp artifacts
+*.zip
+data/logos_unpacked/
+data/logo_sheet.png
+data/*_extracted.txt
