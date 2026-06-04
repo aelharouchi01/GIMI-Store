@@ -28,7 +28,9 @@ Note: assets are kept used-only — re-run `scripts/clean_assets.py` (dry-run by
 
 - **Pricing** — Training Prices sheet / V64 deck (cert + training price per course)
 - **Descriptions** — CRM sheet for courses; V64 deck for the two masterclasses
-- **Durations** — CRM "Hours" column for courses; V64 deck for masterclasses
+- **Durations** — CRM "Hours" column for courses; V64 deck for masterclasses.
+  Exceptions live in `data/duration_overrides.json` (e.g. the Future Foresight
+  CFF-1..5 hours came from the GIMI FF team by email, not the deck/CRM).
 - **Process & Examination cards, storylines, includes** — V64 deck
 
 ## Product structure (65 products, 8 groups)

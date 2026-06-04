@@ -1,0 +1,10 @@
+{
+  "_note": "Authoritative course durations that come from sources OTHER than the V68 deck / CRM (which list these as Self-paced or TBD). These values are the source of truth for the listed product codes and supersede the deck/CRM. Used by index.html and should be respected by any audit.",
+  "overrides": {
+    "CFF-1": { "duration": "30h", "source": "Email from Maria Carvalho (GIMI Future Foresight team), 2026-06", "label": "FF Individual Level 1" },
+    "CFF-2": { "duration": "40h", "source": "Email from Maria Carvalho (GIMI Future Foresight team), 2026-06", "label": "FF Individual Level 2" },
+    "CFF-3": { "duration": "40h", "source": "Email from Maria Carvalho (GIMI Future Foresight team), 2026-06", "label": "FF Individual Level 3" },
+    "CFF-4": { "duration": "30h", "source": "Email from Maria Carvalho (GIMI Future Foresight team), 2026-06", "label": "FF Train-the-Trainer Level 1" },
+    "CFF-5": { "duration": "30h", "source": "Email from Maria Carvalho (GIMI Future Foresight team), 2026-06", "label": "FF Train-the-Trainer Level 2" }
+  }
+}
