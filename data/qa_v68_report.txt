@@ -1,0 +1,114 @@
+==============================================================================
+FULL QA — STORE vs V68 DECK  (1 Prices  2 Taxonomy  3 Codes  4 Desc  5 Hours)
+==============================================================================
+Deck cert courses parsed: 31   Store products: 31
+
+[3] CODES — coverage
+  In deck, missing from store: NONE
+  In store, not detailed in deck (books/tools/memberships expected): 0 products
+
+------------------------------------------------------------------------------
+PER-COURSE CHECK (deck-detailed courses)
+------------------------------------------------------------------------------
+
+CAAP     Certified AI Agent Practitioner
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CCIO-1   Certified Chief Innovation Officer Level 3: Manager
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CCIO-2   Certified Chief Innovation Officer Level 4: Leader
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CCIO-MC  CCIO Masterclass
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CDT-1    Certified Design Thinking: Level 1
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CDT-2    Certified Design Thinking: Level 2
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CDTT-3   Certified Design Thinking Trainer
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CFF-1    Certified Foresight Professional: Level 1
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS (override 30h; deck says 'Self-paced')
+
+CFF-2    Certified Foresight Leader: Level 2
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS (override 40h; deck says 'Self-paced')
+
+CFF-3    Certified Foresight Officer: Level 3
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS (override 40h; deck says 'Self-paced')
+
+CFF-4    Certified Trainer In Future Foresight Level 1
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS (override 30h; deck says 'Self-paced')
+
+CFF-5    Certified Trainer In Future Foresight Level 2
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS (override 30h; deck says 'Self-paced')
+
+CGA      Certified GIMI Auditor
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CGIS-1   Certified GIMI Impact: Students
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CGIT     Certified GIMI Impact: Teachers
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CGT      Certified GIMI Trainer
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CIL      Certified Innovation Leader
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CIME     Certified ISO Innovation Management Expert
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CIP-0    Certified Innovation Professional Level 0: Innovation 
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CIP-1    Certified Innovation Professional Level 1: Associate
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CIP-2    Certified Innovation Professional Level 2: Master
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CIP-MC   CIP Masterclass
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CLC      Certified Longevity Catalyst
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CLF-1    Certified Leader for the Future
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+CTC      Certified Technology Catalyst
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+IP       Innovation Primer
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+MCI-1    Certified Management Consulting Level 1: Analyst
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+MCI-2    Certified Management Consulting Level 2: Consultant
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+MCI-3    Certified Management Consulting Level 3: Manager
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+MCI-4    Certified Management Consulting Level 4: Leader
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+PBCC     Problem Solving Certified Catalyst
+   1 Price PASS  2 Tax PASS  3 Code PASS  4 Desc PASS  5 Hours PASS 
+
+==============================================================================
+SUMMARY (deck-detailed courses)
+  Prices       : 31 PASS / 0 FLAG
+  Taxonomy     : 31 PASS / 0 FLAG
+  Codes        : 31 PASS / 0 FLAG
+  Descriptions : 31 PASS / 0 FLAG
+  Hours        : 31 PASS / 0 FLAG
+==============================================================================

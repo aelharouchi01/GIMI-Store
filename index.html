@@ -353,6 +353,7 @@ const PRODUCTS = [
       tagline:'Professionals learn to generate and apply breakthrough ideas, the only innovation management course accredited as 17024',
       price:560, priceDisplay:'$560', certDisplay:'$560', trainDisplay:'$1,000', duration:'32-40h', target:'Professionals (Level 1)',
       badge:'gimi-store-assets/v2/cip-1.png',
+      learnUrl:'https://www.giminstitute.org/certified-innovation-professional-level-1-associate/',
       eligibilityIntro:'Candidates must satisfy at least one of the following routes to certification:', eligibility:['Completion of GIMI\'s Level 1 in-house training','Completion of a Certified Training Provider\'s (CTP) authorized preparatory training','Reading of the GIMI Innovation Management Book of Knowledge (Level 1)','Holding an MBA from a recognized institution','Completion of other recognized innovation training programs'], eligNote:'Completing a training program does not guarantee certification and confers no advantage in the examination process. The certification decision is based solely on examination performance.',
       description:'The Certified Innovation Professional Level 1: Associate certification is designed for individuals who want to understand business innovation and the processes needed to generate breakthrough ideas. Participants learn idea generation tools and how to apply them to create more and better ideas for their organizations.',
       includes:['Level 1 Certificate (upon passing)','Online examination fee','IMBOK Level 1 Guide (e-copy)','Remote proctor fee'],
@@ -403,7 +404,7 @@ const PRODUCTS = [
       price:2600, priceDisplay:'$2,600', certDisplay:'$2,600', trainDisplay:null, duration:'4 weeks plus 3-4 months mentoring sessions', target:'Senior Executives', modality:'Live Virtual Cohort',
       badge:'gimi-store-assets/v2/ccio-mc.png',
       includes:['21+ hours live online with experts','3-4 months mentoring sessions to close the gaps on the innovation management system','CCIO Level 3 + Level 4 certifications','Online exam fees + remote proctor','IMBOK Level 3 Guide (e-copy)','Level 4 project review and guideline'],
-      description:'The CCIO Masterclass is a 4-week virtual masterclass led by globally recognized innovation experts followed by a 3-4 month mentoring program to build their innovation management system. It certifies a professional has the broad range of knowledge required to function as a successful manager and leader of enterprise-wide innovation programmes.',
+      description:'The CCIO Masterclass is a 4-week virtual masterclass led by globally recognized innovation experts followed by a 3-4 month mentoring program to build their innovation management system using the GIMI SCDP framework (Strategy, Capacity, Discipline, Performance). It certifies a professional has the broad range of knowledge required to function as a successful manager and leader of enterprise-wide innovation programs.',
       details:{ 'Exam Format':'MCQ + Level 4 project review', 'Pass Threshold':'70% + panel approval', 'Recertification':'3-year cycle · 60 CPE hrs', 'Certificate':'Digital + optional hard copy' }}),
 
   mk({ id:'cgis-1', track:'icore', cluster:'impact', code:'CGIS-1',
@@ -1207,7 +1208,7 @@ function openModal(id) {
 
   // Footer — dual price chips + type-appropriate CTA
   document.getElementById('modalFooterPrice').innerHTML = priceChipsHTML(p);
-  document.getElementById('modalLearnLink').href = p.storeUrl;
+  document.getElementById('modalLearnLink').href = p.learnUrl || p.storeUrl;
   const enrollLink = document.getElementById('modalEnrollLink');
   enrollLink.href = p.storeUrl;
   const CTA = {

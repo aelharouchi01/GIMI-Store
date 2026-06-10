@@ -1,0 +1,45 @@
+==========================================================================================
+CAAP
+==========================================================================================
+DECK  (379 chars):
+The Certified AI Agent Practitioner certification is designed for teams and individuals ready to operationalize AI in their organizations. Through a hands-on, executive-ready workshop, participants identify a real business need, design an AI-powered solution, and build a functional agent mock-up to explore multiple solutions, reduce bias, and focus on execution-ready outcomes.
+
+STORE (454 chars):
+The Certified AI Agent Practitioner certification is designed for teams and individuals ready to operationalize AI in their organizations. Through a hands-on, executive-ready workshop, participants identify a real business need, design an AI-powered solution, and build a functional agent mock-up — moving from intuition to structured decision-making using Innovation 5.0 to explore multiple solutions, reduce bias, and focus on execution-ready outcomes.
+
+==========================================================================================
+CCIO-1
+==========================================================================================
+DECK  (453 chars):
+The Certified Chief Innovation Officer Level 3: Manager certification is designed for managers taking their first step toward becoming a Certified Chief Innovation Officer. Participants gain an advanced understanding of business innovation strategy, capacity, and discipline to manage innovation effectively within their organizations. It is built on the GIMI High-Performance Innovation framework (SCDP): Strategy, Capacity, Discipline and Performance.
+
+STORE (335 chars):
+The Certified Chief Innovation Officer Level 3: Manager certification is designed for managers taking their first step toward becoming a Certified Chief Innovation Officer. Participants gain an advanced understanding of business innovation strategy, capacity, and discipline to manage innovation effectively within their organizations.
+
+==========================================================================================
+CCIO-2
+==========================================================================================
+DECK  (521 chars):
+The Certified Chief Innovation Officer Level 4: Leader certification is designed for senior professionals ready to apply Manager Level 3 learnings to real organizational challenges. Participants submit a documented experience on an Innovation Ecosystem or Innovation Portfolio Management initiative, generating insights and solutions for managing innovation within organizations. It applies the GIMI SCDP framework (Strategy, Capacity, Discipline, Performance) to build and run an enterprise innovation management system.
+
+STORE (379 chars):
+The Certified Chief Innovation Officer Level 4: Leader certification is designed for senior professionals ready to apply Manager Level 3 learnings to real organizational challenges. Participants submit a documented experience on an Innovation Ecosystem or Innovation Portfolio Management initiative, generating insights and solutions for managing innovation within organizations.
+
+==========================================================================================
+CCIO-MC
+==========================================================================================
+DECK  (418 chars):
+The CCIO Masterclass is a 4-week virtual masterclass led by globally recognized innovation experts followed by a 3-4 month mentoring program to build their innovation management system using the GIMI SCDP framework (Strategy, Capacity, Discipline, Performance). It certifies a professional has the broad range of knowledge required to function as a successful manager and leader of enterprise-wide innovation programs.
+
+STORE (344 chars):
+The CCIO Masterclass is a 4-week virtual masterclass led by globally recognized innovation experts followed by a 3-4 month mentoring program to build their innovation management system. It certifies a professional has the broad range of knowledge required to function as a successful manager and leader of enterprise-wide innovation programmes.
+
+==========================================================================================
+CGT
+==========================================================================================
+DECK  (395 chars):
+The Certified GIMI Trainer certification is designed for certified GIMI individuals who want to train others on GIMI methodologies, whether inside or outside their organization. Participants develop mastery in delivering GIMI frameworks and tools, learn to explain key innovation concepts clearly, and use GIMI's materials to build a training and certification business in innovation management.
+
+STORE (396 chars):
+The Certified GIMI Trainer certification is designed for certified GIMI individuals who want to train others on GIMI methodologies, whether inside or outside their organization. Participants develop mastery in delivering GIMI frameworks and tools, learn to explain key innovation concepts clearly, and use GIMI\'s materials to build a training and certification business in innovation management.
+
