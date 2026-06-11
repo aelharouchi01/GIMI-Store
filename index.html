@@ -102,6 +102,24 @@ body { font-family:'Calibri','Segoe UI',system-ui,sans-serif; color:var(--text);
 .price-chip.solo  { background:var(--teal-light); color:var(--teal-dark); }
 .price-chip.free  { background:#E6F6EC; color:#22863a; }
 .price-chip.tbd   { background:var(--gray-light); color:var(--gray); }
+/* card pricing prompt (courses) */
+.pricing-prompt { display:flex; align-items:center; justify-content:space-between; gap:8px; width:100%;
+  background:var(--teal-light); color:var(--teal-dark); border-radius:8px; padding:9px 12px;
+  font-size:12.5px; font-weight:700; margin-bottom:12px; }
+.pricing-prompt .arrow { font-size:16px; line-height:1; }
+/* modal pricing options */
+.pricing-options { border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+.popt { display:flex; gap:13px; padding:14px 16px; border-top:1px solid var(--border); }
+.popt:first-child { border-top:none; }
+.popt .pn { flex-shrink:0; width:26px; height:26px; border-radius:50%; background:var(--teal-light);
+  color:var(--teal-dark); font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; }
+.popt .pbody { flex:1; }
+.popt .prow { display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+.popt .plabel { font-size:14px; font-weight:700; color:var(--navy); }
+.popt .pprice { font-size:17px; font-weight:800; color:var(--teal-dark); white-space:nowrap; }
+.popt .pprice.contact { font-size:13px; font-weight:700; color:var(--gray); }
+.popt .pprice.free { color:#22863a; }
+.popt .pdesc { font-size:12.5px; color:var(--gray); line-height:1.45; margin-top:3px; }
 .card-cta { display:block; text-align:center; padding:9px 0; border-radius:8px; font-size:13px; font-weight:700; border:2px solid var(--teal); color:var(--teal); background:none; font-family:inherit; cursor:pointer; width:100%; transition:all 0.18s; }
 .product-card:hover .card-cta, .card-cta:hover { background:var(--teal); color:#fff; }
 
@@ -188,9 +206,9 @@ footer strong { color:rgba(255,255,255,0.85); }
 <section class="hero">
   <div class="hero-inner">
     <h1>Build Your <span>Innovation</span> Career</h1>
-    <p>Certifications, programs, and tools trusted by 18,000+ innovators in 60+ countries. Find what you need by discipline.</p>
+    <p>Certifications, programs, and tools trusted by 18,000+ innovators in 116 countries. Find what you need by discipline.</p>
     <div class="hero-stats">
-      <div class="hero-stat"><strong>60+</strong><span>Countries</span></div>
+      <div class="hero-stat"><strong>116</strong><span>Countries</span></div>
       <div class="hero-stat"><strong>140+</strong><span>Universities</span></div>
       <div class="hero-stat"><strong>1,600+</strong><span>Corporations</span></div>
       <div class="hero-stat"><strong>18,000+</strong><span>Innovators</span></div>
@@ -245,6 +263,10 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="modal-section-title">About This Product</div>
         <div class="modal-desc" id="modalDesc"></div>
       </div>
+      <div class="modal-section" id="modalPricingSection">
+        <div class="modal-section-title">Pricing Options</div>
+        <div class="pricing-options" id="modalPricing"></div>
+      </div>
       <div class="modal-section" id="modalIncludesSection">
         <div class="modal-section-title">What's Included</div>
         <ul class="modal-list" id="modalIncludes"></ul>
@@ -271,7 +293,7 @@ footer strong { color:rgba(255,255,255,0.85); }
   110 Cambridge Street, Cambridge MA 02141 &nbsp;|&nbsp;
   <a href="mailto:info@giminstitute.org">info@giminstitute.org</a> &nbsp;|&nbsp;
   <a href="https://www.giminstitute.org">giminstitute.org</a><br><br>
-  ISO/IEC 17024 Accredited Certification Body. Certifying innovation professionals in 60+ countries since 2009.
+  ISO/IEC 17024 Accredited Certification Body. Certifying innovation professionals in 116 countries since 2009.
 </footer>
 
 <script>
@@ -315,7 +337,8 @@ const TRACKS = [
       {id:'indiv-ass', label:'Individual Assessments'},
       {id:'org-ass',   label:'Organizational Assessments'},
       {id:'software',  label:'Software & Digital Tools'},
-      {id:'engage',    label:'Programs & Engagements'}
+      {id:'engage',    label:'Programs & Engagements'},
+      {id:'awards',    label:'Awards'}
     ]},
   { id:'memb',  label:'Memberships',         sub:'Annual access tiers for individuals, companies, and academia',
     color:'#003645', clusters:null }
@@ -486,7 +509,7 @@ const PRODUCTS = [
   mk({ id:'caap', track:'ielec', code:'CAAP',
       title:'Certified AI Agent Practitioner',
       tagline:'Practitioners learn to operationalise AI by building a working agent through Innovation 5.0',
-      price:495, priceDisplay:'$495', certDisplay:'$495', trainDisplay:'$495', duration:'4h', target:'Practitioners',
+      price:495, priceDisplay:'$495', certDisplay:'$495', trainDisplay:null, duration:'4h', target:'Practitioners',
       badge:'gimi-store-assets/v2/caap.png',
       includes:['CAAP Practitioner Certificate','Innovation 5.0 framework','AI agent mock-up build','Workshop facilitation'],
       description:'The Certified AI Agent Practitioner certification is designed for teams and individuals ready to operationalize AI in their organizations. Through a hands-on, executive-ready workshop, participants identify a real business need, design an AI-powered solution, and build a functional agent mock-up — moving from intuition to structured decision-making using Innovation 5.0 to explore multiple solutions, reduce bias, and focus on execution-ready outcomes.',
@@ -495,7 +518,7 @@ const PRODUCTS = [
   mk({ id:'cga', track:'ielec', code:'CGA',
       title:'Certified GIMI Auditor',
       tagline:'Professionals gain the skills to audit innovation management systems against ISO 56001',
-      price:2000, priceDisplay:'$2,000', certDisplay:'$2,000', trainDisplay:'$2,000', duration:'20h', target:'Auditors',
+      price:510, priceDisplay:'$510', certDisplay:'$510', trainDisplay:'$2,000', duration:'20h', target:'Auditors',
       badge:'gimi-store-assets/v2/cga.png',
       includes:['Certified GIMI Auditor Certificate','ISO 56001 audit toolkit','GIMI auditor handbook','Mastery assessment'],
       description:'The Certified GIMI Auditor certification is designed for professionals who conduct or oversee audits of innovation management systems aligned with global standards like ISO 56001. Participants gain an in-depth understanding of GIMI and ISO 56001 standards and practical tools to assess the innovation maturity of different organizations. The pathway requires completing the Certified Innovation Management (CIM) Level 3 Certification before pursuing the GIMI Certified Auditor (GCA) Certification.',
@@ -505,7 +528,7 @@ const PRODUCTS = [
   mk({ id:'cime', track:'ielec', code:'CIME',
       title:'Certified ISO Innovation Management Expert',
       tagline:'Experts learn to establish and improve innovation management systems across the ISO 56000 family',
-      price:1200, priceDisplay:'$1,200', certDisplay:'$1,200', trainDisplay:'$1,200', duration:'20h', target:'Leaders & Managers',
+      price:510, priceDisplay:'$510', certDisplay:'$510', trainDisplay:'$1,200', duration:'20h', target:'Leaders & Managers',
       badge:'gimi-store-assets/v2/cime.png',
       includes:['CIME Expert Certificate','ISO 56000 framework deep-dive','Implementation playbook','Delivered by ISO committee members'],
       description:'The ISO Innovation Management Expert certification is designed for leaders who want to establish, implement, and improve Innovation Management Systems (IMS) in full alignment with the ISO 56000 family. Participants gain a complete framework to design and systematize innovation management, moving beyond sporadic creativity to disciplined performance.',
@@ -740,13 +763,13 @@ const PRODUCTS = [
       details:{ Duration:'45 min', Modality:'Online Self-Assessment', Language:'English' }}),
 
 
-  mk({ id:'awards-individual', track:'tools', cluster:'indiv-ass',
-      title:'GIMI Innovation Awards – Individual Ticket',
-      tagline:'Attend the annual GIMI Innovation Awards ceremony.',
-      price:400, priceDisplay:'$400', duration:'Event', target:'Professionals',
+  mk({ id:'awards-individual', track:'tools', cluster:'awards',
+      title:'GIMI Innovation Awards – Individual Application',
+      tagline:'Apply for individual recognition at the annual GIMI Innovation Awards.',
+      price:200, priceDisplay:'$200', duration:'Annual cycle', target:'Professionals',
       badge:'gimi-store-assets/v2/awards-individual.png',
-      description:'Individual attendance ticket for the annual GIMI Innovation Awards ceremony.',
-      details:{ Modality:'In-Person Event', Frequency:'Annual' }}),
+      description:'Application to enter the annual GIMI Innovation Awards as an individual innovator, recognising standout contributions to innovation.',
+      details:{ Modality:'Online Application', Frequency:'Annual' }}),
 
   mk({ id:'ipa-corporate', track:'tools', cluster:'org-ass',
       title:'IPA Corporate',
@@ -827,18 +850,26 @@ const PRODUCTS = [
       description:'A personalised coaching experience to boost individual and company innovation approaches. Available per session, per month, or per year.',
       details:{ 'Per Session':'$700', 'Per Month':'$2,000', 'Per Year':'$12,000', Modality:'1-on-1 Coaching' }}),
 
-  mk({ id:'awards-org', track:'tools', cluster:'engage',
-      title:'GIMI Innovation Awards – Organization',
-      tagline:'International recognition for groundbreaking innovation initiatives.',
-      price:350, priceDisplay:'$350–$600', duration:'Annual cycle', target:'Organizations',
+  mk({ id:'awards-org', track:'tools', cluster:'awards',
+      title:'GIMI Innovation Awards – Organizational Application',
+      tagline:'Apply for international recognition of your organization\'s innovation initiatives.',
+      price:600, priceDisplay:'$600', duration:'Annual cycle', target:'Organizations',
       badge:'gimi-store-assets/v2/awards-org.png',
-      description:'An international recognition programme to identify and celebrate groundbreaking innovation initiatives. 10 award categories across public, private, and social sectors.',
+      description:'Application to enter the annual GIMI Innovation Awards as an organization. Submissions are evaluated across 10 award categories spanning public, private, and social sectors.',
       details:{ Frequency:'Annual', Categories:'10 (8 organisational + 2 individual)' }}),
+
+  mk({ id:'awards-additional', track:'tools', cluster:'awards',
+      title:'GIMI Innovation Awards – Additional Application',
+      tagline:'Submit an additional entry to the GIMI Innovation Awards.',
+      price:100, priceDisplay:'$100', duration:'Annual cycle', target:'Organizations & Individuals',
+      badge:'gimi-store-assets/v2/awards-org.png',
+      description:'Each additional award entry beyond your first application, submitted within the same annual awards cycle.',
+      details:{ Modality:'Online Application', Frequency:'Annual' }}),
 
   mk({ id:'speech', track:'tools', cluster:'engage',
       title:'Innovation Keynote Speech',
       tagline:'Inspire leadership alignment and spark innovation mindset.',
-      price:25000, priceDisplay:'$25,000', duration:'1-2 hours', target:'Leadership Teams',
+      price:5000, priceDisplay:'$5,000–$25,000', duration:'1-2 hours', target:'Leadership Teams',
       badge:'gimi-store-assets/v2/speech.jpg',
       description:'A keynote engagement designed to generate executive alignment and organisational excitement around innovation, with current trends, technologies, and real case studies.',
       details:{ Duration:'1–2 hours', Modality:'Online, In-Person, or Recorded' }}),
@@ -894,7 +925,7 @@ const PRODUCTS = [
       badge:'gimi-store-assets/v2/memb-academia.png',
       description:'Organisational membership for universities and academic institutions, supporting innovation research, student programmes, and the GIMI community.'}),
 
-  mk({ id:'thinktank', track:'memb',
+  mk({ id:'thinktank', track:'tools', cluster:'engage',
       title:'GIMI Think Tank',
       tagline:'Monthly access to global innovation experts and 18,000+ innovators.',
       price:0, priceDisplay:'Free', duration:'1h / month', target:'All Professionals',
@@ -1006,6 +1037,51 @@ function priceChipsHTML(p) {
   </div>`;
 }
 
+/* Courses (certifications) use the new multi-section pricing panel; books,
+   tools, and memberships keep their single price. */
+function isCourse(p) { return ['icore','ielec','ff','lead','cons'].includes(p.track); }
+
+/* Build the 2–3 pricing rows for a course based on its cert/training prices. */
+function pricingRows(p) {
+  const type = getType(p);
+  const cert = p.certDisplay, train = p.trainDisplay;
+  if (cert === 'Free' || p.price === 0) {
+    return [{ label:'Certification — Self-Paced', price:'Free', cls:'free',
+      desc:'Offered free of charge as a self-paced certification.' }];
+  }
+  const rows = [];
+  if (type === 'masterclass') {
+    rows.push({ label:'Virtual Masterclass', price: cert || train,
+      desc:'Delivered as a live, expert-led virtual masterclass cohort, including the certification.' });
+  } else {
+    if (cert) rows.push({ label:'Certification — Self-Paced', price:cert,
+      desc: train ? 'Online self-paced course and examination. Includes the certification only.'
+                  : 'Offered as a self-paced certification.' });
+    if (train) rows.push({ label:'Virtual Masterclass', price:train,
+      desc:'Adds live virtual masterclass training, delivered together with the certification.' });
+  }
+  rows.push({ label:'On-Site Delivery', price:'Contact GIMI', cls:'contact',
+    desc:'On-site delivery pricing is determined by reaching out to GIMI directly.' });
+  return rows;
+}
+function pricingOptionsHTML(p) {
+  return pricingRows(p).map((r, i) =>
+    `<div class="popt"><div class="pn">${i+1}</div><div class="pbody">
+       <div class="prow"><span class="plabel">${r.label}</span><span class="pprice ${r.cls||''}">${r.price}</span></div>
+       <div class="pdesc">${r.desc}</div>
+     </div></div>`).join('');
+}
+/* Footer summary: "From $X" when more than one priced tier, else the single price. */
+function pricingFrom(p) {
+  const rows = pricingRows(p);
+  const nums = rows.map(r => { const m = String(r.price).replace(/[,$]/g,'').match(/\d+/); return m ? +m[0] : null; })
+                   .filter(v => v != null);
+  if (!nums.length) return rows[0].price;            // Free
+  const min = Math.min(...nums);
+  const multi = rows.filter(r => /\d/.test(String(r.price))).length > 1;
+  return (multi ? 'From ' : '') + '$' + min.toLocaleString();
+}
+
 /* Title-case a duration for display (first letter of each word), leaving
    numbers, unit suffixes (32-40h) and acronyms (TBD) intact. Source data
    stays deck-faithful; this only affects display. */
@@ -1021,6 +1097,8 @@ function cardHTML(p) {
   const durDisp = fmtDuration(p.duration);
   const cpe = !p.duration ? ''
     : `<div class="card-cpe">${isHours ? durDisp + ' CPE' : durDisp}</div>`;
+  const free = p.certDisplay === 'Free' || p.price === 0 || p.priceDisplay === 'Free';
+  const usePrompt = isCourse(p) && !free;
   return `
     <div class="product-card ${p.flagship ? 'flagship' : ''}" onclick="openModal('${p.id}')">
       ${p.flagship ? '<div class="flagship-tag">Flagship</div>' : ''}
@@ -1029,9 +1107,10 @@ function cardHTML(p) {
       <div class="card-title">${p.title}</div>
       <div class="card-blurb">${p.tagline || ''}</div>
       <div class="card-meta">
-        ${priceChipsHTML(p)}
+        ${usePrompt ? '' : priceChipsHTML(p)}
         ${cpe}
       </div>
+      ${usePrompt ? `<div class="pricing-prompt"><span>View pricing options</span><span class="arrow">&rsaquo;</span></div>` : ''}
       <button class="card-cta">View Details</button>
     </div>`;
 }
@@ -1042,6 +1121,7 @@ function cardHTML(p) {
    examination details are identical across certifications.
    ============================================================ */
 function getType(p) {
+  if (p.id === 'thinktank') return 'community';
   if (p.cluster === 'cip-mc' || p.cluster === 'ccio-mc') return 'masterclass';
   if (['icore','ielec','ff','lead','cons'].includes(p.track)) return 'cert';
   if (p.track === 'books') return 'book';
@@ -1195,19 +1275,30 @@ function openModal(id) {
   document.getElementById('modalDetails').innerHTML = Object.entries(standardDetails(p, type))
     .map(([k,v]) => `<div class="modal-info-item"><dt>${k}</dt><dd>${v}</dd></div>`).join('');
 
-  // Stat strip — show Cert / Cert+Training split when both exist
+  // Stat strip — courses surface pricing in the Pricing Options section, not here
+  const crs = isCourse(p);
   const hasBoth = p.certDisplay && p.trainDisplay && p.certDisplay !== p.trainDisplay;
-  const priceStat = hasBoth
-    ? `<div class="modal-stat"><strong>${p.certDisplay} / ${p.trainDisplay}</strong><span>Cert / +Training</span></div>`
-    : `<div class="modal-stat"><strong>${p.certDisplay || p.trainDisplay || p.priceDisplay}</strong><span>Investment</span></div>`;
+  const priceStat = crs ? ''
+    : (hasBoth
+      ? `<div class="modal-stat"><strong>${p.certDisplay} / ${p.trainDisplay}</strong><span>Cert / +Training</span></div>`
+      : `<div class="modal-stat"><strong>${p.certDisplay || p.trainDisplay || p.priceDisplay}</strong><span>Investment</span></div>`);
   document.getElementById('modalStats').innerHTML = `
     ${priceStat}
     <div class="modal-stat"><strong>${fmtDuration(p.duration) || '—'}</strong><span>Duration</span></div>
     <div class="modal-stat"><strong>${(p.modality||'').split('(')[0].trim() || '—'}</strong><span>Format</span></div>
     <div class="modal-stat"><strong>${p.target || '—'}</strong><span>For</span></div>`;
 
-  // Footer — dual price chips + type-appropriate CTA
-  document.getElementById('modalFooterPrice').innerHTML = priceChipsHTML(p);
+  // Pricing Options section — courses only
+  const pricingSec = document.getElementById('modalPricingSection');
+  if (crs) {
+    document.getElementById('modalPricing').innerHTML = pricingOptionsHTML(p);
+    pricingSec.style.display = '';
+  } else pricingSec.style.display = 'none';
+
+  // Footer — "From $X" summary for courses, single price chips otherwise
+  document.getElementById('modalFooterPrice').innerHTML = crs
+    ? `${pricingFrom(p)}<small>See pricing options above</small>`
+    : priceChipsHTML(p);
   document.getElementById('modalLearnLink').href = p.learnUrl || p.storeUrl;
   const enrollLink = document.getElementById('modalEnrollLink');
   enrollLink.href = p.storeUrl;
@@ -1233,6 +1324,7 @@ TRACKS.forEach(tr => {
   if (btn) btn.textContent = n;
 });
 document.getElementById('cnt-all').textContent = PRODUCTS.length;
+document.getElementById('resultCount').textContent = `Showing all ${PRODUCTS.length} products`;
 renderGrid(PRODUCTS);
 </script>
 </body>
