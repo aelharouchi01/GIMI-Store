@@ -351,7 +351,7 @@ const STORE = 'https://www.giminstitute.org/store/';
 
 function mk(o) {
   return Object.assign({
-    modality: 'Online Self-Paced',
+    modality: null,
     target: 'Professionals',
     storeUrl: STORE,
     flagship: false,
@@ -742,14 +742,14 @@ const PRODUCTS = [
   mk({ id:'technovate', track:'books', cluster:'tool-bk',
       title:'Technovate (Book + App)',
       tagline:'Book plus companion app for technology-driven innovation.',
-      price:99, priceDisplay:'$99', duration:'Reference', target:'Practitioners',
+      price:99, priceDisplay:'$99', duration:'Reference', target:'Practitioners', modality:'Digital — Book + App',
       badge:'gimi-store-assets/v2/technovate.png',
       description:'Book and companion application that helps practitioners apply technology-driven innovation methods.'}),
 
   mk({ id:'ijis', track:'books', cluster:'journal',
       title:'International Journal of Innovation Science',
       tagline:'Peer-reviewed articles on innovation science and practice.',
-      priceDisplay:'TBD', duration:'Subscription', target:'Researchers',
+      priceDisplay:'TBD', duration:'Subscription', target:'Researchers', modality:'Annual Subscription',
       badge:'gimi-store-assets/v2/ijis.png',
       description:'A peer-reviewed journal compiled from a range of innovation experts on the developments and applications of innovation science.'}),
 
@@ -791,7 +791,7 @@ const PRODUCTS = [
   mk({ id:'full-oia', track:'tools', cluster:'org-ass',
       title:'Full Organizational Innovation Assessment (Full OIA)',
       tagline:'Expert-led audit producing a Company Certificate at Level 1–4.',
-      price:40000, priceDisplay:'$40,000 audit', duration:'4-12 weeks', target:'Organizations',
+      price:40000, priceDisplay:'$40,000 audit', duration:'4-12 weeks', target:'Organizations', modality:'Expert-Led Audit',
       badge:'gimi-store-assets/v2/full-oia.png',
       description:'Comprehensive professional evaluation conducted by GIMI auditors. The audit produces a formal Company Certificate at Level 1, 2, 3, or 4, with the certification fee determined by the outcome level.',
       includes:[
@@ -813,7 +813,7 @@ const PRODUCTS = [
   mk({ id:'eureka', track:'tools', cluster:'software',
       title:'Eureka – Online Subscription',
       tagline:'Idea management and innovation portfolio software.',
-      price:500, priceDisplay:'$500 / year', duration:'Annual', target:'Organizations',
+      price:500, priceDisplay:'$500 / year', duration:'Annual', target:'Organizations', modality:'Software Subscription',
       badge:'gimi-store-assets/v2/eureka.png',
       description:'Eureka provides a collaborative environment to manage innovation portfolios, run lean experiments, iterate ideas rapidly, and develop artefacts at scale.',
       details:{ Modality:'Software Subscription', Cycle:'Annual' }}),
@@ -829,7 +829,7 @@ const PRODUCTS = [
   mk({ id:'quickgrowth', track:'tools', cluster:'software',
       title:'QuickGrowth',
       tagline:'Software-enabled strategic planning platform for SMEs.',
-      price:5000, priceDisplay:'$5,000', duration:'Custom', target:'SMEs',
+      price:5000, priceDisplay:'$5,000', duration:'Custom', target:'SMEs', modality:'Software + Facilitation',
       badge:'gimi-store-assets/2x.jpeg',
       description:'QuickGrowth is a software-enabled strategic planning programme that helps SME owners assess operations, identify improvement opportunities, and develop actionable plans for immediate results.',
       details:{ Modality:'Software + Facilitated Workshops', Focus:'SME Strategic Planning' }}),
@@ -837,7 +837,7 @@ const PRODUCTS = [
   mk({ id:'academy', track:'tools', cluster:'engage',
       title:'Innovation Academy',
       tagline:'Transform your organisation into a self-sustaining learning hub.',
-      price:50000, priceDisplay:'$50,000', duration:'4 weeks setup', target:'Organizations',
+      price:50000, priceDisplay:'$50,000', duration:'4 weeks setup', target:'Organizations', modality:'Custom Academy',
       badge:'gimi-store-assets/v2/academy.png',
       description:'A strategic capability-building engine that transforms an organisation into a Learning Hub for innovation, standardising the language and building internal mentors.',
       details:{ Modality:'Online Custom Academy', Output:'Custom learning paths + mentor certification' }}),
@@ -845,7 +845,7 @@ const PRODUCTS = [
   mk({ id:'coaching', track:'tools', cluster:'engage',
       title:'GIMI Innovation Coaching',
       tagline:'Personalised coaching with innovation experts.',
-      priceDisplay:'From $700', duration:'Tiered', target:'Individuals & Companies',
+      priceDisplay:'From $700', duration:'Tiered', target:'Individuals & Companies', modality:'1-on-1 Coaching',
       badge:'gimi-store-assets/v2/coaching.png',
       description:'A personalised coaching experience to boost individual and company innovation approaches. Available per session, per month, or per year.',
       details:{ 'Per Session':'$700', 'Per Month':'$2,000', 'Per Year':'$12,000', Modality:'1-on-1 Coaching' }}),
@@ -869,7 +869,7 @@ const PRODUCTS = [
   mk({ id:'speech', track:'tools', cluster:'engage',
       title:'Innovation Keynote Speech',
       tagline:'Inspire leadership alignment and spark innovation mindset.',
-      price:5000, priceDisplay:'$5,000–$25,000', duration:'1-2 hours', target:'Leadership Teams',
+      price:5000, priceDisplay:'$5,000–$25,000', duration:'1-2 hours', target:'Leadership Teams', modality:'Keynote — Virtual or In-Person',
       badge:'gimi-store-assets/v2/speech.jpg',
       description:'A keynote engagement designed to generate executive alignment and organisational excitement around innovation, with current trends, technologies, and real case studies.',
       details:{ Duration:'1–2 hours', Modality:'Online, In-Person, or Recorded' }}),
@@ -1082,6 +1082,26 @@ function pricingFrom(p) {
   return (multi ? 'From ' : '') + '$' + min.toLocaleString();
 }
 
+/* Available delivery formats for a course, derived from its pricing tiers. */
+function courseFormats(p) {
+  const modes = [];
+  pricingRows(p).forEach(r => {
+    if (r.label.indexOf('Self-Paced') >= 0) modes.push('Self-Paced');
+    else if (r.label.indexOf('Masterclass') >= 0) modes.push('Virtual');
+    else if (r.label.indexOf('On-Site') >= 0) modes.push('On-Site');
+  });
+  return modes.join(' · ') || '—';
+}
+/* Format shown in the modal stat strip — sensible per product type. */
+function displayFormat(p) {
+  if (isCourse(p)) return courseFormats(p);
+  if (p.modality) return p.modality;
+  return ({ book:'Digital (e-copy)', membership:'Annual Membership',
+    community:'Live Virtual Sessions', assessment:'Online Assessment',
+    software:'Software Platform', program:'Engagement',
+    product:'Online Application' })[getType(p)] || '—';
+}
+
 /* Title-case a duration for display (first letter of each word), leaving
    numbers, unit suffixes (32-40h) and acronyms (TBD) intact. Source data
    stays deck-faithful; this only affects display. */
@@ -1198,7 +1218,7 @@ function standardDetails(p, type) {
     return base;
   }
   if (type === 'assessment') {
-    if (!base.Modality && p.modality) base.Modality = p.modality;
+    if (!base.Modality) base.Modality = displayFormat(p);
     if (!base.Duration && p.duration)  base.Duration = p.duration;
     if (!base.Language)        base.Language = 'English';
     if (!base.Output)          base.Output = 'Automated PDF report';
@@ -1285,7 +1305,7 @@ function openModal(id) {
   document.getElementById('modalStats').innerHTML = `
     ${priceStat}
     <div class="modal-stat"><strong>${fmtDuration(p.duration) || '—'}</strong><span>Duration</span></div>
-    <div class="modal-stat"><strong>${(p.modality||'').split('(')[0].trim() || '—'}</strong><span>Format</span></div>
+    <div class="modal-stat"><strong>${displayFormat(p)}</strong><span>Format</span></div>
     <div class="modal-stat"><strong>${p.target || '—'}</strong><span>For</span></div>`;
 
   // Pricing Options section — courses only
