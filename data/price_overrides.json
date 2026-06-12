@@ -1,0 +1,12 @@
+{
+  "_note": "Manual cert-price overrides decided by GIMI management that supersede the V68 deck / Training Prices sheet. These are the source of truth for the listed product codes' CERT (self-paced) price. Reason: round-hundred cert prices were nudged +$10 so they end in $X10, consistent with the rest of the catalogue. Training-tier prices are unchanged. Masterclasses (CIP-MC $2,000, CCIO-MC $2,600) were intentionally left as-is.",
+  "effective": "2026-06",
+  "overrides": {
+    "CIP-0":  { "cert": "$210", "was": "$200", "code": "CIP-0",  "title": "Certified Innovation Professional Level 0: Innovation Champion" },
+    "CGIS-1": { "cert": "$110", "was": "$100", "code": "CGIS-1", "title": "Certified GIMI Impact: Students" },
+    "PBCC":   { "cert": "$210", "was": "$200", "code": "PBCC",   "title": "Problem Solving Certified Catalyst" },
+    "CTC":    { "cert": "$210", "was": "$200", "code": "CTC",    "title": "Certified Technology Catalyst" },
+    "CLC":    { "cert": "$210", "was": "$200", "code": "CLC",    "title": "Certified Longevity Catalyst" },
+    "CIL":    { "cert": "$210", "was": "$200", "code": "CIL",    "title": "Certified Innovation Leader" }
+  }
+}

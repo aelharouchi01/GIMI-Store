@@ -26,7 +26,9 @@ Note: assets are kept used-only — re-run `scripts/clean_assets.py` (dry-run by
 
 ## Source-of-truth rules (as of V64 audit)
 
-- **Pricing** — Training Prices sheet / V64 deck (cert + training price per course)
+- **Pricing** — Training Prices sheet / V64 deck (cert + training price per course).
+  Manual overrides that supersede the deck live in `data/price_overrides.json`
+  (e.g. several round-hundred cert prices nudged +$10 to end in $X10).
 - **Descriptions** — CRM sheet for courses; V64 deck for the two masterclasses
 - **Durations** — CRM "Hours" column for courses; V64 deck for masterclasses.
   Exceptions live in `data/duration_overrides.json` (e.g. the Future Foresight
