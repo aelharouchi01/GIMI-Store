@@ -963,7 +963,7 @@ function applyFilters() {
 
 /* Bump ASSET_VER whenever a badge image is replaced — it appends ?v=... to
    every badge URL so browsers fetch the new image instead of a cached copy. */
-const ASSET_VER = '20260612-1';
+const ASSET_VER = '20260612-2';
 function buildBadge(p) {
   if (p.badge) {
     const src = p.badge + (p.badge.includes('?') ? '&' : '?') + 'v=' + ASSET_VER;
