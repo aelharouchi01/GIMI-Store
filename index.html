@@ -961,9 +961,13 @@ function applyFilters() {
     `Showing ${filtered.length} of ${PRODUCTS.length} products`;
 }
 
+/* Bump ASSET_VER whenever a badge image is replaced — it appends ?v=... to
+   every badge URL so browsers fetch the new image instead of a cached copy. */
+const ASSET_VER = '20260612-1';
 function buildBadge(p) {
   if (p.badge) {
-    return `<img src="${p.badge}" alt="${p.title}"
+    const src = p.badge + (p.badge.includes('?') ? '&' : '?') + 'v=' + ASSET_VER;
+    return `<img src="${src}" alt="${p.title}"
             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
             <svg class="badge-svg" viewBox="0 0 100 100" style="display:none">${badgeSVG(p)}</svg>`;
   }
