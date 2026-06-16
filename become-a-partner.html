@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Become a Partner | Global Innovation Management Institute</title>
+<style>
+:root {
+  --teal:        #2AACB5;
+  --teal-dark:   #1E8A93;
+  --teal-light:  #E6F6F7;
+  --yellow:      #C9D940;
+  --pink:        #E15A78;
+  --orange:      #F0871E;
+  --navy:        #1B1F3B;
+  --navy-dark:   #13162C;
+  --gray:        #6B7280;
+  --gray-light:  #F0F4F6;
+  --text:        #1F2937;
+  --border:      #E5E7EB;
+  --white:       #FFFFFF;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family:'Calibri','Segoe UI',system-ui,sans-serif; color:var(--text); background:var(--white); line-height:1.6; font-size:16px; }
+
+/* NAV (shared with store) */
+.nav { background:var(--navy); position:sticky; top:0; z-index:200; box-shadow:0 2px 8px rgba(0,0,0,0.18); }
+.nav-inner { max-width:1280px; margin:0 auto; padding:12px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.logo img { height:52px; width:auto; display:block; }
+.nav-sections { display:flex; flex:1; justify-content:flex-end; align-items:center; gap:6px; flex-wrap:wrap; margin-left:32px; }
+.nav-sec { color:rgba(255,255,255,0.85); background:none; border:none; cursor:pointer; padding:9px 13px; border-radius:6px; font-family:inherit; font-size:13.5px; font-weight:600; white-space:nowrap; transition:all 0.2s; }
+.nav-sec:hover { background:rgba(255,255,255,0.1); color:#fff; }
+.nav-sec.active { background:var(--teal); color:#fff; }
+.subnav { background:#fff; border-bottom:1px solid var(--border); box-shadow:0 2px 6px rgba(0,0,0,0.05); }
+.subnav-inner { max-width:1280px; margin:0 auto; padding:10px 32px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.subnav-item { background:var(--gray-light); color:var(--text); border:none; cursor:pointer; padding:6px 14px; border-radius:20px; font-family:inherit; font-size:12.5px; font-weight:600; white-space:nowrap; transition:all 0.15s; }
+.subnav-item:hover { background:var(--teal-light); color:var(--teal-dark); }
+.subnav-item.active { background:var(--teal); color:#fff; }
+
+/* HERO */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); padding:64px 32px 68px; }
+.hero-inner { max-width:1100px; margin:0 auto; }
+.hero .eyebrow { color:var(--yellow); font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
+.hero h1 { font-size:42px; line-height:1.12; color:#fff; font-weight:800; max-width:840px; margin-bottom:18px; letter-spacing:-0.5px; }
+.hero h1 span { color:var(--teal); }
+.hero p { font-size:17.5px; color:rgba(255,255,255,0.78); max-width:760px; margin-bottom:30px; }
+.hero-cta { display:flex; gap:14px; flex-wrap:wrap; }
+.btn { display:inline-block; padding:14px 26px; border-radius:10px; font-size:15px; font-weight:700; text-decoration:none; cursor:pointer; border:2px solid transparent; transition:all 0.2s; font-family:inherit; }
+.btn-primary { background:var(--teal); color:#fff; }
+.btn-primary:hover { background:var(--teal-dark); transform:translateY(-1px); box-shadow:0 8px 22px rgba(42,172,181,0.3); }
+.btn-ghost { background:transparent; color:#fff; border-color:rgba(255,255,255,0.35); }
+.btn-ghost:hover { border-color:#fff; background:rgba(255,255,255,0.08); }
+
+/* SECTIONS */
+.section { max-width:1100px; margin:0 auto; padding:64px 32px; }
+.section.alt { background:var(--gray-light); max-width:none; }
+.section.alt > .section-inner { max-width:1100px; margin:0 auto; }
+.section-label { font-size:13px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+.section h2 { font-size:30px; color:var(--navy); font-weight:800; line-height:1.15; margin-bottom:14px; letter-spacing:-0.4px; }
+.section .lead { font-size:17px; color:var(--gray); max-width:760px; margin-bottom:34px; }
+.sub-h { font-size:18px; font-weight:800; color:var(--navy); margin:30px 0 16px; }
+
+/* GAINS / FEATURE CARDS */
+.feature-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.feature-card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:24px; box-shadow:0 2px 10px rgba(27,31,59,0.04); }
+.feature-card .ico { width:42px; height:42px; border-radius:11px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; margin-bottom:14px; }
+.feature-card p { font-size:14.5px; color:var(--text); line-height:1.55; }
+
+/* STAT ROW */
+.stats { display:flex; flex-wrap:wrap; gap:40px; margin-top:30px; padding:28px 30px; background:var(--navy); border-radius:16px; }
+.stat strong { display:block; font-size:30px; font-weight:800; color:var(--yellow); line-height:1; }
+.stat span { font-size:13px; color:rgba(255,255,255,0.65); }
+.trusted { margin-top:18px; font-size:14px; color:var(--gray); }
+.trusted strong { color:var(--navy); }
+
+/* TWO-WAYS CARDS */
+.ways-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+.way-card { background:#fff; border:2px solid var(--border); border-radius:18px; padding:30px; transition:all 0.2s; }
+.way-card:hover { border-color:var(--teal); transform:translateY(-3px); box-shadow:0 16px 40px rgba(27,31,59,0.10); }
+.way-card .tag { display:inline-block; background:var(--teal-light); color:var(--teal-dark); font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:6px; margin-bottom:14px; }
+.way-card h3 { font-size:22px; color:var(--navy); font-weight:800; margin-bottom:10px; }
+.way-card p { font-size:15px; color:var(--gray); margin-bottom:18px; }
+.way-card .for { font-size:13px; color:var(--teal-dark); font-weight:700; }
+
+/* LISTS */
+.check-list { list-style:none; display:grid; gap:10px; }
+.check-list li { position:relative; padding-left:30px; font-size:15px; color:var(--text); line-height:1.5; }
+.check-list li::before { content:''; position:absolute; left:0; top:7px; width:16px; height:16px; border-radius:50%; background:var(--teal-light);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E8A93' stroke-width='3'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E"); background-size:11px; background-repeat:no-repeat; background-position:center; }
+
+/* SERVE / TWO-COL */
+.two-col { display:grid; grid-template-columns:repeat(2,1fr); gap:30px; }
+.serve-card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:22px 24px; }
+.serve-card h4 { font-size:13px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
+.serve-card p { font-size:14.5px; color:var(--text); line-height:1.6; }
+
+/* NAME / LOGO GRID */
+.name-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:8px; }
+.name-chip { background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px 12px; text-align:center; font-size:13px; font-weight:600; color:var(--navy); display:flex; align-items:center; justify-content:center; min-height:62px; box-shadow:0 1px 4px rgba(27,31,59,0.04); }
+.note { font-size:13px; color:var(--gray); font-style:italic; margin-top:14px; }
+
+/* APPLY */
+.apply { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); border-radius:20px; padding:48px 40px; text-align:center; color:#fff; }
+.apply h2 { font-size:28px; font-weight:800; color:#fff; margin-bottom:12px; }
+.apply p { font-size:16px; color:rgba(255,255,255,0.78); max-width:620px; margin:0 auto 26px; }
+.apply .hero-cta { justify-content:center; }
+
+/* FOOTER */
+footer { background:var(--navy-dark); color:rgba(255,255,255,0.55); padding:40px 32px; text-align:center; font-size:13.5px; }
+footer a { color:var(--teal); text-decoration:none; }
+footer strong { color:rgba(255,255,255,0.85); }
+
+@media (max-width:900px) {
+  .feature-grid, .ways-grid, .two-col { grid-template-columns:1fr; }
+  .name-grid { grid-template-columns:repeat(2,1fr); }
+  .hero h1 { font-size:32px; }
+  .section h2 { font-size:25px; }
+}
+@media (max-width:640px) {
+  .nav-inner { flex-wrap:wrap; }
+  .nav-sections { justify-content:flex-start; margin-left:0; }
+  .nav-sec { font-size:12.5px; padding:7px 10px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo" onclick="return false"><img src="gimi-store-assets/gimi-logo-white.png" alt="GIMI"></a>
+    <div class="nav-sections" id="navSections"></div>
+  </div>
+  <div class="subnav"><div class="subnav-inner" id="subnavInner"></div></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Become a Partner</div>
+    <h1>Extend the world's standard for <span>innovation</span> into your market.</h1>
+    <p>A GIMI partnership gives you a proven portfolio, a global ISO-aligned brand, and a pipeline of demand. Partners either deliver GIMI's methodology to organizations or embed it into academia.</p>
+    <div class="hero-cta">
+      <a href="#apply" class="btn btn-primary">Become a Certified Partner</a>
+      <a href="#apply" class="btn btn-ghost">Become a University Partner</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PARTNER -->
+<section class="section" id="why">
+  <div class="section-label">Why Partner with GIMI</div>
+  <h2>One partnership, a complete innovation business.</h2>
+  <p class="lead">A GIMI partnership lets you extend the world's standard for innovation into your market — delivering GIMI's methodology to organizations or embedding it into academia.</p>
+
+  <div class="sub-h">What every partner gains</div>
+  <div class="feature-grid">
+    <div class="feature-card"><div class="ico">&#9632;</div><p>A proven portfolio you can deliver from day one: GIMI's complete methodology, assessments, programs, certifications, and tools.</p></div>
+    <div class="feature-card"><div class="ico">&#9670;</div><p>A global, ISO-aligned standard and the GIMI brand that set you apart as the credible innovation authority in your market.</p></div>
+    <div class="feature-card"><div class="ico">&#9650;</div><p>A pipeline of demand: referrals, joint projects, and visibility through GIMI's network, with marketing and sales support.</p></div>
+    <div class="feature-card"><div class="ico">&#9733;</div><p>The edge to stay ahead: the latest frameworks and research, the GIMI Think Tank, and a worldwide community of peers.</p></div>
+  </div>
+
+  <div class="sub-h">Our impact</div>
+  <div class="stats">
+    <div class="stat"><strong>116</strong><span>Countries reached</span></div>
+    <div class="stat"><strong>1,600+</strong><span>Corporations served</span></div>
+    <div class="stat"><strong>140+</strong><span>Universities engaged</span></div>
+    <div class="stat"><strong>18,000+</strong><span>Innovators in the network</span></div>
+  </div>
+  <p class="trusted">Trusted by <strong>HSBC, Pfizer, P&amp;G, IBM, Philips, and Verizon.</strong></p>
+</section>
+
+<!-- TWO WAYS -->
+<section class="section alt" id="two-ways">
+  <div class="section-inner">
+    <div class="section-label">The Two Ways to Partner</div>
+    <h2>Choose the path that fits your organization.</h2>
+    <div class="ways-grid">
+      <div class="way-card">
+        <span class="tag">Certified Partner</span>
+        <h3>Deliver GIMI to organizations</h3>
+        <p>Get licensed to deliver GIMI's methodologies, assessments, and programs to corporations and governments.</p>
+        <div class="for">For consulting firms, training providers, and independent experts.</div>
+      </div>
+      <div class="way-card">
+        <span class="tag">University Partner</span>
+        <h3>Embed GIMI into academia</h3>
+        <p>Embed GIMI's methodology and certifications into your institution to credential students and faculty.</p>
+        <div class="for">For universities, business schools, and academic innovation centers.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFIED PARTNER -->
+<section class="section" id="certified">
+  <div class="section-label">Certified Partner</div>
+  <h2>Build an innovation practice on a global standard.</h2>
+
+  <div class="two-col">
+    <div>
+      <div class="sub-h" style="margin-top:0">Who it is for</div>
+      <ul class="check-list">
+        <li>Organizations that sell and deliver innovation services and want a proven methodology and global brand</li>
+        <li>Partners with a genuine passion for innovation</li>
+        <li>Partners who understand local market needs and the global context</li>
+        <li>Partners with access to the business community, government, or universities</li>
+        <li>Partners with the capability to sell</li>
+      </ul>
+    </div>
+    <div>
+      <div class="sub-h" style="margin-top:0">The work you can do</div>
+      <ul class="check-list">
+        <li><strong>Inspire, assess, and focus:</strong> keynote, IPA, OIA, and strategy workshop</li>
+        <li><strong>Drive breakthrough results:</strong> Open Innovation Accelerator, idea crowdsourcing, project acceleration, and service and process improvement</li>
+        <li><strong>Build lasting capability:</strong> Innovation Academy, GIMI certifications, Innovation Management System, and coaching and tools such as AKAIO and Eureka</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sub-h">Who you serve</div>
+  <div class="two-col">
+    <div class="serve-card">
+      <h4>Corporations</h4>
+      <p>HSBC, Pfizer, P&amp;G, IBM, Philips, Verizon, Johnson Controls, Cigna, Roche, Haier, Bank Muscat, and Ecopetrol.</p>
+    </div>
+    <div class="serve-card">
+      <h4>Governments &amp; public sector</h4>
+      <p>Dubai government entities, Qatar ministries, Lesotho Revenue Authority, Saudi Aramco, EDB Singapore, and King Abdullah II Center for Excellence.</p>
+    </div>
+  </div>
+
+  <div class="sub-h">Our Certified Partners</div>
+  <p style="font-size:14.5px;color:var(--gray);margin-bottom:6px">A global network across more than 100 countries.</p>
+  <div class="name-grid" id="certPartners"></div>
+</section>
+
+<!-- UNIVERSITY PARTNER -->
+<section class="section alt" id="university">
+  <div class="section-inner">
+    <div class="section-label">University Partner</div>
+    <h2>Lead on innovation in academia.</h2>
+    <p class="lead">For universities, business schools, and academic innovation centers that want to credential students and faculty and lead on innovation.</p>
+
+    <div class="sub-h">What you can do for your institution</div>
+    <ul class="check-list">
+      <li><strong>Credential students and faculty:</strong> embed GIMI certifications (ISO 17024-accredited) and certify faculty to teach and assess</li>
+      <li><strong>Bring real-world innovation learning:</strong> action-learning challenges and an Open Innovation Accelerator with corporate sponsors</li>
+      <li><strong>Elevate faculty and research:</strong> publish in the International Journal of Innovation Science, compete for editor seats, speak at the Think Tank, and contribute to the IMBOK</li>
+      <li><strong>Structure your own innovation efforts:</strong> assess and roadmap maturity, stand up an Innovation Academy, and join the global GIMI network</li>
+    </ul>
+
+    <div class="sub-h">Universities in the GIMI network</div>
+    <div class="name-grid" id="universities"></div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="section" id="apply">
+  <div class="apply">
+    <h2>Become a Partner</h2>
+    <p>Tell us how you want to grow and we will guide you to the right partnership. We walk you through licensing and onboarding.</p>
+    <div class="hero-cta">
+      <a href="mailto:info@giminstitute.org?subject=Certified%20Partner%20Inquiry" class="btn btn-primary">Become a Certified Partner</a>
+      <a href="mailto:info@giminstitute.org?subject=University%20Partner%20Inquiry" class="btn btn-ghost">Become a University Partner</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Global Innovation Management Institute (GIMI)</strong><br>
+  110 Cambridge Street, Cambridge MA 02141 &nbsp;|&nbsp;
+  <a href="mailto:info@giminstitute.org">info@giminstitute.org</a> &nbsp;|&nbsp;
+  <a href="https://www.giminstitute.org">giminstitute.org</a><br><br>
+  ISO/IEC 17024 Accredited Certification Body. Certifying innovation professionals in 116 countries since 2009.
+</footer>
+
+<script>
+/* ============================================================
+   Shared site nav — Become a Partner active. Top sections are
+   highlight-only (other pages not built yet); the Partner
+   subnav smooth-scrolls to the sections on this page.
+   ============================================================ */
+const SITE_NAV = [
+  { id:'home',         label:'Home',              subs:['Hero','Who We Serve','Impact in Numbers','Programs & Certifications Overview','Our Partners','Innovation Awards Highlight','Newsletter & Contact'] },
+  { id:'about',        label:'About Us',          subs:['Who We Are','Executive Team','Board of Directors','About the IAOIP','ISO & Standards','Social Impact Initiatives','Contact Us'] },
+  { id:'programs',     label:'Programs',          subs:['Assessments','Training / Masterclasses','Consulting','Speaker Bureau'] },
+  { id:'thought',      label:'Thought Leadership',subs:['Innovation Awards','GIMI Think Tank','Books & Guides','International Journal of Innovation Science','Blog: Innovation Insights','News & Events'] },
+  { id:'certificates', label:'Certificates',      subs:['Innovation Core','Innovation Elective','Future Foresight','Leadership Core','Consulting Core','Organizational Certifications','Recertification & Registry'] },
+  { id:'store',        label:'Store',             subs:['Storefront','Browse by Group','Product Pages','Cart / Checkout / My Account'] },
+  { id:'member',       label:'Become a Member',   subs:['Membership Overview','Professional','Student','Corporate (Silver / Gold / Platinum / Platinum Plus)','Academia'] },
+  { id:'partner',      label:'Become a Partner',  subs:['Why Partner with GIMI','The Two Ways to Partner','Certified Partner','University Partner','Become a Partner (apply)'] }
+];
+/* Partner subnav items -> in-page section anchors */
+const PARTNER_ANCHORS = {
+  'Why Partner with GIMI':'why',
+  'The Two Ways to Partner':'two-ways',
+  'Certified Partner':'certified',
+  'University Partner':'university',
+  'Become a Partner (apply)':'apply'
+};
+let activeSection = 'partner';
+function renderNav() {
+  document.getElementById('navSections').innerHTML = SITE_NAV.map(s =>
+    `<button class="nav-sec ${s.id===activeSection?'active':''}" onclick="selectSection('${s.id}')">${s.label}</button>`).join('');
+  renderSubnav();
+}
+function renderSubnav() {
+  const sec = SITE_NAV.find(s => s.id === activeSection);
+  document.getElementById('subnavInner').innerHTML = sec.subs.map(sub =>
+    `<button class="subnav-item" onclick="selectSub(this,'${sub.replace(/'/g,"\\'")}')">${sub}</button>`).join('');
+}
+function selectSection(id) { activeSection = id; renderNav(); }   // highlight + show subs only
+function selectSub(btn, label) {
+  document.querySelectorAll('.subnav-item').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // On the Partner page, scroll to the matching section; elsewhere highlight only.
+  if (activeSection === 'partner' && PARTNER_ANCHORS[label]) {
+    const el = document.getElementById(PARTNER_ANCHORS[label]);
+    if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+}
+
+/* Name grids */
+const CERT_PARTNERS = ['SIA Partners','KACE','UCOTRA','IXL Italy','Innovate AS','Grupo Alva','Easy Ltd','Earn International','Doracrea','TDM Internacional','IXL Center US','Innavise','Smart Connections','IXL Brazil','IXL Colombia','Sandbox','Clarus Consulting','Embiggen Consulting','SBM-ITB','Hong Kong Innovation Management Institute','IXL Korea','Sira Innovation','Triangle Partners','Kavoo Agency'];
+const UNIVERSITIES = ['INSEAD','Hult International Business School','Bocconi','Rotman School of Management (U. of Toronto)','Thunderbird School of Global Management','Tecnologico de Monterrey','INCAE Business School','University of Miami','Worcester Polytechnic Institute','Yonsei University','Fundacao Dom Cabral','CESA','Universidad de La Sabana'];
+document.getElementById('certPartners').innerHTML = CERT_PARTNERS.map(n => `<div class="name-chip">${n}</div>`).join('');
+document.getElementById('universities').innerHTML = UNIVERSITIES.map(n => `<div class="name-chip">${n}</div>`).join('');
+
+renderNav();
+</script>
+</body>
+</html>
