@@ -28,12 +28,17 @@ body { font-family:'Calibri','Segoe UI',system-ui,sans-serif; color:var(--text);
 .nav { background:var(--navy); position:sticky; top:0; z-index:200; box-shadow:0 2px 8px rgba(0,0,0,0.18); }
 .nav-inner { max-width:1280px; margin:0 auto; padding:12px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .logo img { height:52px; width:auto; display:block; }
-.nav-links { display:flex; gap:4px; list-style:none; }
-.nav-links a { color:rgba(255,255,255,0.85); text-decoration:none; padding:9px 15px; border-radius:6px; font-size:14px; font-weight:500; transition:all 0.2s; white-space:nowrap; }
-.nav-links a:hover { background:rgba(255,255,255,0.1); color:#fff; }
-.nav-links a.active { background:var(--teal); color:#fff; }
-.nav-cta { background:var(--teal); color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:14px; font-weight:600; transition:background 0.2s; white-space:nowrap; }
-.nav-cta:hover { background:var(--teal-dark); }
+/* top row: 8 section buttons, spaced out */
+.nav-sections { display:flex; flex:1; justify-content:space-between; align-items:center; gap:4px; flex-wrap:wrap; }
+.nav-sec { color:rgba(255,255,255,0.85); background:none; border:none; cursor:pointer; padding:9px 13px; border-radius:6px; font-family:inherit; font-size:13.5px; font-weight:600; white-space:nowrap; transition:all 0.2s; }
+.nav-sec:hover { background:rgba(255,255,255,0.1); color:#fff; }
+.nav-sec.active { background:var(--teal); color:#fff; }
+/* second row: subsections of the active section */
+.subnav { background:#fff; border-bottom:1px solid var(--border); box-shadow:0 2px 6px rgba(0,0,0,0.05); }
+.subnav-inner { max-width:1280px; margin:0 auto; padding:10px 32px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.subnav-item { background:var(--gray-light); color:var(--text); border:none; cursor:pointer; padding:6px 14px; border-radius:20px; font-family:inherit; font-size:12.5px; font-weight:600; white-space:nowrap; transition:all 0.15s; }
+.subnav-item:hover { background:var(--teal-light); color:var(--teal-dark); }
+.subnav-item.active { background:var(--teal); color:#fff; }
 
 /* HERO */
 .hero { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); padding:60px 32px 64px; }
@@ -183,7 +188,9 @@ footer strong { color:rgba(255,255,255,0.85); }
   .modal-body { padding:22px; }
   .modal-footer { padding:18px 22px 24px; }
   .modal-info-grid { grid-template-columns:1fr; }
-  .nav-links { display:none; }
+  .nav-inner { flex-wrap:wrap; }
+  .nav-sections { justify-content:flex-start; }
+  .nav-sec { font-size:12.5px; padding:7px 10px; }
 }
 </style>
 </head>
@@ -191,16 +198,10 @@ footer strong { color:rgba(255,255,255,0.85); }
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="https://www.giminstitute.org" class="logo"><img src="gimi-store-assets/gimi-logo-white.png" alt="GIMI"></a>
-    <ul class="nav-links">
-      <li><a href="https://www.giminstitute.org/about-us/">About Us</a></li>
-      <li><a href="https://www.giminstitute.org/individuals/">Individuals</a></li>
-      <li><a href="https://www.giminstitute.org/organizations/">Organizations</a></li>
-      <li><a href="https://www.giminstitute.org/knowledge/">Knowledge</a></li>
-      <li><a href="https://www.giminstitute.org/store/" class="active">Store</a></li>
-    </ul>
-    <a href="https://www.giminstitute.org/store/" class="nav-cta">Enroll Now</a>
+    <a href="#" class="logo" onclick="return false"><img src="gimi-store-assets/gimi-logo-white.png" alt="GIMI"></a>
+    <div class="nav-sections" id="navSections"></div>
   </div>
+  <div class="subnav"><div class="subnav-inner" id="subnavInner"></div></div>
 </nav>
 
 <section class="hero">
@@ -1350,6 +1351,39 @@ TRACKS.forEach(tr => {
 document.getElementById('cnt-all').textContent = PRODUCTS.length;
 document.getElementById('resultCount').textContent = `Showing all ${PRODUCTS.length} products`;
 renderGrid(PRODUCTS);
+
+/* ============================================================
+   SITE NAV (structure-only) — the 8 sections and subsections
+   from the master blueprint. Clicking only highlights; it does
+   NOT navigate or change any page content (skeleton for now).
+   ============================================================ */
+const SITE_NAV = [
+  { id:'home',         label:'Home',              subs:['Hero','Who We Serve','Impact in Numbers','Programs & Certifications Overview','Our Partners','Innovation Awards Highlight','Newsletter & Contact'] },
+  { id:'about',        label:'About Us',          subs:['Who We Are','Executive Team','Board of Directors','About the IAOIP','ISO & Standards','Social Impact Initiatives','Contact Us'] },
+  { id:'programs',     label:'Programs',          subs:['Assessments','Training / Masterclasses','Consulting','Speaker Bureau'] },
+  { id:'thought',      label:'Thought Leadership',subs:['Innovation Awards','GIMI Think Tank','Books & Guides','International Journal of Innovation Science','Blog: Innovation Insights','News & Events'] },
+  { id:'certificates', label:'Certificates',      subs:['Innovation Core','Innovation Elective','Future Foresight','Leadership Core','Consulting Core','Organizational Certifications','Recertification & Registry'] },
+  { id:'store',        label:'Store',             subs:['Storefront','Browse by Group','Product Pages','Cart / Checkout / My Account'] },
+  { id:'member',       label:'Become a Member',   subs:['Membership Overview','Professional','Student','Corporate (Silver / Gold / Platinum / Platinum Plus)','Academia'] },
+  { id:'partner',      label:'Become a Partner',  subs:['Why Partner with GIMI','The Two Ways to Partner','Certified Partner','University Partner','Become a Partner (apply)'] }
+];
+let activeSection = 'store';   // Store highlighted by default (this page)
+function renderNav() {
+  document.getElementById('navSections').innerHTML = SITE_NAV.map(s =>
+    `<button class="nav-sec ${s.id===activeSection?'active':''}" onclick="selectSection('${s.id}')">${s.label}</button>`).join('');
+  renderSubnav();
+}
+function renderSubnav() {
+  const sec = SITE_NAV.find(s => s.id === activeSection);
+  document.getElementById('subnavInner').innerHTML = sec.subs.map(sub =>
+    `<button class="subnav-item" onclick="selectSub(this)">${sub}</button>`).join('');
+}
+function selectSection(id) { activeSection = id; renderNav(); }      // highlight section + show its subs only
+function selectSub(btn) {                                            // highlight subsection only
+  document.querySelectorAll('.subnav-item').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+renderNav();
 </script>
 </body>
 </html>
