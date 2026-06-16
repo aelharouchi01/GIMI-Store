@@ -195,7 +195,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 
 /* ===== BECOME A PARTNER VIEW (scoped, isolated from the store) ===== */
 #view-partner .pt-hero { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); padding:64px 32px 68px; }
-#view-partner .pt-hero-inner { max-width:1100px; margin:0 auto; }
+#view-partner .pt-hero-inner { max-width:1036px; margin:0 auto; }
 #view-partner .pt-eyebrow { color:var(--yellow); font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
 #view-partner .pt-hero h1 { font-size:38px; line-height:1.15; color:#fff; font-weight:800; margin-bottom:18px; letter-spacing:-0.5px; }
 #view-partner .pt-hero h1 span { color:var(--teal); }
@@ -208,7 +208,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-partner .btn-ghost:hover { border-color:#fff; background:rgba(255,255,255,0.08); }
 #view-partner .section { max-width:1100px; margin:0 auto; padding:60px 32px; }
 #view-partner .section.alt { background:var(--gray-light); max-width:none; }
-#view-partner .section.alt > .section-inner { max-width:1100px; margin:0 auto; }
+#view-partner .section.alt > .section-inner { max-width:1036px; margin:0 auto; }
 #view-partner .section-label { font-size:13px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
 #view-partner .section h2 { font-size:30px; color:var(--navy); font-weight:800; line-height:1.15; margin-bottom:14px; letter-spacing:-0.4px; }
 #view-partner .lead { font-size:17px; color:var(--gray); margin-bottom:34px; }
@@ -268,11 +268,21 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-partner .marquee:hover .marquee-track { animation-play-state:paused; }
 #view-partner .marquee .name-chip { width:210px; flex:none; min-height:70px; margin:0; }
 @keyframes ptscroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-#view-partner .work-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+#view-partner .work-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; grid-auto-rows:1fr; }
+/* two-ways card icons */
+#view-partner .way-card .wico { width:46px; height:46px; border-radius:12px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+#view-partner .way-card .wico svg { width:24px; height:24px; }
+/* how partnering works — 3 steps */
+#view-partner .pt-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:840px; margin:0 auto 38px; }
+#view-partner .pt-step { text-align:center; padding:0 8px; }
+#view-partner .pt-step .sn { width:40px; height:40px; border-radius:50%; background:var(--teal); color:#fff; font-weight:800; font-size:17px; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; }
+#view-partner .pt-step h4 { font-size:15px; color:var(--navy); font-weight:800; margin-bottom:6px; }
+#view-partner .pt-step p { font-size:13.5px; color:var(--gray); line-height:1.5; }
+#view-partner .steps-head { text-align:center; font-size:18px; font-weight:800; color:var(--navy); margin-bottom:24px; }
 #view-partner .check-list.cols-2 { grid-template-columns:repeat(2,1fr); column-gap:40px; }
 /* align the rows (label / need / examples) across the two 'who you serve' cards */
 #view-partner .serve-grid > .serve-card { display:grid; grid-template-rows:subgrid; grid-row:span 3; align-content:start; row-gap:0; }
-@media (max-width:900px){ #view-partner .feature-grid,#view-partner .ways-grid,#view-partner .two-col,#view-partner .work-grid,#view-partner .work-grid-2,#view-partner .check-list.cols-2{grid-template-columns:1fr;} #view-partner .who-grid{grid-template-columns:repeat(2,1fr);} #view-partner .trusted-wall{grid-template-columns:repeat(2,1fr);} #view-partner .pt-hero h1{font-size:32px;} #view-partner .section h2{font-size:25px;} }
+@media (max-width:900px){ #view-partner .feature-grid,#view-partner .ways-grid,#view-partner .two-col,#view-partner .work-grid,#view-partner .work-grid-2,#view-partner .check-list.cols-2,#view-partner .pt-steps{grid-template-columns:1fr;} #view-partner .who-grid{grid-template-columns:repeat(2,1fr);} #view-partner .trusted-wall{grid-template-columns:repeat(2,1fr);} #view-partner .pt-hero h1{font-size:32px;} #view-partner .section h2{font-size:25px;} }
 </style>
 </head>
 <body>
@@ -346,7 +356,7 @@ footer strong { color:rgba(255,255,255,0.85); }
   <section class="section" id="why">
     <div class="section-label">Why Partner with GIMI</div>
     <h2>One partnership, a complete innovation business.</h2>
-    <p class="lead">A GIMI partnership lets you extend the world's standard for innovation into your market, delivering GIMI's methodology to organizations or embedding it into academia.</p>
+    <p class="lead">Everything you need to win and deliver innovation work is already built, so your firm can focus on growing, not on building a practice from scratch.</p>
     <div class="sub-h">What every partner gains</div>
     <div class="feature-grid">
       <div class="feature-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M2 13h20"/></svg></div><p>A proven portfolio you can deliver from day one: GIMI's complete methodology, assessments, programs, certifications, and tools.</p></div>
@@ -364,12 +374,14 @@ footer strong { color:rgba(255,255,255,0.85); }
       <h2>Choose the path that fits your organization.</h2>
       <div class="ways-grid">
         <div class="way-card">
+          <div class="wico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h6"/></svg></div>
           <span class="tag">Certified Partner</span>
           <h3>Deliver GIMI to organizations</h3>
           <p>Get licensed to deliver GIMI's methodologies, assessments, and programs to corporations and governments.</p>
           <div class="for">For consulting firms and training providers.</div>
         </div>
         <div class="way-card">
+          <div class="wico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></div>
           <span class="tag">University Partner</span>
           <h3>Embed GIMI into academia</h3>
           <p>Embed GIMI's methodology and certifications into your institution to credential students and faculty.</p>
@@ -506,8 +518,14 @@ footer strong { color:rgba(255,255,255,0.85); }
   </section>
 
   <section class="section" id="partner-apply">
+    <div class="steps-head">How partnering works</div>
+    <div class="pt-steps">
+      <div class="pt-step"><div class="sn">1</div><h4>Apply</h4><p>Tell us your market and how you want to grow.</p></div>
+      <div class="pt-step"><div class="sn">2</div><h4>Get licensed &amp; onboarded</h4><p>We train and equip you on GIMI's methodology and tools.</p></div>
+      <div class="pt-step"><div class="sn">3</div><h4>Start delivering</h4><p>Win work and deliver GIMI programs under the global brand.</p></div>
+    </div>
     <div class="apply-cta">
-      <h2>Become a Partner</h2>
+      <h2>Ready to grow with GIMI?</h2>
       <p>Tell us how you want to grow and we will guide you to the right partnership. We walk you through licensing and onboarding.</p>
       <div class="pt-cta">
         <a href="mailto:info@giminstitute.org?subject=Certified%20Partner%20Inquiry" class="btn btn-primary">Become a Certified Partner</a>
