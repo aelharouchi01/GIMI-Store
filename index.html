@@ -269,7 +269,8 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-partner .marquee .name-chip { width:210px; flex:none; min-height:70px; margin:0; }
 @keyframes ptscroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 #view-partner .work-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-@media (max-width:900px){ #view-partner .feature-grid,#view-partner .ways-grid,#view-partner .two-col,#view-partner .work-grid,#view-partner .work-grid-2{grid-template-columns:1fr;} #view-partner .who-grid{grid-template-columns:repeat(2,1fr);} #view-partner .trusted-wall{grid-template-columns:repeat(2,1fr);} #view-partner .pt-hero h1{font-size:32px;} #view-partner .section h2{font-size:25px;} }
+#view-partner .check-list.cols-2 { grid-template-columns:repeat(2,1fr); column-gap:40px; }
+@media (max-width:900px){ #view-partner .feature-grid,#view-partner .ways-grid,#view-partner .two-col,#view-partner .work-grid,#view-partner .work-grid-2,#view-partner .check-list.cols-2{grid-template-columns:1fr;} #view-partner .who-grid{grid-template-columns:repeat(2,1fr);} #view-partner .trusted-wall{grid-template-columns:repeat(2,1fr);} #view-partner .pt-hero h1{font-size:32px;} #view-partner .section h2{font-size:25px;} }
 </style>
 </head>
 <body>
@@ -387,7 +388,7 @@ footer strong { color:rgba(255,255,255,0.85); }
       <div class="serve-card"><h4>Training Providers</h4><p>Training and education providers delivering accredited innovation certifications and programs.</p></div>
     </div>
     <div class="sub-h" style="margin-top:30px">What these partners are looking for</div>
-    <ul class="check-list">
+    <ul class="check-list cols-2">
       <li>A proven methodology and complete portfolio they can deliver from day one</li>
       <li>A recognized, ISO-aligned global brand and the credibility that comes with it</li>
       <li>A pipeline of demand and a worldwide partner network to grow with</li>
