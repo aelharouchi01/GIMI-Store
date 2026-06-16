@@ -242,7 +242,34 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-partner .apply-cta h2 { font-size:28px; font-weight:800; color:#fff; margin-bottom:12px; }
 #view-partner .apply-cta p { font-size:16px; color:rgba(255,255,255,0.78); max-width:620px; margin:0 auto 26px; }
 #view-partner .apply-cta .pt-cta { justify-content:center; }
-@media (max-width:900px){ #view-partner .feature-grid,#view-partner .ways-grid,#view-partner .two-col{grid-template-columns:1fr;} #view-partner .name-grid{grid-template-columns:repeat(2,1fr);} #view-partner .pt-hero h1{font-size:32px;} #view-partner .section h2{font-size:25px;} }
+#view-partner .feature-card .ico svg { width:22px; height:22px; }
+/* trusted-by wall (replaces impact numbers) */
+#view-partner .trusted-wall { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+/* who-it-is-for cards (full row) */
+#view-partner .who-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+#view-partner .who-card { background:#fff; border:1px solid var(--border); border-top:3px solid var(--teal); border-radius:12px; padding:18px 16px; font-size:13.5px; color:var(--text); line-height:1.45; box-shadow:0 2px 10px rgba(27,31,59,0.04); }
+/* work-you-can-do — the centerpiece: 3 buckets a partner can deliver */
+#view-partner .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+#view-partner .work-card { background:#fff; border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:16px; padding:26px; box-shadow:0 8px 24px rgba(27,31,59,0.07); }
+#view-partner .work-card .wnum { width:34px; height:34px; border-radius:9px; background:var(--teal); color:#fff; font-weight:800; font-size:15px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+#view-partner .work-card h3 { font-size:18px; color:var(--navy); font-weight:800; margin-bottom:5px; line-height:1.25; }
+#view-partner .work-card .wsub { font-size:12.5px; color:var(--teal-dark); font-weight:700; margin-bottom:14px; }
+#view-partner .work-card ul { list-style:none; display:grid; gap:9px; }
+#view-partner .work-card li { position:relative; padding-left:18px; font-size:13.5px; color:var(--text); line-height:1.45; }
+#view-partner .work-card li::before { content:''; position:absolute; left:0; top:7px; width:6px; height:6px; border-radius:50%; background:var(--teal); }
+/* serve cards with needs */
+#view-partner .serve-card .need { font-size:14px; color:var(--text); line-height:1.55; margin-bottom:12px; }
+#view-partner .serve-card .eg { font-size:13px; color:var(--gray); }
+#view-partner .serve-card .eg strong { color:var(--navy); }
+/* logo slideshow (marquee) */
+#view-partner .marquee-head { font-size:13px; font-weight:800; color:var(--teal-dark); text-transform:uppercase; letter-spacing:1px; margin-bottom:14px; }
+#view-partner .marquee { overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+#view-partner .marquee-track { display:flex; gap:14px; width:max-content; animation:ptscroll 50s linear infinite; }
+#view-partner .marquee:hover .marquee-track { animation-play-state:paused; }
+#view-partner .marquee .name-chip { width:210px; flex:none; min-height:70px; margin:0; }
+@keyframes ptscroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+#view-partner .work-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+@media (max-width:900px){ #view-partner .feature-grid,#view-partner .ways-grid,#view-partner .two-col,#view-partner .work-grid,#view-partner .work-grid-2{grid-template-columns:1fr;} #view-partner .who-grid{grid-template-columns:repeat(2,1fr);} #view-partner .trusted-wall{grid-template-columns:repeat(2,1fr);} #view-partner .pt-hero h1{font-size:32px;} #view-partner .section h2{font-size:25px;} }
 </style>
 </head>
 <body>
@@ -319,19 +346,17 @@ footer strong { color:rgba(255,255,255,0.85); }
     <p class="lead">A GIMI partnership lets you extend the world's standard for innovation into your market &mdash; delivering GIMI's methodology to organizations or embedding it into academia.</p>
     <div class="sub-h">What every partner gains</div>
     <div class="feature-grid">
-      <div class="feature-card"><div class="ico">&#9632;</div><p>A proven portfolio you can deliver from day one: GIMI's complete methodology, assessments, programs, certifications, and tools.</p></div>
-      <div class="feature-card"><div class="ico">&#9670;</div><p>A global, ISO-aligned standard and the GIMI brand that set you apart as the credible innovation authority in your market.</p></div>
-      <div class="feature-card"><div class="ico">&#9650;</div><p>A pipeline of demand: referrals, joint projects, and visibility through GIMI's network, with marketing and sales support.</p></div>
-      <div class="feature-card"><div class="ico">&#9733;</div><p>The edge to stay ahead: the latest frameworks and research, the GIMI Think Tank, and a worldwide community of peers.</p></div>
+      <div class="feature-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M2 13h20"/></svg></div><p>A proven portfolio you can deliver from day one: GIMI's complete methodology, assessments, programs, certifications, and tools.</p></div>
+      <div class="feature-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></div><p>A global, ISO-aligned standard and the GIMI brand that set you apart as the credible innovation authority in your market.</p></div>
+      <div class="feature-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><p>A pipeline of demand: referrals, joint projects, and visibility through GIMI's network, with marketing and sales support.</p></div>
+      <div class="feature-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></div><p>The edge to stay ahead: the latest frameworks and research, the GIMI Think Tank, and a worldwide community of peers.</p></div>
     </div>
-    <div class="sub-h">Our impact</div>
-    <div class="stats">
-      <div class="stat"><strong>116</strong><span>Countries reached</span></div>
-      <div class="stat"><strong>1,600+</strong><span>Corporations served</span></div>
-      <div class="stat"><strong>140+</strong><span>Universities engaged</span></div>
-      <div class="stat"><strong>18,000+</strong><span>Innovators in the network</span></div>
+    <div class="sub-h">Trusted by leading organizations worldwide</div>
+    <div class="trusted-wall">
+      <div class="name-chip">HSBC</div><div class="name-chip">Pfizer</div><div class="name-chip">P&amp;G</div><div class="name-chip">IBM</div>
+      <div class="name-chip">Philips</div><div class="name-chip">Verizon</div><div class="name-chip">Johnson Controls</div><div class="name-chip">Cigna</div>
+      <div class="name-chip">Roche</div><div class="name-chip">Haier</div><div class="name-chip">Bank Muscat</div><div class="name-chip">Ecopetrol</div>
     </div>
-    <p class="trusted">Trusted by <strong>HSBC, Pfizer, P&amp;G, IBM, Philips, and Verizon.</strong></p>
   </section>
 
   <section class="section alt" id="two-ways">
@@ -358,34 +383,71 @@ footer strong { color:rgba(255,255,255,0.85); }
   <section class="section" id="certified">
     <div class="section-label">Certified Partner</div>
     <h2>Build an innovation practice on a global standard.</h2>
-    <div class="two-col">
-      <div>
-        <div class="sub-h" style="margin-top:0">Who it is for</div>
-        <ul class="check-list">
-          <li>Organizations that sell and deliver innovation services and want a proven methodology and global brand</li>
-          <li>Partners with a genuine passion for innovation</li>
-          <li>Partners who understand local market needs and the global context</li>
-          <li>Partners with access to the business community, government, or universities</li>
-          <li>Partners with the capability to sell</li>
+
+    <div class="sub-h" style="margin-top:8px">Who it is for</div>
+    <div class="who-grid">
+      <div class="who-card">Organizations that sell and deliver innovation services and want a proven methodology and global brand</div>
+      <div class="who-card">Partners with a genuine passion for innovation</div>
+      <div class="who-card">Partners who understand local market needs and the global context</div>
+      <div class="who-card">Partners with access to the business community, government, or universities</div>
+      <div class="who-card">Partners with the capability to sell</div>
+    </div>
+
+    <div class="sub-h" style="margin-top:40px">What you can do &mdash; and where you can focus</div>
+    <p class="lead" style="margin-bottom:24px">As a Certified Partner you can deliver GIMI's full portfolio. Most partners focus on one of these three areas first, then expand:</p>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="wnum">1</div>
+        <h3>Inspire, Assess &amp; Focus</h3>
+        <div class="wsub">Win the room and set the direction</div>
+        <ul>
+          <li>Innovation Keynote Speech</li>
+          <li>Innovation Potential Assessment (IPA)</li>
+          <li>Organizational Innovation Assessment (OIA)</li>
+          <li>Innovation Strategy Workshop</li>
         </ul>
       </div>
-      <div>
-        <div class="sub-h" style="margin-top:0">The work you can do</div>
-        <ul class="check-list">
-          <li><strong>Inspire, assess, and focus:</strong> keynote, IPA, OIA, and strategy workshop</li>
-          <li><strong>Drive breakthrough results:</strong> Open Innovation Accelerator, idea crowdsourcing, project acceleration, and service and process improvement</li>
-          <li><strong>Build lasting capability:</strong> Innovation Academy, GIMI certifications, Innovation Management System, and coaching and tools such as AKAIO and Eureka</li>
+      <div class="work-card">
+        <div class="wnum">2</div>
+        <h3>Drive Breakthrough Results</h3>
+        <div class="wsub">Turn strategy into concrete outcomes</div>
+        <ul>
+          <li>Open Innovation Accelerator</li>
+          <li>Idea Crowdsourcing</li>
+          <li>Project Acceleration</li>
+          <li>Service &amp; Process Improvement</li>
+        </ul>
+      </div>
+      <div class="work-card">
+        <div class="wnum">3</div>
+        <h3>Build Lasting Capability</h3>
+        <div class="wsub">Embed innovation for the long term</div>
+        <ul>
+          <li>Innovation Academy</li>
+          <li>GIMI Certifications</li>
+          <li>Innovation Management System</li>
+          <li>Coaching &amp; tools (AKAIO, Eureka)</li>
         </ul>
       </div>
     </div>
-    <div class="sub-h">Who you serve</div>
+
+    <div class="sub-h" style="margin-top:40px">Who you serve</div>
     <div class="two-col">
-      <div class="serve-card"><h4>Corporations</h4><p>HSBC, Pfizer, P&amp;G, IBM, Philips, Verizon, Johnson Controls, Cigna, Roche, Haier, Bank Muscat, and Ecopetrol.</p></div>
-      <div class="serve-card"><h4>Governments &amp; public sector</h4><p>Dubai government entities, Qatar ministries, Lesotho Revenue Authority, Saudi Aramco, EDB Singapore, and King Abdullah II Center for Excellence.</p></div>
+      <div class="serve-card">
+        <h4>Corporations</h4>
+        <p class="need">Enterprises that need to build a repeatable innovation capability, accelerate growth, and systematize innovation across business units &mdash; turning strategy into measurable results.</p>
+        <p class="eg"><strong>Examples:</strong> HSBC, Pfizer, P&amp;G, IBM, Philips, Verizon, Johnson Controls, Cigna, Roche, Haier, Bank Muscat, Ecopetrol.</p>
+      </div>
+      <div class="serve-card">
+        <h4>Governments &amp; public sector</h4>
+        <p class="need">Ministries and public bodies that need to diversify their economies, modernize services, and build national innovation ecosystems and talent.</p>
+        <p class="eg"><strong>Examples:</strong> Dubai government entities, Qatar ministries, Lesotho Revenue Authority, Saudi Aramco, EDB Singapore, King Abdullah II Center for Excellence.</p>
+      </div>
     </div>
-    <div class="sub-h">Our Certified Partners</div>
-    <p style="font-size:14.5px;color:var(--gray);margin-bottom:6px">A global network across more than 100 countries.</p>
-    <div class="name-grid" id="certPartners"></div>
+
+    <div class="sub-h" style="margin-top:40px">Our Certified Partners</div>
+    <div class="marquee-head">Active in 33+ countries</div>
+    <div class="marquee" id="certPartners"></div>
   </section>
 
   <section class="section alt" id="university">
@@ -393,15 +455,49 @@ footer strong { color:rgba(255,255,255,0.85); }
       <div class="section-label">University Partner</div>
       <h2>Lead on innovation in academia.</h2>
       <p class="lead">For universities, business schools, and academic innovation centers that want to credential students and faculty and lead on innovation.</p>
+
       <div class="sub-h">What you can do for your institution</div>
-      <ul class="check-list">
-        <li><strong>Credential students and faculty:</strong> embed GIMI certifications (ISO 17024-accredited) and certify faculty to teach and assess</li>
-        <li><strong>Bring real-world innovation learning:</strong> action-learning challenges and an Open Innovation Accelerator with corporate sponsors</li>
-        <li><strong>Elevate faculty and research:</strong> publish in the International Journal of Innovation Science, compete for editor seats, speak at the Think Tank, and contribute to the IMBOK</li>
-        <li><strong>Structure your own innovation efforts:</strong> assess and roadmap maturity, stand up an Innovation Academy, and join the global GIMI network</li>
-      </ul>
-      <div class="sub-h">Universities in the GIMI network</div>
-      <div class="name-grid" id="universities"></div>
+      <p class="lead" style="margin-bottom:24px">Each of these directly addresses an academic need &mdash; from credentialing talent to elevating research and structuring your own innovation efforts:</p>
+      <div class="work-grid-2">
+        <div class="work-card">
+          <div class="wnum">1</div>
+          <h3>Credential students &amp; faculty</h3>
+          <ul>
+            <li>Embed GIMI certifications (ISO 17024-accredited)</li>
+            <li>Certify faculty to teach and assess</li>
+          </ul>
+        </div>
+        <div class="work-card">
+          <div class="wnum">2</div>
+          <h3>Bring real-world innovation learning</h3>
+          <ul>
+            <li>Action-learning challenges</li>
+            <li>Open Innovation Accelerator with corporate sponsors</li>
+          </ul>
+        </div>
+        <div class="work-card">
+          <div class="wnum">3</div>
+          <h3>Elevate faculty &amp; research</h3>
+          <ul>
+            <li>Publish in the International Journal of Innovation Science</li>
+            <li>Compete for editor seats &amp; speak at the Think Tank</li>
+            <li>Contribute to the IMBOK</li>
+          </ul>
+        </div>
+        <div class="work-card">
+          <div class="wnum">4</div>
+          <h3>Structure your own innovation efforts</h3>
+          <ul>
+            <li>Assess and roadmap your maturity</li>
+            <li>Stand up an Innovation Academy</li>
+            <li>Join the global GIMI network</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub-h" style="margin-top:40px">Universities in the GIMI network</div>
+      <div class="marquee-head">Leading institutions worldwide</div>
+      <div class="marquee" id="universities"></div>
     </div>
   </section>
 
@@ -1572,8 +1668,13 @@ function selectSub(btn, label) {
 /* Partner network name grids */
 const CERT_PARTNERS = ['SIA Partners','KACE','UCOTRA','IXL Italy','Innovate AS','Grupo Alva','Easy Ltd','Earn International','Doracrea','TDM Internacional','IXL Center US','Innavise','Smart Connections','IXL Brazil','IXL Colombia','Sandbox','Clarus Consulting','Embiggen Consulting','SBM-ITB','Hong Kong Innovation Management Institute','IXL Korea','Sira Innovation','Triangle Partners','Kavoo Agency'];
 const UNIVERSITIES = ['INSEAD','Hult International Business School','Bocconi','Rotman School of Management (U. of Toronto)','Thunderbird School of Global Management','Tecnologico de Monterrey','INCAE Business School','University of Miami','Worcester Polytechnic Institute','Yonsei University','Fundacao Dom Cabral','CESA','Universidad de La Sabana'];
-document.getElementById('certPartners').innerHTML = CERT_PARTNERS.map(n => `<div class="name-chip">${n}</div>`).join('');
-document.getElementById('universities').innerHTML = UNIVERSITIES.map(n => `<div class="name-chip">${n}</div>`).join('');
+/* Render as an auto-scrolling slideshow (chips duplicated for a seamless loop). */
+function marqueeTrack(arr) {
+  const chips = arr.map(n => `<div class="name-chip">${n}</div>`).join('');
+  return `<div class="marquee-track">${chips}${chips}</div>`;
+}
+document.getElementById('certPartners').innerHTML = marqueeTrack(CERT_PARTNERS);
+document.getElementById('universities').innerHTML = marqueeTrack(UNIVERSITIES);
 renderNav();
 </script>
 </body>
