@@ -301,8 +301,10 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-about .section h2 { font-size:30px; color:var(--navy); font-weight:800; line-height:1.15; margin-bottom:14px; letter-spacing:-0.4px; }
 #view-about .lead { font-size:17px; color:var(--gray); margin-bottom:34px; max-width:760px; }
 /* Mission / Vision / History */
-#view-about .mvh-grid { display:flex; flex-direction:column; gap:18px; }
-#view-about .mvh-card { display:grid; grid-template-columns:240px 1fr; gap:32px; align-items:center; background:#fff; border:1px solid var(--border); border-left:5px solid var(--teal); border-radius:16px; padding:28px 34px; box-shadow:0 4px 16px rgba(27,31,59,0.05); }
+#view-about .mvh-grid { display:flex; flex-direction:column; gap:22px; align-items:flex-start; }
+#view-about .mvh-card { width:80%; display:grid; grid-template-columns:240px 1fr; gap:32px; align-items:center; background:#fff; border:1px solid var(--border); border-left:5px solid var(--teal); border-radius:16px; padding:28px 34px; box-shadow:0 4px 16px rgba(27,31,59,0.05); }
+#view-about .mvh-card:nth-child(even) { align-self:flex-end; grid-template-columns:1fr 240px; border-left:none; border-right:5px solid var(--teal); }
+#view-about .mvh-card:nth-child(even) .mvh-head { order:2; text-align:right; }
 #view-about .mvh-card .kicker { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:6px; }
 #view-about .mvh-card h3 { font-size:23px; color:var(--navy); font-weight:800; line-height:1.2; margin:0; }
 #view-about .mvh-card p { font-size:15.5px; color:var(--text); line-height:1.65; margin:0; }
@@ -319,6 +321,9 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-about .why-card ul { list-style:none; display:grid; gap:9px; }
 #view-about .why-card li { position:relative; padding-left:22px; font-size:14px; color:var(--text); line-height:1.5; }
 #view-about .why-card li::before { content:''; position:absolute; left:0; top:8px; width:8px; height:8px; border-radius:50%; background:var(--teal); }
+#view-about .why-highlight { display:flex; gap:11px; align-items:flex-start; background:var(--teal-light); border:1px solid #CDEBED; border-radius:11px; padding:12px 14px; margin:0 0 16px; }
+#view-about .why-highlight svg { flex:none; width:19px; height:19px; color:var(--teal-dark); margin-top:1px; }
+#view-about .why-highlight span { font-size:14px; font-weight:700; color:var(--navy); line-height:1.4; }
 /* Reach numbers band */
 #view-about .reach { background:var(--navy); }
 #view-about .reach .section { padding-top:48px; padding-bottom:48px; }
@@ -333,6 +338,9 @@ footer strong { color:rgba(255,255,255,0.85); }
 /* Leadership */
 #view-about .lead-group { margin-top:30px; }
 #view-about .lead-group:first-of-type { margin-top:8px; }
+#view-about .lead-duo { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:8px; }
+#view-about .lead-duo .lead-group { margin-top:0; }
+#view-about .lead-duo .people-grid { grid-template-columns:1fr 1fr; }
 #view-about .lead-group h3 { font-size:15px; font-weight:800; color:var(--navy); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
 #view-about .lead-group h3::after { content:''; flex:1; height:1px; background:var(--border); }
 #view-about .name-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
@@ -358,7 +366,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-about .contact-form input:focus, #view-about .contact-form textarea:focus { outline:none; border-color:var(--teal); background:#fff; box-shadow:0 0 0 3px var(--teal-light); }
 #view-about .ab-btn { display:inline-block; margin-top:18px; padding:13px 26px; border-radius:10px; font-size:15px; font-weight:700; border:none; cursor:pointer; background:var(--teal); color:#fff; font-family:inherit; transition:all 0.2s; }
 #view-about .ab-btn:hover { background:var(--teal-dark); transform:translateY(-1px); box-shadow:0 8px 22px rgba(42,172,181,0.3); }
-@media (max-width:900px){ #view-about .why-grid,#view-about .contact-grid{grid-template-columns:1fr;} #view-about .mvh-card{grid-template-columns:1fr; gap:12px; align-items:start;} #view-about .reach-grid{grid-template-columns:repeat(3,1fr);} #view-about .gallery{grid-template-columns:repeat(2,1fr);} #view-about .name-grid{grid-template-columns:repeat(2,1fr);} #view-about .people-grid{grid-template-columns:repeat(2,1fr);} #view-about .ab-hero h1{font-size:31px;} #view-about .section h2{font-size:25px;} }
+@media (max-width:900px){ #view-about .why-grid,#view-about .contact-grid,#view-about .lead-duo{grid-template-columns:1fr;} #view-about .mvh-card,#view-about .mvh-card:nth-child(even){width:100%; align-self:stretch; grid-template-columns:1fr; gap:12px; align-items:start; border-right:none; border-left:5px solid var(--teal);} #view-about .mvh-card:nth-child(even) .mvh-head{order:0; text-align:left;} #view-about .reach-grid{grid-template-columns:repeat(3,1fr);} #view-about .gallery{grid-template-columns:repeat(2,1fr);} #view-about .name-grid{grid-template-columns:repeat(2,1fr);} #view-about .people-grid{grid-template-columns:repeat(2,1fr);} #view-about .ab-hero h1{font-size:31px;} #view-about .section h2{font-size:25px;} }
 </style>
 </head>
 <body>
@@ -455,21 +463,20 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="why-card">
           <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 10h16M5 21V10M19 21V10M9 21V10M15 21V10M12 3 4 7v3h16V7l-8-4Z"/></svg></div><div><div class="why-cat">Authority</div><h3>Standards leadership and institutional authority</h3></div></div>
           <p class="why-sub">What makes GIMI structurally unique in the global system.</p>
+          <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>The only organization globally accredited under ISO/IEC 17024 for innovation personnel certification.</span></div>
           <ul>
             <li>Lead driver of the ISO 56000 series through leadership and advisory roles</li>
-            <li>The only organization globally accredited under ISO/IEC 17024 for innovation personnel certification</li>
             <li>Licensed by ANSI to sell ISO standards</li>
-            <li>Methodology independently audited and endorsed as ISO 56002+ (exceeds standard guidelines)</li>
+            <li>Methodology independently audited and endorsed as ISO 56002+</li>
             <li>Leadership includes the founders of the US ISO Technical Advisory Group for Innovation</li>
-            <li>The largest global innovation certification body following the IAOIP acquisition</li>
           </ul>
         </div>
         <div class="why-card">
           <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 12l10 5 10-5M2 17l10 5 10-5"/></svg></div><div><div class="why-cat">Methodology</div><h3>Proprietary capability system (ISO+)</h3></div></div>
           <p class="why-sub">How GIMI delivers innovation, beyond standards.</p>
+          <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>Built on three pillars: Strategy, Capacity, Discipline.</span></div>
           <ul>
             <li>The High-Performance Innovation (HPI) framework, a structured, actionable system</li>
-            <li>Built on three pillars: Strategy, Capacity, Discipline</li>
             <li>A common language for innovation across organizations</li>
             <li>Goes beyond compliance into execution (ISO+)</li>
             <li>Makes innovation repeatable, scalable and measurable</li>
@@ -478,18 +485,19 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="why-card">
           <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.83 2.83-2-2 2.83-2.83Z"/></svg></div><div><div class="why-cat">Execution</div><h3>Execution model and learning experience</h3></div></div>
           <p class="why-sub">How GIMI ensures real-world outcomes, not just knowledge.</p>
+          <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>"Show and Tell": every learner ships a real output, not just theory.</span></div>
           <ul>
             <li>Action-oriented pedagogy based on the "do vs. learn" principle</li>
-            <li>"Show and Tell" methodology requiring tangible outputs such as prototypes and business cases</li>
+            <li>Tangible outputs such as prototypes and business cases</li>
             <li>Education 4.0 approach: micro-learning, gamification and problem-based learning</li>
-            <li>Focus on real business challenges and implementation, not theory</li>
+            <li>Focus on real business challenges and implementation</li>
           </ul>
         </div>
         <div class="why-card">
           <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><div><div class="why-cat">Ecosystem</div><h3>Product ecosystem and scalable programs</h3></div></div>
           <p class="why-sub">What GIMI offers across segments, and how it scales.</p>
+          <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>One portfolio from youth (GIMI Impact) to C-suite (CCIO).</span></div>
           <ul>
-            <li>End-to-end portfolio from students to executives, from GIMI Impact (youth) to CCIO (C-suite)</li>
             <li>Turnkey programs designed for immediate deployment</li>
             <li>Adaptable to corporations, governments, SMEs and universities</li>
             <li>Proven at scale through the 10X Program (Colombia) and Innovation Olympics</li>
@@ -498,9 +506,10 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="why-card">
           <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div><div><div class="why-cat">Technology</div><h3>Technology and AI-driven infrastructure</h3></div></div>
           <p class="why-sub">The digital layer enabling speed and scale.</p>
+          <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>AI-powered platforms: Akaio and Eureka Online.</span></div>
           <ul>
-            <li>Akaio, an AI-powered ecosystem for managing innovation</li>
-            <li>Eureka Online, an end-to-end innovation workflow platform</li>
+            <li>Akaio explores hidden trends, future scenarios and partner matching</li>
+            <li>Eureka Online runs the end-to-end innovation workflow</li>
             <li>Automated diagnostics: the Innovation Potential Assessment and Innovation Mindset Index</li>
             <li>Faster, cheaper, more scalable innovation execution</li>
           </ul>
@@ -508,9 +517,9 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="why-card">
           <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><div><div class="why-cat">Reach</div><h3>Global ecosystem, reach and partnerships</h3></div></div>
           <p class="why-sub">The scale of influence and network effects.</p>
+          <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>18,000+ professionals across 100+ countries and 6 continents.</span></div>
           <ul>
-            <li>18,000+ certified professionals and 1,200+ certified organizations</li>
-            <li>Presence across 6 continents and 100+ countries</li>
+            <li>1,200+ certified organizations worldwide</li>
             <li>Partnerships with governments (Colombia, UAE, Brazil), corporations (NASA, P&amp;G, IBM) and universities, including Ivy League</li>
             <li>50+ strategic partners and a global training network</li>
             <li>Collaboration with Emerald Publishing for the International Journal of Innovation Science</li>
@@ -519,8 +528,8 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="why-card">
           <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2V4ZM22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22V4Z"/></svg></div><div><div class="why-cat">Knowledge</div><h3>Thought leadership and knowledge platforms</h3></div></div>
           <p class="why-sub">How GIMI shapes the field intellectually.</p>
+          <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>Publisher of the International Journal of Innovation Science.</span></div>
           <ul>
-            <li>Publisher of the International Journal of Innovation Science (IJIS)</li>
             <li>A global think tank and speaker bureau of innovation leaders</li>
             <li>Continuous research and content in innovation management</li>
             <li>Helps shape global innovation discourse and standards</li>
@@ -529,9 +538,9 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="why-card">
           <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"/></svg></div><div><div class="why-cat">Moat</div><h3>Market position and competitive moat</h3></div></div>
           <p class="why-sub">Why GIMI is difficult to replicate.</p>
+          <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>The only body combining ISO authority, methodology, tools and global scale.</span></div>
           <ul>
             <li>The largest and most established innovation certification ecosystem globally</li>
-            <li>The only organization combining ISO authority, scalable methodology, digital tools and global deployment</li>
             <li>No open-market competitor with comparable tools, frameworks and certification credibility</li>
             <li>Strong first-mover advantage and institutional legitimacy</li>
           </ul>
@@ -577,18 +586,20 @@ footer strong { color:rgba(255,255,255,0.85); }
       <div class="section-label">Leadership</div>
       <h2>The innovators behind GIMI.</h2>
       <p class="lead">Our Chairmen, Board of Directors and Advisory Commission, the innovators who spread innovation around the globe.</p>
-      <div class="lead-group">
-        <h3>Chairmen</h3>
-        <div class="people-grid">
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/ron-jonash.jpg?v=4" alt="Ron Jonash"><div class="pname">Ron Jonash</div></div>
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/brett-trusko.jpg?v=4" alt="Brett Trusko"><div class="pname">Brett Trusko</div></div>
+      <div class="lead-duo">
+        <div class="lead-group">
+          <h3>Chairmen</h3>
+          <div class="people-grid">
+            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/ron-jonash.jpg?v=4" alt="Ron Jonash"><div class="pname">Ron Jonash</div></div>
+            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/brett-trusko.jpg?v=4" alt="Brett Trusko"><div class="pname">Brett Trusko</div></div>
+          </div>
         </div>
-      </div>
-      <div class="lead-group">
-        <h3>Board of Directors</h3>
-        <div class="people-grid">
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/mark-fuller.jpg?v=4" alt="Mark Fuller"><div class="pname">Mark Fuller</div></div>
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/bill-achtmeyer.webp?v=4" alt="Bill Achtmeyer"><div class="pname">Bill Achtmeyer</div></div>
+        <div class="lead-group">
+          <h3>Board of Directors</h3>
+          <div class="people-grid">
+            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/mark-fuller.jpg?v=4" alt="Mark Fuller"><div class="pname">Mark Fuller</div></div>
+            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/bill-achtmeyer.webp?v=4" alt="Bill Achtmeyer"><div class="pname">Bill Achtmeyer</div></div>
+          </div>
         </div>
       </div>
       <div class="lead-group">
