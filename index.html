@@ -409,20 +409,20 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-home .hm-section h2 { font-size:32px; color:var(--navy); font-weight:800; line-height:1.15; letter-spacing:-0.5px; margin-bottom:14px; }
 #view-home .hm-lead { font-size:17px; color:var(--gray); line-height:1.6; margin-bottom:30px; max-width:760px; }
 /* watch */
-#view-home .hm-watch-grid { display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; }
+#view-home .hm-watch-grid { display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start; }
+#view-home .hm-watch-text { padding-top:4px; }
+#view-home .hm-watch-text .hm-lead { margin-bottom:22px; }
 #view-home .hm-video { position:relative; aspect-ratio:16/9; border-radius:18px; overflow:hidden; box-shadow:0 16px 40px rgba(27,31,59,0.16); background:var(--navy); }
 #view-home .hm-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
 /* about teaser */
 #view-home .hm-about-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:stretch; }
 #view-home .hm-about-grid > div:first-child p { font-size:16px; color:var(--text); line-height:1.7; margin-bottom:16px; }
 #view-home .hm-sidenote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--yellow); border-radius:14px; padding:28px 26px; box-shadow:0 4px 16px rgba(27,31,59,0.05); display:flex; flex-direction:column; justify-content:center; gap:18px; }
-#view-home .hm-iaoip-badge { display:flex; align-items:center; gap:13px; }
-#view-home .hm-iaoip-mark { width:50px; height:50px; border-radius:12px; background:var(--navy); color:#fff; font-size:13px; font-weight:800; letter-spacing:0.5px; display:flex; align-items:center; justify-content:center; flex:none; }
-#view-home .hm-iaoip-name { font-size:13px; font-weight:700; color:var(--navy); line-height:1.35; }
+#view-home .hm-iaoip-logo { width:100%; max-width:330px; height:auto; display:block; }
 #view-home .hm-sidenote-eyebrow { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:10px; }
 #view-home .hm-sidenote p { font-size:14.5px; color:var(--text); line-height:1.6; margin:0; }
-#view-home .hm-tlogos { display:flex; gap:8px; margin-top:16px; flex-wrap:wrap; }
-#view-home .hm-tlogos img { width:40px; height:40px; object-fit:contain; background:#fff; border:1px solid var(--border); border-radius:8px; padding:4px; }
+#view-home .hm-tlogos { display:flex; gap:9px; margin-top:18px; flex-wrap:wrap; }
+#view-home .hm-tlogos img { width:48px; height:48px; object-fit:contain; background:#fff; border:1px solid var(--border); border-radius:9px; padding:5px; }
 #view-home .hm-panel-cta { display:flex; gap:12px; flex-wrap:wrap; }
 #view-home .hm-panel .hm-btn.ghost-light { background:transparent; color:#fff; border-color:rgba(255,255,255,0.45); }
 #view-home .hm-panel .hm-btn.ghost-light:hover { border-color:#fff; background:rgba(255,255,255,0.10); }
@@ -566,10 +566,11 @@ footer strong { color:rgba(255,255,255,0.85); }
   <!-- WATCH -->
   <section class="hm-section">
     <div class="hm-watch-grid">
-      <div>
+      <div class="hm-watch-text">
         <div class="hm-section-label">Watch</div>
         <h2>Innovation, made a discipline.</h2>
-        <p class="hm-lead">See how GIMI is democratizing innovation across the globe to increase impact by 10X.</p>
+        <p class="hm-lead">See how GIMI is democratizing innovation across the globe to increase impact by 10X. In under two minutes, meet the institute, its standards, and the global community turning innovation into a measurable, certifiable discipline.</p>
+        <a class="hm-btn solid" href="https://youtu.be/j_BBU6T0LuQ" target="_blank" rel="noopener">Watch on YouTube</a>
       </div>
       <div class="hm-video"><iframe src="https://www.youtube.com/embed/j_BBU6T0LuQ" title="Watch the GIMI intro" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
     </div>
@@ -587,10 +588,7 @@ footer strong { color:rgba(255,255,255,0.85); }
           <button class="hm-btn solid" onclick="selectSection('about')">Learn about GIMI</button>
         </div>
         <aside class="hm-sidenote">
-          <div class="hm-iaoip-badge">
-            <span class="hm-iaoip-mark">IAOIP</span>
-            <span class="hm-iaoip-name">International Association of Innovation Professionals</span>
-          </div>
+          <img class="hm-iaoip-logo" src="gimi-store-assets/gimi-iaoip-lockup.png?v=4" alt="GIMI and IAOIP">
           <div>
             <div class="hm-sidenote-eyebrow">2023 · Joining forces with IAOIP</div>
             <p>IAOIP brought a worldwide community of practitioners, the International Journal of Innovation Science, and deep involvement in ISO standards development, uniting rigorous accredited certification with an active global community.</p>
@@ -622,7 +620,6 @@ footer strong { color:rgba(255,255,255,0.85); }
     <h2>Accredited credentials for people and organizations.</h2>
     <div class="hm-teaser-grid c3">
       <div class="hm-tcard">
-        <div class="hm-ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg></div>
         <div class="hm-ttag">Core</div>
         <h3>Innovation Core</h3>
         <p>The Certified Innovation Professional program, at Associate and Master levels. Start with Level 1.</p>
@@ -634,7 +631,6 @@ footer strong { color:rgba(255,255,255,0.85); }
         </div>
       </div>
       <div class="hm-tcard">
-        <div class="hm-ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <div class="hm-ttag">Foresight</div>
         <h3>Future Foresight</h3>
         <p>Strategic foresight and futures thinking for long-term direction.</p>
@@ -645,7 +641,6 @@ footer strong { color:rgba(255,255,255,0.85); }
         </div>
       </div>
       <div class="hm-tcard">
-        <div class="hm-ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
         <div class="hm-ttag">Organizational</div>
         <h3>Company &amp; Government</h3>
         <p>Certify your organization's innovation capability and maturity.</p>
@@ -665,28 +660,42 @@ footer strong { color:rgba(255,255,255,0.85); }
       <h2>Build innovation capability at every level.</h2>
       <div class="hm-teaser-grid c4">
         <div class="hm-tcard">
-          <div class="hm-ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
           <div class="hm-ttag">Assess</div>
           <h3>Assessments</h3>
           <p>Benchmark innovation capability for people and organizations.</p>
+          <div class="hm-tlogos">
+            <img src="gimi-store-assets/v2/ipa-individual.png?v=20260612-2" alt="IPA Individual">
+            <img src="gimi-store-assets/v2/ipa-corporate.png?v=20260612-2" alt="IPA Corporate">
+            <img src="gimi-store-assets/v2/full-oia.png?v=20260612-2" alt="Organizational Innovation Assessment">
+          </div>
         </div>
         <div class="hm-tcard">
-          <div class="hm-ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></div>
           <div class="hm-ttag">Learn</div>
           <h3>Training</h3>
           <p>Build practical innovation skills through GIMI programs.</p>
+          <div class="hm-tlogos">
+            <img src="gimi-store-assets/v2/cip-mc.png?v=20260612-2" alt="CIP Masterclass">
+            <img src="gimi-store-assets/v2/ccio-mc.png?v=20260612-2" alt="CCIO Masterclass">
+            <img src="gimi-store-assets/v2/academy.png?v=20260612-2" alt="Digital Academy">
+          </div>
         </div>
         <div class="hm-tcard">
-          <div class="hm-ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5 3 21l4.5-1.5M12 15l-3-3 8-8 3 3-8 8ZM15 6l3 3"/></svg></div>
           <div class="hm-ttag">Grow</div>
           <h3>Accelerators</h3>
           <p>Accelerate ventures and corporate innovation initiatives.</p>
+          <div class="hm-tlogos">
+            <img src="gimi-store-assets/v2/akaio.png?v=20260612-2" alt="AKAIO">
+            <img src="gimi-store-assets/v2/eureka.png?v=20260612-2" alt="Eureka">
+          </div>
         </div>
         <div class="hm-tcard">
-          <div class="hm-ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
           <div class="hm-ttag">Guide</div>
           <h3>Coaching</h3>
           <p>Work with certified innovation advisors and coaches.</p>
+          <div class="hm-tlogos">
+            <img src="gimi-store-assets/v2/coaching.png?v=20260612-2" alt="Innovation Coaching">
+            <img src="gimi-store-assets/v2/speech.png?v=20260612-2" alt="Innovation Keynote">
+          </div>
         </div>
       </div>
       <div class="hm-seeall"><button class="hm-btn solid" onclick="selectSection('programs')">See all programs</button></div>
