@@ -266,12 +266,12 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-partner .who-card { background:#fff; border:1px solid var(--border); border-top:3px solid var(--teal); border-radius:12px; padding:18px 16px; font-size:13.5px; color:var(--text); line-height:1.45; box-shadow:0 2px 10px rgba(27,31,59,0.04); }
 /* work-you-can-do — the centerpiece: 3 buckets a partner can deliver */
 #view-partner .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-#view-partner .work-card { background:#fff; border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:16px; padding:26px; box-shadow:0 8px 24px rgba(27,31,59,0.07); }
-#view-partner .work-card .wnum { width:40px; height:40px; border-radius:11px; background:var(--teal); color:#fff; font-weight:800; font-size:15px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+#view-partner .work-card { background:#fff; border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:16px; padding:26px; box-shadow:0 8px 24px rgba(27,31,59,0.07); display:grid; grid-template-columns:auto 1fr; column-gap:14px; align-items:center; }
+#view-partner .work-card .wnum { width:40px; height:40px; border-radius:11px; background:var(--teal); color:#fff; font-weight:800; font-size:15px; display:flex; align-items:center; justify-content:center; flex:none; grid-column:1; grid-row:1; }
 #view-partner .work-card .wnum svg { width:22px; height:22px; }
-#view-partner .work-card h3 { font-size:18px; color:var(--navy); font-weight:800; margin-bottom:5px; line-height:1.25; }
-#view-partner .work-card .wsub { font-size:12.5px; color:var(--teal-dark); font-weight:700; margin-bottom:14px; }
-#view-partner .work-card ul { list-style:none; display:grid; gap:9px; }
+#view-partner .work-card h3 { font-size:18px; color:var(--navy); font-weight:800; margin:0; line-height:1.25; grid-column:2; grid-row:1; }
+#view-partner .work-card .wsub { font-size:12.5px; color:var(--teal-dark); font-weight:700; margin:3px 0 0; grid-column:2; grid-row:2; }
+#view-partner .work-card ul { list-style:none; display:grid; gap:9px; grid-column:1 / -1; margin-top:14px; }
 #view-partner .work-card li { position:relative; padding-left:18px; font-size:13.5px; color:var(--text); line-height:1.45; }
 #view-partner .work-card li::before { content:''; position:absolute; left:0; top:7px; width:6px; height:6px; border-radius:50%; background:var(--teal); }
 /* serve cards with needs */
@@ -376,6 +376,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-about .person .avatar { width:88px; height:88px; border-radius:50%; object-fit:cover; object-position:top center; display:block; margin:0 auto 13px; background:var(--gray-light); border:3px solid var(--teal-light); }
 #view-about .person .avatar.ph { display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:800; color:var(--teal-dark); background:var(--teal-light); }
 #view-about .person .pname { font-size:14.5px; font-weight:700; color:var(--navy); line-height:1.3; }
+#view-about .person .prole { font-size:11.5px; font-weight:600; color:var(--gray); line-height:1.35; margin-top:5px; }
 /* Contact */
 #view-about .contact-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:36px; align-items:start; }
 #view-about .contact-info dt { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-top:18px; }
@@ -434,7 +435,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 /* about teaser */
 #view-home .hm-about-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center; }
 #view-home .hm-about-grid > div:first-child p { font-size:16px; color:var(--text); line-height:1.7; margin-bottom:16px; }
-#view-home .hm-sidenote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--yellow); border-radius:14px; padding:30px 26px; box-shadow:0 4px 16px rgba(27,31,59,0.05); display:flex; flex-direction:column; justify-content:flex-start; gap:20px; }
+#view-home .hm-sidenote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:14px; padding:30px 26px; box-shadow:0 4px 16px rgba(27,31,59,0.05); display:flex; flex-direction:column; justify-content:flex-start; gap:20px; }
 #view-home .hm-iaoip-logo { width:100%; max-width:320px; height:auto; display:block; margin:0 auto; }
 #view-home .hm-tlogo-ph { width:48px; height:48px; flex:none; border:1px solid var(--border); border-radius:9px; display:flex; align-items:center; justify-content:center; background:var(--teal-light); color:var(--teal-dark); }
 #view-home .hm-tlogo-ph svg { width:26px; height:26px; }
@@ -935,29 +936,29 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="lead-group">
           <h3>Chairmen</h3>
           <div class="people-grid">
-            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/ron-jonash.jpg?v=4" alt="Ron Jonash"><div class="pname">Ron Jonash</div></div>
-            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/brett-trusko.jpg?v=4" alt="Brett Trusko"><div class="pname">Brett Trusko</div></div>
+            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/ron-jonash.jpg?v=4" alt="Ron Jonash"><div class="pname">Ron Jonash</div><div class="prole">Chairman · ex-Arthur D. Little</div></div>
+            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/brett-trusko.jpg?v=4" alt="Brett Trusko"><div class="pname">Brett Trusko</div><div class="prole">Founder &amp; President, IAOIP · US ISO TAG</div></div>
           </div>
         </div>
         <div class="lead-group">
           <h3>Board of Directors</h3>
           <div class="people-grid">
-            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/mark-fuller.jpg?v=4" alt="Mark Fuller"><div class="pname">Mark Fuller</div></div>
-            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/bill-achtmeyer.webp?v=4" alt="Bill Achtmeyer"><div class="pname">Bill Achtmeyer</div></div>
+            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/mark-fuller.jpg?v=4" alt="Mark Fuller"><div class="pname">Mark Fuller</div><div class="prole">Executive Director · Founder, Monitor Group (now Monitor Deloitte)</div></div>
+            <div class="person"><img class="avatar" src="gimi-store-assets/leadership/bill-achtmeyer.webp?v=4" alt="Bill Achtmeyer"><div class="pname">Bill Achtmeyer</div><div class="prole">Founder &amp; Chairman, The Parthenon Group</div></div>
           </div>
         </div>
       </div>
       <div class="lead-group">
         <h3>Advisory Committee</h3>
         <div class="people-grid">
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/brett-trusko.jpg?v=4" alt="Brett Trusko"><div class="pname">Brett Trusko</div></div>
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/carolina-chitiva.jpg?v=4" alt="Carolina Chitiva"><div class="pname">Carolina Chitiva</div></div>
-          <div class="person"><div class="avatar ph">DG</div><div class="pname">Daniel Gonzaga</div></div>
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/silvio-bitencourt.jpg?v=4" alt="Silvio Bitencourt"><div class="pname">Silvio Bitencourt</div></div>
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/kalpana-majumdar.jpg?v=4" alt="Kalpana Majumdar"><div class="pname">Kalpana Majumdar</div></div>
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/massimo-andriolo.jpg?v=4" alt="Massimo Andriolo"><div class="pname">Massimo Andriolo</div></div>
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/cesar-moukarzel.jpg?v=4" alt="Cesar Moukarzel"><div class="pname">Cesar Moukarzel</div></div>
-          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/joseph-pique.jpg?v=4" alt="Joseph Pique"><div class="pname">Joseph Pique</div></div>
+          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/brett-trusko.jpg?v=4" alt="Brett Trusko"><div class="pname">Brett Trusko</div><div class="prole">Founder &amp; President, IAOIP · US ISO TAG</div></div>
+          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/carolina-chitiva.jpg?v=4" alt="Carolina Chitiva"><div class="pname">Carolina Chitiva</div><div class="prole">Title to confirm</div></div>
+          <div class="person"><div class="avatar ph">DG</div><div class="pname">Daniel Gonzaga</div><div class="prole">Title to confirm</div></div>
+          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/silvio-bitencourt.jpg?v=4" alt="Silvio Bitencourt"><div class="pname">Silvio Bitencourt</div><div class="prole">Title to confirm</div></div>
+          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/kalpana-majumdar.jpg?v=4" alt="Kalpana Majumdar"><div class="pname">Kalpana Majumdar</div><div class="prole">Title to confirm</div></div>
+          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/massimo-andriolo.jpg?v=4" alt="Massimo Andriolo"><div class="pname">Massimo Andriolo</div><div class="prole">Title to confirm</div></div>
+          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/cesar-moukarzel.jpg?v=4" alt="Cesar Moukarzel"><div class="pname">Cesar Moukarzel</div><div class="prole">Title to confirm</div></div>
+          <div class="person"><img class="avatar" src="gimi-store-assets/leadership/joseph-pique.jpg?v=4" alt="Joseph Pique"><div class="pname">Joseph Pique</div><div class="prole">Title to confirm</div></div>
         </div>
       </div>
     </div>
