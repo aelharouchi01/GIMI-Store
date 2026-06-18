@@ -494,7 +494,7 @@ footer strong { color:rgba(255,255,255,0.85); }
   </div>
 </nav>
 
-<div id="view-store" style="display:none">
+<div id="view-store">
 <section class="hero">
   <div class="hero-inner">
     <h1>Build Your <span>Innovation</span> Career</h1>
@@ -539,7 +539,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 </div>
 </div><!-- /#view-store -->
 
-<div id="view-home">
+<div id="view-home" style="display:none">
   <!-- HERO -->
   <section class="hm-hero">
     <div class="hm-hero-inner">
@@ -2298,7 +2298,7 @@ const SITE_NAV = [
   { id:'programs',     label:'Programs',          subs:['Assessments','Training / Masterclasses','Consulting','Speaker Bureau'] },
   { id:'thought',      label:'Thought Leadership',subs:['Innovation Awards','GIMI Think Tank','Books & Guides','International Journal of Innovation Science','Blog: Innovation Insights','News & Events'] },
   { id:'certificates', label:'Certificates',      subs:['Innovation Core','Innovation Elective','Future Foresight','Leadership Core','Consulting Core','Organizational Certifications'] },
-  { id:'store',        label:'Store',             subs:['Storefront','Browse by Group','Product Pages','Cart / Checkout / My Account'] },
+  { id:'store',        label:'Store',             subs:[] },
   { id:'member',       label:'Become a Member',   subs:['Membership Overview','Professional','Student','Corporate (Silver / Gold / Platinum / Platinum Plus)','Academia'] },
   { id:'partner',      label:'Become a Partner',  subs:['Why Partner with GIMI','The Two Ways to Partner','Certified Partner','University Partner','Become a Partner (apply)'] }
 ];
@@ -2311,10 +2311,13 @@ const CERT_MENU = [
   { t:'Consulting Core', items:['Management Consulting L1: Analyst','Management Consulting L2: Consultant','Management Consulting L3: Manager','Management Consulting L4: Leader'] },
   { t:'Organizational Certifications', items:['Organization Innovation Certification','Future Foresight Organizational Certification'] }
 ];
-let activeSection = 'home';   // Home is the default landing view
+/* Sections shown in the nav / reachable on the live site. Other views are
+   fully built but hidden until launch — add their ids here to publish them. */
+const PUBLISHED = ['store', 'partner'];
+let activeSection = 'store';   // default landing view while only Store + Partner are live
 function renderNav() {
-  document.getElementById('navSections').innerHTML = SITE_NAV.map(s => {
-    let dd, mega = '';
+  document.getElementById('navSections').innerHTML = SITE_NAV.filter(s => PUBLISHED.includes(s.id)).map(s => {
+    let dd = '', mega = '';
     if (s.id === 'certificates') {
       mega = ' mega';
       dd = `<div class="nav-mega">` + CERT_MENU.map(g =>
@@ -2324,7 +2327,8 @@ function renderNav() {
     } else {
       dd = s.subs.map((sub,i) => `<button class="nav-dd-item" onclick="gotoSubIdx('${s.id}',${i})">${sub}</button>`).join('');
     }
-    return `<div class="nav-item"><button class="nav-sec ${s.id===activeSection?'active':''}" onclick="selectSection('${s.id}')">${s.label}</button><div class="nav-dropdown${mega}">${dd}</div></div>`;
+    const dropdown = s.subs.length ? `<div class="nav-dropdown${mega}">${dd}</div>` : '';
+    return `<div class="nav-item"><button class="nav-sec ${s.id===activeSection?'active':''}" onclick="selectSection('${s.id}')">${s.label}</button>${dropdown}</div>`;
   }).join('');
 }
 /* Hover-dropdown subsection click: go to the section, then scroll to the sub-anchor. */
