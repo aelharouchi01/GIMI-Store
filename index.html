@@ -301,10 +301,11 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-partner .check-list.cols-2 { grid-template-columns:repeat(2,1fr); column-gap:40px; }
 /* Certified Partner: who-it-is-for + what-they-want, side by side */
 #view-partner .cert-profile { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:stretch; margin-top:8px; }
-#view-partner .cert-profile .sub-h { margin-top:0; }
+#view-partner .cert-col { display:flex; flex-direction:column; }
+#view-partner .cert-profile .sub-h { margin-top:0; margin-bottom:14px; }
 #view-partner .cert-profile .serve-card + .serve-card { margin-top:14px; }
-#view-partner .cert-looking { background:var(--gray-light); border:1px solid var(--border); border-radius:16px; padding:26px 28px; }
-#view-partner .cert-looking .check-list { margin-top:4px; }
+#view-partner .cert-looking { flex:1; background:var(--gray-light); border:1px solid var(--border); border-radius:16px; padding:24px 28px; }
+#view-partner .cert-looking .check-list { margin-top:0; }
 /* align the rows (label / need / examples) across the two 'who you serve' cards */
 #view-partner .serve-grid > .serve-card { display:grid; grid-template-rows:subgrid; grid-row:span 3; align-content:start; row-gap:0; }
 @media (max-width:900px){ #view-partner .feature-grid,#view-partner .ways-grid,#view-partner .two-col,#view-partner .cert-profile,#view-partner .work-grid,#view-partner .work-grid-2,#view-partner .check-list.cols-2,#view-partner .pt-steps{grid-template-columns:1fr;} #view-partner .who-grid{grid-template-columns:repeat(2,1fr);} #view-partner .trusted-wall{grid-template-columns:repeat(2,1fr);} #view-partner .pt-hero h1{font-size:32px;} #view-partner .section h2{font-size:25px;} }
@@ -1052,19 +1053,21 @@ footer strong { color:rgba(255,255,255,0.85); }
 
     <p class="lead" style="margin-top:8px; margin-bottom:0">GIMI Certified Partners are firms that sell and deliver innovation services. Here is who they are and what they are looking for.</p>
     <div class="cert-profile">
-      <div>
+      <div class="cert-col">
         <div class="sub-h">Who it is for</div>
         <div class="serve-card"><h4>Consulting Firms</h4><p>Advisory and management consulting firms adding a proven innovation practice to what they already sell.</p></div>
         <div class="serve-card"><h4>Training Providers</h4><p>Training and education providers delivering accredited innovation certifications and programs.</p></div>
       </div>
-      <div class="cert-looking">
+      <div class="cert-col">
         <div class="sub-h">What they are looking for</div>
+        <div class="cert-looking">
         <ul class="check-list">
           <li>A proven methodology and complete portfolio they can deliver from day one</li>
           <li>A recognized, ISO-aligned global brand and the credibility that comes with it</li>
           <li>The brand, network, and go-to-market support to grow their own practice</li>
           <li>Local-market insight backed by a global standard</li>
         </ul>
+        </div>
       </div>
     </div>
 
