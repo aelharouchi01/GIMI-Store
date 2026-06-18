@@ -507,7 +507,7 @@ footer strong { color:rgba(255,255,255,0.85); }
   </div>
 </nav>
 
-<div id="view-store">
+<div id="view-store" style="display:none">
 <section class="hero">
   <div class="hero-inner">
     <h1>Build Your <span>Innovation</span> Career</h1>
@@ -552,7 +552,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 </div>
 </div><!-- /#view-store -->
 
-<div id="view-home" style="display:none">
+<div id="view-home">
   <!-- HERO -->
   <section class="hm-hero">
     <div class="hm-hero-inner">
@@ -2328,14 +2328,14 @@ const CERT_MENU = [
 ];
 /* Sections live on the PUBLIC site. Other views are fully built but hidden
    until launch — add their ids here to publish them publicly. */
-const PUBLISHED = ['store', 'partner'];
+const PUBLISHED = ['home', 'store', 'about', 'partner'];
 /* On localhost / local file preview we show EVERY section so you can review
    in-progress work; the public GitHub Pages site shows only PUBLISHED. */
 const PREVIEW = location.protocol === 'file:' ||
   /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/.test(location.hostname) ||
   location.hostname.endsWith('.local');
 const VISIBLE_SECTIONS = PREVIEW ? SITE_NAV.map(s => s.id) : PUBLISHED;
-let activeSection = 'store';   // default landing view
+let activeSection = 'home';   // default landing view
 function renderNav() {
   document.getElementById('navSections').innerHTML = SITE_NAV.filter(s => VISIBLE_SECTIONS.includes(s.id)).map(s => {
     let dd = '', mega = '';
