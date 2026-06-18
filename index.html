@@ -34,6 +34,14 @@ body { font-family:'Calibri','Segoe UI',system-ui,sans-serif; color:var(--text);
 .nav-sec { color:rgba(255,255,255,0.85); background:none; border:none; cursor:pointer; padding:9px 13px; border-radius:6px; font-family:inherit; font-size:13.5px; font-weight:600; white-space:nowrap; transition:all 0.2s; }
 .nav-sec:hover { background:rgba(255,255,255,0.1); color:#fff; }
 .nav-sec.active { background:var(--teal); color:#fff; }
+/* hover dropdowns of subsections */
+.nav-item { position:relative; }
+.nav-dropdown { position:absolute; top:100%; left:0; min-width:235px; background:#fff; border:1px solid var(--border); border-radius:11px; box-shadow:0 14px 36px rgba(27,31,59,0.18); padding:8px; display:none; z-index:300; }
+.nav-dropdown::before { content:''; position:absolute; top:-10px; left:0; right:0; height:10px; }
+.nav-item:hover .nav-dropdown { display:block; }
+.nav-item:nth-last-child(-n+4) .nav-dropdown { left:auto; right:0; }
+.nav-dd-item { display:block; width:100%; text-align:left; padding:9px 12px; border:none; background:none; font-family:inherit; font-size:13px; font-weight:600; color:var(--text); border-radius:7px; cursor:pointer; white-space:nowrap; transition:background 0.12s, color 0.12s; }
+.nav-dd-item:hover { background:var(--teal-light); color:var(--teal-dark); }
 /* second row: subsections of the active section */
 .subnav { background:#fff; border-bottom:1px solid var(--border); box-shadow:0 2px 6px rgba(0,0,0,0.05); }
 .subnav-inner { max-width:var(--wrap); margin:0 auto; padding:10px 32px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
@@ -418,7 +426,9 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-home .hm-about-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:stretch; }
 #view-home .hm-about-grid > div:first-child p { font-size:16px; color:var(--text); line-height:1.7; margin-bottom:16px; }
 #view-home .hm-sidenote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--yellow); border-radius:14px; padding:28px 26px; box-shadow:0 4px 16px rgba(27,31,59,0.05); display:flex; flex-direction:column; justify-content:center; gap:18px; }
-#view-home .hm-iaoip-logo { width:100%; max-width:330px; height:auto; display:block; }
+#view-home .hm-iaoip-logo { width:100%; max-width:320px; height:auto; display:block; margin:0 auto; }
+#view-home .hm-tlogo-ph { width:48px; height:48px; flex:none; border:1px solid var(--border); border-radius:9px; display:flex; align-items:center; justify-content:center; background:var(--teal-light); color:var(--teal-dark); }
+#view-home .hm-tlogo-ph svg { width:26px; height:26px; }
 #view-home .hm-sidenote-eyebrow { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:10px; }
 #view-home .hm-sidenote p { font-size:14.5px; color:var(--text); line-height:1.6; margin:0; }
 #view-home .hm-tlogos { display:flex; gap:9px; margin-top:18px; flex-wrap:wrap; }
@@ -478,7 +488,6 @@ footer strong { color:rgba(255,255,255,0.85); }
     <a href="#" class="logo" onclick="return false"><img src="gimi-store-assets/gimi-logo-white.png" alt="GIMI"></a>
     <div class="nav-sections" id="navSections"></div>
   </div>
-  <div class="subnav"><div class="subnav-inner" id="subnavInner"></div></div>
 </nav>
 
 <div id="view-store" style="display:none">
@@ -489,8 +498,8 @@ footer strong { color:rgba(255,255,255,0.85); }
     <div class="hero-stats">
       <div class="hero-stat"><strong>116</strong><span>Countries</span></div>
       <div class="hero-stat"><strong>140+</strong><span>Universities</span></div>
-      <div class="hero-stat"><strong>1,600+</strong><span>Corporations</span></div>
-      <div class="hero-stat"><strong>18,000+</strong><span>Innovators</span></div>
+      <div class="hero-stat"><strong>1,200+</strong><span>Corporations</span></div>
+      <div class="hero-stat"><strong>18,000</strong><span>Members</span></div>
     </div>
   </div>
 </section>
@@ -535,21 +544,24 @@ footer strong { color:rgba(255,255,255,0.85); }
         <h1>The global standard for <span>innovation management</span> certification.</h1>
         <p>GIMI is the only innovation management certification body accredited to ISO/IEC 17024, the international benchmark for certifying professionals, and a contributor to the ISO 56000 family of innovation standards.</p>
         <div class="hm-cta">
-          <button class="hm-btn primary" onclick="selectSection('certificates')">Explore certifications</button>
-          <button class="hm-btn ghost" onclick="selectSection('programs')">Explore our programs</button>
+          <button class="hm-btn primary" onclick="document.getElementById('hm-certs').scrollIntoView({behavior:'smooth'})">Explore certifications</button>
+          <button class="hm-btn ghost" onclick="document.getElementById('hm-programs').scrollIntoView({behavior:'smooth'})">Explore our programs</button>
           <button class="hm-btn ghost" onclick="selectSection('partner')">Become a partner</button>
         </div>
       </div>
       <div class="hm-seal">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <defs><path id="hm-ring" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
-          <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
-          <circle cx="100" cy="100" r="87" fill="none" stroke="#2AACB5" stroke-width="2"/>
-          <circle cx="100" cy="100" r="56" fill="#2AACB5" fill-opacity="0.12" stroke="#2AACB5" stroke-width="1.5"/>
-          <text fill="rgba(255,255,255,0.78)" font-size="9.3" font-weight="700" letter-spacing="2.4" font-family="Calibri, Segoe UI, sans-serif"><textPath href="#hm-ring" startOffset="1%">ACCREDITED CERTIFICATION BODY · GLOBAL INNOVATION STANDARD ·</textPath></text>
-          <text x="100" y="91" text-anchor="middle" fill="#fff" font-size="13" font-weight="800" letter-spacing="1" font-family="Calibri, Segoe UI, sans-serif">ISO/IEC</text>
-          <text x="100" y="118" text-anchor="middle" fill="#C9D940" font-size="27" font-weight="800" font-family="Calibri, Segoe UI, sans-serif">17024</text>
-          <text x="100" y="135" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="7.5" font-weight="700" letter-spacing="2" font-family="Calibri, Segoe UI, sans-serif">ACCREDITED BODY</text>
+          <defs>
+            <path id="hm-arc-top" d="M37,100 A63,63 0 0 1 163,100"/>
+            <path id="hm-arc-bot" d="M37,100 A63,63 0 0 0 163,100"/>
+          </defs>
+          <circle cx="100" cy="100" r="93" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="82" fill="none" stroke="#2AACB5" stroke-width="2"/>
+          <circle cx="100" cy="100" r="50" fill="#2AACB5" fill-opacity="0.12" stroke="#2AACB5" stroke-width="1.5"/>
+          <text fill="rgba(255,255,255,0.82)" font-size="8.5" font-weight="700" letter-spacing="1.7" font-family="Calibri, Segoe UI, sans-serif" text-anchor="middle"><textPath href="#hm-arc-top" startOffset="50%">ACCREDITED CERTIFICATION BODY</textPath></text>
+          <text fill="rgba(255,255,255,0.82)" font-size="8.5" font-weight="700" letter-spacing="1.7" font-family="Calibri, Segoe UI, sans-serif" text-anchor="middle"><textPath href="#hm-arc-bot" startOffset="50%">GLOBAL INNOVATION STANDARD</textPath></text>
+          <text x="100" y="94" text-anchor="middle" fill="#fff" font-size="13" font-weight="800" letter-spacing="1" font-family="Calibri, Segoe UI, sans-serif">ISO/IEC</text>
+          <text x="100" y="120" text-anchor="middle" fill="#C9D940" font-size="25" font-weight="800" font-family="Calibri, Segoe UI, sans-serif">17024</text>
         </svg>
       </div>
     </div>
@@ -684,6 +696,7 @@ footer strong { color:rgba(255,255,255,0.85); }
           <h3>Accelerators</h3>
           <p>Accelerate ventures and corporate innovation initiatives.</p>
           <div class="hm-tlogos">
+            <span class="hm-tlogo-ph" title="Innovation Olympics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 0 12 0V3H6v6Z"/><path d="M6 5H3v2a3 3 0 0 0 3 3M18 5h3v2a3 3 0 0 1-3 3M9 21h6M12 15v6"/></svg></span>
             <img src="gimi-store-assets/v2/akaio.png?v=20260612-2" alt="AKAIO">
             <img src="gimi-store-assets/v2/eureka.png?v=20260612-2" alt="Eureka">
           </div>
@@ -2287,18 +2300,21 @@ const SITE_NAV = [
 ];
 let activeSection = 'home';   // Home is the default landing view
 function renderNav() {
-  document.getElementById('navSections').innerHTML = SITE_NAV.map(s =>
-    `<button class="nav-sec ${s.id===activeSection?'active':''}" onclick="selectSection('${s.id}')">${s.label}</button>`).join('');
-  renderSubnav();
+  document.getElementById('navSections').innerHTML = SITE_NAV.map(s => {
+    const dd = s.subs.map((sub,i) => `<button class="nav-dd-item" onclick="gotoSubIdx('${s.id}',${i})">${sub}</button>`).join('');
+    return `<div class="nav-item"><button class="nav-sec ${s.id===activeSection?'active':''}" onclick="selectSection('${s.id}')">${s.label}</button><div class="nav-dropdown">${dd}</div></div>`;
+  }).join('');
 }
-function renderSubnav() {
-  const sec = SITE_NAV.find(s => s.id === activeSection);
-  const opts = sec.subs.map(sub => `<option value="${sub.replace(/"/g,'&quot;')}">${sub}</option>`).join('');
-  document.getElementById('subnavInner').innerHTML =
-    `<span class="subnav-label">${sec.label}</span>` +
-    `<select class="subnav-select" aria-label="Jump to a ${sec.label} section" onchange="selectSub(this.value)">` +
-      `<option value="">Jump to a section&hellip;</option>${opts}` +
-    `</select>`;
+/* Hover-dropdown subsection click: go to the section, then scroll to the sub-anchor. */
+function gotoSubIdx(secId, i) {
+  const sec = SITE_NAV.find(s => s.id === secId);
+  const label = sec.subs[i];
+  selectSection(secId);
+  const anchors = SUB_ANCHORS[secId];
+  if (anchors && anchors[label]) {
+    const el = document.getElementById(anchors[label]);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior:'smooth', block:'start' }), 60);
+  }
 }
 /* Subnav items -> in-page section anchors, keyed by section id */
 const SUB_ANCHORS = {
@@ -2324,13 +2340,6 @@ function selectSection(id) {
   if (target) {
     Object.values(BUILT_VIEWS).forEach(v => document.getElementById(v).style.display = (v === target ? '' : 'none'));
     window.scrollTo(0,0);
-  }
-}
-function selectSub(label) {
-  const anchors = SUB_ANCHORS[activeSection];
-  if (anchors && anchors[label]) {
-    const el = document.getElementById(anchors[label]);
-    if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
   }
 }
 /* Partner network name grids */
