@@ -2309,12 +2309,18 @@ const CERT_MENU = [
   { t:'Consulting Core', items:['Management Consulting L1: Analyst','Management Consulting L2: Consultant','Management Consulting L3: Manager','Management Consulting L4: Leader'] },
   { t:'Organizational Certifications', items:['Organization Innovation Certification','Future Foresight Organizational Certification'] }
 ];
-/* Sections shown in the nav / reachable on the live site. Other views are
-   fully built but hidden until launch — add their ids here to publish them. */
+/* Sections live on the PUBLIC site. Other views are fully built but hidden
+   until launch — add their ids here to publish them publicly. */
 const PUBLISHED = ['store', 'partner'];
-let activeSection = 'store';   // default landing view while only Store + Partner are live
+/* On localhost / local file preview we show EVERY section so you can review
+   in-progress work; the public GitHub Pages site shows only PUBLISHED. */
+const PREVIEW = location.protocol === 'file:' ||
+  /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/.test(location.hostname) ||
+  location.hostname.endsWith('.local');
+const VISIBLE_SECTIONS = PREVIEW ? SITE_NAV.map(s => s.id) : PUBLISHED;
+let activeSection = 'store';   // default landing view
 function renderNav() {
-  document.getElementById('navSections').innerHTML = SITE_NAV.filter(s => PUBLISHED.includes(s.id)).map(s => {
+  document.getElementById('navSections').innerHTML = SITE_NAV.filter(s => VISIBLE_SECTIONS.includes(s.id)).map(s => {
     let dd = '', mega = '';
     if (s.id === 'certificates') {
       mega = ' mega';
