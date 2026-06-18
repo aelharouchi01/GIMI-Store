@@ -229,7 +229,9 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-partner .sub-h { font-size:18px; font-weight:800; color:var(--navy); margin:30px 0 16px; }
 #view-partner .feature-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
 #view-partner .feature-card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:24px; box-shadow:0 2px 10px rgba(27,31,59,0.04); }
-#view-partner .feature-card .ico { width:42px; height:42px; border-radius:11px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; margin-bottom:14px; }
+#view-partner .feature-card .ico { width:42px; height:42px; border-radius:11px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; flex:none; }
+#view-partner .feature-card .fhead { display:flex; align-items:center; gap:13px; margin-bottom:12px; }
+#view-partner .feature-card .fhead h4 { font-size:16px; font-weight:800; color:var(--navy); line-height:1.25; margin:0; }
 #view-partner .feature-card p { font-size:14.5px; color:var(--text); line-height:1.55; }
 #view-partner .stats { display:flex; flex-wrap:wrap; gap:40px; margin-top:30px; padding:28px 30px; background:var(--navy); border-radius:16px; }
 #view-partner .stat strong { display:block; font-size:30px; font-weight:800; color:var(--yellow); line-height:1; }
@@ -316,9 +318,12 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-about .lead { font-size:17px; color:var(--gray); margin-bottom:34px; max-width:760px; }
 /* Mission / Vision / History */
 #view-about .mvh-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:stretch; }
-#view-about .mvh-card { background:#fff; border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:16px; padding:28px 30px; box-shadow:0 4px 16px rgba(27,31,59,0.05); display:flex; flex-direction:column; gap:15px; }
+#view-about .mvh-card { background:#fff; border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:16px; padding:26px 28px; box-shadow:0 4px 16px rgba(27,31,59,0.05); display:grid; grid-template-columns:auto 1fr; column-gap:18px; row-gap:16px; align-items:center; }
+#view-about .mvh-card > .mvh-ico { grid-row:1; grid-column:1; }
+#view-about .mvh-card > .mvh-head { grid-row:1; grid-column:2; }
+#view-about .mvh-card > p { grid-column:1 / -1; }
 /* History spans the full width below Mission + Vision, laid out horizontally */
-#view-about .mvh-card.full { grid-column:1 / -1; flex-direction:row; align-items:center; gap:30px; border-top:none; border-left:5px solid var(--teal); }
+#view-about .mvh-card.full { grid-column:1 / -1; display:flex; flex-direction:row; align-items:center; gap:30px; border-top:none; border-left:5px solid var(--teal); }
 #view-about .mvh-card.full .mvh-head { width:220px; flex:none; }
 #view-about .mvh-card.full p { flex:1; }
 #view-about .mvh-ico { width:60px; height:60px; border-radius:15px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; flex:none; }
@@ -1004,10 +1009,10 @@ footer strong { color:rgba(255,255,255,0.85); }
     <p class="lead">Everything you need to win and deliver innovation work is already built, so your firm can focus on growing, not on building a practice from scratch.</p>
     <div class="sub-h">What every partner gains</div>
     <div class="feature-grid">
-      <div class="feature-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M2 13h20"/></svg></div><p>A proven portfolio you can deliver from day one: GIMI's complete methodology, assessments, programs, certifications, and tools.</p></div>
-      <div class="feature-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></div><p>A global, ISO-aligned standard and the GIMI brand that set you apart as the credible innovation authority in your market.</p></div>
-      <div class="feature-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><p>Go-to-market support: co-branding, marketing and sales enablement, and visibility through GIMI's global network.</p></div>
-      <div class="feature-card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></div><p>The edge to stay ahead: the latest frameworks and research, the GIMI Think Tank, and a worldwide community of peers.</p></div>
+      <div class="feature-card"><div class="fhead"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M2 13h20"/></svg></div><h4>A proven portfolio</h4></div><p>A proven portfolio you can deliver from day one: GIMI's complete methodology, assessments, programs, certifications, and tools.</p></div>
+      <div class="feature-card"><div class="fhead"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></div><h4>A global standard and brand</h4></div><p>A global, ISO-aligned standard and the GIMI brand that set you apart as the credible innovation authority in your market.</p></div>
+      <div class="feature-card"><div class="fhead"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h4>Go-to-market support</h4></div><p>Go-to-market support: co-branding, marketing and sales enablement, and visibility through GIMI's global network.</p></div>
+      <div class="feature-card"><div class="fhead"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></div><h4>The edge to stay ahead</h4></div><p>The edge to stay ahead: the latest frameworks and research, the GIMI Think Tank, and a worldwide community of peers.</p></div>
     </div>
     <div class="sub-h">Trusted by leading organizations worldwide</div>
     <div class="marquee" id="trustedCos"></div>
