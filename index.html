@@ -42,6 +42,10 @@ body { font-family:'Calibri','Segoe UI',system-ui,sans-serif; color:var(--text);
 .nav-item:nth-last-child(-n+4) .nav-dropdown { left:auto; right:0; }
 .nav-dd-item { display:block; width:100%; text-align:left; padding:9px 12px; border:none; background:none; font-family:inherit; font-size:13px; font-weight:600; color:var(--text); border-radius:7px; cursor:pointer; white-space:nowrap; transition:background 0.12s, color 0.12s; }
 .nav-dd-item:hover { background:var(--teal-light); color:var(--teal-dark); }
+.nav-dropdown.mega { min-width:680px; padding:12px; }
+.nav-mega { display:grid; grid-template-columns:repeat(3,1fr); gap:4px 10px; align-items:start; }
+.nav-mega-title { font-size:11.5px; font-weight:800; letter-spacing:0.5px; color:var(--teal-dark); text-transform:uppercase; padding:6px 12px 4px; cursor:pointer; border-bottom:1px solid var(--border); margin-bottom:3px; }
+.nav-dd-item.sm { padding:5px 12px; font-size:12px; font-weight:600; color:var(--text); }
 /* second row: subsections of the active section */
 .subnav { background:#fff; border-bottom:1px solid var(--border); box-shadow:0 2px 6px rgba(0,0,0,0.05); }
 .subnav-inner { max-width:var(--wrap); margin:0 auto; padding:10px 32px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
@@ -425,7 +429,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 /* about teaser */
 #view-home .hm-about-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:stretch; }
 #view-home .hm-about-grid > div:first-child p { font-size:16px; color:var(--text); line-height:1.7; margin-bottom:16px; }
-#view-home .hm-sidenote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--yellow); border-radius:14px; padding:28px 26px; box-shadow:0 4px 16px rgba(27,31,59,0.05); display:flex; flex-direction:column; justify-content:center; gap:18px; }
+#view-home .hm-sidenote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--yellow); border-radius:14px; padding:30px 26px; box-shadow:0 4px 16px rgba(27,31,59,0.05); display:flex; flex-direction:column; justify-content:flex-start; gap:20px; }
 #view-home .hm-iaoip-logo { width:100%; max-width:320px; height:auto; display:block; margin:0 auto; }
 #view-home .hm-tlogo-ph { width:48px; height:48px; flex:none; border:1px solid var(--border); border-radius:9px; display:flex; align-items:center; justify-content:center; background:var(--teal-light); color:var(--teal-dark); }
 #view-home .hm-tlogo-ph svg { width:26px; height:26px; }
@@ -498,7 +502,7 @@ footer strong { color:rgba(255,255,255,0.85); }
     <div class="hero-stats">
       <div class="hero-stat"><strong>116</strong><span>Countries</span></div>
       <div class="hero-stat"><strong>140+</strong><span>Universities</span></div>
-      <div class="hero-stat"><strong>1,200+</strong><span>Corporations</span></div>
+      <div class="hero-stat"><strong>1,600+</strong><span>Corporations</span></div>
       <div class="hero-stat"><strong>18,000</strong><span>Members</span></div>
     </div>
   </div>
@@ -620,7 +624,7 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="hm-reach-stat"><strong>20k+</strong><span>Individual certificates</span></div>
         <div class="hm-reach-stat"><strong>1,600+</strong><span>Company certificates</span></div>
         <div class="hm-reach-stat"><strong>140+</strong><span>University partners</span></div>
-        <div class="hm-reach-stat"><strong>1,200+</strong><span>Corporations</span></div>
+        <div class="hm-reach-stat"><strong>1,600+</strong><span>Corporations</span></div>
         <div class="hm-reach-stat"><strong>18,000</strong><span>Members</span></div>
       </div>
     </section>
@@ -696,7 +700,7 @@ footer strong { color:rgba(255,255,255,0.85); }
           <h3>Accelerators</h3>
           <p>Accelerate ventures and corporate innovation initiatives.</p>
           <div class="hm-tlogos">
-            <span class="hm-tlogo-ph" title="Innovation Olympics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 0 12 0V3H6v6Z"/><path d="M6 5H3v2a3 3 0 0 0 3 3M18 5h3v2a3 3 0 0 1-3 3M9 21h6M12 15v6"/></svg></span>
+            <img src="gimi-store-assets/v2/innovation-olympics.png?v=20260612-2" alt="Innovation Olympics" title="Innovation Olympics">
             <img src="gimi-store-assets/v2/akaio.png?v=20260612-2" alt="AKAIO">
             <img src="gimi-store-assets/v2/eureka.png?v=20260612-2" alt="Eureka">
           </div>
@@ -799,7 +803,7 @@ footer strong { color:rgba(255,255,255,0.85); }
       <p class="lead">Eight reasons organizations and professionals choose GIMI to make innovation a measurable, repeatable discipline.</p>
       <div class="why-grid">
         <div class="why-card">
-          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 10h16M5 21V10M19 21V10M9 21V10M15 21V10M12 3 4 7v3h16V7l-8-4Z"/></svg></div><div><div class="why-cat">Authority</div><h3>Standards leadership and institutional authority</h3></div></div>
+          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 10h16M5 21V10M19 21V10M9 21V10M15 21V10M12 3 4 7v3h16V7l-8-4Z"/></svg></div><div><div class="why-cat">01 &middot; Authority</div><h3>Standards leadership and institutional authority</h3></div></div>
           <p class="why-sub">What makes GIMI structurally unique in the global system.</p>
           <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>Only body globally accredited to ISO/IEC 17024.</span></div>
           <ul>
@@ -810,7 +814,7 @@ footer strong { color:rgba(255,255,255,0.85); }
           </ul>
         </div>
         <div class="why-card">
-          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 12l10 5 10-5M2 17l10 5 10-5"/></svg></div><div><div class="why-cat">Methodology</div><h3>Proprietary capability system (ISO+)</h3></div></div>
+          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 12l10 5 10-5M2 17l10 5 10-5"/></svg></div><div><div class="why-cat">02 &middot; Methodology</div><h3>Proprietary capability system (ISO+)</h3></div></div>
           <p class="why-sub">How GIMI delivers innovation, beyond standards.</p>
           <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>Three pillars: Strategy, Capacity, Discipline.</span></div>
           <ul>
@@ -821,7 +825,7 @@ footer strong { color:rgba(255,255,255,0.85); }
           </ul>
         </div>
         <div class="why-card">
-          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.83 2.83-2-2 2.83-2.83Z"/></svg></div><div><div class="why-cat">Execution</div><h3>Execution model and learning experience</h3></div></div>
+          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.83 2.83-2-2 2.83-2.83Z"/></svg></div><div><div class="why-cat">03 &middot; Execution</div><h3>Execution model and learning experience</h3></div></div>
           <p class="why-sub">How GIMI ensures real-world outcomes, not just knowledge.</p>
           <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>"Show and Tell": learners ship real outputs.</span></div>
           <ul>
@@ -832,7 +836,7 @@ footer strong { color:rgba(255,255,255,0.85); }
           </ul>
         </div>
         <div class="why-card">
-          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><div><div class="why-cat">Ecosystem</div><h3>Product ecosystem and scalable programs</h3></div></div>
+          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><div><div class="why-cat">04 &middot; Ecosystem</div><h3>Product ecosystem and scalable programs</h3></div></div>
           <p class="why-sub">What GIMI offers across segments, and how it scales.</p>
           <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>From youth (GIMI Impact) to C-suite (CCIO).</span></div>
           <ul>
@@ -842,7 +846,7 @@ footer strong { color:rgba(255,255,255,0.85); }
           </ul>
         </div>
         <div class="why-card">
-          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div><div><div class="why-cat">Technology</div><h3>Technology and AI-driven infrastructure</h3></div></div>
+          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div><div><div class="why-cat">05 &middot; Technology</div><h3>Technology and AI-driven infrastructure</h3></div></div>
           <p class="why-sub">The digital layer enabling speed and scale.</p>
           <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>AI-powered: Akaio and Eureka Online.</span></div>
           <ul>
@@ -853,18 +857,18 @@ footer strong { color:rgba(255,255,255,0.85); }
           </ul>
         </div>
         <div class="why-card">
-          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><div><div class="why-cat">Reach</div><h3>Global ecosystem, reach and partnerships</h3></div></div>
+          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><div><div class="why-cat">06 &middot; Reach</div><h3>Global ecosystem, reach and partnerships</h3></div></div>
           <p class="why-sub">The scale of influence and network effects.</p>
           <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>18,000+ professionals in 100+ countries.</span></div>
           <ul>
-            <li>1,200+ certified organizations worldwide</li>
+            <li>1,600+ certified organizations worldwide</li>
             <li>Partnerships with governments (Colombia, UAE, Brazil), corporations (NASA, P&amp;G, IBM) and universities, including Ivy League</li>
             <li>50+ strategic partners and a global training network</li>
             <li>Collaboration with Emerald Publishing for the International Journal of Innovation Science</li>
           </ul>
         </div>
         <div class="why-card">
-          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2V4ZM22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22V4Z"/></svg></div><div><div class="why-cat">Knowledge</div><h3>Thought leadership and knowledge platforms</h3></div></div>
+          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2V4ZM22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22V4Z"/></svg></div><div><div class="why-cat">07 &middot; Knowledge</div><h3>Thought leadership and knowledge platforms</h3></div></div>
           <p class="why-sub">How GIMI shapes the field intellectually.</p>
           <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>Publisher of the Journal of Innovation Science.</span></div>
           <ul>
@@ -874,7 +878,7 @@ footer strong { color:rgba(255,255,255,0.85); }
           </ul>
         </div>
         <div class="why-card">
-          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"/></svg></div><div><div class="why-cat">Moat</div><h3>Market position and competitive moat</h3></div></div>
+          <div class="why-head"><div class="why-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"/></svg></div><div><div class="why-cat">08 &middot; Moat</div><h3>Market position and competitive moat</h3></div></div>
           <p class="why-sub">Why GIMI is difficult to replicate.</p>
           <div class="why-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2Z"/></svg><span>Combines ISO authority, tools and global scale.</span></div>
           <ul>
@@ -897,7 +901,7 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="reach-stat"><strong>20k+</strong><span>Individual certificates</span></div>
         <div class="reach-stat"><strong>1,600+</strong><span>Company certificates</span></div>
         <div class="reach-stat"><strong>140+</strong><span>University partners</span></div>
-        <div class="reach-stat"><strong>1,200+</strong><span>Corporations</span></div>
+        <div class="reach-stat"><strong>1,600+</strong><span>Corporations</span></div>
         <div class="reach-stat"><strong>18,000</strong><span>Members</span></div>
       </div>
     </section>
@@ -2293,16 +2297,34 @@ const SITE_NAV = [
   { id:'about',        label:'About Us',          subs:['Who We Are','Why GIMI','Our Reach','In Pictures','Leadership','Contact Us'] },
   { id:'programs',     label:'Programs',          subs:['Assessments','Training / Masterclasses','Consulting','Speaker Bureau'] },
   { id:'thought',      label:'Thought Leadership',subs:['Innovation Awards','GIMI Think Tank','Books & Guides','International Journal of Innovation Science','Blog: Innovation Insights','News & Events'] },
-  { id:'certificates', label:'Certificates',      subs:['Innovation Core','Innovation Elective','Future Foresight','Leadership Core','Consulting Core','Organizational Certifications','Recertification & Registry'] },
+  { id:'certificates', label:'Certificates',      subs:['Innovation Core','Innovation Elective','Future Foresight','Leadership Core','Consulting Core','Organizational Certifications'] },
   { id:'store',        label:'Store',             subs:['Storefront','Browse by Group','Product Pages','Cart / Checkout / My Account'] },
   { id:'member',       label:'Become a Member',   subs:['Membership Overview','Professional','Student','Corporate (Silver / Gold / Platinum / Platinum Plus)','Academia'] },
   { id:'partner',      label:'Become a Partner',  subs:['Why Partner with GIMI','The Two Ways to Partner','Certified Partner','University Partner','Become a Partner (apply)'] }
 ];
+/* Certificate tracks and their individual certifications (sub-subsections) for the mega-menu. */
+const CERT_MENU = [
+  { t:'Innovation Core', items:['CIP Level 0: Champion','CIP Level 1: Associate','CIP Level 2: Master','CIP Masterclass','CCIO Level 3: Manager','CCIO Level 4: Leader','CCIO Masterclass','GIMI Impact: Students','GIMI Impact: Teachers','GIMI Trainer'] },
+  { t:'Innovation Elective', items:['Innovation Primer','Problem Solving Catalyst','Design Thinking Level 1','Design Thinking Level 2','Design Thinking Trainer','AI Agent Practitioner','GIMI Auditor','ISO Innovation Management Expert','Technology Catalyst','Longevity Catalyst'] },
+  { t:'Future Foresight', items:['Foresight Professional: Level 1','Foresight Leader: Level 2','Foresight Officer: Level 3','Future Foresight Trainer L1','Future Foresight Trainer L2'] },
+  { t:'Leadership Core', items:['Leader for the Future','Innovation Leader'] },
+  { t:'Consulting Core', items:['Management Consulting L1: Analyst','Management Consulting L2: Consultant','Management Consulting L3: Manager','Management Consulting L4: Leader'] },
+  { t:'Organizational Certifications', items:['Organization Innovation Certification','Future Foresight Organizational Certification'] }
+];
 let activeSection = 'home';   // Home is the default landing view
 function renderNav() {
   document.getElementById('navSections').innerHTML = SITE_NAV.map(s => {
-    const dd = s.subs.map((sub,i) => `<button class="nav-dd-item" onclick="gotoSubIdx('${s.id}',${i})">${sub}</button>`).join('');
-    return `<div class="nav-item"><button class="nav-sec ${s.id===activeSection?'active':''}" onclick="selectSection('${s.id}')">${s.label}</button><div class="nav-dropdown">${dd}</div></div>`;
+    let dd, mega = '';
+    if (s.id === 'certificates') {
+      mega = ' mega';
+      dd = `<div class="nav-mega">` + CERT_MENU.map(g =>
+        `<div class="nav-mega-col"><div class="nav-mega-title" onclick="selectSection('certificates')">${g.t}</div>` +
+        g.items.map(it => `<button class="nav-dd-item sm" onclick="selectSection('certificates')">${it}</button>`).join('') +
+        `</div>`).join('') + `</div>`;
+    } else {
+      dd = s.subs.map((sub,i) => `<button class="nav-dd-item" onclick="gotoSubIdx('${s.id}',${i})">${sub}</button>`).join('');
+    }
+    return `<div class="nav-item"><button class="nav-sec ${s.id===activeSection?'active':''}" onclick="selectSection('${s.id}')">${s.label}</button><div class="nav-dropdown${mega}">${dd}</div></div>`;
   }).join('');
 }
 /* Hover-dropdown subsection click: go to the section, then scroll to the sub-anchor. */
