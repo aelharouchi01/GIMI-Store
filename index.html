@@ -2328,7 +2328,7 @@ const CERT_MENU = [
 ];
 /* Sections live on the PUBLIC site. Other views are fully built but hidden
    until launch — add their ids here to publish them publicly. */
-const PUBLISHED = ['home', 'store', 'about', 'partner'];
+const PUBLISHED = ['home', 'about', 'programs', 'thought', 'certificates', 'store', 'member', 'partner'];
 /* On localhost / local file preview we show EVERY section so you can review
    in-progress work; the public GitHub Pages site shows only PUBLISHED. */
 const PREVIEW = location.protocol === 'file:' ||
@@ -2382,12 +2382,11 @@ const SUB_ANCHORS = {
 /* Built views toggle by section; other sections are highlight-only (not built yet). */
 const BUILT_VIEWS = { home:'view-home', store:'view-store', about:'view-about', partner:'view-partner' };
 function selectSection(id) {
+  if (!BUILT_VIEWS[id]) return;   // unbuilt sections: nav shows them, but clicking does nothing
   activeSection = id; renderNav();
   const target = BUILT_VIEWS[id];
-  if (target) {
-    Object.values(BUILT_VIEWS).forEach(v => document.getElementById(v).style.display = (v === target ? '' : 'none'));
-    window.scrollTo(0,0);
-  }
+  Object.values(BUILT_VIEWS).forEach(v => document.getElementById(v).style.display = (v === target ? '' : 'none'));
+  window.scrollTo(0,0);
 }
 /* Partner network name grids */
 const CERT_PARTNERS = ['SIA Partners','KACE','UCOTRA','IXL Italy','Innovate AS','Grupo Alva','Easy Ltd','Earn International','Doracrea','TDM Internacional','IXL Center US','Innavise','Smart Connections','IXL Brazil','IXL Colombia','Sandbox','Clarus Consulting','Embiggen Consulting','SBM-ITB','Hong Kong Innovation Management Institute','IXL Korea','Sira Innovation','Triangle Partners','Kavoo Agency'];
