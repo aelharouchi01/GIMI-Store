@@ -315,17 +315,17 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-about .section h2 { font-size:30px; color:var(--navy); font-weight:800; line-height:1.15; margin-bottom:14px; letter-spacing:-0.4px; }
 #view-about .lead { font-size:17px; color:var(--gray); margin-bottom:34px; max-width:760px; }
 /* Mission / Vision / History */
-#view-about .mvh-grid { display:flex; flex-direction:column; gap:18px; }
-#view-about .mvh-card { width:100%; min-height:160px; display:grid; grid-template-columns:64px 210px 1fr; gap:28px; align-items:center; background:#fff; border:1px solid var(--border); border-left:5px solid var(--teal); border-radius:16px; padding:26px 34px; box-shadow:0 4px 16px rgba(27,31,59,0.05); }
-#view-about .mvh-card:nth-child(even) { grid-template-columns:1fr 210px 64px; border-left:none; border-right:5px solid var(--teal); }
-#view-about .mvh-card:nth-child(even) p { order:1; }
-#view-about .mvh-card:nth-child(even) .mvh-head { order:2; text-align:right; }
-#view-about .mvh-card:nth-child(even) .mvh-ico { order:3; }
-#view-about .mvh-ico { width:64px; height:64px; border-radius:16px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; }
-#view-about .mvh-ico svg { width:33px; height:33px; }
+#view-about .mvh-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:stretch; }
+#view-about .mvh-card { background:#fff; border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:16px; padding:28px 30px; box-shadow:0 4px 16px rgba(27,31,59,0.05); display:flex; flex-direction:column; gap:15px; }
+/* History spans the full width below Mission + Vision, laid out horizontally */
+#view-about .mvh-card.full { grid-column:1 / -1; flex-direction:row; align-items:center; gap:30px; border-top:none; border-left:5px solid var(--teal); }
+#view-about .mvh-card.full .mvh-head { width:220px; flex:none; }
+#view-about .mvh-card.full p { flex:1; }
+#view-about .mvh-ico { width:60px; height:60px; border-radius:15px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; flex:none; }
+#view-about .mvh-ico svg { width:30px; height:30px; }
 #view-about .mvh-card .kicker { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:6px; }
-#view-about .mvh-card h3 { font-size:23px; color:var(--navy); font-weight:800; line-height:1.2; margin:0; }
-#view-about .mvh-card p { font-size:15.5px; color:var(--text); line-height:1.65; margin:0; }
+#view-about .mvh-card h3 { font-size:21px; color:var(--navy); font-weight:800; line-height:1.2; margin:0; }
+#view-about .mvh-card p { font-size:15px; color:var(--text); line-height:1.6; margin:0; }
 /* Why GIMI - 8 reasons */
 #view-about .why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
 #view-about .why-card { background:#fff; border:1px solid var(--border); border-radius:16px; padding:26px 26px 24px; box-shadow:0 4px 16px rgba(27,31,59,0.05); transition:all 0.2s; }
@@ -384,7 +384,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-about .contact-form input:focus, #view-about .contact-form textarea:focus { outline:none; border-color:var(--teal); background:#fff; box-shadow:0 0 0 3px var(--teal-light); }
 #view-about .ab-btn { display:inline-block; margin-top:18px; padding:13px 26px; border-radius:10px; font-size:15px; font-weight:700; border:none; cursor:pointer; background:var(--teal); color:#fff; font-family:inherit; transition:all 0.2s; }
 #view-about .ab-btn:hover { background:var(--teal-dark); transform:translateY(-1px); box-shadow:0 8px 22px rgba(42,172,181,0.3); }
-@media (max-width:900px){ #view-about .why-grid,#view-about .contact-grid,#view-about .lead-duo{grid-template-columns:1fr;} #view-about .mvh-card,#view-about .mvh-card:nth-child(even){width:100%; align-self:stretch; grid-template-columns:1fr; gap:14px; align-items:start; border-right:none; border-left:5px solid var(--teal);} #view-about .mvh-card:nth-child(even) .mvh-head{order:0; text-align:left;} #view-about .mvh-card:nth-child(even) p{order:0;} #view-about .mvh-card:nth-child(even) .mvh-ico{order:0;} #view-about .reach-grid{grid-template-columns:repeat(3,1fr);} #view-about .gallery{grid-template-columns:repeat(2,1fr);} #view-about .name-grid{grid-template-columns:repeat(2,1fr);} #view-about .people-grid{grid-template-columns:repeat(2,1fr);} #view-about .ab-hero h1{font-size:31px;} #view-about .section h2{font-size:25px;} }
+@media (max-width:900px){ #view-about .why-grid,#view-about .contact-grid,#view-about .lead-duo,#view-about .mvh-grid{grid-template-columns:1fr;} #view-about .mvh-card.full{flex-direction:column; align-items:flex-start;} #view-about .mvh-card.full .mvh-head{width:auto;} #view-about .reach-grid{grid-template-columns:repeat(3,1fr);} #view-about .gallery{grid-template-columns:repeat(2,1fr);} #view-about .name-grid{grid-template-columns:repeat(2,1fr);} #view-about .people-grid{grid-template-columns:repeat(2,1fr);} #view-about .ab-hero h1{font-size:31px;} #view-about .section h2{font-size:25px;} }
 /* ===== HOME VIEW ===== */
 #view-home .hm-hero { background:linear-gradient(135deg, var(--navy) 0%, #263162 55%, #1E6E78 100%); padding:72px 0 78px; }
 #view-home .hm-hero-inner { max-width:var(--wrap); margin:0 auto; padding:0 32px; display:grid; grid-template-columns:1fr 290px; gap:50px; align-items:center; }
@@ -786,7 +786,7 @@ footer strong { color:rgba(255,255,255,0.85); }
         <div class="mvh-head"><div class="kicker">Vision</div><h3>A professional discipline</h3></div>
         <p>To make innovation a professional business discipline taught in academic institutions, corporate and government academies, and adopted across organizations.</p>
       </div>
-      <div class="mvh-card">
+      <div class="mvh-card full">
         <div class="mvh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <div class="mvh-head"><div class="kicker">History</div><h3>Founded in 2009</h3></div>
         <p>Born from the thought leaders of innovation practice: pioneers from firms like Arthur D. Little, Monitor Group and Parthenon, together with academia including Harvard. In 2023, GIMI's acquisition of the IAOIP added a strong academic angle and made it the largest global innovation certification body.</p>
