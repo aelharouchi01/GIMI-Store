@@ -2409,9 +2409,8 @@ function renderNav() {
       dd = s.subs.map((sub,i) => `<button class="nav-dd-item" onclick="gotoSubIdx('${s.id}',${i})">${sub}</button>`).join('');
     }
     const dropdown = s.subs.length ? `<div class="nav-dropdown${mega}">${dd}</div>` : '';
-    /* Certificates button itself is inert; its dropdown tracks open the view. */
-    const btnClick = s.id === 'certificates' ? 'return false' : `selectSection('${s.id}')`;
-    return `<div class="nav-item"><button class="nav-sec ${s.id===activeSection?'active':''}" onclick="${btnClick}">${s.label}</button>${dropdown}</div>`;
+    /* Certificates button opens the view at the top (all tracks); its mega-menu items jump to a track. */
+    return `<div class="nav-item"><button class="nav-sec ${s.id===activeSection?'active':''}" onclick="selectSection('${s.id}')">${s.label}</button>${dropdown}</div>`;
   }).join('');
 }
 /* Hover-dropdown subsection click: go to the section, then scroll to the sub-anchor. */
@@ -2487,9 +2486,9 @@ const CERT_TRACKS = [
   { anchor:'ct-cons', track:'cons', label:'Consulting Core', intro:'The full Management Consulting pathway, from Analyst to Leader.' }
 ];
 const CERT_ORG = [
-  { code:'OIC', title:'Organization Innovation Certification', badge:'gimi-store-assets/v2/full-oia.png', url:'org-innovation-cert.html', desc:'Certifies innovation maturity at Levels 1 to 4, based on the Organizational Innovation Assessment and aligned to ISO 56001. Certified organizations receive a certificate and letter of award issued by GIMI.' },
-  { code:'FFOC', title:'Future Foresight Organizational Certification', badge:'gimi-store-assets/v2/cff-1.png', url:'ff-org-cert.html', desc:'Certifies an organization\'s foresight capability and practices, complementing the innovation maturity certification.' },
-  { code:'VEA', title:'Venture Ecosystem Assessment', badge:'gimi-store-assets/v2/venture-ecosystem.png', url:'venture-ecosystem-assessment.html', desc:'The world\'s first ISO-aligned innovation assessment and certification framework, built specifically for incubators, accelerators, innovation hubs, and startup ecosystem organizations. It evaluates four dimensions, Innovation Strategy, Capacity, Discipline, and Performance, and certifies maturity across four levels, from Emerging Incubator to Ecosystem Leader, with leadership interviews, a systems review, benchmarking, and a growth roadmap.' }
+  { code:'OIC', title:'Organization Innovation Certification', badge:'gimi-store-assets/v2/full-oia.png', url:'org-innovation-cert.html', desc:'Certifies organizational innovation maturity at Levels 1 to 4, based on the Organizational Innovation Assessment and aligned to ISO 56001. Includes a certificate and letter of award from GIMI.' },
+  { code:'FFOC', title:'Future Foresight Organizational Certification', badge:'gimi-store-assets/v2/cff-1.png', url:'ff-org-cert.html', desc:'Certifies an organization\'s foresight capability and practices, complementing the innovation maturity certification with a forward-looking lens.' },
+  { code:'VEA', title:'Venture Ecosystem Assessment', badge:'gimi-store-assets/v2/venture-ecosystem.png', url:'venture-ecosystem-assessment.html', desc:'The world\'s first ISO-aligned assessment and certification for incubators, accelerators, and innovation hubs. Evaluates four innovation dimensions and certifies maturity across four levels, with benchmarking and a growth roadmap.' }
 ];
 /* Products with their own standalone landing page (opened via a "More" link). */
 const CERT_LANDING = {
