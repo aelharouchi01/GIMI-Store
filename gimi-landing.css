@@ -5,17 +5,19 @@
    Brand tokens aligned with the CIP L1 certification page.
    ============================================================ */
 :root {
-  --gimi-teal: #36828A;
-  --gimi-teal-dark: #355E71;
-  --gimi-teal-light: #EAF3F4;
-  --gimi-yellow: #E2DC46;
-  --gimi-pink: #A43C7C;
-  --gimi-orange: #DE8E3D;
-  --gimi-navy: #2c4e5e;
-  --gimi-navy-dark: #26263f;
+  /* Aligned to the main GIMI site palette (index.html: store / home / about)
+     so the landing pages match the rest of the site. */
+  --gimi-teal: #2AACB5;
+  --gimi-teal-dark: #1E8A93;
+  --gimi-teal-light: #E6F6F7;
+  --gimi-yellow: #C9D940;
+  --gimi-pink: #E15A78;
+  --gimi-orange: #F0871E;
+  --gimi-navy: #1B1F3B;
+  --gimi-navy-dark: #13162C;
   --gimi-gray: #6B7280;
   --gimi-gray-light: #F0F4F6;
-  --gimi-text: #111111;
+  --gimi-text: #1F2937;
   --gimi-border: #E5E7EB;
   --gimi-white: #FFFFFF;
 }
@@ -41,14 +43,14 @@ body { font-family: 'Calibri','Segoe UI',system-ui,-apple-system,sans-serif; col
 /* ---------- Buttons ---------- */
 .btn { display: inline-block; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; font-family: inherit; }
 .btn-primary { background: var(--gimi-teal); color: var(--gimi-white); }
-.btn-primary:hover { background: var(--gimi-teal-dark); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(54,130,138,0.25); }
+.btn-primary:hover { background: var(--gimi-teal-dark); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(42,172,181,0.30); }
 .btn-outline { background: transparent; color: var(--gimi-teal); border: 2px solid var(--gimi-teal); }
 .btn-outline:hover { background: var(--gimi-teal); color: var(--gimi-white); }
 .btn-ghost { background: transparent; color: var(--gimi-white); border: 2px solid rgba(255,255,255,0.4); }
 .btn-ghost:hover { border-color: var(--gimi-white); background: rgba(255,255,255,0.08); }
 
 /* ---------- Hero ---------- */
-.hero { background: linear-gradient(135deg, var(--gimi-navy) 0%, #25414e 55%, var(--gimi-teal-dark) 100%); padding: 70px 0 76px; }
+.hero { background: linear-gradient(135deg, var(--gimi-navy) 0%, #263162 60%, #1E6E78 100%); padding: 70px 0 76px; }
 .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 240px; gap: 48px; align-items: center; }
 .hero-eyebrow { display: inline-block; color: var(--gimi-yellow); font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px; }
 .hero h1 { font-size: 44px; line-height: 1.12; color: var(--gimi-white); font-weight: 800; max-width: 760px; margin-bottom: 18px; letter-spacing: -0.6px; }
