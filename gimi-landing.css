@@ -83,11 +83,18 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
 .level-card ul { list-style: none; padding: 0; margin: 0; }
 .level-card li { position: relative; padding-left: 18px; font-size: 14px; line-height: 1.5; color: var(--gimi-text); margin-bottom: 6px; }
 .level-card li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--gimi-teal); }
+/* more breathing room when level cards follow the overview prose (masterclasses) */
+.prose + .level-grid { margin-top: 38px; }
 @media (max-width: 900px) { .level-grid { grid-template-columns: 1fr; gap: 20px; } .level-card { display: block; } }
 
 /* ---------- Overview: prose + "at a glance" aside (fills the right column) ---------- */
-.overview-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start; margin-top: 4px; }
+/* stretch -> both columns share one height so their tops AND bottoms line up;
+   the prose gets a small top inset so its first line matches the aside heading
+   (the card's border + padding push its content down by ~25px). */
+.overview-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: stretch; margin-top: 4px; }
+.overview-grid .prose { padding-top: 25px; }
 .overview-grid .prose p { margin-bottom: 16px; }
+.overview-grid .prose p:last-child { margin-bottom: 0; }
 .overview-aside { background: var(--gimi-gray-light); border: 1px solid var(--gimi-border); border-left: 4px solid var(--gimi-teal); border-radius: 14px; padding: 24px 26px; }
 .overview-aside h4 { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gimi-teal); margin: 0 0 14px; }
 .overview-aside ul { list-style: none; margin: 0; padding: 0; }
