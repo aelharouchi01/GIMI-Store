@@ -2475,14 +2475,21 @@ const CERT_ORG = [
   { code:'FFOC', title:'Future Foresight Organizational Certification', badge:'gimi-store-assets/v2/cff-1.png', desc:'Certifies an organization\'s foresight capability and practices, complementing the innovation maturity certification.' },
   { code:'VEA', title:'Venture Ecosystem Assessment', badge:'gimi-store-assets/v2/venture-ecosystem.png', url:'https://www.giminstitute.org/organizational-innovation-assessment/venture-ecosystem-assessment/', desc:'The world\'s first ISO-aligned innovation assessment and certification framework, built specifically for incubators, accelerators, innovation hubs, and startup ecosystem organizations. It evaluates four dimensions, Innovation Strategy, Capacity, Discipline, and Performance, and certifies maturity across four levels, from Emerging Incubator to Ecosystem Leader, with leadership interviews, a systems review, benchmarking, and a growth roadmap.' }
 ];
+/* Products with their own standalone landing page (opened via a "More" link). */
+const CERT_LANDING = {
+  'cip-mc':'cip-masterclass.html'
+};
 function certCard(p) {
   const meta = [];
   if (p.duration) meta.push(`<span class="ct-chip">${p.duration}</span>`);
   if (p.target)   meta.push(`<span class="ct-chip">${p.target}</span>`);
   const isoTag = p.flagship ? `<div class="ct-flag-tag">ISO/IEC 17024 Accredited</div>` : '';
-  const isoLink = p.id === 'cip-1'
-    ? `<a class="ct-iso" href="cip-l1-certification.html" target="_blank" rel="noopener"><span class="ct-iso-badge">ISO/IEC 17024</span> More certification info</a>`
-    : '';
+  let moreLink = '';
+  if (p.id === 'cip-1') {
+    moreLink = `<a class="ct-iso" href="cip-l1-certification.html" target="_blank" rel="noopener"><span class="ct-iso-badge">ISO/IEC 17024</span> More certification info</a>`;
+  } else if (CERT_LANDING[p.id]) {
+    moreLink = `<a class="ct-iso" href="${CERT_LANDING[p.id]}" target="_blank" rel="noopener">More about this course →</a>`;
+  }
   return `<div class="ct-card${p.flagship ? ' flag' : ''}" id="cert-${p.id}">
     <div class="ct-badge">${buildBadge(p)}</div>
     <div>
@@ -2491,7 +2498,7 @@ function certCard(p) {
       <h3>${p.title}</h3>
       <p>${p.tagline || p.description || ''}</p>
       <div class="ct-meta">${meta.join('')}</div>
-      <div class="ct-actions"><button class="ct-btn" onclick="openModal('${p.id}')">View details</button>${isoLink}</div>
+      <div class="ct-actions"><button class="ct-btn" onclick="openModal('${p.id}')">View details</button>${moreLink}</div>
     </div>
   </div>`;
 }
