@@ -2473,7 +2473,7 @@ const CERT_TRACKS = [
 const CERT_ORG = [
   { code:'OIC', title:'Organization Innovation Certification', badge:'gimi-store-assets/v2/full-oia.png', desc:'Certifies innovation maturity at Levels 1 to 4, based on the Organizational Innovation Assessment and aligned to ISO 56001. Certified organizations receive a certificate and letter of award issued by GIMI.' },
   { code:'FFOC', title:'Future Foresight Organizational Certification', badge:'gimi-store-assets/v2/cff-1.png', desc:'Certifies an organization\'s foresight capability and practices, complementing the innovation maturity certification.' },
-  { code:'VEC', title:'Venture Ecosystem Certification', badge:null, desc:'Certifies the health and maturity of a venture or startup ecosystem: its actors, support structures, and growth conditions.' }
+  { code:'VEC', title:'Venture Ecosystem Certification', badge:null, url:'https://www.giminstitute.org/organizational-innovation-assessment/venture-ecosystem-assessment/', desc:'The world\'s first ISO-aligned assessment and certification built for incubators, accelerators, innovation hubs, and startup ecosystem organizations. It evaluates four dimensions, Innovation Strategy, Capacity, Discipline, and Performance, and certifies maturity across four levels, from Emerging Incubator to Ecosystem Leader, with benchmarking and a growth roadmap.' }
 ];
 function certCard(p) {
   const meta = [];
@@ -2503,7 +2503,7 @@ function orgCard(o) {
       <div class="ct-code">${o.code}</div>
       <h3>${o.title}</h3>
       <p>${o.desc}</p>
-      <div class="ct-actions"><a class="ct-iso" href="https://www.giminstitute.org/" target="_blank" rel="noopener">Talk to GIMI</a></div>
+      <div class="ct-actions"><a class="ct-iso" href="${o.url || 'https://www.giminstitute.org/'}" target="_blank" rel="noopener">${o.url ? 'Learn more' : 'Talk to GIMI'}</a></div>
     </div>
   </div>`;
 }
