@@ -552,10 +552,13 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-programs .pr-label { font-size:13px; font-weight:800; color:var(--acc); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:11px; }
 #view-programs .pr-section h2 { font-size:28px; color:var(--navy); font-weight:800; line-height:1.18; margin-bottom:10px; letter-spacing:-0.3px; max-width:820px; }
 #view-programs .pr-intro { font-size:16.5px; color:var(--gray); line-height:1.6; margin-bottom:26px; max-width:820px; }
-/* program banners (full-width, fleshed out) */
+/* program banners (full-width, fleshed out, with logo) */
 #view-programs .pr-banners { display:flex; flex-direction:column; gap:16px; }
-#view-programs .pr-banner { display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center; background:#fff; border:1px solid var(--border); border-left:5px solid var(--acc); border-radius:14px; padding:26px 30px; box-shadow:0 4px 16px rgba(27,31,59,0.05); transition:all .2s; }
+#view-programs .pr-banner { display:grid; grid-template-columns:68px 1fr auto; gap:26px; align-items:center; background:#fff; border:1px solid var(--border); border-left:5px solid var(--acc); border-radius:14px; padding:24px 30px; box-shadow:0 4px 16px rgba(27,31,59,0.05); transition:all .2s; }
 #view-programs .pr-banner:hover { box-shadow:0 12px 30px rgba(27,31,59,0.10); transform:translateY(-1px); }
+#view-programs .pr-banner-logo { width:68px; height:68px; display:flex; align-items:center; justify-content:center; flex:none; }
+#view-programs .pr-banner-logo img { max-width:68px; max-height:68px; object-fit:contain; }
+#view-programs .pr-banner-mono { width:60px; height:60px; border-radius:14px; background:var(--gray-light); color:var(--acc); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:800; letter-spacing:.5px; }
 #view-programs .pr-banner h3 { font-size:20px; color:var(--navy); font-weight:800; line-height:1.25; margin-bottom:9px; }
 #view-programs .pr-banner .pb-desc { font-size:15px; color:var(--gray); line-height:1.6; margin-bottom:14px; max-width:780px; }
 #view-programs .pr-banner-points { display:flex; flex-wrap:wrap; gap:8px; }
@@ -588,7 +591,10 @@ footer strong { color:rgba(255,255,255,0.85); }
   #view-programs .pr-cats{ grid-template-columns:repeat(2,1fr); margin-top:-44px; }
   #view-programs .pr-hero h1{ font-size:32px; }
   #view-programs .pr-section h2,#view-programs .pr-quotes h2{ font-size:24px; }
-  #view-programs .pr-banner{ grid-template-columns:1fr; gap:16px; }
+  #view-programs .pr-banner{ grid-template-columns:52px 1fr; gap:16px 18px; }
+  #view-programs .pr-banner-logo{ width:52px; height:52px; }
+  #view-programs .pr-banner-logo img{ max-width:52px; max-height:52px; }
+  #view-programs .pr-banner-action{ grid-column:1 / -1; }
   #view-programs .pr-banner-link{ width:100%; justify-content:center; }
   #view-programs .pr-qgrid{ grid-template-columns:1fr; }
 }
@@ -2487,7 +2493,7 @@ renderGrid(PRODUCTS);
 const SITE_NAV = [
   { id:'home',         label:'Home',              subs:['About GIMI','Our Reach','Certifications','Programs','Contact'] },
   { id:'about',        label:'About Us',          subs:['Who We Are','Why GIMI','Our Reach','In Pictures','Leadership','Contact Us'] },
-  { id:'programs',     label:'Programs',          subs:['Assessments','Training & Masterclasses','Accelerators & Platforms','Coaching & Advisory'] },
+  { id:'programs',     label:'Programs',          subs:['Assessments','Training & Masterclasses','Consulting','Speaker Bureau'] },
   { id:'thought',      label:'Thought Leadership',subs:['Innovation Awards','GIMI Think Tank','Books & Guides','International Journal of Innovation Science','Blog: Innovation Insights','News & Events'] },
   { id:'certificates', label:'Certificates',      subs:['Innovation Core','Innovation Elective','Future Foresight','Leadership Core','Consulting Core','Organizational Certifications'] },
   { id:'store',        label:'Store',             subs:[] },
@@ -2556,7 +2562,7 @@ const SUB_ANCHORS = {
   },
   programs: {
     'Assessments':'pr-assess', 'Training & Masterclasses':'pr-training',
-    'Accelerators & Platforms':'pr-accel', 'Coaching & Advisory':'pr-coaching'
+    'Consulting':'pr-consult', 'Speaker Bureau':'pr-speaker'
   }
 };
 /* Built views toggle by section; other sections are highlight-only (not built yet). */
@@ -2666,72 +2672,75 @@ renderCertificates();
 const PROGRAMS = [
   { anchor:'pr-assess', label:'Assessments', accent:'var(--teal)',
     blurb:'Benchmark where people and organizations stand.',
-    headline:'Know where you stand before you invest in change.',
-    intro:'You can\'t improve what you don\'t measure. GIMI\'s assessments give an objective baseline of innovation capability, reveal the barriers holding you back, and turn the results into a prioritized roadmap.',
+    headline:'Know where you stand, and where to grow next.',
+    intro:'Every innovation journey starts with an honest baseline. GIMI\'s assessments measure innovation capability for people and organizations, reveal the gaps holding them back, and turn the results into a prioritized roadmap.',
     items:[
-      { name:'Innovation Potential Assessment (IPA)', url:'innovation-potential-assessment.html',
-        desc:'A short online assessment that measures the innovation mindset and skills of individuals and teams across two dimensions. It produces a personalized report that pinpoints strengths and blind spots and maps each person to one of seven innovation profiles, so development effort goes exactly where it is needed.',
-        points:['~45 minutes, online','Individual & team views','Personalized growth roadmap'] },
-      { name:'Organizational Innovation Assessment (OIA)', url:'org-innovation-cert.html',
-        desc:'Benchmarks how systematically your organization manages innovation, from a fast self-assessment to a full expert-led audit aligned to ISO 56001. It scores maturity across Strategy, Capacity, and Discipline and delivers a clear roadmap, plus a Company Certificate at Level 1 to 4 for the full audit.',
-        points:['Self-assessment or expert audit','Aligned to ISO 56001','Maturity levels 1–4'] },
-      { name:'Venture Ecosystem Assessment (VEA)', url:'venture-ecosystem-assessment.html',
-        desc:'The world\'s first ISO-aligned assessment built specifically for incubators, accelerators, and innovation hubs. It evaluates the institutional systems that help founders scale across four dimensions and certifies maturity from Emerging Incubator to Ecosystem Leader, with global benchmarking and a growth roadmap.',
-        points:['First ISO-aligned ecosystem framework','Four evaluation dimensions','Global benchmarking + roadmap'] }
+      { name:'Innovation Potential Assessment (IPA)', logo:'gimi-store-assets/v2/ipa-individual.png', url:'innovation-potential-assessment.html',
+        desc:'Measures the innovation mindset and skills of individuals and teams, so you can build high-performance teams and direct development exactly where it is needed. Each person receives a personalized report and growth path; leaders get an aggregated view of the team.',
+        points:['Individual + team report','Mindset & tools measured','Training needs by group'] },
+      { name:'Organizational Innovation Assessment (OIA)', logo:'gimi-store-assets/v2/full-oia.png', url:'org-innovation-cert.html',
+        desc:'An expert audit of how systematically your organization manages innovation across Strategy, Capacity, and Discipline, delivering a maturity score, a roadmap, and a Company Certificate at Level 1 to 4. More than 900 organizations have been audited to date.',
+        points:['Strategy · Capacity · Discipline','Maturity levels 1–4','900+ organizations audited'] },
+      { name:'Venture Ecosystem Assessment (VEA)', logo:'gimi-store-assets/v2/venture-ecosystem.png', url:'venture-ecosystem-assessment.html',
+        desc:'The world\'s first ISO-aligned assessment built specifically for incubators, accelerators, and innovation hubs. It evaluates the systems that help founders scale across four dimensions and certifies maturity from Emerging Incubator to Ecosystem Leader.',
+        points:['Built for ecosystems','Four evaluation dimensions','ISO-aligned certification'] },
+      { name:'ISO 56001 Innovation Assessment', mono:'ISO',
+        desc:'An organizational innovation assessment aligned to the ISO 56001 management-system standard, for organizations that want to formalize, benchmark, and certify their innovation management against the international standard.',
+        points:['Aligned to ISO 56001','Certifiable management system','Audit + roadmap'] },
+      { name:'Future Foresight Assessment', logo:'gimi-store-assets/v2/cff-1.png', url:'ff-org-cert.html',
+        desc:'Assesses how well your organization anticipates change and turns it into strategy, evaluating foresight capability on the S4Futures framework and certifying maturity across four levels.',
+        points:['S4Futures framework','Evidence-based foresight','Four maturity levels'] }
     ]},
   { anchor:'pr-training', label:'Training & Masterclasses', accent:'var(--pink)',
-    blurb:'Build practical innovation skills with experts.',
-    headline:'Make innovation a skill your teams use, not a buzzword.',
-    intro:'Innovation is a discipline, not a stroke of luck. Our expert-led programs give teams a shared language, proven tools, and the confidence to run the innovation process end to end, building capability that stays in-house.',
+    blurb:'Build innovation skills your people own.',
+    headline:'Make innovation a skill your people own.',
+    intro:'Innovation is a discipline, not a stroke of luck. GIMI\'s expert-led programs give teams a shared language, proven tools, and globally recognized certification, building capability that stays in-house long after the program ends.',
     items:[
-      { name:'CIP Masterclass', url:'cip-masterclass.html',
-        desc:'An expert-led virtual cohort that fast-tracks working professionals to Certified Innovation Professional, Levels 1 and 2, the only innovation management certification accredited to ISO/IEC 17024. Over eight weeks you learn the full innovation process and apply it to a real growth challenge.',
+      { name:'CIP Masterclass', logo:'gimi-store-assets/v2/cip-mc.png', url:'cip-masterclass.html',
+        desc:'An expert-led virtual cohort that fast-tracks working professionals to Certified Innovation Professional, Levels 1 and 2, the only innovation management certification accredited to ISO/IEC 17024. You learn the full innovation process and apply it to a real growth challenge.',
         points:['8-week live cohort','CIP Level 1 + Level 2','ISO/IEC 17024 accredited'] },
-      { name:'CCIO Masterclass', url:'ccio-masterclass.html',
-        desc:'GIMI\'s executive program for senior leaders who need to build and lead innovation across the enterprise. A live masterclass plus months of mentoring equip you to stand up an innovation management system using the SCDP framework, earning Certified Chief Innovation Officer Levels 3 and 4.',
+      { name:'CCIO Masterclass', logo:'gimi-store-assets/v2/ccio-mc.png', url:'ccio-masterclass.html',
+        desc:'GIMI\'s executive program for senior leaders who build and lead innovation across the enterprise. A live masterclass plus months of mentoring equip you to stand up an innovation management system using the SCDP framework, earning CCIO Levels 3 and 4.',
         points:['Masterclass + mentoring','CCIO Level 3 + Level 4','Build an innovation system'] },
-      { name:'Innovation Academy',
-        desc:'A turnkey program that turns your organization into a self-sustaining innovation learning hub, training your people, embedding GIMI\'s methodology, and building the internal capacity to keep innovating long after the engagement ends.',
-        points:['In-house capability','Methodology embedded','Self-sustaining hub'] },
-      { name:'Conferences & Summits',
-        desc:'Global conferences, summits, and hands-on training led by leading innovation practitioners, where your teams learn the latest methods and connect with a worldwide community of innovators.',
-        points:['Led by top practitioners','Latest methods & tools','Global networking'] }
+      { name:'Future Foresight Training', logo:'gimi-store-assets/v2/cff-1.png',
+        desc:'Trains professionals and leaders to question assumptions, read weak signals, and build rigorous, evidence-based scenarios using the S4Futures framework, so your organization can plan confidently under uncertainty.',
+        points:['S4Futures method','Professional to Leader levels','Scenario planning'] },
+      { name:'Design Thinking Trainer', logo:'gimi-store-assets/v2/cdtt-3.png', url:'design-thinking-trainer.html',
+        desc:'Certifies practitioners to facilitate and teach Design Thinking, the Immerse, Invent, and Implement method for turning real human needs into tested solutions, so the capability compounds across everyone they train.',
+        points:['Train-the-trainer','Immerse · Invent · Implement','Facilitation skills'] },
+      { name:'Certified GIMI Auditor', logo:'gimi-store-assets/v2/cga.png',
+        desc:'Prepares experienced professionals to audit innovation management systems against ISO 56001, the skills consultants and internal auditors need to assess maturity and guide organizations toward certification.',
+        points:['Audit to ISO 56001','For auditors & consultants','Certified GIMI Auditor'] },
+      { name:'Certified AI Agent Practitioner', logo:'gimi-store-assets/v2/caap.png',
+        desc:'Teaches practitioners to operationalize AI by building a working agent through GIMI\'s Innovation 5.0 approach, turning AI from a talking point into a practical capability inside the innovation process.',
+        points:['Build a working AI agent','Innovation 5.0','Hands-on'] }
     ]},
-  { anchor:'pr-accel', label:'Accelerators & Platforms', accent:'var(--orange)',
-    blurb:'Generate ideas and run innovation at scale.',
-    headline:'Turn ideas into ventures, faster.',
-    intro:'Ideas are easy; execution is hard. GIMI\'s platforms and accelerator programs help you surface the best opportunities, keep a portfolio of ideas moving, and rally teams around real problems, compressing the time from insight to impact.',
+  { anchor:'pr-consult', label:'Consulting', accent:'var(--orange)',
+    blurb:'Deliver breakthrough results with experts alongside you.',
+    headline:'Deliver breakthrough results, with experts alongside you.',
+    intro:'When you need outcomes, not just training, GIMI puts experienced innovators alongside your teams to source ideas, accelerate projects, and deliver real business results.',
     items:[
-      { name:'AKAIO',
-        desc:'An AI-powered innovation platform that helps teams explore hidden trends, envision future scenarios, and match with the right partners, turning scattered signals into a focused set of opportunities to act on.',
-        points:['AI-powered insights','Trends & scenarios','Partner matching'] },
-      { name:'Eureka',
-        desc:'Idea management and innovation portfolio software that captures ideas from across the organization, runs them through a clear pipeline, and gives leaders a live view of the innovation portfolio.',
-        points:['Crowdsource ideas','Manage the pipeline','Portfolio visibility'] },
-      { name:'Innovation Olympics',
-        desc:'A gamified innovation challenge that mobilizes teams and entire ecosystems to solve real problems against the clock, building energy, skills, and a pipeline of tested ideas in days rather than months.',
-        points:['Fast, high-energy format','Real problems solved','Skills + idea pipeline'] },
-      { name:'QuickGrowth',
-        desc:'A software-enabled strategic planning platform built for SMEs, guiding smaller organizations through a structured path from strategy to growth without the overhead of a large consulting engagement.',
-        points:['Built for SMEs','Strategy to growth','Guided & affordable'] }
+      { name:'Innovation Olympics', logo:'gimi-store-assets/v2/innovation-olympics.png',
+        desc:'An open innovation competition in which five expert teams, drawn from a network of 150+ global universities, run an accelerated 8-week sprint to surface and shape your next strategic growth opportunities, from ideas to fields-of-play to preliminary business cases. More than 100 global companies have taken part.',
+        points:['Open innovation competition','5 teams · 8-week sprint','100+ companies · 150+ universities'] },
+      { name:'Accelerators (2x, 10x, EPR)', mono:'EPR',
+        desc:'Breakthrough Growth Projects that accelerate a portfolio of innovation projects to implementation over 10 to 12 weeks, through workshops, coaching, and teamwork, building prototypes and certified people, whether you are pursuing 2x core growth or 10x breakthroughs.',
+        points:['10–12 week sprints','Prototype portfolio + certified teams','2x and 10x growth tracks'] },
+      { name:'Workshops', mono:'WS',
+        desc:'Facilitated strategy and innovation workshops that align your leadership team on where to focus, prioritizing fields-of-play and building a shared innovation roadmap grounded in an upfront audit and leadership interviews.',
+        points:['Leadership alignment','Prioritized fields-of-play','Shared roadmap'] },
+      { name:'Digital Tools', logo:'gimi-store-assets/v2/akaio.png',
+        desc:'GIMI\'s innovation software, including AKAIO for AI-powered trends and scenarios, Eureka for idea and portfolio management, and team-powered ideation, to crowdsource ideas and run innovation at scale.',
+        points:['AKAIO · Eureka','Idea crowdsourcing','Portfolio management'] }
     ]},
-  { anchor:'pr-coaching', label:'Coaching & Advisory', accent:'var(--navy)',
-    blurb:'Work directly with GIMI experts.',
-    headline:'Expert guidance, exactly when you need it.',
-    intro:'Frameworks get you started; experienced guidance gets you through. GIMI\'s coaches and advisors help leaders make the right calls, avoid common traps, and embed innovation into how the organization actually runs.',
+  { anchor:'pr-speaker', label:'Speaker Bureau', accent:'var(--navy)',
+    blurb:'Inspire and align your leadership.',
+    headline:'Inspire and align your leadership.',
+    intro:'Set the tone for change. GIMI\'s keynote speakers align decision-makers and spark an innovation mindset across the organization, at conferences, summits, and executive sessions.',
     items:[
-      { name:'Innovation Coaching',
-        desc:'Personalized coaching that pairs your leaders and teams with experienced innovation experts, giving them on-demand guidance to navigate real decisions and keep momentum between formal programs.',
-        points:['1:1 and team coaching','Experienced experts','Guidance when it counts'] },
-      { name:'Innovation Consulting & Advisory',
-        desc:'Hands-on advisory engagements where GIMI experts work alongside your leadership to design innovation strategy, build capability, and deliver measurable results, tailored to your context rather than a template.',
-        points:['Tailored to your context','Strategy + capability','Measurable results'] },
-      { name:'Keynote Speech',
-        desc:'Inspiring keynotes that align leadership and spark an innovation mindset across the organization, setting the tone for change before a major program or transformation.',
-        points:['Align leadership','Spark the mindset','Set the tone'] },
-      { name:'GIMI Think Tank',
-        desc:'Free monthly access to global innovation experts and a community of 18,000+ innovators, a low-commitment way to stay current, exchange practices, and tap into the network.',
-        points:['Free to join','Monthly expert sessions','18,000+ community'] }
+      { name:'Keynote Speeches & Executive Summits', logo:'gimi-store-assets/v2/speech.png',
+        desc:'One to two hour keynotes and executive leadership summits, virtual or in person, that align decision-makers and inspire teams to drive breakthrough results with an innovative mindset. Delivered at Fortune 1000 companies worldwide.',
+        points:['Virtual or in person','Fortune 1000 experience','Align and inspire'] }
     ]}
 ];
 function programBanner(it) {
@@ -2739,7 +2748,11 @@ function programBanner(it) {
     ? `<a class="pr-banner-link" href="${it.url}" target="_blank" rel="noopener">Learn more →</a>`
     : `<a class="pr-banner-link ghost" href="mailto:info@giminstitute.org">Talk to GIMI →</a>`;
   const pts = (it.points || []).map(p => `<span>${p}</span>`).join('');
+  const logo = it.logo
+    ? `<img src="${it.logo}?v=${ASSET_VER}" alt="">`
+    : `<div class="pr-banner-mono">${it.mono || ''}</div>`;
   return `<div class="pr-banner">
+    <div class="pr-banner-logo">${logo}</div>
     <div class="pr-banner-body">
       <h3>${it.name}</h3>
       <p class="pb-desc">${it.desc}</p>
