@@ -531,36 +531,51 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-certificates .ct-iso .ct-iso-badge { font-size:10px; font-weight:800; letter-spacing:0.4px; background:var(--navy); color:#fff; padding:3px 7px; border-radius:5px; }
 @media (max-width:900px){ #view-certificates .ct-grid,#view-certificates .ct-card{grid-template-columns:1fr;} #view-certificates .ct-hero h1{font-size:32px;} #view-certificates .ct-section h2{font-size:25px;} }
 
-/* ===== PROGRAMS VIEW ===== */
-#view-programs .pr-hero { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); padding:64px 0 68px; }
+/* ===== PROGRAMS VIEW (category tiles + color-coded list rows) ===== */
+#view-programs { --acc: var(--teal); }
+#view-programs .pr-hero { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); padding:64px 0 96px; }
 #view-programs .pr-hero-inner { max-width:var(--wrap); margin:0 auto; padding:0 32px; }
 #view-programs .pr-eyebrow { color:var(--yellow); font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
 #view-programs .pr-hero h1 { font-size:42px; line-height:1.12; color:#fff; font-weight:800; letter-spacing:-0.6px; margin-bottom:18px; max-width:840px; }
 #view-programs .pr-hero h1 span { color:var(--teal); }
 #view-programs .pr-hero p { font-size:18px; color:rgba(255,255,255,0.80); max-width:800px; }
-#view-programs .pr-section { max-width:var(--wrap); margin:0 auto; padding:54px 32px; border-bottom:1px solid var(--border); }
+/* category quick-nav tiles, overlapping the hero */
+#view-programs .pr-cats { max-width:var(--wrap); margin:-60px auto 0; padding:0 32px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px; position:relative; z-index:3; }
+#view-programs .pr-cat { --acc:var(--teal); text-align:left; background:#fff; border:1px solid var(--border); border-top:4px solid var(--acc); border-radius:14px; padding:18px 20px; cursor:pointer; font-family:inherit; box-shadow:0 10px 28px rgba(27,31,59,0.10); transition:all .2s; }
+#view-programs .pr-cat:hover { transform:translateY(-3px); box-shadow:0 16px 36px rgba(27,31,59,0.15); }
+#view-programs .pr-cat .pc-count { font-size:11.5px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; color:var(--acc); margin-bottom:6px; }
+#view-programs .pr-cat .pc-name { font-size:16px; font-weight:800; color:var(--navy); line-height:1.2; margin-bottom:7px; }
+#view-programs .pr-cat p { font-size:13px; color:var(--gray); line-height:1.45; }
+#view-programs .pr-section { max-width:var(--wrap); margin:0 auto; padding:50px 32px; border-bottom:1px solid var(--border); }
 #view-programs .pr-section:last-child { border-bottom:none; }
-#view-programs .pr-label { font-size:13px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+#view-programs .pr-label { font-size:13px; font-weight:800; color:var(--acc); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
 #view-programs .pr-section h2 { font-size:30px; color:var(--navy); font-weight:800; line-height:1.15; margin-bottom:10px; letter-spacing:-0.4px; }
-#view-programs .pr-intro { font-size:17px; color:var(--gray); margin-bottom:28px; max-width:820px; }
-#view-programs .pr-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
-#view-programs .pr-card { display:grid; grid-template-columns:auto 1fr; gap:18px; background:#fff; border:1px solid var(--border); border-radius:16px; padding:22px 24px; box-shadow:0 4px 16px rgba(27,31,59,0.05); transition:all .2s; }
-#view-programs .pr-card:hover { border-color:var(--teal); box-shadow:0 12px 30px rgba(27,31,59,0.10); }
-#view-programs .pr-badge { width:72px; flex:none; display:flex; align-items:flex-start; justify-content:center; }
-#view-programs .pr-badge img { max-width:72px; max-height:72px; object-fit:contain; }
-#view-programs .pr-badge .badge-svg { width:64px; height:64px; }
-#view-programs .pr-badge-ph { width:64px; height:64px; border-radius:13px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; text-align:center; line-height:1.15; padding:5px; }
-#view-programs .pr-code { font-size:11px; font-weight:800; letter-spacing:1px; color:var(--teal-dark); margin-bottom:4px; }
-#view-programs .pr-card h3 { font-size:18px; color:var(--navy); font-weight:800; line-height:1.25; margin-bottom:7px; }
-#view-programs .pr-card p { font-size:14.5px; color:var(--gray); line-height:1.5; margin-bottom:12px; }
-#view-programs .pr-meta { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
-#view-programs .pr-chip { font-size:11.5px; font-weight:700; color:var(--teal-dark); background:var(--teal-light); border-radius:6px; padding:4px 9px; }
-#view-programs .pr-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
-#view-programs .pr-btn { font-size:13px; font-weight:700; padding:9px 16px; border-radius:9px; border:2px solid var(--teal); color:var(--teal); background:none; cursor:pointer; font-family:inherit; transition:all .18s; }
-#view-programs .pr-btn:hover { background:var(--teal); color:#fff; }
-#view-programs .pr-link { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:var(--teal-dark); text-decoration:none; }
+#view-programs .pr-intro { font-size:17px; color:var(--gray); margin-bottom:26px; max-width:840px; }
+/* program rows (list, not boxed grid) */
+#view-programs .pr-list { display:flex; flex-direction:column; gap:14px; }
+#view-programs .pr-row { display:grid; grid-template-columns:60px 1fr auto; gap:22px; align-items:center; background:#fff; border:1px solid var(--border); border-left:5px solid var(--acc); border-radius:12px; padding:18px 24px; transition:all .2s; }
+#view-programs .pr-row:hover { box-shadow:0 10px 26px rgba(27,31,59,0.09); transform:translateY(-1px); }
+#view-programs .pr-thumb { width:60px; height:60px; display:flex; align-items:center; justify-content:center; }
+#view-programs .pr-thumb img { max-width:60px; max-height:60px; object-fit:contain; }
+#view-programs .pr-thumb .badge-svg { width:56px; height:56px; }
+#view-programs .pr-thumb-ph { width:56px; height:56px; border-radius:12px; background:var(--gray-light); color:var(--acc); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; text-align:center; line-height:1.1; padding:5px; }
+#view-programs .pr-rinfo h3 { font-size:17px; color:var(--navy); font-weight:800; line-height:1.25; margin-bottom:5px; }
+#view-programs .pr-rinfo p { font-size:14px; color:var(--gray); line-height:1.5; margin:0; max-width:640px; }
+#view-programs .pr-rside { text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:9px; min-width:128px; }
+#view-programs .pr-price { font-size:15px; font-weight:800; color:var(--navy); }
+#view-programs .pr-ractions { display:flex; align-items:center; gap:12px; }
+#view-programs .pr-btn { font-size:13px; font-weight:700; padding:8px 15px; border-radius:9px; border:2px solid var(--acc); color:var(--acc); background:none; cursor:pointer; font-family:inherit; transition:all .18s; white-space:nowrap; }
+#view-programs .pr-btn:hover { background:var(--acc); color:#fff; }
+#view-programs .pr-link { display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:var(--acc); text-decoration:none; white-space:nowrap; }
 #view-programs .pr-link:hover { text-decoration:underline; }
-@media (max-width:900px){ #view-programs .pr-grid,#view-programs .pr-card{grid-template-columns:1fr;} #view-programs .pr-hero h1{font-size:32px;} #view-programs .pr-section h2{font-size:25px;} }
+@media (max-width:900px){
+  #view-programs .pr-cats{ grid-template-columns:repeat(2,1fr); margin-top:-44px; }
+  #view-programs .pr-hero h1{ font-size:32px; }
+  #view-programs .pr-section h2{ font-size:25px; }
+  #view-programs .pr-row{ grid-template-columns:52px 1fr; }
+  #view-programs .pr-rside{ grid-column:1 / -1; flex-direction:row; align-items:center; justify-content:space-between; text-align:left; min-width:0; margin-top:2px; }
+}
+@media (max-width:560px){ #view-programs .pr-cats{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -1093,6 +1108,7 @@ footer strong { color:rgba(255,255,255,0.85); }
       <p>From assessments that benchmark where you stand, to masterclasses, accelerators, and expert coaching that move you forward, GIMI's programs turn innovation into a managed capability for people and organizations.</p>
     </div>
   </section>
+  <div id="programCats" class="pr-cats"></div>
   <div id="programTracks"></div>
 </div><!-- /#view-programs -->
 
@@ -2601,67 +2617,78 @@ renderCertificates();
 
 /* ===== Programs view: curated program offerings, grouped ===== */
 const PROGRAMS = [
-  { anchor:'pr-assess', label:'Assessments', intro:'Benchmark innovation capability for individuals and organizations, with automated reports and a clear growth path.', items:[
+  { anchor:'pr-assess', label:'Assessments', accent:'var(--teal)',
+    blurb:'Benchmark where people and organizations stand.',
+    intro:'Benchmark innovation capability for individuals and organizations, with automated reports and a clear growth path.', items:[
     { pid:'ipa-individual', url:'innovation-potential-assessment.html' },
     { pid:'ipa-corporate', url:'innovation-potential-assessment.html' },
     { pid:'oia-self', url:'org-innovation-cert.html' },
     { pid:'full-oia', url:'org-innovation-cert.html' },
     { pid:'vea', url:'venture-ecosystem-assessment.html' }
   ]},
-  { anchor:'pr-training', label:'Training & Masterclasses', intro:'Expert-led programs that build practical innovation skills, from live masterclasses to a full in-house academy.', items:[
+  { anchor:'pr-training', label:'Training & Masterclasses', accent:'var(--pink)',
+    blurb:'Build practical innovation skills with experts.',
+    intro:'Expert-led programs that build practical innovation skills, from live masterclasses to a full in-house academy.', items:[
     { pid:'cip-mc', url:'cip-masterclass.html' },
     { pid:'ccio-mc', url:'ccio-masterclass.html' },
     { pid:'academy' },
     { custom:{ code:'EVENTS', title:'Conferences & Summits', desc:'Global conferences, summits, and hands-on training led by leading innovation practitioners worldwide.' } }
   ]},
-  { anchor:'pr-accel', label:'Accelerators & Platforms', intro:'Software and programs that help you generate ideas, accelerate ventures, and run innovation at scale.', items:[
+  { anchor:'pr-accel', label:'Accelerators & Platforms', accent:'var(--orange)',
+    blurb:'Generate ideas and run innovation at scale.',
+    intro:'Software and programs that help you generate ideas, accelerate ventures, and run innovation at scale.', items:[
     { pid:'akaio' },
     { pid:'eureka' },
     { custom:{ code:'OLYMPICS', title:'Innovation Olympics', desc:'A gamified innovation challenge that mobilizes teams and ecosystems to solve real problems against the clock.', badge:'gimi-store-assets/v2/innovation-olympics.png' } },
     { pid:'quickgrowth' }
   ]},
-  { anchor:'pr-coaching', label:'Coaching & Advisory', intro:'Work directly with GIMI experts, through coaching, advisory, keynotes, and a global community of innovators.', items:[
+  { anchor:'pr-coaching', label:'Coaching & Advisory', accent:'var(--navy)',
+    blurb:'Work directly with GIMI experts.',
+    intro:'Work directly with GIMI experts, through coaching, advisory, keynotes, and a global community of innovators.', items:[
     { pid:'coaching' },
     { custom:{ code:'ADVISORY', title:'Innovation Consulting & Advisory', desc:'Hands-on advisory engagements that help leadership teams design strategy, build capability, and deliver results.' } },
     { pid:'speech' },
     { pid:'thinktank' }
   ]}
 ];
-function programCard(item) {
+function programRow(item) {
   if (item.custom) {
     const c = item.custom;
-    const badge = c.badge ? `<img src="${c.badge}?v=${ASSET_VER}" alt="">` : `<div class="pr-badge-ph">${c.code || ''}</div>`;
-    return `<div class="pr-card">
-      <div class="pr-badge">${badge}</div>
-      <div>
-        ${c.code ? `<div class="pr-code">${c.code}</div>` : ''}
-        <h3>${c.title}</h3>
-        <p>${c.desc}</p>
-        <div class="pr-actions"><a class="pr-link" href="mailto:info@giminstitute.org">Talk to GIMI →</a></div>
-      </div>
+    const thumb = c.badge ? `<img src="${c.badge}?v=${ASSET_VER}" alt="">` : `<div class="pr-thumb-ph">${c.code || ''}</div>`;
+    return `<div class="pr-row">
+      <div class="pr-thumb">${thumb}</div>
+      <div class="pr-rinfo"><h3>${c.title}</h3><p>${c.desc}</p></div>
+      <div class="pr-rside"><div class="pr-ractions"><a class="pr-link" href="mailto:info@giminstitute.org">Talk to GIMI →</a></div></div>
     </div>`;
   }
   const p = PRODUCTS.find(x => x.id === item.pid);
   if (!p) return '';
-  const price = p.priceDisplay ? `<span class="pr-chip">${p.priceDisplay}</span>` : '';
+  const price = p.priceDisplay ? `<div class="pr-price">${p.priceDisplay}</div>` : '';
   const more = item.url ? `<a class="pr-link" href="${item.url}" target="_blank" rel="noopener">Learn more →</a>` : '';
-  return `<div class="pr-card">
-    <div class="pr-badge">${buildBadge(p)}</div>
-    <div>
-      ${p.code ? `<div class="pr-code">${p.code}</div>` : ''}
-      <h3>${p.title}</h3>
-      <p>${p.tagline || p.description || ''}</p>
-      <div class="pr-meta">${price}</div>
-      <div class="pr-actions"><button class="pr-btn" onclick="openModal('${p.id}')">View details</button>${more}</div>
-    </div>
+  return `<div class="pr-row">
+    <div class="pr-thumb">${buildBadge(p)}</div>
+    <div class="pr-rinfo"><h3>${p.title}</h3><p>${p.tagline || p.description || ''}</p></div>
+    <div class="pr-rside">${price}<div class="pr-ractions"><button class="pr-btn" onclick="openModal('${p.id}')">View details</button>${more}</div></div>
   </div>`;
 }
+function gotoProgram(anchor) {
+  const el = document.getElementById(anchor);
+  if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+}
 function renderPrograms() {
-  let html = '';
-  PROGRAMS.forEach(s => {
-    html += `<section class="pr-section" id="${s.anchor}"><div class="pr-label">${s.label}</div><h2>${s.label}</h2><p class="pr-intro">${s.intro}</p><div class="pr-grid">${s.items.map(programCard).join('')}</div></section>`;
-  });
-  document.getElementById('programTracks').innerHTML = html;
+  document.getElementById('programCats').innerHTML = PROGRAMS.map(s =>
+    `<button class="pr-cat" style="--acc:${s.accent}" onclick="gotoProgram('${s.anchor}')">
+      <div class="pc-count">${s.items.length} programs</div>
+      <div class="pc-name">${s.label}</div>
+      <p>${s.blurb}</p>
+    </button>`).join('');
+  document.getElementById('programTracks').innerHTML = PROGRAMS.map(s =>
+    `<section class="pr-section" id="${s.anchor}" style="--acc:${s.accent}">
+      <div class="pr-label">${s.label}</div>
+      <h2>${s.label}</h2>
+      <p class="pr-intro">${s.intro}</p>
+      <div class="pr-list">${s.items.map(programRow).join('')}</div>
+    </section>`).join('');
 }
 renderPrograms();
 renderNav();
