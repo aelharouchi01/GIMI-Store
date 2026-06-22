@@ -545,24 +545,28 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-programs .pr-cat:hover { transform:translateY(-3px); box-shadow:0 16px 36px rgba(27,31,59,0.15); }
 #view-programs .pr-cat .pc-name { font-size:16px; font-weight:800; color:var(--navy); line-height:1.2; margin-bottom:7px; }
 #view-programs .pr-cat p { font-size:13px; color:var(--gray); line-height:1.45; }
-/* category sections: narrative (left) + program list (right), alternating bg */
-#view-programs .pr-section { padding:58px 0; }
+/* category section (alternating bg) */
+#view-programs .pr-section { padding:54px 0; }
 #view-programs .pr-section:nth-child(even) { background:var(--gray-light); }
-#view-programs .pr-inner { max-width:var(--wrap); margin:0 auto; padding:0 32px; display:grid; grid-template-columns:1.05fr 0.95fr; gap:54px; align-items:start; }
-#view-programs .pr-label { font-size:13px; font-weight:800; color:var(--acc); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:12px; }
-#view-programs .pr-head h2 { font-size:28px; color:var(--navy); font-weight:800; line-height:1.18; margin-bottom:14px; letter-spacing:-0.3px; }
-#view-programs .pr-lead { font-size:16px; color:var(--text); line-height:1.7; margin-bottom:20px; }
-#view-programs .pr-impact { list-style:none; display:flex; flex-direction:column; gap:10px; }
-#view-programs .pr-impact li { position:relative; padding-left:26px; font-size:14.5px; color:var(--navy); font-weight:600; line-height:1.45; }
-#view-programs .pr-impact li::before { content:'→'; position:absolute; left:0; top:0; color:var(--acc); font-weight:800; }
-#view-programs .pr-items { display:flex; flex-direction:column; }
-#view-programs .pr-item { display:flex; justify-content:space-between; align-items:flex-start; gap:18px; padding:18px 0; border-top:1px solid var(--border); }
-#view-programs .pr-section:nth-child(even) .pr-item { border-top-color:#dfe6ea; }
-#view-programs .pr-item:first-child { border-top:none; padding-top:0; }
-#view-programs .pr-item h4 { font-size:16px; color:var(--navy); font-weight:800; margin-bottom:4px; line-height:1.3; }
-#view-programs .pr-item p { font-size:14px; color:var(--gray); line-height:1.5; margin:0; }
-#view-programs .pr-link { display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:var(--acc); text-decoration:none; white-space:nowrap; flex:none; padding-top:3px; }
-#view-programs .pr-link:hover { text-decoration:underline; }
+#view-programs .pr-wrap { max-width:var(--wrap); margin:0 auto; padding:0 32px; }
+#view-programs .pr-label { font-size:13px; font-weight:800; color:var(--acc); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:11px; }
+#view-programs .pr-section h2 { font-size:28px; color:var(--navy); font-weight:800; line-height:1.18; margin-bottom:10px; letter-spacing:-0.3px; max-width:820px; }
+#view-programs .pr-intro { font-size:16.5px; color:var(--gray); line-height:1.6; margin-bottom:26px; max-width:820px; }
+/* program banners (full-width, fleshed out) */
+#view-programs .pr-banners { display:flex; flex-direction:column; gap:16px; }
+#view-programs .pr-banner { display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center; background:#fff; border:1px solid var(--border); border-left:5px solid var(--acc); border-radius:14px; padding:26px 30px; box-shadow:0 4px 16px rgba(27,31,59,0.05); transition:all .2s; }
+#view-programs .pr-banner:hover { box-shadow:0 12px 30px rgba(27,31,59,0.10); transform:translateY(-1px); }
+#view-programs .pr-banner h3 { font-size:20px; color:var(--navy); font-weight:800; line-height:1.25; margin-bottom:9px; }
+#view-programs .pr-banner .pb-desc { font-size:15px; color:var(--gray); line-height:1.6; margin-bottom:14px; max-width:780px; }
+#view-programs .pr-banner-points { display:flex; flex-wrap:wrap; gap:8px; }
+#view-programs .pr-banner-points span { position:relative; font-size:12px; font-weight:700; color:var(--navy); background:var(--gray-light); border-radius:20px; padding:5px 13px 5px 24px; }
+#view-programs .pr-section:nth-child(even) .pr-banner-points span { background:#fff; border:1px solid var(--border); }
+#view-programs .pr-banner-points span::before { content:''; position:absolute; left:11px; top:50%; transform:translateY(-50%); width:6px; height:6px; border-radius:50%; background:var(--acc); }
+#view-programs .pr-banner-action { flex:none; }
+#view-programs .pr-banner-link { display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:#fff; background:var(--acc); padding:12px 24px; border-radius:10px; text-decoration:none; white-space:nowrap; transition:all .2s; }
+#view-programs .pr-banner-link:hover { filter:brightness(0.93); }
+#view-programs .pr-banner-link.ghost { color:var(--acc); background:none; border:2px solid var(--acc); padding:10px 22px; }
+#view-programs .pr-banner-link.ghost:hover { background:var(--acc); color:#fff; filter:none; }
 /* testimonials band */
 #view-programs .pr-quotes { background:var(--navy); padding:62px 0; }
 #view-programs .pr-quotes-inner { max-width:var(--wrap); margin:0 auto; padding:0 32px; }
@@ -583,8 +587,9 @@ footer strong { color:rgba(255,255,255,0.85); }
 @media (max-width:900px){
   #view-programs .pr-cats{ grid-template-columns:repeat(2,1fr); margin-top:-44px; }
   #view-programs .pr-hero h1{ font-size:32px; }
-  #view-programs .pr-inner{ grid-template-columns:1fr; gap:28px; }
-  #view-programs .pr-head h2,#view-programs .pr-quotes h2{ font-size:24px; }
+  #view-programs .pr-section h2,#view-programs .pr-quotes h2{ font-size:24px; }
+  #view-programs .pr-banner{ grid-template-columns:1fr; gap:16px; }
+  #view-programs .pr-banner-link{ width:100%; justify-content:center; }
   #view-programs .pr-qgrid{ grid-template-columns:1fr; }
 }
 @media (max-width:560px){ #view-programs .pr-cats{ grid-template-columns:1fr; } }
@@ -2662,52 +2667,86 @@ const PROGRAMS = [
   { anchor:'pr-assess', label:'Assessments', accent:'var(--teal)',
     blurb:'Benchmark where people and organizations stand.',
     headline:'Know where you stand before you invest in change.',
-    lead:'You can\'t improve what you don\'t measure. GIMI\'s assessments give individuals and organizations an objective baseline of their innovation capability, reveal the hidden barriers holding them back, and turn the results into a clear, prioritized roadmap, so effort and budget go where they actually move the needle.',
-    impact:['An objective, globally benchmarked starting point','Hidden barriers and real strengths made visible','A prioritized roadmap for what to improve next'],
+    intro:'You can\'t improve what you don\'t measure. GIMI\'s assessments give an objective baseline of innovation capability, reveal the barriers holding you back, and turn the results into a prioritized roadmap.',
     items:[
-      { name:'Innovation Potential Assessment (IPA)', desc:'Measures the innovation mindset and skills of individuals and teams.', url:'innovation-potential-assessment.html' },
-      { name:'Organizational Innovation Assessment (OIA)', desc:'Benchmarks an organization\'s innovation maturity, from a self-assessment to a full expert audit.', url:'org-innovation-cert.html' },
-      { name:'Venture Ecosystem Assessment (VEA)', desc:'The first ISO-aligned assessment for incubators, accelerators, and innovation hubs.', url:'venture-ecosystem-assessment.html' }
+      { name:'Innovation Potential Assessment (IPA)', url:'innovation-potential-assessment.html',
+        desc:'A short online assessment that measures the innovation mindset and skills of individuals and teams across two dimensions. It produces a personalized report that pinpoints strengths and blind spots and maps each person to one of seven innovation profiles, so development effort goes exactly where it is needed.',
+        points:['~45 minutes, online','Individual & team views','Personalized growth roadmap'] },
+      { name:'Organizational Innovation Assessment (OIA)', url:'org-innovation-cert.html',
+        desc:'Benchmarks how systematically your organization manages innovation, from a fast self-assessment to a full expert-led audit aligned to ISO 56001. It scores maturity across Strategy, Capacity, and Discipline and delivers a clear roadmap, plus a Company Certificate at Level 1 to 4 for the full audit.',
+        points:['Self-assessment or expert audit','Aligned to ISO 56001','Maturity levels 1–4'] },
+      { name:'Venture Ecosystem Assessment (VEA)', url:'venture-ecosystem-assessment.html',
+        desc:'The world\'s first ISO-aligned assessment built specifically for incubators, accelerators, and innovation hubs. It evaluates the institutional systems that help founders scale across four dimensions and certifies maturity from Emerging Incubator to Ecosystem Leader, with global benchmarking and a growth roadmap.',
+        points:['First ISO-aligned ecosystem framework','Four evaluation dimensions','Global benchmarking + roadmap'] }
     ]},
   { anchor:'pr-training', label:'Training & Masterclasses', accent:'var(--pink)',
     blurb:'Build practical innovation skills with experts.',
     headline:'Make innovation a skill your teams use, not a buzzword.',
-    lead:'Innovation is a discipline, not a stroke of luck. Our expert-led programs give teams a shared language, proven tools, and the confidence to run the innovation process end to end, building lasting in-house capability so good ideas consistently reach the market instead of stalling.',
-    impact:['A shared language and toolkit across teams','Capability that stays in-house after the program','Globally recognized, ISO-aligned certification'],
+    intro:'Innovation is a discipline, not a stroke of luck. Our expert-led programs give teams a shared language, proven tools, and the confidence to run the innovation process end to end, building capability that stays in-house.',
     items:[
-      { name:'CIP Masterclass', desc:'Fast-tracks professionals to Certified Innovation Professional, Levels 1 and 2.', url:'cip-masterclass.html' },
-      { name:'CCIO Masterclass', desc:'Equips senior leaders to build and lead an innovation management system.', url:'ccio-masterclass.html' },
-      { name:'Innovation Academy', desc:'Turns your organization into a self-sustaining innovation learning hub.' },
-      { name:'Conferences & Summits', desc:'Global events and hands-on training led by leading innovation practitioners.' }
+      { name:'CIP Masterclass', url:'cip-masterclass.html',
+        desc:'An expert-led virtual cohort that fast-tracks working professionals to Certified Innovation Professional, Levels 1 and 2, the only innovation management certification accredited to ISO/IEC 17024. Over eight weeks you learn the full innovation process and apply it to a real growth challenge.',
+        points:['8-week live cohort','CIP Level 1 + Level 2','ISO/IEC 17024 accredited'] },
+      { name:'CCIO Masterclass', url:'ccio-masterclass.html',
+        desc:'GIMI\'s executive program for senior leaders who need to build and lead innovation across the enterprise. A live masterclass plus months of mentoring equip you to stand up an innovation management system using the SCDP framework, earning Certified Chief Innovation Officer Levels 3 and 4.',
+        points:['Masterclass + mentoring','CCIO Level 3 + Level 4','Build an innovation system'] },
+      { name:'Innovation Academy',
+        desc:'A turnkey program that turns your organization into a self-sustaining innovation learning hub, training your people, embedding GIMI\'s methodology, and building the internal capacity to keep innovating long after the engagement ends.',
+        points:['In-house capability','Methodology embedded','Self-sustaining hub'] },
+      { name:'Conferences & Summits',
+        desc:'Global conferences, summits, and hands-on training led by leading innovation practitioners, where your teams learn the latest methods and connect with a worldwide community of innovators.',
+        points:['Led by top practitioners','Latest methods & tools','Global networking'] }
     ]},
   { anchor:'pr-accel', label:'Accelerators & Platforms', accent:'var(--orange)',
     blurb:'Generate ideas and run innovation at scale.',
     headline:'Turn ideas into ventures, faster.',
-    lead:'Ideas are easy; execution is hard. GIMI\'s platforms and accelerator programs help you surface the best opportunities, keep a portfolio of ideas moving, and rally teams and ecosystems around real problems, compressing the time from insight to measurable impact.',
-    impact:['A steady pipeline of high-potential ideas','A faster path from concept to launch','Teams and ecosystems mobilized around real problems'],
+    intro:'Ideas are easy; execution is hard. GIMI\'s platforms and accelerator programs help you surface the best opportunities, keep a portfolio of ideas moving, and rally teams around real problems, compressing the time from insight to impact.',
     items:[
-      { name:'AKAIO', desc:'AI-powered platform to explore trends, envision scenarios, and match partners.' },
-      { name:'Eureka', desc:'Idea management and innovation portfolio software.' },
-      { name:'Innovation Olympics', desc:'A gamified challenge that mobilizes teams to solve real problems against the clock.' },
-      { name:'QuickGrowth', desc:'Software-enabled strategic planning platform for SMEs.' }
+      { name:'AKAIO',
+        desc:'An AI-powered innovation platform that helps teams explore hidden trends, envision future scenarios, and match with the right partners, turning scattered signals into a focused set of opportunities to act on.',
+        points:['AI-powered insights','Trends & scenarios','Partner matching'] },
+      { name:'Eureka',
+        desc:'Idea management and innovation portfolio software that captures ideas from across the organization, runs them through a clear pipeline, and gives leaders a live view of the innovation portfolio.',
+        points:['Crowdsource ideas','Manage the pipeline','Portfolio visibility'] },
+      { name:'Innovation Olympics',
+        desc:'A gamified innovation challenge that mobilizes teams and entire ecosystems to solve real problems against the clock, building energy, skills, and a pipeline of tested ideas in days rather than months.',
+        points:['Fast, high-energy format','Real problems solved','Skills + idea pipeline'] },
+      { name:'QuickGrowth',
+        desc:'A software-enabled strategic planning platform built for SMEs, guiding smaller organizations through a structured path from strategy to growth without the overhead of a large consulting engagement.',
+        points:['Built for SMEs','Strategy to growth','Guided & affordable'] }
     ]},
   { anchor:'pr-coaching', label:'Coaching & Advisory', accent:'var(--navy)',
     blurb:'Work directly with GIMI experts.',
     headline:'Expert guidance, exactly when you need it.',
-    lead:'Frameworks get you started; experienced guidance gets you through. GIMI\'s coaches and advisors help leaders make the right calls, avoid common traps, and embed innovation into how the organization actually runs, while keynotes and our global community keep teams aligned and inspired.',
-    impact:['Senior guidance tailored to your context','Innovation embedded into day-to-day operations','Access to a global community of 18,000+ innovators'],
+    intro:'Frameworks get you started; experienced guidance gets you through. GIMI\'s coaches and advisors help leaders make the right calls, avoid common traps, and embed innovation into how the organization actually runs.',
     items:[
-      { name:'Innovation Coaching', desc:'Personalized coaching with experienced innovation experts.' },
-      { name:'Innovation Consulting & Advisory', desc:'Hands-on engagements to design strategy, build capability, and deliver results.' },
-      { name:'Keynote Speech', desc:'Talks that align leadership and spark an innovation mindset.' },
-      { name:'GIMI Think Tank', desc:'Monthly access to global innovation experts and 18,000+ innovators.' }
+      { name:'Innovation Coaching',
+        desc:'Personalized coaching that pairs your leaders and teams with experienced innovation experts, giving them on-demand guidance to navigate real decisions and keep momentum between formal programs.',
+        points:['1:1 and team coaching','Experienced experts','Guidance when it counts'] },
+      { name:'Innovation Consulting & Advisory',
+        desc:'Hands-on advisory engagements where GIMI experts work alongside your leadership to design innovation strategy, build capability, and deliver measurable results, tailored to your context rather than a template.',
+        points:['Tailored to your context','Strategy + capability','Measurable results'] },
+      { name:'Keynote Speech',
+        desc:'Inspiring keynotes that align leadership and spark an innovation mindset across the organization, setting the tone for change before a major program or transformation.',
+        points:['Align leadership','Spark the mindset','Set the tone'] },
+      { name:'GIMI Think Tank',
+        desc:'Free monthly access to global innovation experts and a community of 18,000+ innovators, a low-commitment way to stay current, exchange practices, and tap into the network.',
+        points:['Free to join','Monthly expert sessions','18,000+ community'] }
     ]}
 ];
-function programItem(it) {
+function programBanner(it) {
   const link = it.url
-    ? `<a class="pr-link" href="${it.url}" target="_blank" rel="noopener">Learn more →</a>`
-    : `<a class="pr-link" href="mailto:info@giminstitute.org">Talk to GIMI →</a>`;
-  return `<div class="pr-item"><div><h4>${it.name}</h4><p>${it.desc}</p></div>${link}</div>`;
+    ? `<a class="pr-banner-link" href="${it.url}" target="_blank" rel="noopener">Learn more →</a>`
+    : `<a class="pr-banner-link ghost" href="mailto:info@giminstitute.org">Talk to GIMI →</a>`;
+  const pts = (it.points || []).map(p => `<span>${p}</span>`).join('');
+  return `<div class="pr-banner">
+    <div class="pr-banner-body">
+      <h3>${it.name}</h3>
+      <p class="pb-desc">${it.desc}</p>
+      ${pts ? `<div class="pr-banner-points">${pts}</div>` : ''}
+    </div>
+    <div class="pr-banner-action">${link}</div>
+  </div>`;
 }
 function gotoProgram(anchor) {
   const el = document.getElementById(anchor);
@@ -2721,14 +2760,11 @@ function renderPrograms() {
     </button>`).join('');
   document.getElementById('programTracks').innerHTML = PROGRAMS.map(s =>
     `<section class="pr-section" id="${s.anchor}" style="--acc:${s.accent}">
-      <div class="pr-inner">
-        <div class="pr-head">
-          <div class="pr-label">${s.label}</div>
-          <h2>${s.headline}</h2>
-          <p class="pr-lead">${s.lead}</p>
-          <ul class="pr-impact">${s.impact.map(x => `<li>${x}</li>`).join('')}</ul>
-        </div>
-        <div class="pr-items">${s.items.map(programItem).join('')}</div>
+      <div class="pr-wrap">
+        <div class="pr-label">${s.label}</div>
+        <h2>${s.headline}</h2>
+        <p class="pr-intro">${s.intro}</p>
+        <div class="pr-banners">${s.items.map(programBanner).join('')}</div>
       </div>
     </section>`).join('');
 }
