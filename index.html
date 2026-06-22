@@ -530,6 +530,37 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-certificates .ct-iso:hover { text-decoration:underline; }
 #view-certificates .ct-iso .ct-iso-badge { font-size:10px; font-weight:800; letter-spacing:0.4px; background:var(--navy); color:#fff; padding:3px 7px; border-radius:5px; }
 @media (max-width:900px){ #view-certificates .ct-grid,#view-certificates .ct-card{grid-template-columns:1fr;} #view-certificates .ct-hero h1{font-size:32px;} #view-certificates .ct-section h2{font-size:25px;} }
+
+/* ===== PROGRAMS VIEW ===== */
+#view-programs .pr-hero { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); padding:64px 0 68px; }
+#view-programs .pr-hero-inner { max-width:var(--wrap); margin:0 auto; padding:0 32px; }
+#view-programs .pr-eyebrow { color:var(--yellow); font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
+#view-programs .pr-hero h1 { font-size:42px; line-height:1.12; color:#fff; font-weight:800; letter-spacing:-0.6px; margin-bottom:18px; max-width:840px; }
+#view-programs .pr-hero h1 span { color:var(--teal); }
+#view-programs .pr-hero p { font-size:18px; color:rgba(255,255,255,0.80); max-width:800px; }
+#view-programs .pr-section { max-width:var(--wrap); margin:0 auto; padding:54px 32px; border-bottom:1px solid var(--border); }
+#view-programs .pr-section:last-child { border-bottom:none; }
+#view-programs .pr-label { font-size:13px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+#view-programs .pr-section h2 { font-size:30px; color:var(--navy); font-weight:800; line-height:1.15; margin-bottom:10px; letter-spacing:-0.4px; }
+#view-programs .pr-intro { font-size:17px; color:var(--gray); margin-bottom:28px; max-width:820px; }
+#view-programs .pr-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+#view-programs .pr-card { display:grid; grid-template-columns:auto 1fr; gap:18px; background:#fff; border:1px solid var(--border); border-radius:16px; padding:22px 24px; box-shadow:0 4px 16px rgba(27,31,59,0.05); transition:all .2s; }
+#view-programs .pr-card:hover { border-color:var(--teal); box-shadow:0 12px 30px rgba(27,31,59,0.10); }
+#view-programs .pr-badge { width:72px; flex:none; display:flex; align-items:flex-start; justify-content:center; }
+#view-programs .pr-badge img { max-width:72px; max-height:72px; object-fit:contain; }
+#view-programs .pr-badge .badge-svg { width:64px; height:64px; }
+#view-programs .pr-badge-ph { width:64px; height:64px; border-radius:13px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; text-align:center; line-height:1.15; padding:5px; }
+#view-programs .pr-code { font-size:11px; font-weight:800; letter-spacing:1px; color:var(--teal-dark); margin-bottom:4px; }
+#view-programs .pr-card h3 { font-size:18px; color:var(--navy); font-weight:800; line-height:1.25; margin-bottom:7px; }
+#view-programs .pr-card p { font-size:14.5px; color:var(--gray); line-height:1.5; margin-bottom:12px; }
+#view-programs .pr-meta { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+#view-programs .pr-chip { font-size:11.5px; font-weight:700; color:var(--teal-dark); background:var(--teal-light); border-radius:6px; padding:4px 9px; }
+#view-programs .pr-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+#view-programs .pr-btn { font-size:13px; font-weight:700; padding:9px 16px; border-radius:9px; border:2px solid var(--teal); color:var(--teal); background:none; cursor:pointer; font-family:inherit; transition:all .18s; }
+#view-programs .pr-btn:hover { background:var(--teal); color:#fff; }
+#view-programs .pr-link { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:var(--teal-dark); text-decoration:none; }
+#view-programs .pr-link:hover { text-decoration:underline; }
+@media (max-width:900px){ #view-programs .pr-grid,#view-programs .pr-card{grid-template-columns:1fr;} #view-programs .pr-hero h1{font-size:32px;} #view-programs .pr-section h2{font-size:25px;} }
 </style>
 </head>
 <body>
@@ -1053,6 +1084,17 @@ footer strong { color:rgba(255,255,255,0.85); }
   </section>
   <div id="certTracks"></div>
 </div><!-- /#view-certificates -->
+
+<div id="view-programs" style="display:none">
+  <section class="pr-hero">
+    <div class="pr-hero-inner">
+      <div class="pr-eyebrow">Programs</div>
+      <h1>Build innovation capability <span>at every level</span>.</h1>
+      <p>From assessments that benchmark where you stand, to masterclasses, accelerators, and expert coaching that move you forward, GIMI's programs turn innovation into a managed capability for people and organizations.</p>
+    </div>
+  </section>
+  <div id="programTracks"></div>
+</div><!-- /#view-programs -->
 
 <div id="view-partner" style="display:none">
   <section class="pt-hero">
@@ -2382,7 +2424,7 @@ renderGrid(PRODUCTS);
 const SITE_NAV = [
   { id:'home',         label:'Home',              subs:['About GIMI','Our Reach','Certifications','Programs','Contact'] },
   { id:'about',        label:'About Us',          subs:['Who We Are','Why GIMI','Our Reach','In Pictures','Leadership','Contact Us'] },
-  { id:'programs',     label:'Programs',          subs:['Assessments','Training / Masterclasses','Consulting','Speaker Bureau'] },
+  { id:'programs',     label:'Programs',          subs:['Assessments','Training & Masterclasses','Accelerators & Platforms','Coaching & Advisory'] },
   { id:'thought',      label:'Thought Leadership',subs:['Innovation Awards','GIMI Think Tank','Books & Guides','International Journal of Innovation Science','Blog: Innovation Insights','News & Events'] },
   { id:'certificates', label:'Certificates',      subs:['Innovation Core','Innovation Elective','Future Foresight','Leadership Core','Consulting Core','Organizational Certifications'] },
   { id:'store',        label:'Store',             subs:[] },
@@ -2448,10 +2490,14 @@ const SUB_ANCHORS = {
   home: {
     'About GIMI':'hm-about', 'Our Reach':'hm-reach', 'Certifications':'hm-certs',
     'Programs':'hm-programs', 'Contact':'hm-contact'
+  },
+  programs: {
+    'Assessments':'pr-assess', 'Training & Masterclasses':'pr-training',
+    'Accelerators & Platforms':'pr-accel', 'Coaching & Advisory':'pr-coaching'
   }
 };
 /* Built views toggle by section; other sections are highlight-only (not built yet). */
-const BUILT_VIEWS = { home:'view-home', store:'view-store', about:'view-about', partner:'view-partner', certificates:'view-certificates' };
+const BUILT_VIEWS = { home:'view-home', store:'view-store', about:'view-about', partner:'view-partner', certificates:'view-certificates', programs:'view-programs' };
 function selectSection(id) {
   if (!BUILT_VIEWS[id]) return;   // unbuilt sections: nav shows them, but clicking does nothing
   activeSection = id; renderNav();
@@ -2552,6 +2598,72 @@ function renderCertificates() {
   document.getElementById('certTracks').innerHTML = html;
 }
 renderCertificates();
+
+/* ===== Programs view: curated program offerings, grouped ===== */
+const PROGRAMS = [
+  { anchor:'pr-assess', label:'Assessments', intro:'Benchmark innovation capability for individuals and organizations, with automated reports and a clear growth path.', items:[
+    { pid:'ipa-individual', url:'innovation-potential-assessment.html' },
+    { pid:'ipa-corporate', url:'innovation-potential-assessment.html' },
+    { pid:'oia-self', url:'org-innovation-cert.html' },
+    { pid:'full-oia', url:'org-innovation-cert.html' },
+    { pid:'vea', url:'venture-ecosystem-assessment.html' }
+  ]},
+  { anchor:'pr-training', label:'Training & Masterclasses', intro:'Expert-led programs that build practical innovation skills, from live masterclasses to a full in-house academy.', items:[
+    { pid:'cip-mc', url:'cip-masterclass.html' },
+    { pid:'ccio-mc', url:'ccio-masterclass.html' },
+    { pid:'academy' },
+    { custom:{ code:'EVENTS', title:'Conferences & Summits', desc:'Global conferences, summits, and hands-on training led by leading innovation practitioners worldwide.' } }
+  ]},
+  { anchor:'pr-accel', label:'Accelerators & Platforms', intro:'Software and programs that help you generate ideas, accelerate ventures, and run innovation at scale.', items:[
+    { pid:'akaio' },
+    { pid:'eureka' },
+    { custom:{ code:'OLYMPICS', title:'Innovation Olympics', desc:'A gamified innovation challenge that mobilizes teams and ecosystems to solve real problems against the clock.', badge:'gimi-store-assets/v2/innovation-olympics.png' } },
+    { pid:'quickgrowth' }
+  ]},
+  { anchor:'pr-coaching', label:'Coaching & Advisory', intro:'Work directly with GIMI experts, through coaching, advisory, keynotes, and a global community of innovators.', items:[
+    { pid:'coaching' },
+    { custom:{ code:'ADVISORY', title:'Innovation Consulting & Advisory', desc:'Hands-on advisory engagements that help leadership teams design strategy, build capability, and deliver results.' } },
+    { pid:'speech' },
+    { pid:'thinktank' }
+  ]}
+];
+function programCard(item) {
+  if (item.custom) {
+    const c = item.custom;
+    const badge = c.badge ? `<img src="${c.badge}?v=${ASSET_VER}" alt="">` : `<div class="pr-badge-ph">${c.code || ''}</div>`;
+    return `<div class="pr-card">
+      <div class="pr-badge">${badge}</div>
+      <div>
+        ${c.code ? `<div class="pr-code">${c.code}</div>` : ''}
+        <h3>${c.title}</h3>
+        <p>${c.desc}</p>
+        <div class="pr-actions"><a class="pr-link" href="mailto:info@giminstitute.org">Talk to GIMI →</a></div>
+      </div>
+    </div>`;
+  }
+  const p = PRODUCTS.find(x => x.id === item.pid);
+  if (!p) return '';
+  const price = p.priceDisplay ? `<span class="pr-chip">${p.priceDisplay}</span>` : '';
+  const more = item.url ? `<a class="pr-link" href="${item.url}" target="_blank" rel="noopener">Learn more →</a>` : '';
+  return `<div class="pr-card">
+    <div class="pr-badge">${buildBadge(p)}</div>
+    <div>
+      ${p.code ? `<div class="pr-code">${p.code}</div>` : ''}
+      <h3>${p.title}</h3>
+      <p>${p.tagline || p.description || ''}</p>
+      <div class="pr-meta">${price}</div>
+      <div class="pr-actions"><button class="pr-btn" onclick="openModal('${p.id}')">View details</button>${more}</div>
+    </div>
+  </div>`;
+}
+function renderPrograms() {
+  let html = '';
+  PROGRAMS.forEach(s => {
+    html += `<section class="pr-section" id="${s.anchor}"><div class="pr-label">${s.label}</div><h2>${s.label}</h2><p class="pr-intro">${s.intro}</p><div class="pr-grid">${s.items.map(programCard).join('')}</div></section>`;
+  });
+  document.getElementById('programTracks').innerHTML = html;
+}
+renderPrograms();
 renderNav();
 </script>
 </body>
