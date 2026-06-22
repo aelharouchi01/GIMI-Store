@@ -599,6 +599,71 @@ footer strong { color:rgba(255,255,255,0.85); }
   #view-programs .pr-qgrid{ grid-template-columns:1fr; }
 }
 @media (max-width:560px){ #view-programs .pr-cats{ grid-template-columns:1fr; } }
+
+/* ===== MEMBER VIEW ===== */
+#view-member .mr-hero { background:linear-gradient(135deg, var(--navy) 0%, #263162 60%, #1E6E78 100%); padding:64px 0 68px; }
+#view-member .mr-hero-inner { max-width:var(--wrap); margin:0 auto; padding:0 32px; }
+#view-member .mr-eyebrow { color:var(--yellow); font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
+#view-member .mr-hero h1 { font-size:42px; line-height:1.12; color:#fff; font-weight:800; letter-spacing:-0.6px; margin-bottom:16px; max-width:820px; }
+#view-member .mr-hero h1 span { color:var(--teal); }
+#view-member .mr-hero p { font-size:18px; color:rgba(255,255,255,0.82); max-width:760px; margin-bottom:26px; }
+#view-member .mr-ctas { display:flex; gap:14px; flex-wrap:wrap; }
+#view-member .mr-btn { display:inline-block; padding:13px 26px; border-radius:10px; font-size:15px; font-weight:700; text-decoration:none; cursor:pointer; border:2px solid var(--teal); background:var(--teal); color:#fff; font-family:inherit; transition:all .2s; }
+#view-member .mr-btn:hover { background:var(--teal-dark); border-color:var(--teal-dark); }
+#view-member .mr-btn.ghost { background:none; color:#fff; border-color:rgba(255,255,255,0.4); }
+#view-member .mr-btn.ghost:hover { border-color:#fff; }
+#view-member .mr-stats { background:var(--navy); padding:30px 0; }
+#view-member .mr-stats-inner { max-width:var(--wrap); margin:0 auto; padding:0 32px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+#view-member .mr-stats strong { display:block; font-size:30px; font-weight:800; color:var(--yellow); line-height:1; margin-bottom:6px; }
+#view-member .mr-stats span { font-size:13px; color:rgba(255,255,255,0.82); }
+#view-member .mr-section { max-width:var(--wrap); margin:0 auto; padding:52px 32px; border-bottom:1px solid var(--border); }
+#view-member .mr-section.last { border-bottom:none; }
+#view-member .mr-label { font-size:13px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+#view-member .mr-section h2 { font-size:30px; color:var(--navy); font-weight:800; line-height:1.15; margin-bottom:10px; letter-spacing:-0.4px; }
+#view-member .mr-intro { font-size:17px; color:var(--gray); margin-bottom:28px; max-width:820px; }
+#view-member .mr-types { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+#view-member .mr-type { background:#fff; border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:14px; padding:24px; cursor:pointer; transition:all .2s; font-family:inherit; text-align:left; }
+#view-member .mr-type:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(27,31,59,0.1); }
+#view-member .mr-type .mt-price { font-size:13px; font-weight:800; color:var(--teal-dark); margin-bottom:6px; }
+#view-member .mr-type h3 { font-size:19px; color:var(--navy); font-weight:800; margin-bottom:8px; }
+#view-member .mr-type p { font-size:14px; color:var(--gray); line-height:1.55; }
+#view-member .mr-bgroups { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+#view-member .mr-bgroup { background:var(--gray-light); border:1px solid var(--border); border-radius:14px; padding:24px 26px; }
+#view-member .mr-bgroup h4 { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:14px; }
+#view-member .mr-bgroup ul { list-style:none; }
+#view-member .mr-bgroup li { position:relative; padding-left:24px; font-size:14.5px; line-height:1.5; color:var(--text); margin-bottom:11px; }
+#view-member .mr-bgroup li:last-child { margin-bottom:0; }
+#view-member .mr-bgroup li::before { content:'✓'; position:absolute; left:0; top:0; color:var(--teal); font-weight:800; }
+#view-member .mr-bgroup li strong { color:var(--navy); }
+#view-member .mr-pkgs { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+#view-member .mr-pkg { background:#fff; border:1px solid var(--border); border-radius:14px; padding:24px 22px; display:flex; flex-direction:column; }
+#view-member .mr-pkg.feat { border:2px solid var(--teal); box-shadow:0 12px 32px rgba(42,172,181,0.16); }
+#view-member .mr-pkg .pk-name { font-size:13px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); }
+#view-member .mr-pkg .pk-price { font-size:30px; font-weight:800; color:var(--navy); margin:6px 0 2px; }
+#view-member .mr-pkg .pk-price span { font-size:13px; font-weight:600; color:var(--gray); }
+#view-member .mr-pkg .pk-tag { font-size:12.5px; color:var(--gray); line-height:1.45; margin-bottom:14px; min-height:54px; }
+#view-member .mr-pkg ul { list-style:none; margin:0 0 16px; }
+#view-member .mr-pkg li { position:relative; padding-left:20px; font-size:13px; line-height:1.45; color:var(--text); margin-bottom:8px; }
+#view-member .mr-pkg li::before { content:'✓'; position:absolute; left:0; top:1px; color:var(--teal); font-weight:800; font-size:12px; }
+#view-member .mr-pkg .mr-btn { margin-top:auto; text-align:center; font-size:13.5px; padding:10px; }
+#view-member .mr-quotes { background:var(--gray-light); }
+#view-member .mr-qgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+#view-member .mr-quote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:12px; padding:22px 24px; }
+#view-member .mr-quote p { font-size:14.5px; color:var(--text); line-height:1.6; font-style:italic; margin-bottom:12px; }
+#view-member .mr-quote .mq-who { font-size:13px; font-weight:800; color:var(--navy); }
+#view-member .mr-quote .mq-tier { font-size:12px; font-weight:700; color:var(--teal-dark); }
+#view-member .mr-cta { max-width:var(--wrap); margin:0 auto; padding:54px 32px; }
+#view-member .mr-cta-band { background:linear-gradient(135deg, #1E6E78 0%, var(--navy) 100%); border-radius:20px; padding:46px; text-align:center; color:#fff; }
+#view-member .mr-cta-band h2 { font-size:28px; font-weight:800; color:#fff; margin-bottom:10px; }
+#view-member .mr-cta-band p { font-size:16px; color:rgba(255,255,255,0.85); max-width:600px; margin:0 auto 22px; }
+@media (max-width:900px){
+  #view-member .mr-stats-inner{ grid-template-columns:repeat(2,1fr); }
+  #view-member .mr-types,#view-member .mr-bgroups,#view-member .mr-qgrid{ grid-template-columns:1fr; }
+  #view-member .mr-pkgs{ grid-template-columns:repeat(2,1fr); }
+  #view-member .mr-hero h1{ font-size:32px; }
+  #view-member .mr-section h2{ font-size:25px; }
+}
+@media (max-width:560px){ #view-member .mr-pkgs{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -1164,6 +1229,192 @@ footer strong { color:rgba(255,255,255,0.85); }
     </div>
   </div>
 </div><!-- /#view-programs -->
+
+<div id="view-member" style="display:none">
+  <section class="mr-hero">
+    <div class="mr-hero-inner">
+      <div class="mr-eyebrow">Become a Member</div>
+      <h1>Join the world's largest <span>innovation network</span>.</h1>
+      <p>GIMI &amp; IAOIP membership connects you to a global community of innovators and unlocks certifications, assessments, coaching, and recognition, for individuals, organizations, and universities. Our mission: democratize innovation worldwide.</p>
+      <div class="mr-ctas">
+        <a href="mailto:info@giminstitute.org?subject=GIMI%20Membership" class="mr-btn">Become a Member</a>
+        <a href="#mr-corporate" class="mr-btn ghost" onclick="document.getElementById('mr-corporate').scrollIntoView({behavior:'smooth'});return false;">See Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="mr-stats">
+    <div class="mr-stats-inner">
+      <div><strong>13,000+</strong><span>Active members</span></div>
+      <div><strong>18,000+</strong><span>Certificates issued</span></div>
+      <div><strong>28</strong><span>Certified Training Partners</span></div>
+      <div><strong>100+</strong><span>Countries</span></div>
+    </div>
+  </div>
+
+  <section class="mr-section" id="mr-overview">
+    <div class="mr-label">Membership Overview</div>
+    <h2>Three ways to join.</h2>
+    <p class="mr-intro">Whether you are an individual building your career, an organization building capability, or a university shaping the next generation, there is a membership for you.</p>
+    <div class="mr-types">
+      <button class="mr-type" onclick="document.getElementById('mr-professional').scrollIntoView({behavior:'smooth'})">
+        <div class="mt-price">From $200 / year</div>
+        <h3>Professional</h3>
+        <p>For individual innovators, practitioners, and leaders growing their skills, network, and recognition.</p>
+      </button>
+      <button class="mr-type" onclick="document.getElementById('mr-corporate').scrollIntoView({behavior:'smooth'})">
+        <div class="mt-price">From $7K / year</div>
+        <h3>Organizational</h3>
+        <p>For companies and governments building innovation capability, brand, and results across teams.</p>
+      </button>
+      <button class="mr-type" onclick="document.getElementById('mr-academia').scrollIntoView({behavior:'smooth'})">
+        <div class="mt-price">From $5K / year</div>
+        <h3>Academia</h3>
+        <p>For universities developing faculty and student talent and elevating their innovation brand.</p>
+      </button>
+    </div>
+  </section>
+
+  <section class="mr-section" id="mr-professional">
+    <div class="mr-label">Professional · $200 / year</div>
+    <h2>For the individual innovator.</h2>
+    <p class="mr-intro">Everything you need to build your innovation skills and get recognized in a global community.</p>
+    <div class="mr-bgroups">
+      <div class="mr-bgroup">
+        <h4>Build Your Knowledge &amp; Skills</h4>
+        <ul>
+          <li><strong>40% discount</strong> on all certifications and courses</li>
+          <li><strong>1 coaching session</strong> + 20% off further support</li>
+          <li>Free <strong>GIMI Think Tank</strong> access: webinars and insight reports</li>
+          <li>Free <strong>Innovation Potential Assessment</strong> with personalized feedback</li>
+        </ul>
+      </div>
+      <div class="mr-bgroup">
+        <h4>Connect &amp; Gain Recognition</h4>
+        <ul>
+          <li>Entries to multiple <strong>Innovation Challenges</strong></li>
+          <li>Free access to innovation articles and <strong>priority publishing</strong></li>
+          <li><strong>Tradewing platform</strong>: connect with 18,000+ innovators worldwide</li>
+          <li><strong>Career Center</strong> access</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mr-section" id="mr-corporate">
+    <div class="mr-label">Organizational Packages</div>
+    <h2>Build innovation into your organization.</h2>
+    <p class="mr-intro">Four packages for businesses and governments to develop innovation branding, grow their people, and build organizational capability and results.</p>
+    <div class="mr-pkgs">
+      <div class="mr-pkg">
+        <div class="pk-name">Silver</div>
+        <div class="pk-price">$7K<span> / year</span></div>
+        <div class="pk-tag">Get started with innovation capability and recognition.</div>
+        <ul>
+          <li>1 Masterclass seat</li>
+          <li>Organizational Innovation Assessment (1 business unit) + report</li>
+          <li>Awards: 1 organizational + 1 individual entry</li>
+          <li>Unlimited Think Tank, Video Spotlight, Blog</li>
+          <li>Tradewing platform access</li>
+        </ul>
+        <a href="mailto:info@giminstitute.org?subject=Silver%20Membership" class="mr-btn">Join Silver</a>
+      </div>
+      <div class="mr-pkg">
+        <div class="pk-name">Gold</div>
+        <div class="pk-price">$10K<span> / year</span></div>
+        <div class="pk-tag">Scale capability across more of your teams.</div>
+        <ul>
+          <li>2 Masterclass seats</li>
+          <li>OIA (1 business unit) + report</li>
+          <li>Innovation Potential Assessment: up to 700 people</li>
+          <li>Awards: 5 entries + 1 ceremony ticket</li>
+          <li>Everything in Silver</li>
+        </ul>
+        <a href="mailto:info@giminstitute.org?subject=Gold%20Membership" class="mr-btn">Join Gold</a>
+      </div>
+      <div class="mr-pkg feat">
+        <div class="pk-name">Platinum</div>
+        <div class="pk-price">$15K<span> / year</span></div>
+        <div class="pk-tag">Our most popular package for serious innovators.</div>
+        <ul>
+          <li>3 Masterclass seats</li>
+          <li>OIA (1 business unit) + report</li>
+          <li>Coaching: 1 free session + 30% off</li>
+          <li>Awards: 10 entries + 2 ceremony tickets</li>
+          <li>Everything in Gold</li>
+        </ul>
+        <a href="mailto:info@giminstitute.org?subject=Platinum%20Membership" class="mr-btn">Join Platinum</a>
+      </div>
+      <div class="mr-pkg">
+        <div class="pk-name">Platinum +</div>
+        <div class="pk-price">$100K<span> / year</span></div>
+        <div class="pk-tag">Enterprise-wide innovation, fully supported.</div>
+        <ul>
+          <li>10 Masterclass seats</li>
+          <li>OIA maturity assessment + action roadmap</li>
+          <li>AKAIO software + 2 innovation platforms</li>
+          <li>Open Innovation Challenge + committee seat</li>
+          <li>5 CoE reports · Awards: 10 entries + 2 tickets</li>
+        </ul>
+        <a href="mailto:info@giminstitute.org?subject=Platinum%20Plus%20Membership" class="mr-btn">Talk to GIMI</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mr-section" id="mr-academia">
+    <div class="mr-label">Academia · From $5K / year</div>
+    <h2>For universities and business schools.</h2>
+    <p class="mr-intro">A comprehensive package for talent development, innovation branding, and stronger organizational innovation management.</p>
+    <div class="mr-bgroups">
+      <div class="mr-bgroup">
+        <h4>Elevate Your Academic Brand</h4>
+        <ul>
+          <li><strong>50% discount</strong> on certificates and courses for 500 students, plus 5 to 10 faculty professional memberships</li>
+          <li><strong>Journal of Innovation Science</strong>: priority publishing and a chance to compete for an Associate Editor seat</li>
+          <li>Publish thought leadership on the <strong>GIMI Blog</strong></li>
+        </ul>
+      </div>
+      <div class="mr-bgroup">
+        <h4>Empower Faculty &amp; Student Growth</h4>
+        <ul>
+          <li>Free <strong>Innovation Potential Assessment</strong> for up to 500 individuals</li>
+          <li><strong>Career Center</strong>: one-week early and free access for 500 students</li>
+          <li>A customized <strong>coaching session</strong> for faculty or a unit</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mr-section mr-quotes">
+    <div class="mr-label">Member Voices</div>
+    <h2>Why members join GIMI &amp; IAOIP.</h2>
+    <div class="mr-qgrid">
+      <div class="mr-quote">
+        <p>"The GIMI-IAOIP Corporate Platinum Membership has been an innovation fix for our team. It's a transformative tool that's redefining how we approach innovation."</p>
+        <div class="mq-who">Lesotho Revenue Authority</div>
+        <div class="mq-tier">Corporate · Platinum</div>
+      </div>
+      <div class="mr-quote">
+        <p>"Being a corporate member of GIMI-IAOIP has been a transformative journey. This platform fuels our company's growth with unparalleled insights and collaborations."</p>
+        <div class="mq-who">Haier Appliances</div>
+        <div class="mq-tier">Corporate · Gold</div>
+      </div>
+      <div class="mr-quote">
+        <p>"It was very helpful to be associated with IAOIP and have access to the network of practitioners. I gained valuable experience to learn more about innovation."</p>
+        <div class="mq-who">Travis Kahle · University of Charleston</div>
+        <div class="mq-tier">Academia</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mr-cta">
+    <div class="mr-cta-band">
+      <h2>Ready to become a member?</h2>
+      <p>Talk to us about the membership that fits your goals, for you, your organization, or your university.</p>
+      <a href="mailto:info@giminstitute.org?subject=GIMI%20Membership" class="mr-btn" style="background:var(--teal);border-color:var(--teal);">Become a Member</a>
+    </div>
+  </div>
+</div><!-- /#view-member -->
 
 <div id="view-partner" style="display:none">
   <section class="pt-hero">
@@ -2497,7 +2748,7 @@ const SITE_NAV = [
   { id:'thought',      label:'Thought Leadership',subs:['Innovation Awards','GIMI Think Tank','Books & Guides','International Journal of Innovation Science','Blog: Innovation Insights','News & Events'] },
   { id:'certificates', label:'Certificates',      subs:['Innovation Core','Innovation Elective','Future Foresight','Leadership Core','Consulting Core','Organizational Certifications'] },
   { id:'store',        label:'Store',             subs:[] },
-  { id:'member',       label:'Become a Member',   subs:['Membership Overview','Professional','Student','Corporate (Silver / Gold / Platinum / Platinum Plus)','Academia'] },
+  { id:'member',       label:'Become a Member',   subs:['Membership Overview','Professional','Organizational','Academia'] },
   { id:'partner',      label:'Become a Partner',  subs:['Certified Partner','Certified University Partner'] }
 ];
 /* Certificate tracks and their individual certifications (sub-subsections) for the mega-menu. */
@@ -2563,10 +2814,14 @@ const SUB_ANCHORS = {
   programs: {
     'Assessments':'pr-assess', 'Training & Masterclasses':'pr-training',
     'Consulting':'pr-consult', 'Speaker Bureau':'pr-speaker'
+  },
+  member: {
+    'Membership Overview':'mr-overview', 'Professional':'mr-professional',
+    'Organizational':'mr-corporate', 'Academia':'mr-academia'
   }
 };
 /* Built views toggle by section; other sections are highlight-only (not built yet). */
-const BUILT_VIEWS = { home:'view-home', store:'view-store', about:'view-about', partner:'view-partner', certificates:'view-certificates', programs:'view-programs' };
+const BUILT_VIEWS = { home:'view-home', store:'view-store', about:'view-about', partner:'view-partner', certificates:'view-certificates', programs:'view-programs', member:'view-member' };
 function selectSection(id) {
   if (!BUILT_VIEWS[id]) return;   // unbuilt sections: nav shows them, but clicking does nothing
   activeSection = id; renderNav();
