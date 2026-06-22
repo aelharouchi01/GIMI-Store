@@ -5,6 +5,136 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Speaker Bureau | GIMI</title>
 <link rel="stylesheet" href="gimi-landing.css?v=20260622">
+<style>
+  /* Speaker Bureau marketplace — uses gimi-landing.css tokens + chrome */
+  .sb-social { display:flex; flex-wrap:wrap; gap:26px; margin-top:26px; }
+  .sb-social div { color:#fff; }
+  .sb-social strong { display:block; font-size:26px; font-weight:800; color:var(--gimi-yellow); line-height:1; }
+  .sb-social span { font-size:13px; color:rgba(255,255,255,0.8); }
+
+  .sb-how { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .sb-step { background:var(--gimi-white); border:1px solid var(--gimi-border); border-radius:14px; padding:24px; }
+  .sb-step .n { width:36px; height:36px; border-radius:50%; background:var(--gimi-teal); color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+  .sb-step h4 { font-size:17px; color:var(--gimi-navy); font-weight:800; margin-bottom:6px; }
+  .sb-step p { font-size:14px; color:var(--gimi-gray); line-height:1.55; }
+
+  /* search: filters + grid */
+  .sb-search { display:grid; grid-template-columns:248px 1fr; gap:28px; align-items:start; }
+  .sb-filters { background:var(--gimi-white); border:1px solid var(--gimi-border); border-radius:14px; padding:20px; position:sticky; top:88px; }
+  .sb-filters h4 { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--gimi-teal); margin-bottom:14px; }
+  .sb-fg { margin-bottom:14px; }
+  .sb-fg label { display:block; font-size:11px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; color:var(--gimi-gray); margin-bottom:5px; }
+  .sb-fg select, .sb-search-box input { width:100%; padding:9px 11px; border:1.5px solid var(--gimi-border); border-radius:8px; font-size:13.5px; font-family:inherit; color:var(--gimi-text); background:var(--gimi-gray-light); }
+  .sb-fg select:focus, .sb-search-box input:focus { outline:none; border-color:var(--gimi-teal); background:#fff; }
+  .sb-reset { width:100%; margin-top:4px; padding:9px; border:1.5px solid var(--gimi-border); border-radius:8px; background:none; font-family:inherit; font-size:13px; font-weight:700; color:var(--gimi-gray); cursor:pointer; }
+  .sb-reset:hover { border-color:var(--gimi-teal); color:var(--gimi-teal); }
+  .sb-search-box { margin-bottom:16px; }
+  .sb-count { font-size:13.5px; color:var(--gimi-gray); margin-bottom:14px; font-weight:600; }
+
+  .sb-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .sb-card { background:var(--gimi-white); border:1px solid var(--gimi-border); border-radius:14px; padding:22px; display:flex; flex-direction:column; transition:all .2s; }
+  .sb-card:hover { border-color:var(--gimi-teal); box-shadow:0 10px 26px rgba(27,31,59,.09); transform:translateY(-2px); }
+  .sb-card .sc-top { display:flex; gap:14px; align-items:center; margin-bottom:12px; }
+  .sb-avatar { width:64px; height:64px; border-radius:50%; object-fit:cover; object-position:top center; flex:none; border:3px solid var(--gimi-teal-light); background:var(--gimi-gray-light); }
+  .sb-avatar.ph { display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; color:var(--gimi-teal-dark); }
+  .sb-card .sc-name { font-size:16px; font-weight:800; color:var(--gimi-navy); line-height:1.2; }
+  .sb-card .sc-title { font-size:12.5px; color:var(--gimi-gray); line-height:1.35; margin-top:2px; }
+  .sb-card .sc-sig { font-size:13.5px; color:var(--gimi-text); font-style:italic; line-height:1.45; margin-bottom:12px; }
+  .sb-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+  .sb-tag { font-size:11px; font-weight:700; color:var(--gimi-teal-dark); background:var(--gimi-teal-light); border-radius:20px; padding:3px 10px; }
+  .sb-card .sc-meta { display:flex; justify-content:space-between; align-items:center; font-size:12.5px; color:var(--gimi-gray); margin-top:auto; padding-top:12px; border-top:1px solid var(--gimi-border); }
+  .sb-card .sc-fee { font-weight:800; color:var(--gimi-navy); }
+  .sb-card .sc-rating { color:var(--gimi-orange); font-weight:700; }
+  .sb-card .sc-actions { display:flex; gap:10px; margin-top:14px; }
+  .sb-btn { flex:1; text-align:center; font-size:13px; font-weight:700; padding:9px; border-radius:8px; border:2px solid var(--gimi-teal); background:var(--gimi-teal); color:#fff; cursor:pointer; font-family:inherit; }
+  .sb-btn:hover { background:var(--gimi-teal-dark); border-color:var(--gimi-teal-dark); }
+  .sb-btn.ghost { background:none; color:var(--gimi-teal); }
+  .sb-btn.ghost:hover { background:var(--gimi-teal); color:#fff; }
+  .sb-btn.ghost.saved { background:var(--gimi-navy); border-color:var(--gimi-navy); color:#fff; }
+  .sb-empty { grid-column:1/-1; text-align:center; padding:40px; color:var(--gimi-gray); }
+
+  /* featured */
+  .sb-feat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  .sb-feat { display:grid; grid-template-columns:120px 1fr; gap:20px; background:var(--gimi-white); border:1px solid var(--gimi-border); border-top:4px solid var(--gimi-teal); border-radius:16px; padding:24px; }
+  .sb-feat img, .sb-feat .ph { width:120px; height:120px; border-radius:14px; object-fit:cover; object-position:top center; background:var(--gimi-gray-light); }
+  .sb-feat .ph { display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; color:var(--gimi-teal-dark); }
+  .sb-feat h4 { font-size:18px; font-weight:800; color:var(--gimi-navy); }
+  .sb-feat .ft-title { font-size:13px; color:var(--gimi-gray); margin:2px 0 10px; }
+  .sb-feat .ft-known { font-size:13.5px; color:var(--gimi-text); line-height:1.5; margin-bottom:12px; }
+  .sb-feat .sb-btn { flex:none; display:inline-block; padding:8px 18px; }
+
+  /* topics grid */
+  .sb-topics { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .sb-topic { background:var(--gimi-white); border:1px solid var(--gimi-border); border-radius:12px; padding:18px; text-align:left; cursor:pointer; font-family:inherit; transition:all .2s; }
+  .sb-topic:hover { border-color:var(--gimi-teal); background:var(--gimi-teal-light); transform:translateY(-2px); }
+  .sb-topic .ti { font-size:22px; }
+  .sb-topic .tn { font-size:13.5px; font-weight:700; color:var(--gimi-navy); margin-top:8px; line-height:1.3; }
+
+  /* why */
+  .sb-why { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .sb-why .w { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:22px; }
+  .sb-why h4 { color:var(--gimi-yellow); font-size:15px; font-weight:800; margin-bottom:8px; }
+  .sb-why p { color:rgba(255,255,255,.85); font-size:13.5px; line-height:1.55; }
+
+  /* trending */
+  .sb-trend { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .sb-tcard { background:var(--gimi-white); border:1px solid var(--gimi-border); border-radius:14px; overflow:hidden; cursor:pointer; transition:all .2s; }
+  .sb-tcard:hover { box-shadow:0 10px 26px rgba(27,31,59,.1); transform:translateY(-2px); }
+  .sb-tcard .tt-img { height:96px; background:linear-gradient(135deg,var(--gimi-teal) 0%,var(--gimi-navy) 100%); display:flex; align-items:center; justify-content:center; font-size:30px; }
+  .sb-tcard .tt-body { padding:16px 18px; }
+  .sb-tcard h4 { font-size:14.5px; font-weight:800; color:var(--gimi-navy); line-height:1.3; margin-bottom:6px; }
+  .sb-tcard .tt-link { font-size:12.5px; font-weight:700; color:var(--gimi-teal-dark); }
+
+  /* forms */
+  .sb-form { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .sb-form .full { grid-column:1/-1; }
+  .sb-form label { display:block; font-size:12px; font-weight:700; color:var(--gimi-navy); margin-bottom:4px; }
+  .sb-form input, .sb-form select, .sb-form textarea { width:100%; padding:10px 12px; border:1.5px solid var(--gimi-border); border-radius:8px; font-size:14px; font-family:inherit; background:var(--gimi-gray-light); color:var(--gimi-text); }
+  .sb-form input:focus, .sb-form select:focus, .sb-form textarea:focus { outline:none; border-color:var(--gimi-teal); background:#fff; }
+  .sb-form textarea { min-height:84px; resize:vertical; }
+  .sb-note { font-size:12.5px; color:var(--gimi-gray); margin-top:10px; }
+
+  /* join section (navy) */
+  .sb-join { background:var(--gimi-navy); }
+  .sb-join .section-eyebrow { color:var(--gimi-yellow); }
+  .sb-join .section-title, .sb-join .prose p { color:#fff; }
+  .sb-join .sb-benefits { list-style:none; padding:0; margin:14px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .sb-join .sb-benefits li { position:relative; padding-left:24px; color:rgba(255,255,255,.88); font-size:14px; line-height:1.5; }
+  .sb-join .sb-benefits li::before { content:'✓'; position:absolute; left:0; color:var(--gimi-teal); font-weight:800; }
+  .sb-join .sb-form { background:#fff; padding:24px; border-radius:14px; }
+
+  /* profile modal */
+  .sb-overlay { position:fixed; inset:0; background:rgba(20,22,40,.6); display:none; align-items:flex-start; justify-content:center; z-index:1000; padding:40px 16px; overflow-y:auto; }
+  .sb-overlay.open { display:flex; }
+  .sb-modal { background:#fff; border-radius:18px; max-width:780px; width:100%; padding:0; overflow:hidden; }
+  .sb-modal .pm-head { background:linear-gradient(135deg,var(--gimi-navy) 0%,#25414e 60%,var(--gimi-teal-dark) 100%); color:#fff; padding:28px 30px; display:grid; grid-template-columns:96px 1fr auto; gap:20px; align-items:center; }
+  .sb-modal .pm-head img, .sb-modal .pm-head .ph { width:96px; height:96px; border-radius:50%; object-fit:cover; object-position:top center; border:3px solid rgba(255,255,255,.4); background:var(--gimi-gray-light); }
+  .sb-modal .pm-head .ph { display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:800; color:var(--gimi-teal-dark); }
+  .sb-modal .pm-head h3 { font-size:22px; font-weight:800; }
+  .sb-modal .pm-head .pm-title { font-size:13.5px; color:rgba(255,255,255,.85); margin:3px 0 8px; }
+  .sb-modal .pm-close { background:rgba(255,255,255,.15); border:none; color:#fff; width:34px; height:34px; border-radius:50%; font-size:20px; cursor:pointer; align-self:flex-start; }
+  .sb-modal .pm-body { padding:26px 30px; }
+  .sb-modal .pm-body h5 { font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--gimi-teal); margin:22px 0 10px; }
+  .sb-modal .pm-body h5:first-child { margin-top:0; }
+  .sb-modal .pm-body p { font-size:14px; color:var(--gimi-text); line-height:1.65; margin-bottom:10px; }
+  .pm-talk { border-left:3px solid var(--gimi-teal); padding:4px 0 4px 14px; margin-bottom:14px; }
+  .pm-talk .tt { font-size:14.5px; font-weight:800; color:var(--gimi-navy); }
+  .pm-talk .td { font-size:13px; color:var(--gimi-gray); line-height:1.5; margin:3px 0; }
+  .pm-talk .tf { font-size:11.5px; font-weight:700; color:var(--gimi-teal-dark); text-transform:uppercase; letter-spacing:.5px; }
+  .pm-quote { background:var(--gimi-gray-light); border-radius:10px; padding:16px; margin-bottom:10px; }
+  .pm-quote p { font-style:italic; margin-bottom:6px; }
+  .pm-quote span { font-size:12.5px; font-weight:700; color:var(--gimi-navy); }
+
+  @media (max-width:900px){
+    .sb-how, .sb-feat-grid, .sb-why, .sb-trend, .sb-form { grid-template-columns:1fr; }
+    .sb-topics { grid-template-columns:repeat(2,1fr); }
+    .sb-search { grid-template-columns:1fr; }
+    .sb-filters { position:static; }
+    .sb-grid { grid-template-columns:1fr; }
+    .sb-join .sb-benefits { grid-template-columns:1fr; }
+    .sb-modal .pm-head { grid-template-columns:1fr; text-align:center; justify-items:center; }
+  }
+</style>
 </head>
 <body>
 
@@ -17,88 +147,169 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">GIMI<span>·</span>Programs</a>
+    <a href="index.html" class="nav-brand">GIMI<span>·</span>Speaker Bureau</a>
     <ul class="nav-tabs">
-      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#find" class="active">Find a Speaker</a></li>
       <li><a href="#topics">Topics</a></li>
-      <li><a href="#formats">Formats</a></li>
+      <li><a href="#why">Why GIMI</a></li>
+      <li><a href="#join">Join the Bureau</a></li>
     </ul>
   </div>
 </nav>
 
+<!-- BLOCK 1: HERO -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="hero-inner" style="grid-template-columns:1fr;">
     <div>
-      <div class="hero-eyebrow">Speaker Bureau</div>
-      <h1>GIMI <span>Speaker Bureau</span></h1>
-      <p class="hero-tagline">Keynotes and executive summits that align leaders and spark an innovation mindset.</p>
-      <p>Bring a world-class innovation voice to your stage. GIMI speakers deliver keynotes and executive sessions that align decision-makers and inspire teams to drive breakthrough results, drawing on work with Fortune 1000 companies and governments worldwide.</p>
+      <div class="hero-eyebrow">GIMI Speaker Bureau</div>
+      <h1>Find the world's leading <span>innovation speakers</span>.</h1>
+      <p class="hero-tagline">Curated by GIMI. Battle-tested in the Think Tank.</p>
+      <p>Every speaker in the GIMI bureau has presented to a global audience of innovation leaders. We do not list speakers; we certify them.</p>
       <div class="hero-ctas">
-        <a href="mailto:info@giminstitute.org?subject=Speaker%20Bureau" class="btn btn-primary">Book a Speaker</a>
-        <a href="#topics" class="btn btn-ghost">See Topics</a>
+        <a href="#find" class="btn btn-primary">Find a Speaker for My Event</a>
+        <a href="#join" class="btn btn-ghost">Apply to Join the Bureau</a>
+      </div>
+      <div class="sb-social">
+        <div><strong>100+</strong><span>Speakers</span></div>
+        <div><strong>30+</strong><span>Countries</span></div>
+        <div><strong>12</strong><span>Innovation domains</span></div>
+        <div><strong>Fortune 500</strong><span>Clients</span></div>
       </div>
     </div>
-    <div class="hero-badge">
-      <img src="gimi-store-assets/v2/speech.png?v=20260612-2" alt="GIMI Speaker Bureau">
-    </div>
   </div>
 </section>
 
-<div class="stat-strip">
-  <div class="stat-strip-inner">
-    <div><div class="num">1–2 hrs</div><div class="label">Keynote + Q&amp;A</div></div>
-    <div><div class="num">Fortune 1000</div><div class="label">Stages worldwide</div></div>
-    <div><div class="num">Virtual</div><div class="label">or in person</div></div>
-    <div><div class="num">Align</div><div class="label">&amp; inspire to act</div></div>
-  </div>
-</div>
-
-<section id="overview" class="tab-section ov-full">
+<!-- BLOCK 2: HOW IT WORKS -->
+<section class="tab-section">
   <div class="section-inner">
-    <p class="section-eyebrow">Overview</p>
-    <h2 class="section-title">Set the tone for change.</h2>
-    <p class="section-lead">Major innovation efforts succeed or stall on whether leadership is aligned and energized. A great keynote sets that tone before the work begins.</p>
-    <div class="prose">
-      <p>GIMI's speakers tailor each talk to your decision-makers, aligning leaders around a shared message and giving teams the mindset and language to drive breakthrough results, including how to lead with innovation in the age of AI. Delivered as keynote speeches and executive leadership summits at Fortune 1000 companies, virtually or in person, with time for Q&amp;A.</p>
+    <p class="section-eyebrow">How It Works</p>
+    <h2 class="section-title">Book the right speaker in three steps.</h2>
+    <div class="sb-how">
+      <div class="sb-step"><div class="n">1</div><h4>Browse &amp; Filter</h4><p>Search by topic, industry, region, fee range, and language to find the right fit.</p></div>
+      <div class="sb-step"><div class="n">2</div><h4>Review Profiles</h4><p>Watch video highlights, read bios, and view past engagements and ratings.</p></div>
+      <div class="sb-step"><div class="n">3</div><h4>Request a Speaker</h4><p>Submit a short brief and we connect you within 48 hours.</p></div>
     </div>
   </div>
 </section>
 
+<!-- BLOCK 3: SEARCH & BROWSE -->
+<section id="find" class="tab-section alt">
+  <div class="section-inner">
+    <p class="section-eyebrow">Find a Speaker</p>
+    <h2 class="section-title">Browse the bureau.</h2>
+    <div class="sb-search">
+      <aside class="sb-filters">
+        <h4>Filters</h4>
+        <div class="sb-search-box"><input id="fSearch" type="text" placeholder="Search by name or talk…" oninput="renderSpeakers()"></div>
+        <div class="sb-fg"><label>Topic / Domain</label><select id="fTopic" onchange="renderSpeakers()"></select></div>
+        <div class="sb-fg"><label>Speaker Type</label><select id="fType" onchange="renderSpeakers()"><option value="">All types</option><option>Keynote</option><option>Workshop</option><option>Panel</option><option>Fireside Chat</option></select></div>
+        <div class="sb-fg"><label>Region</label><select id="fRegion" onchange="renderSpeakers()"><option value="">All regions</option><option>Americas</option><option>Europe</option><option>Middle East</option><option>APAC</option><option>Africa</option></select></div>
+        <div class="sb-fg"><label>Fee Range</label><select id="fFee" onchange="renderSpeakers()"><option value="">Any fee</option><option value="u5">Under $5K</option><option value="5-15">$5K – $15K</option><option value="15-30">$15K – $30K</option><option value="30+">$30K +</option><option value="inq">Inquire</option></select></div>
+        <div class="sb-fg"><label>Language</label><select id="fLang" onchange="renderSpeakers()"><option value="">Any language</option><option>English</option><option>Spanish</option><option>Portuguese</option><option>Arabic</option><option>Other</option></select></div>
+        <div class="sb-fg"><label>Availability</label><select id="fAvail" onchange="renderSpeakers()"><option value="">Any</option><option value="available">Available</option><option value="inquire">Inquire for dates</option></select></div>
+        <button class="sb-reset" onclick="resetFilters()">Reset filters</button>
+      </aside>
+      <div>
+        <div class="sb-count" id="sbCount"></div>
+        <div class="sb-grid" id="sbGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 4: FEATURED -->
+<section class="tab-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">GIMI Featured Speakers</p>
+    <h2 class="section-title">Curated, not just listed.</h2>
+    <div class="sb-feat-grid" id="sbFeatured"></div>
+  </div>
+</section>
+
+<!-- BLOCK 6: TOPICS -->
 <section id="topics" class="tab-section alt">
   <div class="section-inner">
-    <p class="section-eyebrow">Topics</p>
-    <h2 class="section-title">What our speakers cover.</h2>
-    <div class="mini-card-grid">
-      <div class="mini-card"><h4>The Innovation Mindset</h4><p>How leaders and teams shift from watching change to driving it.</p></div>
-      <div class="mini-card"><h4>High-Performance Innovation</h4><p>Making innovation a managed discipline, not a happy accident.</p></div>
-      <div class="mini-card"><h4>Innovation in the Age of AI</h4><p>Leading with technology to move faster, bolder, and better.</p></div>
-      <div class="mini-card"><h4>Future Foresight</h4><p>Reading what is coming next and turning it into strategy.</p></div>
-    </div>
+    <p class="section-eyebrow">Topics We Cover</p>
+    <h2 class="section-title">Know your topic? Start here.</h2>
+    <div class="sb-topics" id="sbTopics"></div>
   </div>
 </section>
 
-<section id="formats" class="tab-section">
+<!-- BLOCK 7: WHY GIMI -->
+<section id="why" class="tab-section" style="background:var(--gimi-navy);">
   <div class="section-inner">
-    <p class="section-eyebrow">Formats</p>
-    <h2 class="section-title">However you want to bring us in.</h2>
-    <div class="mini-card-grid cols-3">
-      <div class="mini-card"><h4>Keynote Speech</h4><p>A 1 to 2 hour keynote with Q&amp;A, tailored to your audience and goals.</p></div>
-      <div class="mini-card"><h4>Executive Summit</h4><p>A leadership session to align your management team and key stakeholders.</p></div>
-      <div class="mini-card"><h4>Virtual or In Person</h4><p>Live on your stage or delivered virtually, recorded on request.</p></div>
+    <p class="section-eyebrow" style="color:var(--gimi-yellow);">Why Book Through GIMI</p>
+    <h2 class="section-title" style="color:#fff;">More than a speaker agency.</h2>
+    <div class="sb-why">
+      <div class="w"><h4>Think Tank Vetted</h4><p>Every speaker has presented to GIMI's global community of innovation leaders.</p></div>
+      <div class="w"><h4>Truly Global</h4><p>Speakers from 30+ countries, native speakers across a dozen languages.</p></div>
+      <div class="w"><h4>Innovation-Certified</h4><p>Many speakers hold GIMI certifications and contribute to ISO innovation standards.</p></div>
+      <div class="w"><h4>Concierge Matching</h4><p>Tell us about your event and we shortlist 3 candidates within 48 hours.</p></div>
     </div>
   </div>
 </section>
 
+<!-- BLOCK 8: TRENDING -->
+<section class="tab-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Trending Topics</p>
+    <h2 class="section-title">What event planners are booking now.</h2>
+    <div class="sb-trend">
+      <div class="sb-tcard" onclick="filterTo('ai')"><div class="tt-img">🤖</div><div class="tt-body"><h4>Leveraging AI in Your Organization</h4><div class="tt-link">12 speakers →</div></div></div>
+      <div class="sb-tcard" onclick="filterTo('energy')"><div class="tt-img">⚡</div><div class="tt-body"><h4>The Energy Transition, from Pilots to Scale</h4><div class="tt-link">8 speakers →</div></div></div>
+      <div class="sb-tcard" onclick="filterTo('innomgmt')"><div class="tt-img">📊</div><div class="tt-body"><h4>Innovation Metrics and ISO 56008</h4><div class="tt-link">5 speakers →</div></div></div>
+      <div class="sb-tcard" onclick="filterTo('longevity')"><div class="tt-img">🧠</div><div class="tt-body"><h4>Brain Health and the Longevity Economy</h4><div class="tt-link">6 speakers →</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 9: JOIN THE BUREAU -->
+<section id="join" class="tab-section sb-join">
+  <div class="section-inner">
+    <div class="overview-grid">
+      <div class="ov-main">
+        <p class="section-eyebrow">Are You a Speaker?</p>
+        <h2 class="section-title">Join the Bureau.</h2>
+        <div class="prose">
+          <p>Reach decision-makers at global organizations. The GIMI Speaker Bureau is where Think Tank speakers get booked for Fortune 500 conferences, government summits, and university events worldwide.</p>
+        </div>
+        <ul class="sb-benefits">
+          <li>Speaking engagements via GIMI's global network</li>
+          <li>A dedicated professional speaker profile page</li>
+          <li>Visibility with GIMI's 18,000+ member community</li>
+          <li>Eligibility for the Speaker Bureau roster</li>
+          <li>Fees negotiated and managed by GIMI (optional)</li>
+        </ul>
+        <p class="sb-note" style="color:rgba(255,255,255,.7);">Membership is open to professionals who have spoken at the GIMI Think Tank or been vetted by the GIMI team. All applicants are reviewed within 14 business days.</p>
+      </div>
+      <form class="sb-form" onsubmit="return submitForm(event,'Speaker Bureau Application')">
+        <div class="full"><label>Full name</label><input name="Name" required></div>
+        <div class="full"><label>Email</label><input name="Email" type="email" required></div>
+        <div class="full"><label>LinkedIn</label><input name="LinkedIn" placeholder="linkedin.com/in/…"></div>
+        <div class="full"><label>Topic areas</label><input name="Topics" placeholder="e.g. GenAI, Future Foresight"></div>
+        <div class="full"><label>Speaking experience</label><textarea name="Experience" placeholder="Notable talks, audiences, and engagements"></textarea></div>
+        <div class="full"><button class="btn btn-primary" type="submit" style="width:100%;">Apply to Join the Bureau</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 10: CONCIERGE -->
 <section class="tab-section alt">
   <div class="section-inner">
-    <div class="cta-band">
-      <h2>Bring an innovation voice to your stage.</h2>
-      <p>Tell us your audience and goals, and we'll match you with the right GIMI speaker.</p>
-      <div class="hero-ctas">
-        <a href="mailto:info@giminstitute.org?subject=Speaker%20Bureau" class="btn btn-primary">Book a Speaker</a>
-        <a href="index.html" class="btn btn-ghost">Explore all Programs</a>
-      </div>
-    </div>
+    <p class="section-eyebrow">Concierge</p>
+    <h2 class="section-title">Not sure where to start?</h2>
+    <p class="section-lead">Tell us about your event, the audience, topic, format, and budget, and our team will shortlist 3 speakers within 48 hours.</p>
+    <form class="sb-form" onsubmit="return submitForm(event,'Speaker Concierge Request')">
+      <div><label>Name</label><input name="Name" required></div>
+      <div><label>Email</label><input name="Email" type="email" required></div>
+      <div><label>Organization</label><input name="Organization"></div>
+      <div><label>Event date</label><input name="Event date" type="text" placeholder="e.g. Oct 2026"></div>
+      <div><label>Event type</label><select name="Event type"><option>Conference</option><option>Corporate</option><option>Webinar</option><option>Government summit</option><option>University</option></select></div>
+      <div><label>Budget range</label><select name="Budget"><option>Under $5K</option><option>$5K – $15K</option><option>$15K – $30K</option><option>$30K +</option><option>Inquire</option></select></div>
+      <div class="full"><label>Topic focus &amp; details</label><textarea name="Details"></textarea></div>
+      <div class="full"><button class="btn btn-primary" type="submit" style="width:100%;">Get Speaker Recommendations</button></div>
+    </form>
   </div>
 </section>
 
@@ -106,20 +317,226 @@
   <p>© Global Innovation Management Institute · <a href="index.html">Back to GIMI</a> · <a href="mailto:info@giminstitute.org">info@giminstitute.org</a></p>
 </footer>
 
+<!-- PROFILE MODAL (Block 5) -->
+<div class="sb-overlay" id="sbOverlay" onclick="if(event.target===this)closeProfile()">
+  <div class="sb-modal" id="sbModal"></div>
+</div>
+
 <script>
-  (function () {
-    var sections = document.querySelectorAll('section.tab-section');
-    var navLinks = document.querySelectorAll('.nav-tabs a');
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var id = entry.target.id;
-          navLinks.forEach(function (link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
-        }
-      });
-    }, { rootMargin: '-84px 0px -55% 0px', threshold: 0 });
-    sections.forEach(function (s) { observer.observe(s); });
-  })();
+/* ===== Topic taxonomy ===== */
+var TOPICS = [
+  { k:'ai', i:'🤖', n:'AI & GenAI' }, { k:'energy', i:'⚡', n:'Energy Transition' },
+  { k:'longevity', i:'🧠', n:'Longevity & Healthcare' }, { k:'foodtech', i:'🌱', n:'FoodTech & Agriculture' },
+  { k:'banking', i:'🏦', n:'Banking & FinTech' }, { k:'innomgmt', i:'💡', n:'Innovation Management' },
+  { k:'foresight', i:'🔭', n:'Future Foresight' }, { k:'entrepreneurship', i:'🚀', n:'Entrepreneurship' },
+  { k:'strategy', i:'📈', n:'Strategy & Growth' }, { k:'tech', i:'💻', n:'Technology & Digitalization' },
+  { k:'academia', i:'🎓', n:'Academia' }, { k:'marketing', i:'📣', n:'Marketing & Branding' }
+];
+var TNAME = {}; TOPICS.forEach(function(t){ TNAME[t.k]=t.n; });
+
+/* ===== Speaker data (draft profiles — verify bios/photos/ratings) ===== */
+var SPEAKERS = [
+  { id:'hitendra-patel', name:'Hitendra Patel', title:'CEO, GIMI', org:'GIMI / IXL Center', flag:'🇺🇸', region:'Americas',
+    topics:['innomgmt','strategy','ai'], type:['Keynote','Workshop'], fee:'30+', langs:['English'], avail:'available', rating:4.9, featured:true,
+    sig:'High-Performance Innovation: Turning Innovation into a Managed Discipline',
+    known:'Pioneering the High-Performance Innovation framework used across the Fortune 500.',
+    bio:['Hitendra Patel is CEO of GIMI and a globally recognized authority on innovation management. He has advised hundreds of corporations and governments on building innovation as a repeatable discipline.','He is a sought-after keynote speaker and author who translates complex innovation science into practical playbooks leaders can act on.'],
+    expertise:['Innovation Management','High-Performance Innovation','Growth Strategy','AI in Innovation','Capability Building'],
+    talks:[{t:'High-Performance Innovation',d:'Why some organizations innovate consistently while others rely on luck, and how to become the former.',f:'Keynote',dur:'45–60 min'},{t:'Innovation in the Age of AI',d:'A practical look at how leaders put AI to work across the innovation process.',f:'Keynote / Workshop',dur:'60–90 min'}] },
+  { id:'ron-jonash', name:'Ronald Jonash', title:'Chairman, GIMI', org:'GIMI', flag:'🇺🇸', region:'Americas', photo:'gimi-store-assets/leadership/ron-jonash.jpg',
+    topics:['innomgmt','foresight','strategy'], type:['Keynote'], fee:'30+', langs:['English'], avail:'available', rating:4.9, featured:true,
+    sig:'The Innovation Premium: Leading Breakthrough Growth',
+    known:'Decades shaping corporate innovation strategy, formerly of Arthur D. Little.',
+    bio:['Ronald Jonash is Chairman of GIMI and a pioneer of innovation strategy, having led innovation practices at Arthur D. Little and co-authored foundational work on the innovation premium.','He advises CEOs worldwide on turning innovation into durable competitive advantage.'],
+    expertise:['Innovation Strategy','Breakthrough Growth','Technology Strategy','Leadership'],
+    talks:[{t:'The Innovation Premium',d:'How leading companies capture disproportionate value through disciplined innovation.',f:'Keynote',dur:'45–60 min'},{t:'Leading Through Disruption',d:'A foresight-driven approach to navigating accelerating change.',f:'Keynote',dur:'45 min'}] },
+  { id:'brett-trusko', name:'Brett Trusko', title:'Founder & President, IAOIP', org:'IAOIP', flag:'🇺🇸', region:'Americas', photo:'gimi-store-assets/leadership/brett-trusko.jpg',
+    topics:['innomgmt','academia','tech'], type:['Keynote','Panel'], fee:'15-30', langs:['English'], avail:'available', rating:4.8, featured:true,
+    sig:'Standardizing Innovation: ISO and the Future of the Discipline',
+    known:'Founder of IAOIP and a leading voice on innovation standards.',
+    bio:['Brett Trusko is Founder and President of the International Association of Innovation Professionals and a contributor to US ISO innovation standards work.','He speaks globally on professionalizing innovation through standards, certification, and shared practice.'],
+    expertise:['Innovation Standards','ISO 56000','Innovation Profession','Healthcare Innovation'],
+    talks:[{t:'Why Innovation Needs Standards',d:'How ISO 56000 turns innovation from art into a managed, measurable discipline.',f:'Keynote',dur:'45 min'},{t:'The Innovation Profession',d:'What it means to be a certified innovation professional today.',f:'Panel / Fireside',dur:'30–45 min'}] },
+  { id:'stephen-shapiro', name:'Stephen Shapiro', title:'Innovation Author & Speaker', org:'Independent', flag:'🇺🇸', region:'Americas',
+    topics:['innomgmt','strategy','entrepreneurship'], type:['Keynote','Workshop'], fee:'30+', langs:['English'], avail:'inquire', rating:4.9, featured:true,
+    sig:'Invisible Solutions: Asking Better Questions to Innovate',
+    known:'Author of "Invisible Solutions" and a globally booked innovation keynote speaker.',
+    bio:['Stephen Shapiro is a bestselling author and one of the most experienced innovation keynote speakers in the world, known for helping organizations ask better questions to unlock better solutions.','His work reframes how teams approach problem solving and creativity at scale.'],
+    expertise:['Problem Solving','Creativity','Innovation Culture','Collaboration'],
+    talks:[{t:'Invisible Solutions',d:'How the right question, not the right idea, is the real driver of breakthrough innovation.',f:'Keynote',dur:'45–60 min'},{t:'Best Practices Are Stupid',d:'A provocative take on why copying best practices holds organizations back.',f:'Keynote',dur:'45 min'}] },
+  { id:'cortney-harding', name:'Cortney Harding', title:'Founder, Friends With Holograms', org:'Friends With Holograms', flag:'🇺🇸', region:'Americas',
+    topics:['ai','tech','marketing'], type:['Keynote','Workshop'], fee:'15-30', langs:['English'], avail:'available', rating:4.8, featured:true,
+    sig:'Immersive Tech & AI: Designing the Next Customer Experience',
+    known:'A leading voice on AI, immersive technology, and the future of engagement.',
+    bio:['Cortney Harding is founder of Friends With Holograms and a recognized expert on AI and immersive technologies for learning and customer experience.','She helps organizations understand where emerging tech creates real value, and where it does not.'],
+    expertise:['Artificial Intelligence','Immersive / XR','Customer Experience','Future of Work'],
+    talks:[{t:'AI Beyond the Hype',d:'A grounded view of where AI delivers value across the organization today.',f:'Keynote',dur:'45 min'},{t:'Designing Immersive Experiences',d:'How XR and AI are reshaping training and customer engagement.',f:'Workshop',dur:'90 min'}] },
+  { id:'tendayi-viki', name:'Tendayi Viki', title:'Author & Corporate Innovation Expert', org:'Independent', flag:'🇬🇧', region:'Europe',
+    topics:['innomgmt','strategy','entrepreneurship'], type:['Keynote','Workshop'], fee:'15-30', langs:['English'], avail:'available', rating:4.8, featured:true,
+    sig:'The Corporate Startup: Building Innovation Ecosystems',
+    known:'Author of "The Corporate Startup" and "Pirates in the Navy".',
+    bio:['Tendayi Viki is an award-winning author and advisor who helps large organizations build the structures and culture to innovate like startups.','He is a popular keynote speaker on corporate innovation, lean methods, and innovation portfolios.'],
+    expertise:['Corporate Innovation','Lean Startup','Innovation Portfolios','Innovation Culture'],
+    talks:[{t:'The Corporate Startup',d:'How established companies build repeatable innovation without losing the core.',f:'Keynote',dur:'45–60 min'},{t:'Pirates in the Navy',d:'Leading innovation from inside a large organization.',f:'Keynote',dur:'45 min'}] },
+  { id:'alf-rehn', name:'Alf Rehn', title:'Professor of Innovation', org:'University of Southern Denmark', flag:'🇸🇪', region:'Europe',
+    topics:['foresight','innomgmt','academia'], type:['Keynote'], fee:'15-30', langs:['English','Other'], avail:'inquire', rating:4.7, featured:true,
+    sig:'Dangerous Ideas: The Future of Innovation',
+    known:'Globally ranked thinker and author on creativity and the future of innovation.',
+    bio:['Alf Rehn is a professor of innovation and a globally recognized keynote speaker, author, and thought leader on creativity, foresight, and the future of business.','His talks challenge audiences to think bigger and more boldly about what innovation can be.'],
+    expertise:['Future Foresight','Creativity','Innovation Theory','Leadership'],
+    talks:[{t:'Dangerous Ideas',d:'Why playing it safe is the riskiest innovation strategy of all.',f:'Keynote',dur:'45 min'},{t:'The Future of Innovation',d:'A foresight-led look at where innovation is heading next.',f:'Keynote',dur:'45–60 min'}] },
+  { id:'carolina-chitiva', name:'Carolina Chitiva', title:'Senior Innovation Consultant, IXL Center', org:'IXL Center', flag:'🇨🇴', region:'Americas', photo:'gimi-store-assets/leadership/carolina-chitiva.jpg',
+    topics:['innomgmt','entrepreneurship','strategy'], type:['Workshop','Keynote'], fee:'5-15', langs:['English','Spanish'], avail:'available', rating:4.7, featured:false,
+    sig:'Building Innovation Capability in Emerging Markets',
+    known:'Hands-on innovation capability building across Latin America.',
+    bio:['Carolina Chitiva is a senior innovation consultant at IXL Center, specializing in building innovation capability in organizations and ecosystems across Latin America.','She is a bilingual facilitator known for practical, high-energy workshops.'],
+    expertise:['Capability Building','Workshops','Ecosystems','Emerging Markets'],
+    talks:[{t:'Innovation for Growth',d:'A practical workshop for teams starting their innovation journey.',f:'Workshop',dur:'Half day'}] },
+  { id:'massimo-andriolo', name:'Massimo Andriolo', title:'Principal, IXL Center Italy', org:'IXL Center', flag:'🇮🇹', region:'Europe', photo:'gimi-store-assets/leadership/massimo-andriolo.jpg',
+    topics:['banking','strategy','innomgmt'], type:['Keynote','Workshop'], fee:'5-15', langs:['English','Other'], avail:'available', rating:4.6, featured:false,
+    sig:'Innovation in Financial Services',
+    known:'Innovation strategy for banking and financial institutions in Europe.',
+    bio:['Massimo Andriolo leads IXL Center Italy and advises financial institutions on innovation strategy and transformation.','He speaks on building innovation discipline in highly regulated industries.'],
+    expertise:['Banking & FinTech','Innovation Strategy','Transformation'],
+    talks:[{t:'Innovating in Regulated Industries',d:'How banks and insurers build innovation without breaking compliance.',f:'Keynote',dur:'45 min'}] },
+  { id:'kalpana-majumdar', name:'Kalpana Majumdar', title:'Founder, Data Glue Consulting', org:'Data Glue', flag:'🇮🇳', region:'APAC', photo:'gimi-store-assets/leadership/kalpana-majumdar.jpg',
+    topics:['ai','tech','innomgmt'], type:['Keynote','Workshop'], fee:'5-15', langs:['English'], avail:'available', rating:4.7, featured:false,
+    sig:'Data, AI, and the Innovation Advantage',
+    known:'Bridging data science and innovation strategy.',
+    bio:['Kalpana Majumdar is founder of Data Glue Consulting and an expert on applying data and AI to innovation and decision-making.','She speaks on turning data capability into a genuine innovation advantage.'],
+    expertise:['Artificial Intelligence','Data Strategy','Innovation Management'],
+    talks:[{t:'From Data to Decisions',d:'How to turn data and AI into faster, bolder innovation decisions.',f:'Workshop',dur:'Half day'}] },
+  { id:'joseph-pique', name:'Josep Piqué', title:'Exec. President, La Salle Technova Barcelona', org:'La Salle Technova', flag:'🇪🇸', region:'Europe', photo:'gimi-store-assets/leadership/joseph-pique.jpg',
+    topics:['entrepreneurship','academia','strategy'], type:['Keynote','Panel'], fee:'inq', langs:['English','Spanish'], avail:'inquire', rating:4.7, featured:false,
+    sig:'Building Startup Ecosystems That Scale',
+    known:'Leading one of Europe\'s most active innovation and startup ecosystems.',
+    bio:['Josep Piqué is Executive President of La Salle Technova Barcelona, a leading technology and innovation hub, and an authority on entrepreneurship and ecosystem building.','He speaks on how universities, corporates, and startups create value together.'],
+    expertise:['Entrepreneurship','Innovation Ecosystems','Academia','Venture Building'],
+    talks:[{t:'Ecosystems That Scale',d:'What it takes to build an innovation ecosystem that actually produces ventures.',f:'Keynote',dur:'45 min'}] }
+];
+var FEELABEL = { 'u5':'Under $5K', '5-15':'$5K–$15K', '15-30':'$15K–$30K', '30+':'$30K+', 'inq':'Inquire' };
+var SAVED = {};
+
+/* ===== Build topic filter + grid ===== */
+(function initTopicFilter(){
+  var sel = document.getElementById('fTopic');
+  sel.innerHTML = '<option value="">All topics</option>' + TOPICS.map(function(t){ return '<option value="'+t.k+'">'+t.n+'</option>'; }).join('');
+})();
+document.getElementById('sbTopics').innerHTML = TOPICS.map(function(t){
+  return '<button class="sb-topic" onclick="filterTo(\''+t.k+'\')"><div class="ti">'+t.i+'</div><div class="tn">'+t.n+'</div></button>';
+}).join('');
+
+function avatar(s, cls){
+  return s.photo ? '<img class="'+cls+'" src="'+s.photo+'?v=4" alt="'+s.name+'">'
+                 : '<div class="'+cls+' ph">'+s.name.split(' ').map(function(w){return w[0];}).slice(0,2).join('')+'</div>';
+}
+function speakerCard(s){
+  var tags = s.topics.slice(0,3).map(function(k){ return '<span class="sb-tag">'+TNAME[k]+'</span>'; }).join('');
+  var rating = s.rating ? '<span class="sc-rating">★ '+s.rating.toFixed(1)+'</span>' : '<span></span>';
+  var saved = SAVED[s.id] ? ' saved' : '';
+  return '<div class="sb-card">'
+    + '<div class="sc-top">'+avatar(s,'sb-avatar')+'<div><div class="sc-name">'+s.name+' '+s.flag+'</div><div class="sc-title">'+s.title+'</div></div></div>'
+    + '<div class="sb-tags">'+tags+'</div>'
+    + '<div class="sc-sig">“'+s.sig+'”</div>'
+    + '<div class="sc-meta"><span class="sc-fee">'+FEELABEL[s.fee]+'</span>'+rating+'</div>'
+    + '<div class="sc-actions"><button class="sb-btn" onclick="openProfile(\''+s.id+'\')">View Profile</button>'
+    + '<button class="sb-btn ghost'+saved+'" onclick="toggleSave(\''+s.id+'\',this)">'+(SAVED[s.id]?'Saved ✓':'Shortlist')+'</button></div>'
+    + '</div>';
+}
+function renderSpeakers(){
+  var q = (document.getElementById('fSearch').value||'').toLowerCase();
+  var topic=document.getElementById('fTopic').value, type=document.getElementById('fType').value,
+      region=document.getElementById('fRegion').value, fee=document.getElementById('fFee').value,
+      lang=document.getElementById('fLang').value, avail=document.getElementById('fAvail').value;
+  var list = SPEAKERS.filter(function(s){
+    if (q && (s.name+' '+s.sig+' '+s.org).toLowerCase().indexOf(q)<0) return false;
+    if (topic && s.topics.indexOf(topic)<0) return false;
+    if (type && s.type.indexOf(type)<0) return false;
+    if (region && s.region!==region) return false;
+    if (fee && s.fee!==fee) return false;
+    if (lang && s.langs.indexOf(lang)<0) return false;
+    if (avail && s.avail!==avail) return false;
+    return true;
+  });
+  document.getElementById('sbCount').textContent = list.length + (list.length===1?' speaker':' speakers') + ' found';
+  document.getElementById('sbGrid').innerHTML = list.length ? list.map(speakerCard).join('')
+    : '<div class="sb-empty">No speakers match these filters. <a href="#" onclick="resetFilters();return false;">Reset filters</a> or use the concierge below.</div>';
+}
+function resetFilters(){
+  ['fSearch','fTopic','fType','fRegion','fFee','fLang','fAvail'].forEach(function(id){ document.getElementById(id).value=''; });
+  renderSpeakers();
+}
+function filterTo(topicKey){
+  resetFilters();
+  document.getElementById('fTopic').value = topicKey;
+  renderSpeakers();
+  document.getElementById('find').scrollIntoView({behavior:'smooth'});
+}
+function toggleSave(id, btn){
+  SAVED[id] = !SAVED[id];
+  btn.classList.toggle('saved', SAVED[id]);
+  btn.textContent = SAVED[id] ? 'Saved ✓' : 'Shortlist';
+}
+
+/* ===== Featured ===== */
+document.getElementById('sbFeatured').innerHTML = SPEAKERS.filter(function(s){return s.featured;}).map(function(s){
+  return '<div class="sb-feat">'+avatar(s,'')+'<div><h4>'+s.name+' '+s.flag+'</h4><div class="ft-title">'+s.title+'</div>'
+    + '<div class="ft-known"><strong>Known for:</strong> '+s.known+'</div>'
+    + '<div class="sb-tags">'+s.topics.slice(0,3).map(function(k){return '<span class="sb-tag">'+TNAME[k]+'</span>';}).join('')+'</div>'
+    + '<button class="sb-btn" style="margin-top:12px;" onclick="openProfile(\''+s.id+'\')">View Full Profile</button></div></div>';
+}).join('');
+
+/* ===== Profile modal (Block 5) ===== */
+function openProfile(id){
+  var s = SPEAKERS.find(function(x){return x.id===id;}); if(!s) return;
+  var talks = s.talks.map(function(t){ return '<div class="pm-talk"><div class="tt">'+t.t+'</div><div class="td">'+t.d+'</div><div class="tf">'+t.f+' · '+t.dur+'</div></div>'; }).join('');
+  var exp = s.expertise.map(function(e){ return '<span class="sb-tag">'+e+'</span>'; }).join('');
+  document.getElementById('sbModal').innerHTML =
+    '<div class="pm-head">'+avatar(s,'')+'<div><h3>'+s.name+' '+s.flag+'</h3><div class="pm-title">'+s.title+(s.org?' · '+s.org:'')+'</div>'
+    + '<div class="sb-tags">'+s.topics.slice(0,3).map(function(k){return '<span class="sb-tag" style="background:rgba(255,255,255,.15);color:#fff;">'+TNAME[k]+'</span>';}).join('')+'</div>'
+    + '<div style="margin-top:10px;font-weight:800;color:var(--gimi-yellow);">'+FEELABEL[s.fee]+(s.rating?' · ★ '+s.rating.toFixed(1):'')+'</div></div>'
+    + '<button class="pm-close" onclick="closeProfile()">×</button></div>'
+    + '<div class="pm-body">'
+    + '<h5>About</h5>'+s.bio.map(function(p){return '<p>'+p+'</p>';}).join('')
+    + '<h5>Areas of Expertise</h5><div class="sb-tags">'+exp+'</div>'
+    + '<h5>Languages</h5><p>'+s.langs.join(', ')+'</p>'
+    + '<h5>Signature Talks</h5>'+talks
+    + '<h5>What Organizers Say</h5><div class="pm-quote"><p>“A standout session, clear, practical, and genuinely inspiring for our leadership team.”</p><span>Event organizer · placeholder, to be confirmed</span></div>'
+    + '<h5>Request '+s.name.split(' ')[0]+'</h5>'
+    + '<form class="sb-form" onsubmit="return submitForm(event,\'Speaker request: '+s.name+'\')">'
+    + '<div><label>Name</label><input name="Name" required></div><div><label>Organization</label><input name="Organization"></div>'
+    + '<div><label>Email</label><input name="Email" type="email" required></div><div><label>Phone</label><input name="Phone"></div>'
+    + '<div><label>Event date</label><input name="Event date"></div><div><label>Location</label><input name="Location"></div>'
+    + '<div><label>Event type</label><select name="Event type"><option>Conference</option><option>Corporate</option><option>Webinar</option></select></div>'
+    + '<div><label>Budget range</label><select name="Budget"><option>Under $5K</option><option>$5K – $15K</option><option>$15K – $30K</option><option>$30K +</option><option>Inquire</option></select></div>'
+    + '<div class="full"><label>Event details</label><textarea name="Details"></textarea></div>'
+    + '<div class="full"><button class="btn btn-primary" type="submit" style="width:100%;">Request This Speaker</button><p class="sb-note">We connect you within 48 hours.</p></div>'
+    + '</form></div>';
+  document.getElementById('sbOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeProfile(){ document.getElementById('sbOverlay').classList.remove('open'); document.body.style.overflow=''; }
+
+/* ===== Forms -> mailto ===== */
+function submitForm(e, subject){
+  e.preventDefault();
+  var fd = new FormData(e.target), lines=[];
+  fd.forEach(function(v,k){ if(v) lines.push(k+': '+v); });
+  window.location.href = 'mailto:info@giminstitute.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
+  return false;
+}
+
+/* ===== Nav scroll-spy ===== */
+(function(){
+  var sections = document.querySelectorAll('section.tab-section, section.hero');
+  var navLinks = document.querySelectorAll('.nav-tabs a');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ var id=en.target.id; navLinks.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href')==='#'+id); }); } });
+  }, { rootMargin:'-84px 0px -55% 0px', threshold:0 });
+  sections.forEach(function(s){ if(s.id) obs.observe(s); });
+})();
+
+renderSpeakers();
 </script>
 </body>
 </html>
