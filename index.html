@@ -648,6 +648,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-member .mr-pkg li { position:relative; padding-left:20px; font-size:13px; line-height:1.45; color:var(--text); margin-bottom:8px; }
 #view-member .mr-pkg li::before { content:'✓'; position:absolute; left:0; top:1px; color:var(--teal); font-weight:800; font-size:12px; }
 #view-member .mr-pkg .mr-btn { margin-top:auto; text-align:center; font-size:13.5px; padding:10px; }
+#view-member .mr-acad { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 #view-member .mr-quotes { background:var(--gray-light); }
 #view-member .mr-qgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 #view-member .mr-quote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:12px; padding:22px 24px; }
@@ -660,7 +661,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-member .mr-cta-band p { font-size:16px; color:rgba(255,255,255,0.85); max-width:600px; margin:0 auto 22px; }
 @media (max-width:900px){
   #view-member .mr-stats-inner{ grid-template-columns:repeat(2,1fr); }
-  #view-member .mr-types,#view-member .mr-bgroups,#view-member .mr-qgrid{ grid-template-columns:1fr; }
+  #view-member .mr-types,#view-member .mr-bgroups,#view-member .mr-qgrid,#view-member .mr-acad{ grid-template-columns:1fr; }
   #view-member .mr-pkgs{ grid-template-columns:repeat(2,1fr); }
   #view-member .mr-hero h1{ font-size:32px; }
   #view-member .mr-section h2{ font-size:25px; }
@@ -1373,23 +1374,35 @@ footer strong { color:rgba(255,255,255,0.85); }
   <section class="mr-section" id="mr-academia">
     <div class="mr-label">Academia · From $5K / year</div>
     <h2>For universities and business schools.</h2>
-    <p class="mr-intro">A comprehensive package for talent development, innovation branding, and stronger organizational innovation management.</p>
-    <div class="mr-bgroups">
-      <div class="mr-bgroup">
-        <h4>Elevate Your Academic Brand</h4>
+    <p class="mr-intro">A comprehensive package for talent development, innovation branding, and stronger organizational innovation management, in two tiers.</p>
+    <div class="mr-acad">
+      <div class="mr-pkg">
+        <img src="gimi-store-assets/v2/memb-academia.png?v=20260622" alt="Academia">
+        <div class="pk-name">Academia</div>
+        <div class="pk-price">$5K<span> / year</span></div>
+        <div class="pk-tag">Develop talent and build your innovation brand.</div>
         <ul>
-          <li><strong>50% discount</strong> on certificates and courses for 500 students, plus 5 to 10 faculty professional memberships</li>
-          <li><strong>Journal of Innovation Science</strong>: priority publishing and a chance to compete for an Associate Editor seat</li>
-          <li>Publish thought leadership on the <strong>GIMI Blog</strong></li>
+          <li>50% off certificates and courses for 500 students + 5 faculty professional memberships</li>
+          <li>Free Innovation Potential Assessment for up to 500 individuals</li>
+          <li>Journal of Innovation Science: priority publishing + Associate Editor opportunity</li>
+          <li>Career Center: one-week early and free access for 500 students</li>
+          <li>Publish thought leadership on the GIMI Blog</li>
         </ul>
+        <a href="mailto:info@giminstitute.org?subject=Academia%20Membership%20%245K" class="mr-btn">Join Academia</a>
       </div>
-      <div class="mr-bgroup">
-        <h4>Empower Faculty &amp; Student Growth</h4>
+      <div class="mr-pkg feat">
+        <img src="gimi-store-assets/v2/memb-academia.png?v=20260622" alt="Academia Plus">
+        <div class="pk-name">Academia +</div>
+        <div class="pk-price">$10K<span> / year</span></div>
+        <div class="pk-tag">More faculty seats and added support for your institution.</div>
         <ul>
-          <li>Free <strong>Innovation Potential Assessment</strong> for up to 500 individuals</li>
-          <li><strong>Career Center</strong>: one-week early and free access for 500 students</li>
-          <li>A customized <strong>coaching session</strong> for faculty or a unit</li>
+          <li>50% off certificates and courses for 500 students + 10 faculty professional memberships</li>
+          <li>Free Innovation Potential Assessment for up to 500 individuals</li>
+          <li>Journal of Innovation Science: free access, priority publishing + faculty Associate Editor opportunity</li>
+          <li>1 customized coaching session for faculty or a unit</li>
+          <li>Everything in the $5K tier</li>
         </ul>
+        <a href="mailto:info@giminstitute.org?subject=Academia%20Membership%20%2410K" class="mr-btn">Join Academia +</a>
       </div>
     </div>
   </section>
