@@ -693,13 +693,13 @@ footer strong { color:rgba(255,255,255,0.85); }
         </div>
       </div>
       <div class="hm-tcard">
-        <div class="hm-ttag">Foresight</div>
-        <h3>Future Foresight</h3>
-        <p>Strategic foresight and futures thinking for long-term direction.</p>
+        <div class="hm-ttag">Elective</div>
+        <h3>Innovation Elective</h3>
+        <p>Specialist certifications in Design Thinking, ISO innovation management, AI, technology, and more.</p>
         <div class="hm-tlogos">
-          <img src="gimi-store-assets/v2/cff-1.png?v=20260612-2" alt="Foresight Level 1">
-          <img src="gimi-store-assets/v2/cff-2.png?v=20260612-2" alt="Foresight Level 2">
-          <img src="gimi-store-assets/v2/cff-3.png?v=20260612-2" alt="Foresight Level 3">
+          <img src="gimi-store-assets/v2/cdt-1.png?v=20260612-2" alt="Design Thinking">
+          <img src="gimi-store-assets/v2/cime.png?v=20260612-2" alt="ISO Innovation Management Expert">
+          <img src="gimi-store-assets/v2/caap.png?v=20260612-2" alt="AI Agent Practitioner">
         </div>
       </div>
       <div class="hm-tcard">
@@ -2387,7 +2387,7 @@ const SITE_NAV = [
   { id:'certificates', label:'Certificates',      subs:['Innovation Core','Innovation Elective','Future Foresight','Leadership Core','Consulting Core','Organizational Certifications'] },
   { id:'store',        label:'Store',             subs:[] },
   { id:'member',       label:'Become a Member',   subs:['Membership Overview','Professional','Student','Corporate (Silver / Gold / Platinum / Platinum Plus)','Academia'] },
-  { id:'partner',      label:'Become a Partner',  subs:['Why Partner with GIMI','The Two Ways to Partner','Certified Partner','University Partner','Become a Partner (apply)'] }
+  { id:'partner',      label:'Become a Partner',  subs:['Certified Partner','Certified University Partner'] }
 ];
 /* Certificate tracks and their individual certifications (sub-subsections) for the mega-menu. */
 const CERT_MENU = [
@@ -2439,9 +2439,7 @@ function gotoSubIdx(secId, i) {
 /* Subnav items -> in-page section anchors, keyed by section id */
 const SUB_ANCHORS = {
   partner: {
-    'Why Partner with GIMI':'why', 'The Two Ways to Partner':'two-ways',
-    'Certified Partner':'certified', 'University Partner':'university',
-    'Become a Partner (apply)':'partner-apply'
+    'Certified Partner':'certified', 'Certified University Partner':'university'
   },
   about: {
     'Who We Are':'ab-who', 'Why GIMI':'ab-why', 'Our Reach':'ab-reach',
