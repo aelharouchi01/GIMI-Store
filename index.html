@@ -624,6 +624,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-member .mr-types { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 #view-member .mr-type { background:#fff; border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:14px; padding:24px; cursor:pointer; transition:all .2s; font-family:inherit; text-align:left; }
 #view-member .mr-type:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(27,31,59,0.1); }
+#view-member .mr-type img { width:62px; height:62px; object-fit:contain; display:block; margin-bottom:14px; }
 #view-member .mr-type .mt-price { font-size:13px; font-weight:800; color:var(--teal-dark); margin-bottom:6px; }
 #view-member .mr-type h3 { font-size:19px; color:var(--navy); font-weight:800; margin-bottom:8px; }
 #view-member .mr-type p { font-size:14px; color:var(--gray); line-height:1.55; }
@@ -638,6 +639,7 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-member .mr-pkgs { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
 #view-member .mr-pkg { background:#fff; border:1px solid var(--border); border-radius:14px; padding:24px 22px; display:flex; flex-direction:column; }
 #view-member .mr-pkg.feat { border:2px solid var(--teal); box-shadow:0 12px 32px rgba(42,172,181,0.16); }
+#view-member .mr-pkg img { width:54px; height:54px; object-fit:contain; display:block; margin-bottom:10px; }
 #view-member .mr-pkg .pk-name { font-size:13px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); }
 #view-member .mr-pkg .pk-price { font-size:30px; font-weight:800; color:var(--navy); margin:6px 0 2px; }
 #view-member .mr-pkg .pk-price span { font-size:13px; font-weight:600; color:var(--gray); }
@@ -1258,16 +1260,19 @@ footer strong { color:rgba(255,255,255,0.85); }
     <p class="mr-intro">Whether you are an individual building your career, an organization building capability, or a university shaping the next generation, there is a membership for you.</p>
     <div class="mr-types">
       <button class="mr-type" onclick="document.getElementById('mr-professional').scrollIntoView({behavior:'smooth'})">
+        <img src="gimi-store-assets/v2/memb-pro.png?v=20260622" alt="Professional membership">
         <div class="mt-price">From $200 / year</div>
         <h3>Professional</h3>
         <p>For individual innovators, practitioners, and leaders growing their skills, network, and recognition.</p>
       </button>
       <button class="mr-type" onclick="document.getElementById('mr-corporate').scrollIntoView({behavior:'smooth'})">
+        <img src="gimi-store-assets/v2/memb-gold.png?v=20260622" alt="Organizational membership">
         <div class="mt-price">From $7K / year</div>
         <h3>Organizational</h3>
         <p>For companies and governments building innovation capability, brand, and results across teams.</p>
       </button>
       <button class="mr-type" onclick="document.getElementById('mr-academia').scrollIntoView({behavior:'smooth'})">
+        <img src="gimi-store-assets/v2/memb-academia.png?v=20260622" alt="Academia membership">
         <div class="mt-price">From $5K / year</div>
         <h3>Academia</h3>
         <p>For universities developing faculty and student talent and elevating their innovation brand.</p>
@@ -1307,6 +1312,7 @@ footer strong { color:rgba(255,255,255,0.85); }
     <p class="mr-intro">Four packages for businesses and governments to develop innovation branding, grow their people, and build organizational capability and results.</p>
     <div class="mr-pkgs">
       <div class="mr-pkg">
+        <img src="gimi-store-assets/v2/memb-silver.png?v=20260622" alt="Silver">
         <div class="pk-name">Silver</div>
         <div class="pk-price">$7K<span> / year</span></div>
         <div class="pk-tag">Get started with innovation capability and recognition.</div>
@@ -1320,6 +1326,7 @@ footer strong { color:rgba(255,255,255,0.85); }
         <a href="mailto:info@giminstitute.org?subject=Silver%20Membership" class="mr-btn">Join Silver</a>
       </div>
       <div class="mr-pkg">
+        <img src="gimi-store-assets/v2/memb-gold.png?v=20260622" alt="Gold">
         <div class="pk-name">Gold</div>
         <div class="pk-price">$10K<span> / year</span></div>
         <div class="pk-tag">Scale capability across more of your teams.</div>
@@ -1333,6 +1340,7 @@ footer strong { color:rgba(255,255,255,0.85); }
         <a href="mailto:info@giminstitute.org?subject=Gold%20Membership" class="mr-btn">Join Gold</a>
       </div>
       <div class="mr-pkg feat">
+        <img src="gimi-store-assets/v2/memb-plat.png?v=20260622" alt="Platinum">
         <div class="pk-name">Platinum</div>
         <div class="pk-price">$15K<span> / year</span></div>
         <div class="pk-tag">Our most popular package for serious innovators.</div>
@@ -1346,6 +1354,7 @@ footer strong { color:rgba(255,255,255,0.85); }
         <a href="mailto:info@giminstitute.org?subject=Platinum%20Membership" class="mr-btn">Join Platinum</a>
       </div>
       <div class="mr-pkg">
+        <img src="gimi-store-assets/v2/memb-plat.png?v=20260622" alt="Platinum Plus">
         <div class="pk-name">Platinum +</div>
         <div class="pk-price">$100K<span> / year</span></div>
         <div class="pk-tag">Enterprise-wide innovation, fully supported.</div>
