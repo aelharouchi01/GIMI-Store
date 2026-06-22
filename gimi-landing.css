@@ -90,21 +90,21 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
 /* ---------- Overview: heading + prose (left) and "at a glance" aside (right) ---------- */
 /* The whole heading block (eyebrow, title, lead, prose) lives in the left column
    so the aside is a true sidebar whose top aligns with the title. */
-.overview-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start; margin-top: 4px; }
+.overview-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: stretch; margin-top: 18px; }
 .overview-grid .ov-main { min-width: 0; }
-.overview-grid .ov-main .section-eyebrow,
-.overview-grid .ov-main .section-title,
-.overview-grid .ov-main .section-lead { margin-bottom: 14px; }
+.overview-grid .ov-main .section-title { margin-bottom: 14px; }
 .overview-grid .ov-main .section-lead { margin-bottom: 22px; }
 .overview-grid .prose p { margin-bottom: 16px; }
 .overview-grid .prose p:last-child { margin-bottom: 0; }
-.overview-aside { background: var(--gimi-gray-light); border: 1px solid var(--gimi-border); border-left: 4px solid var(--gimi-teal); border-radius: 14px; padding: 24px 26px; }
+.overview-aside { background: var(--gimi-gray-light); border: 1px solid var(--gimi-border); border-left: 4px solid var(--gimi-teal); border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; }
 .overview-aside h4 { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gimi-teal); margin: 0 0 14px; }
 .overview-aside ul { list-style: none; margin: 0; padding: 0; }
 .overview-aside li { position: relative; padding-left: 22px; font-size: 14px; line-height: 1.5; color: var(--gimi-text); margin-bottom: 11px; }
 .overview-aside li:last-child { margin-bottom: 0; }
 .overview-aside li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--gimi-teal); font-weight: 800; }
-.overview-aside .oa-foot { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--gimi-border); font-size: 13px; color: var(--gimi-gray); line-height: 1.5; }
+/* margin-top:auto pins the footnote to the card bottom when the card stretches
+   to match the left column height, so there is no empty space under the card. */
+.overview-aside .oa-foot { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--gimi-border); font-size: 13px; color: var(--gimi-gray); line-height: 1.5; }
 @media (max-width: 820px) { .overview-grid { grid-template-columns: 1fr; gap: 24px; } }
 
 /* ---------- Journey / progression stepper (maturity levels, process steps) ---------- */
