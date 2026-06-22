@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certified GIMI Auditor | GIMI</title>
+<link rel="stylesheet" href="gimi-landing.css?v=20260619e">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Global Innovation Management Institute</span>
+    <a href="index.html">← Back to GIMI</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">GIMI<span>·</span>Programs</a>
+    <ul class="nav-tabs">
+      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#learn">What You Learn</a></li>
+      <li><a href="#who">Who It's For</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">CGA · Certification</div>
+      <h1>Certified <span>GIMI Auditor</span></h1>
+      <p class="hero-tagline">Gain the skills to audit innovation management systems against ISO 56001.</p>
+      <p>A certification for experienced professionals who assess and certify how organizations manage innovation, building the methodology, judgment, and credential to audit an innovation management system to the international standard.</p>
+      <div class="hero-ctas">
+        <a href="https://www.giminstitute.org/store/" target="_blank" rel="noopener" class="btn btn-primary">Enroll Now</a>
+        <a href="#learn" class="btn btn-ghost">What You Learn</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <img src="gimi-store-assets/v2/cga.png?v=20260612-2" alt="Certified GIMI Auditor">
+    </div>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div><div class="num">20h</div><div class="label">Program length</div></div>
+    <div><div class="num">ISO 56001</div><div class="label">The standard you audit to</div></div>
+    <div><div class="num">Audit</div><div class="label">Methodology &amp; scoring</div></div>
+    <div><div class="num">Credential</div><div class="label">Certified GIMI Auditor</div></div>
+  </div>
+</div>
+
+<section id="overview" class="tab-section ov-full">
+  <div class="section-inner">
+    <p class="section-eyebrow">Overview</p>
+    <h2 class="section-title">Become qualified to audit innovation management.</h2>
+    <p class="section-lead">As ISO 56001 adoption grows, organizations need auditors who can assess innovation management systems with rigor and consistency.</p>
+    <div class="prose">
+      <p>The Certified GIMI Auditor program prepares experienced professionals, consultants, and internal auditors to evaluate an organization's innovation management system against ISO 56001. You learn the requirements of the standard, a structured audit methodology, and how to gather evidence, score maturity, and guide organizations toward certification.</p>
+    </div>
+  </div>
+</section>
+
+<section id="learn" class="tab-section alt">
+  <div class="section-inner">
+    <p class="section-eyebrow">What You Learn</p>
+    <h2 class="section-title">Everything you need to run an audit.</h2>
+    <div class="mini-card-grid">
+      <div class="mini-card"><h4>The ISO 56001 Requirements</h4><p>A working command of the innovation-management-system standard and the wider ISO 56000 family.</p></div>
+      <div class="mini-card"><h4>Audit Methodology</h4><p>How to plan and run a structured, defensible audit using the GIMI framework.</p></div>
+      <div class="mini-card"><h4>Evidence &amp; Scoring</h4><p>How to gather evidence and score maturity objectively across Strategy, Capacity, and Discipline.</p></div>
+      <div class="mini-card"><h4>Reporting &amp; Guidance</h4><p>How to report findings and guide organizations toward certification.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="who" class="tab-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Who It's For</p>
+    <h2 class="section-title">For the people who assess innovation.</h2>
+    <div class="mini-card-grid cols-3">
+      <div class="mini-card"><h4>Consultants &amp; Advisors</h4><p>Adding ISO 56001 audit capability to your service portfolio.</p></div>
+      <div class="mini-card"><h4>Internal Auditors</h4><p>Assessing and improving your own organization's innovation system.</p></div>
+      <div class="mini-card"><h4>Quality &amp; Compliance Leaders</h4><p>Extending management-system expertise to innovation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tab-section alt">
+  <div class="section-inner">
+    <div class="cta-band">
+      <h2>Ready to audit to the standard?</h2>
+      <p>Earn the Certified GIMI Auditor credential and assess innovation management systems against ISO 56001.</p>
+      <div class="hero-ctas">
+        <a href="https://www.giminstitute.org/store/" target="_blank" rel="noopener" class="btn btn-primary">Enroll Now</a>
+        <a href="mailto:info@giminstitute.org?subject=Certified%20GIMI%20Auditor" class="btn btn-ghost">Talk to GIMI</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-footer">
+  <p>© Global Innovation Management Institute · <a href="index.html">Back to GIMI</a> · <a href="mailto:info@giminstitute.org">info@giminstitute.org</a></p>
+</footer>
+
+<script>
+  (function () {
+    var sections = document.querySelectorAll('section.tab-section');
+    var navLinks = document.querySelectorAll('.nav-tabs a');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          navLinks.forEach(function (link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
+        }
+      });
+    }, { rootMargin: '-84px 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  })();
+</script>
+</body>
+</html>

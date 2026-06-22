@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speaker Bureau | GIMI</title>
+<link rel="stylesheet" href="gimi-landing.css?v=20260619e">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Global Innovation Management Institute</span>
+    <a href="index.html">← Back to GIMI</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">GIMI<span>·</span>Programs</a>
+    <ul class="nav-tabs">
+      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#topics">Topics</a></li>
+      <li><a href="#formats">Formats</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Speaker Bureau</div>
+      <h1>GIMI <span>Speaker Bureau</span></h1>
+      <p class="hero-tagline">Keynotes and executive summits that align leaders and spark an innovation mindset.</p>
+      <p>Bring a world-class innovation voice to your stage. GIMI speakers deliver keynotes and executive sessions that align decision-makers and inspire teams to drive breakthrough results, drawing on work with Fortune 1000 companies and governments worldwide.</p>
+      <div class="hero-ctas">
+        <a href="mailto:info@giminstitute.org?subject=Speaker%20Bureau" class="btn btn-primary">Book a Speaker</a>
+        <a href="#topics" class="btn btn-ghost">See Topics</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <img src="gimi-store-assets/v2/speech.png?v=20260612-2" alt="GIMI Speaker Bureau">
+    </div>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div><div class="num">1–2 hrs</div><div class="label">Keynote + Q&amp;A</div></div>
+    <div><div class="num">Fortune 1000</div><div class="label">Stages worldwide</div></div>
+    <div><div class="num">Virtual</div><div class="label">or in person</div></div>
+    <div><div class="num">Align</div><div class="label">&amp; inspire to act</div></div>
+  </div>
+</div>
+
+<section id="overview" class="tab-section ov-full">
+  <div class="section-inner">
+    <p class="section-eyebrow">Overview</p>
+    <h2 class="section-title">Set the tone for change.</h2>
+    <p class="section-lead">Major innovation efforts succeed or stall on whether leadership is aligned and energized. A great keynote sets that tone before the work begins.</p>
+    <div class="prose">
+      <p>GIMI's speakers tailor each talk to your decision-makers, aligning leaders around a shared message and giving teams the mindset and language to drive breakthrough results, including how to lead with innovation in the age of AI. Delivered as keynote speeches and executive leadership summits at Fortune 1000 companies, virtually or in person, with time for Q&amp;A.</p>
+    </div>
+  </div>
+</section>
+
+<section id="topics" class="tab-section alt">
+  <div class="section-inner">
+    <p class="section-eyebrow">Topics</p>
+    <h2 class="section-title">What our speakers cover.</h2>
+    <div class="mini-card-grid">
+      <div class="mini-card"><h4>The Innovation Mindset</h4><p>How leaders and teams shift from watching change to driving it.</p></div>
+      <div class="mini-card"><h4>High-Performance Innovation</h4><p>Making innovation a managed discipline, not a happy accident.</p></div>
+      <div class="mini-card"><h4>Innovation in the Age of AI</h4><p>Leading with technology to move faster, bolder, and better.</p></div>
+      <div class="mini-card"><h4>Future Foresight</h4><p>Reading what is coming next and turning it into strategy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="formats" class="tab-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Formats</p>
+    <h2 class="section-title">However you want to bring us in.</h2>
+    <div class="mini-card-grid cols-3">
+      <div class="mini-card"><h4>Keynote Speech</h4><p>A 1 to 2 hour keynote with Q&amp;A, tailored to your audience and goals.</p></div>
+      <div class="mini-card"><h4>Executive Summit</h4><p>A leadership session to align your management team and key stakeholders.</p></div>
+      <div class="mini-card"><h4>Virtual or In Person</h4><p>Live on your stage or delivered virtually, recorded on request.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tab-section alt">
+  <div class="section-inner">
+    <div class="cta-band">
+      <h2>Bring an innovation voice to your stage.</h2>
+      <p>Tell us your audience and goals, and we'll match you with the right GIMI speaker.</p>
+      <div class="hero-ctas">
+        <a href="mailto:info@giminstitute.org?subject=Speaker%20Bureau" class="btn btn-primary">Book a Speaker</a>
+        <a href="index.html" class="btn btn-ghost">Explore all Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-footer">
+  <p>© Global Innovation Management Institute · <a href="index.html">Back to GIMI</a> · <a href="mailto:info@giminstitute.org">info@giminstitute.org</a></p>
+</footer>
+
+<script>
+  (function () {
+    var sections = document.querySelectorAll('section.tab-section');
+    var navLinks = document.querySelectorAll('.nav-tabs a');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          navLinks.forEach(function (link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
+        }
+      });
+    }, { rootMargin: '-84px 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  })();
+</script>
+</body>
+</html>

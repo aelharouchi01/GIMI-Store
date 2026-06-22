@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIMI Digital Tools | GIMI</title>
+<link rel="stylesheet" href="gimi-landing.css?v=20260619e">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Global Innovation Management Institute</span>
+    <a href="index.html">← Back to GIMI</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">GIMI<span>·</span>Programs</a>
+    <ul class="nav-tabs">
+      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#tools">The Tools</a></li>
+      <li><a href="#outcomes">What You Get</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Innovation Software · Digital Tools</div>
+      <h1>GIMI <span>Digital Tools</span></h1>
+      <p class="hero-tagline">Software to crowdsource ideas, manage the portfolio, and run innovation at scale.</p>
+      <p>GIMI's digital platforms put structure and data behind innovation, from surfacing trends with AI, to crowdsourcing ideas across the organization, to managing the whole portfolio in one place.</p>
+      <div class="hero-ctas">
+        <a href="mailto:info@giminstitute.org?subject=GIMI%20Digital%20Tools" class="btn btn-primary">Talk to GIMI</a>
+        <a href="#tools" class="btn btn-ghost">See the Tools</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <img src="gimi-store-assets/v2/akaio.png?v=20260612-2" alt="GIMI Digital Tools">
+    </div>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div><div class="num">AI</div><div class="label">Trends &amp; scenarios</div></div>
+    <div><div class="num">Crowdsource</div><div class="label">Ideas at scale</div></div>
+    <div><div class="num">Portfolio</div><div class="label">One live view</div></div>
+    <div><div class="num">Structured</div><div class="label">Diverge → converge</div></div>
+  </div>
+</div>
+
+<section id="overview" class="tab-section ov-full">
+  <div class="section-inner">
+    <p class="section-eyebrow">Overview</p>
+    <h2 class="section-title">Run innovation with structure, not spreadsheets.</h2>
+    <p class="section-lead">Good ideas get lost without a system. GIMI's tools capture, refine, and prioritize them, and give leaders a live view of the whole pipeline.</p>
+    <div class="prose">
+      <p>Used on their own or alongside GIMI programs, these platforms bring a standardized, diverge-and-converge process to innovation: explore the future, gather ideas from across the organization and beyond, and turn the best of them into a managed portfolio of concepts, with the dashboards leaders need to steer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tools" class="tab-section alt">
+  <div class="section-inner">
+    <p class="section-eyebrow">The Tools</p>
+    <h2 class="section-title">Three platforms, one innovation engine.</h2>
+    <div class="mini-card-grid cols-3">
+      <div class="mini-card"><h4>AKAIO</h4><p>An AI-powered platform to explore hidden trends, envision future scenarios, and match with the right partners.</p></div>
+      <div class="mini-card"><h4>Eureka</h4><p>Idea management and innovation portfolio software, capturing ideas, running the pipeline, and giving leaders portfolio visibility.</p></div>
+      <div class="mini-card"><h4>Team-Powered Ideation</h4><p>A structured crowdsourcing platform with trained coaches and dashboards, using the IDEX diverge-converge process.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="outcomes" class="tab-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">What You Get</p>
+    <h2 class="section-title">From scattered ideas to a managed pipeline.</h2>
+    <div class="mini-card-grid">
+      <div class="mini-card"><h4>Ideas From Everywhere</h4><p>Crowdsource fragments and concepts across teams and the wider ecosystem.</p></div>
+      <div class="mini-card"><h4>A Standardized Process</h4><p>A proven diverge-converge method that refines and prioritizes the best ideas.</p></div>
+      <div class="mini-card"><h4>Portfolio Visibility</h4><p>A live view of the innovation portfolio so leaders can steer with data.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tab-section alt">
+  <div class="section-inner">
+    <div class="cta-band">
+      <h2>Want to see the platforms?</h2>
+      <p>Talk to GIMI about AKAIO, Eureka, and team-powered ideation for your organization.</p>
+      <div class="hero-ctas">
+        <a href="mailto:info@giminstitute.org?subject=GIMI%20Digital%20Tools" class="btn btn-primary">Request a Demo</a>
+        <a href="index.html" class="btn btn-ghost">Explore all Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-footer">
+  <p>© Global Innovation Management Institute · <a href="index.html">Back to GIMI</a> · <a href="mailto:info@giminstitute.org">info@giminstitute.org</a></p>
+</footer>
+
+<script>
+  (function () {
+    var sections = document.querySelectorAll('section.tab-section');
+    var navLinks = document.querySelectorAll('.nav-tabs a');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          navLinks.forEach(function (link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
+        }
+      });
+    }, { rootMargin: '-84px 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  })();
+</script>
+</body>
+</html>

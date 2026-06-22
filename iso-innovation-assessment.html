@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISO 56001 Innovation Assessment | GIMI</title>
+<link rel="stylesheet" href="gimi-landing.css?v=20260619e">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Global Innovation Management Institute</span>
+    <a href="index.html">← Back to GIMI</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">GIMI<span>·</span>Programs</a>
+    <ul class="nav-tabs">
+      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#evaluate">What We Evaluate</a></li>
+      <li><a href="#how">How It Works</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">ISO 56001 · Assessment</div>
+      <h1>ISO 56001 <span>Innovation Assessment</span></h1>
+      <p class="hero-tagline">Benchmark and certify your innovation management against the international standard.</p>
+      <p>An organizational innovation assessment aligned to ISO 56001, the world's first certifiable innovation-management-system standard, for organizations that want to formalize how they manage innovation and prove it to the world.</p>
+      <div class="hero-ctas">
+        <a href="mailto:info@giminstitute.org?subject=ISO%2056001%20Assessment" class="btn btn-primary">Talk to GIMI</a>
+        <a href="#how" class="btn btn-ghost">See How It Works</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <img src="gimi-store-assets/v2/iso-book.png?v=20260612-2" alt="ISO 56001 Innovation Assessment">
+    </div>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div><div class="num">ISO 56001</div><div class="label">The certifiable standard</div></div>
+    <div><div class="num">System</div><div class="label">Management-system audit</div></div>
+    <div><div class="num">Levels 1–4</div><div class="label">Maturity scoring</div></div>
+    <div><div class="num">900+</div><div class="label">Organizations audited</div></div>
+  </div>
+</div>
+
+<section id="overview" class="tab-section ov-full">
+  <div class="section-inner">
+    <p class="section-eyebrow">Overview</p>
+    <h2 class="section-title">Manage innovation to the global standard.</h2>
+    <p class="section-lead">ISO 56001 turns innovation from a set of activities into a managed system. This assessment shows how close you are, and what it takes to certify.</p>
+    <div class="prose">
+      <p>Built on GIMI's High-Performance Innovation framework and mapped to the ISO 56000 family, the assessment audits your innovation management system against the requirements of ISO 56001. It scores your maturity, identifies the gaps between where you are and a certifiable system, and delivers a roadmap to close them, so you can formalize, benchmark, and ultimately certify your innovation management.</p>
+    </div>
+  </div>
+</section>
+
+<section id="evaluate" class="tab-section alt">
+  <div class="section-inner">
+    <p class="section-eyebrow">What We Evaluate</p>
+    <h2 class="section-title">The pillars of a managed innovation system.</h2>
+    <div class="mini-card-grid cols-3">
+      <div class="mini-card"><h4>Strategy</h4><p>Innovation vision, intent, and leadership commitment, linked to measurable goals.</p></div>
+      <div class="mini-card"><h4>Capacity</h4><p>The people, processes, resources, and partnerships that make innovation happen.</p></div>
+      <div class="mini-card"><h4>Discipline</h4><p>The governance, metrics, and culture that make innovation repeatable and certifiable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="tab-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">How It Works</p>
+    <h2 class="section-title">From pre-audit to a certifiable system.</h2>
+    <div class="flow">
+      <div class="flow-step"><div class="fl-node">1</div><div class="fl-title">Pre-Audit</div><div class="fl-desc">Establish your current maturity against ISO 56001.</div></div>
+      <div class="flow-step"><div class="fl-node">2</div><div class="fl-title">Evidence Review</div><div class="fl-desc">Review documentation, systems, and the project portfolio.</div></div>
+      <div class="flow-step"><div class="fl-node">3</div><div class="fl-title">Audit &amp; Interviews</div><div class="fl-desc">Expert-led audit and stakeholder interviews against the standard.</div></div>
+      <div class="flow-step"><div class="fl-node">4</div><div class="fl-title">Roadmap &amp; Certification</div><div class="fl-desc">A gap-closing roadmap and the path to certification.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tab-section alt">
+  <div class="section-inner">
+    <div class="cta-band">
+      <h2>Ready to formalize your innovation system?</h2>
+      <p>Benchmark your organization against ISO 56001 and chart the path to certification.</p>
+      <div class="hero-ctas">
+        <a href="mailto:info@giminstitute.org?subject=ISO%2056001%20Assessment" class="btn btn-primary">Talk to GIMI</a>
+        <a href="index.html" class="btn btn-ghost">Explore all Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-footer">
+  <p>© Global Innovation Management Institute · <a href="index.html">Back to GIMI</a> · <a href="mailto:info@giminstitute.org">info@giminstitute.org</a></p>
+</footer>
+
+<script>
+  (function () {
+    var sections = document.querySelectorAll('section.tab-section');
+    var navLinks = document.querySelectorAll('.nav-tabs a');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          navLinks.forEach(function (link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
+        }
+      });
+    }, { rootMargin: '-84px 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  })();
+</script>
+</body>
+</html>

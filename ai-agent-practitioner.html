@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certified AI Agent Practitioner | GIMI</title>
+<link rel="stylesheet" href="gimi-landing.css?v=20260619e">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Global Innovation Management Institute</span>
+    <a href="index.html">← Back to GIMI</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">GIMI<span>·</span>Programs</a>
+    <ul class="nav-tabs">
+      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#outcomes">What You Get</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">CAAP · Certification</div>
+      <h1>Certified <span>AI Agent Practitioner</span></h1>
+      <p class="hero-tagline">Operationalize AI by building a working agent, not just talking about it.</p>
+      <p>A hands-on certification that takes practitioners from AI curiosity to a working AI agent, using GIMI's Innovation 5.0 approach to put artificial intelligence to work inside the innovation process.</p>
+      <div class="hero-ctas">
+        <a href="https://www.giminstitute.org/store/" target="_blank" rel="noopener" class="btn btn-primary">Enroll Now</a>
+        <a href="#how" class="btn btn-ghost">See How It Works</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <img src="gimi-store-assets/v2/caap.png?v=20260612-2" alt="Certified AI Agent Practitioner">
+    </div>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div><div class="num">4h</div><div class="label">Focused, hands-on</div></div>
+    <div><div class="num">Innovation 5.0</div><div class="label">GIMI's AI approach</div></div>
+    <div><div class="num">Build</div><div class="label">A working AI agent</div></div>
+    <div><div class="num">Practitioner</div><div class="label">Certification</div></div>
+  </div>
+</div>
+
+<section id="overview" class="tab-section ov-full">
+  <div class="section-inner">
+    <p class="section-eyebrow">Overview</p>
+    <h2 class="section-title">From AI hype to a working agent.</h2>
+    <p class="section-lead">Most teams are still debating what AI could do. This program has you build something that does it.</p>
+    <div class="prose">
+      <p>The Certified AI Agent Practitioner program teaches you to operationalize AI through GIMI's <strong>Innovation 5.0</strong> approach, moving from a real use case to a working AI agent you can put to work in the innovation process. It is practical and hands-on: you leave with both the credential and a tangible result.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="tab-section alt">
+  <div class="section-inner">
+    <p class="section-eyebrow">How It Works</p>
+    <h2 class="section-title">Build an agent in four steps.</h2>
+    <div class="flow">
+      <div class="flow-step"><div class="fl-node">1</div><div class="fl-title">Frame the Use Case</div><div class="fl-desc">Pick a real problem in your innovation process worth automating.</div></div>
+      <div class="flow-step"><div class="fl-node">2</div><div class="fl-title">Design the Agent</div><div class="fl-desc">Shape the agent's task, inputs, and guardrails with Innovation 5.0.</div></div>
+      <div class="flow-step"><div class="fl-node">3</div><div class="fl-title">Build It</div><div class="fl-desc">Assemble a working agent hands-on, with expert guidance.</div></div>
+      <div class="flow-step"><div class="fl-node">4</div><div class="fl-title">Put It to Work</div><div class="fl-desc">Deploy it into the innovation process and measure the impact.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="outcomes" class="tab-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">What You Get</p>
+    <h2 class="section-title">A skill and a result.</h2>
+    <div class="mini-card-grid cols-3">
+      <div class="mini-card"><h4>A Working AI Agent</h4><p>Leave with a tangible agent built around your own use case.</p></div>
+      <div class="mini-card"><h4>The Innovation 5.0 Method</h4><p>A repeatable approach for putting AI to work in innovation.</p></div>
+      <div class="mini-card"><h4>Practitioner Credential</h4><p>The Certified AI Agent Practitioner certification from GIMI.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tab-section alt">
+  <div class="section-inner">
+    <div class="cta-band">
+      <h2>Ready to build your first agent?</h2>
+      <p>Turn AI from a talking point into a working capability inside your innovation process.</p>
+      <div class="hero-ctas">
+        <a href="https://www.giminstitute.org/store/" target="_blank" rel="noopener" class="btn btn-primary">Enroll Now</a>
+        <a href="mailto:info@giminstitute.org?subject=AI%20Agent%20Practitioner" class="btn btn-ghost">Talk to GIMI</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-footer">
+  <p>© Global Innovation Management Institute · <a href="index.html">Back to GIMI</a> · <a href="mailto:info@giminstitute.org">info@giminstitute.org</a></p>
+</footer>
+
+<script>
+  (function () {
+    var sections = document.querySelectorAll('section.tab-section');
+    var navLinks = document.querySelectorAll('.nav-tabs a');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          navLinks.forEach(function (link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
+        }
+      });
+    }, { rootMargin: '-84px 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  })();
+</script>
+</body>
+</html>
