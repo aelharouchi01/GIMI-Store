@@ -164,6 +164,17 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
 .stat-hero .sh-value { font-size: 22px; font-weight: 800; color: var(--gimi-navy); line-height: 1.25; margin-bottom: 4px; }
 .stat-hero .sh-sub { font-size: 13px; color: var(--gimi-gray); line-height: 1.5; margin: 0; }
 
+/* ---------- Case studies / "in practice" cards ---------- */
+.case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.case-card { background: var(--gimi-white); border: 1px solid var(--gimi-border); border-top: 3px solid var(--gimi-teal); border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; }
+.case-card .cc-client { font-size: 15.5px; font-weight: 800; color: var(--gimi-navy); line-height: 1.25; margin-bottom: 4px; }
+.case-card .cc-tag { font-size: 10.5px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gimi-teal); margin-bottom: 10px; }
+.case-card .cc-what { font-size: 13.5px; color: var(--gimi-gray); line-height: 1.55; margin-bottom: 16px; }
+.case-card .cc-result { margin-top: auto; padding-top: 13px; border-top: 1px solid var(--gimi-border); }
+.case-card .cc-result strong { display: block; font-size: 22px; color: var(--gimi-navy); font-weight: 800; line-height: 1.15; }
+.case-card .cc-result span { font-size: 12.5px; color: var(--gimi-gray); font-weight: 600; }
+.tab-section.alt .case-card { background: var(--gimi-white); }
+
 /* ---------- Final CTA band ---------- */
 .cta-band { background: linear-gradient(135deg, var(--gimi-teal-dark) 0%, var(--gimi-navy) 100%); color: var(--gimi-white); border-radius: 20px; padding: 48px 44px; text-align: center; }
 .cta-band h2 { font-size: 28px; font-weight: 800; color: var(--gimi-white); margin-bottom: 12px; }
