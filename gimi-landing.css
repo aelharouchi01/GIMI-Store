@@ -192,6 +192,21 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
 .lp-quote p { font-size: 18px; color: var(--gimi-text); line-height: 1.6; font-style: italic; margin-bottom: 14px; }
 .lp-quote .lq-who { font-size: 14px; font-weight: 800; color: var(--gimi-navy); }
 .lp-quote .lq-role { font-size: 13px; font-weight: 700; color: var(--gimi-teal-dark); }
+/* with author photo */
+.lp-quote.with-photo { display: flex; gap: 24px; align-items: center; }
+.lp-quote.with-photo > img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid var(--gimi-white); box-shadow: 0 5px 16px rgba(27,31,59,0.14); }
+.lp-quote.with-photo p { margin-bottom: 10px; }
+
+/* ---------- Multi-testimonial grid (cards with photos) ---------- */
+.lp-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+.lp-qcard { background: var(--gimi-white); border: 1px solid var(--gimi-border); border-top: 3px solid var(--gimi-teal); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; }
+.lp-qcard .lq-head { display: flex; gap: 13px; align-items: center; margin-bottom: 14px; }
+.lp-qcard .lq-head img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; flex: none; }
+.lp-qcard .lq-head .lq-ph { width: 54px; height: 54px; border-radius: 50%; flex: none; background: var(--gimi-navy); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 17px; }
+.lp-qcard .lq-n { font-size: 14px; font-weight: 800; color: var(--gimi-navy); line-height: 1.2; }
+.lp-qcard .lq-r { font-size: 12px; color: var(--gimi-teal-dark); font-weight: 600; margin-top: 3px; line-height: 1.3; }
+.lp-qcard p { font-size: 14px; color: var(--gimi-text); line-height: 1.6; font-style: italic; }
+.lp-qcard .lq-flag { font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: var(--gimi-gray); margin-top: 12px; }
 
 /* ---------- Final CTA band ---------- */
 .cta-band { background: linear-gradient(135deg, var(--gimi-teal-dark) 0%, var(--gimi-navy) 100%); color: var(--gimi-white); border-radius: 20px; padding: 48px 44px; text-align: center; }
