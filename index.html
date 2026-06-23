@@ -436,9 +436,10 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-home .hm-lead { font-size:17px; color:var(--gray); line-height:1.6; margin-bottom:30px; max-width:760px; }
 #view-home .hm-quotes { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:8px; }
 #view-home .hm-quote { background:#fff; border:1px solid var(--border); border-top:3px solid var(--teal); border-radius:14px; padding:24px; display:flex; flex-direction:column; }
-#view-home .hm-quote img { width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:14px; }
-#view-home .hm-quote p { font-size:14px; color:var(--text); line-height:1.6; font-style:italic; margin-bottom:14px; flex:1; }
-#view-home .hm-quote .hq-n { font-size:13.5px; font-weight:800; color:var(--navy); }
+#view-home .hq-head { display:flex; gap:13px; align-items:center; margin-bottom:15px; min-height:56px; }
+#view-home .hm-quote img { width:56px; height:56px; border-radius:50%; object-fit:cover; flex:none; }
+#view-home .hm-quote p { font-size:14px; color:var(--text); line-height:1.6; font-style:italic; margin:0; }
+#view-home .hm-quote .hq-n { font-size:13.5px; font-weight:800; color:var(--navy); line-height:1.2; }
 #view-home .hm-quote .hq-r { font-size:12px; color:var(--teal-dark); font-weight:600; margin-top:3px; line-height:1.35; }
 @media(max-width:900px){ #view-home .hm-quotes{ grid-template-columns:1fr 1fr; } }
 @media(max-width:560px){ #view-home .hm-quotes{ grid-template-columns:1fr; } }
@@ -1157,10 +1158,10 @@ footer strong { color:rgba(255,255,255,0.85); }
     <div class="hm-section-label">What Our Community Says</div>
     <h2>Trusted by innovators and organizations worldwide.</h2>
     <div class="hm-quotes">
-      <div class="hm-quote"><img src="gimi-store-assets/testimonials/org-l3.jpg?v=20260623c" alt="Vince G. Tobias"><p>&ldquo;Reaching Level 3 means we are managing, tracking, and measuring innovation as a core element of our growth, whilst pushing our people forward.&rdquo;</p><div class="hq-n">Vince G. Tobias</div><div class="hq-r">Head of Innovation, Ayala Corporation &middot; Philippines</div></div>
-      <div class="hm-quote"><img src="gimi-store-assets/testimonials/org-l4.jpg?v=20260623c" alt="H.E. Mattar Al Tayer"><p>&ldquo;RTA is committed to making innovation an institutional practice in planning a sustainable future for the upcoming generations.&rdquo;</p><div class="hq-n">H.E. Mattar Al Tayer</div><div class="hq-r">Director-General &amp; Chairman, RTA &middot; Dubai</div></div>
-      <div class="hm-quote"><img src="gimi-store-assets/testimonials/ccio-1.jpg?v=20260623c" alt="Dr. Cynthia Ee"><p>&ldquo;Managing innovation is challenging, but it will be a long-lasting source of competitive advantage for our organization.&rdquo;</p><div class="hq-n">Dr. Cynthia Ee</div><div class="hq-r">Managing Director, Clarus Consulting &middot; Malaysia</div></div>
-      <div class="hm-quote"><img src="gimi-store-assets/testimonials/cip-1.jpg?v=20260623c" alt="Ernie Zainie"><p>&ldquo;This certification comes with a set of powerful tools and concepts that can be applied basically anywhere and at any level of the organization.&rdquo;</p><div class="hq-n">Ernie Zainie</div><div class="hq-r">Sr. Corporate Strategy Manager, Sabah Electricity</div></div>
+      <div class="hm-quote"><div class="hq-head"><img src="gimi-store-assets/testimonials/org-l3.jpg?v=20260623c" alt="Vince G. Tobias"><div><div class="hq-n">Vince G. Tobias</div><div class="hq-r">Head of Innovation, Ayala Corporation &middot; Philippines</div></div></div><p>&ldquo;Reaching Level 3 means we are managing, tracking, and measuring innovation as a core element of our growth, whilst pushing our people forward.&rdquo;</p></div>
+      <div class="hm-quote"><div class="hq-head"><img src="gimi-store-assets/testimonials/org-l4.jpg?v=20260623c" alt="H.E. Mattar Al Tayer"><div><div class="hq-n">H.E. Mattar Al Tayer</div><div class="hq-r">Director-General &amp; Chairman, RTA &middot; Dubai</div></div></div><p>&ldquo;RTA is committed to making innovation an institutional practice in planning a sustainable future for the upcoming generations.&rdquo;</p></div>
+      <div class="hm-quote"><div class="hq-head"><img src="gimi-store-assets/testimonials/ccio-1.jpg?v=20260623c" alt="Dr. Cynthia Ee"><div><div class="hq-n">Dr. Cynthia Ee</div><div class="hq-r">Managing Director, Clarus Consulting &middot; Malaysia</div></div></div><p>&ldquo;Managing innovation is challenging, but it will be a long-lasting source of competitive advantage for our organization.&rdquo;</p></div>
+      <div class="hm-quote"><div class="hq-head"><img src="gimi-store-assets/testimonials/cip-1.jpg?v=20260623c" alt="Ernie Zainie"><div><div class="hq-n">Ernie Zainie</div><div class="hq-r">Sr. Corporate Strategy Manager, Sabah Electricity</div></div></div><p>&ldquo;This certification comes with a set of powerful tools and concepts that can be applied basically anywhere and at any level of the organization.&rdquo;</p></div>
     </div>
   </section>
 
