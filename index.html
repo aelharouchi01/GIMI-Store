@@ -676,10 +676,12 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-member .mr-acad { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 #view-member .mr-quotes { background:var(--gray-light); }
 #view-member .mr-qgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-#view-member .mr-quote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:12px; padding:22px 24px; }
-#view-member .mr-quote p { font-size:14.5px; color:var(--text); line-height:1.6; font-style:italic; margin-bottom:12px; }
+#view-member .mr-quote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:12px; padding:22px 24px; display:flex; flex-direction:column; }
+#view-member .mr-quote p { font-size:14.5px; color:var(--text); line-height:1.6; font-style:italic; margin-bottom:16px; flex:1; }
+#view-member .mr-quote .mq-foot { display:flex; justify-content:space-between; align-items:flex-end; gap:12px; }
 #view-member .mr-quote .mq-who { font-size:13px; font-weight:800; color:var(--navy); }
-#view-member .mr-quote .mq-tier { font-size:12px; font-weight:700; color:var(--teal-dark); }
+#view-member .mr-quote .mq-tier { font-size:12px; font-weight:700; color:var(--teal-dark); margin-top:2px; }
+#view-member .mr-quote .mq-logo { width:auto; height:44px; object-fit:contain; flex:none; }
 #view-member .mr-cta { max-width:var(--wrap); margin:0 auto; padding:54px 32px; }
 #view-member .mr-cta-band { background:linear-gradient(135deg, #1E6E78 0%, var(--navy) 100%); border-radius:20px; padding:46px; text-align:center; color:#fff; }
 #view-member .mr-cta-band h2 { font-size:28px; font-weight:800; color:#fff; margin-bottom:10px; }
@@ -1667,18 +1669,33 @@ footer strong { color:rgba(255,255,255,0.85); }
     <div class="mr-qgrid">
       <div class="mr-quote">
         <p>"The GIMI-IAOIP Corporate Platinum Membership has been an innovation fix for our team. It's a transformative tool that's redefining how we approach innovation."</p>
-        <div class="mq-who">Lesotho Revenue Authority</div>
-        <div class="mq-tier">Corporate · Platinum</div>
+        <div class="mq-foot">
+          <div>
+            <div class="mq-who">Lesotho Revenue Authority</div>
+            <div class="mq-tier">Corporate · Platinum</div>
+          </div>
+          <img class="mq-logo" src="gimi-store-assets/v2/memb-plat.png?v=20260612-2" alt="Platinum">
+        </div>
       </div>
       <div class="mr-quote">
         <p>"Being a corporate member of GIMI-IAOIP has been a transformative journey. This platform fuels our company's growth with unparalleled insights and collaborations."</p>
-        <div class="mq-who">Haier Appliances</div>
-        <div class="mq-tier">Corporate · Gold</div>
+        <div class="mq-foot">
+          <div>
+            <div class="mq-who">Haier Appliances</div>
+            <div class="mq-tier">Corporate · Gold</div>
+          </div>
+          <img class="mq-logo" src="gimi-store-assets/v2/memb-gold.png?v=20260612-2" alt="Gold">
+        </div>
       </div>
       <div class="mr-quote">
         <p>"It was very helpful to be associated with IAOIP and have access to the network of practitioners. I gained valuable experience to learn more about innovation."</p>
-        <div class="mq-who">Travis Kahle · University of Charleston</div>
-        <div class="mq-tier">Academia</div>
+        <div class="mq-foot">
+          <div>
+            <div class="mq-who">Travis Kahle · University of Charleston</div>
+            <div class="mq-tier">Academia</div>
+          </div>
+          <img class="mq-logo" src="gimi-store-assets/v2/memb-academia.png?v=20260612-2" alt="Academia">
+        </div>
       </div>
     </div>
   </section>
