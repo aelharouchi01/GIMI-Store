@@ -846,6 +846,49 @@ footer strong { color:rgba(255,255,255,0.85); }
 @media (max-width:560px){
   #view-thought .tl-pillars,#view-thought .tl-flow,#view-thought .tl-focus,#view-thought .tl-books,#view-thought .tl-evstats,#view-thought .tl-videos,#view-thought .tl-blog{ grid-template-columns:1fr 1fr; }
 }
+/* ===== Dedicated certificate-detail modal ===== */
+.cm-overlay { display:none; position:fixed; inset:0; background:rgba(19,22,44,0.6); z-index:1000; padding:40px 20px; overflow-y:auto; backdrop-filter:blur(3px); }
+.cm-overlay.open { display:block; }
+.cm-modal { position:relative; max-width:880px; margin:0 auto; background:#fff; border-radius:20px; padding:36px 40px 40px; box-shadow:0 30px 80px rgba(19,22,44,0.4); }
+.cm-close { position:absolute; top:18px; right:18px; width:36px; height:36px; border:none; border-radius:50%; background:var(--gray-light); color:var(--navy); font-size:15px; cursor:pointer; transition:all .2s; }
+.cm-close:hover { background:var(--navy); color:#fff; }
+.cm-head { display:flex; gap:22px; align-items:center; border-bottom:1px solid var(--border); padding-bottom:22px; margin-bottom:22px; }
+.cm-badge { width:96px; height:96px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.cm-badge img { max-width:96px; max-height:96px; object-fit:contain; }
+.cm-code { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:6px; }
+.cm-head h2 { font-size:25px; color:var(--navy); font-weight:800; line-height:1.15; letter-spacing:-0.3px; margin-bottom:6px; }
+.cm-tag { font-size:14.5px; color:var(--gray); line-height:1.5; margin-bottom:12px; }
+.cm-chips { display:flex; flex-wrap:wrap; gap:8px; }
+.cm-chips span { font-size:12.5px; font-weight:700; color:var(--navy); background:var(--gray-light); border:1px solid var(--border); border-radius:20px; padding:4px 12px; }
+.cm-chips span.iso { background:var(--teal-light); color:var(--teal-dark); border-color:var(--teal); }
+.cm-desc { font-size:15px; color:var(--text); line-height:1.65; margin-bottom:24px; }
+.cm-cols { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; }
+.cm-block h4 { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:13px; }
+.cm-block ul { list-style:none; }
+.cm-block li { position:relative; padding-left:22px; font-size:14px; line-height:1.5; color:var(--text); margin-bottom:9px; }
+.cm-block li::before { content:'✓'; position:absolute; left:0; top:0; color:var(--teal); font-weight:800; }
+.cm-tags { display:flex; flex-wrap:wrap; gap:8px; }
+.cm-tags span { font-size:13px; font-weight:700; color:var(--navy); background:#fff; border:1px solid var(--border); border-left:3px solid var(--teal); border-radius:6px; padding:6px 12px; }
+.cm-exam { display:flex; flex-wrap:wrap; gap:26px; background:var(--gray-light); border-radius:12px; padding:16px 22px; margin-bottom:24px; }
+.cm-exam div { font-size:13px; color:var(--gray); }
+.cm-exam strong { display:block; font-size:14.5px; color:var(--navy); font-weight:800; margin-top:2px; }
+.cm-quote { display:flex; gap:18px; align-items:center; background:linear-gradient(135deg,var(--teal-light) 0%,#fff 100%); border:1px solid var(--teal); border-radius:14px; padding:22px 24px; margin-bottom:24px; }
+.cm-quote img { width:66px; height:66px; border-radius:50%; object-fit:cover; flex-shrink:0; border:3px solid #fff; box-shadow:0 4px 12px rgba(27,31,59,0.12); }
+.cm-quote .cm-qmark { width:66px; height:66px; border-radius:50%; flex-shrink:0; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; font-family:Georgia,serif; }
+.cm-quote p { font-size:14.5px; color:var(--text); line-height:1.6; font-style:italic; margin-bottom:9px; }
+.cm-quote .cm-who { font-size:13.5px; font-weight:800; color:var(--navy); }
+.cm-quote .cm-role { font-size:12.5px; color:var(--teal-dark); font-weight:600; }
+.cm-actions { display:flex; flex-wrap:wrap; gap:12px; }
+.cm-btn { display:inline-block; padding:12px 24px; border-radius:10px; font-size:14px; font-weight:700; text-decoration:none; cursor:pointer; border:2px solid var(--teal); background:var(--teal); color:#fff; font-family:inherit; transition:all .2s; }
+.cm-btn:hover { background:var(--teal-dark); border-color:var(--teal-dark); }
+.cm-btn.ghost { background:none; color:var(--teal-dark); }
+.cm-btn.ghost:hover { background:var(--teal-light); }
+@media (max-width:680px){
+  .cm-modal { padding:28px 22px 30px; }
+  .cm-head { flex-direction:column; align-items:flex-start; gap:14px; }
+  .cm-cols { grid-template-columns:1fr; gap:18px; }
+  .cm-quote { flex-direction:column; text-align:center; }
+}
 </style>
 </head>
 <body>
@@ -2126,6 +2169,14 @@ footer strong { color:rgba(255,255,255,0.85); }
   </div>
 </div>
 
+<!-- Dedicated certificate-detail modal (richer than the store modal) -->
+<div class="cm-overlay" id="certOverlay" onclick="if(event.target===this)closeCertDetail()">
+  <div class="cm-modal">
+    <button class="cm-close" onclick="closeCertDetail()">&#x2715;</button>
+    <div id="certBody"></div>
+  </div>
+</div>
+
 <footer>
   <strong>Global Innovation Management Institute (GIMI)</strong><br>
   110 Cambridge Street, Cambridge MA 02141 &nbsp;|&nbsp;
@@ -2134,6 +2185,7 @@ footer strong { color:rgba(255,255,255,0.85); }
   ISO/IEC 17024 Accredited Certification Body. Certifying innovation professionals in 116 countries since 2009.
 </footer>
 
+<script src="cert-data.js?v=20260623"></script>
 <script>
 /* ============================================================
    TRACKS — top-level groups with optional clusters
@@ -3402,7 +3454,7 @@ function certCard(p) {
       <h3>${p.title}</h3>
       <p>${p.tagline || p.description || ''}</p>
       <div class="ct-meta">${meta.join('')}</div>
-      <div class="ct-actions"><button class="ct-btn" onclick="openModal('${p.id}')">View details</button>${moreLink}</div>
+      <div class="ct-actions"><button class="ct-btn" onclick="openCertDetail('${p.id}')">View details</button>${moreLink}</div>
     </div>
   </div>`;
 }
@@ -3417,6 +3469,56 @@ function orgCard(o) {
       <div class="ct-actions"><a class="ct-iso" href="${o.url || 'https://www.giminstitute.org/'}" target="_blank" rel="noopener">${o.url ? 'Learn more' : 'Talk to GIMI'}</a></div>
     </div>
   </div>`;
+}
+/* Rich certificate-detail modal (V68 content + V50 testimonial). Falls back to the store modal. */
+function openCertDetail(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  const d = (typeof CERT_DETAIL !== 'undefined' && p) ? CERT_DETAIL[p.code] : null;
+  if (!p || !d) { return openModal(id); }   // no rich detail -> store modal
+  const q = (typeof CERT_QUOTE !== 'undefined') ? CERT_QUOTE[id] : null;
+  const li = arr => (arr || []).map(x => `<li>${x}</li>`).join('');
+  const chips = [];
+  if (d.time) chips.push(`<span>${d.time}</span>`);
+  if (d.certPrice) chips.push(`<span>From ${d.certPrice}</span>`);
+  if (p.flagship) chips.push(`<span class="iso">ISO/IEC 17024</span>`);
+  const skillsBlock = d.skills && d.skills.length ? `<div class="cm-block"><h4>Skills You'll Master</h4><ul>${li(d.skills)}</ul></div>` : '';
+  const careers = d.careers && d.careers.length ? `<div class="cm-block" style="margin-bottom:24px"><h4>Career Outcomes</h4><div class="cm-tags">${d.careers.map(c=>`<span>${c}</span>`).join('')}</div></div>` : '';
+  const quoteBlock = q ? `<div class="cm-quote">${q.img?`<img src="${q.img}?v=${ASSET_VER}" alt="${q.n}">`:`<div class="cm-qmark">&ldquo;</div>`}<div><p>${q.q}</p><div class="cm-who">${q.n}</div><div class="cm-role">${q.r}</div></div></div>` : '';
+  const landing = (p.id === 'cip-1') ? 'cip-l1-certification.html' : CERT_LANDING[p.id];
+  const moreBtn = landing ? `<a class="cm-btn ghost" href="${landing}" target="_blank" rel="noopener">Full course page</a>` : '';
+  document.getElementById('certBody').innerHTML = `
+    <div class="cm-head">
+      <div class="cm-badge">${buildBadge(p)}</div>
+      <div>
+        <div class="cm-code">${p.code}${d.for?' &middot; For '+d.for:''}</div>
+        <h2>${p.title}</h2>
+        <p class="cm-tag">${d.tagline || p.tagline || ''}</p>
+        <div class="cm-chips">${chips.join('')}</div>
+      </div>
+    </div>
+    <p class="cm-desc">${d.description || p.description || ''}</p>
+    <div class="cm-cols">
+      <div class="cm-block"><h4>What's Included</h4><ul>${li(d.included)}</ul></div>
+      ${skillsBlock}
+    </div>
+    ${careers}
+    <div class="cm-exam">
+      <div>Exam<strong>Online proctored MCQ</strong></div>
+      <div>Pass mark<strong>70%</strong></div>
+      <div>Recertification<strong>3-year cycle &middot; 60 CPE</strong></div>
+      <div>Certificate<strong>Digital${p.flagship?' &middot; ISO 17024':''}</strong></div>
+    </div>
+    ${quoteBlock}
+    <div class="cm-actions">
+      <button class="cm-btn" onclick="closeCertDetail();openModal('${p.id}')">See pricing &amp; enroll</button>
+      ${moreBtn}
+    </div>`;
+  document.getElementById('certOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCertDetail() {
+  document.getElementById('certOverlay').classList.remove('open');
+  document.body.style.overflow = '';
 }
 function renderCertificates() {
   let html = '';
