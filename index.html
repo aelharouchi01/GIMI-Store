@@ -580,6 +580,22 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-programs .pr-quote .pq-text { font-size:15px; color:#fff; line-height:1.6; margin-bottom:16px; }
 #view-programs .pr-quote .pq-name { font-size:13.5px; font-weight:800; color:var(--teal); }
 #view-programs .pr-quote .pq-role { font-size:12px; color:rgba(255,255,255,0.65); margin-top:2px; }
+/* watch / video band */
+#view-programs .pr-watch { max-width:var(--wrap); margin:0 auto; padding:56px 32px; }
+#view-programs .pr-wlabel { font-size:13px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+#view-programs .pr-watch h2 { font-size:30px; color:var(--navy); font-weight:800; letter-spacing:-0.4px; margin-bottom:8px; }
+#view-programs .pr-watch .pr-wlead { font-size:17px; color:var(--gray); margin-bottom:26px; max-width:760px; }
+#view-programs .pr-videos { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+#view-programs .pr-video { text-decoration:none; display:block; }
+#view-programs .pr-vthumb { position:relative; border-radius:12px; overflow:hidden; aspect-ratio:16/9; background:var(--navy); }
+#view-programs .pr-vthumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s; }
+#view-programs .pr-video:hover .pr-vthumb img { transform:scale(1.05); }
+#view-programs .pr-vplay { position:absolute; inset:0; margin:auto; width:50px; height:50px; border-radius:50%; background:rgba(27,31,59,0.78); }
+#view-programs .pr-vplay::after { content:''; position:absolute; top:50%; left:54%; transform:translate(-50%,-50%); border-style:solid; border-width:8px 0 8px 14px; border-color:transparent transparent transparent #fff; }
+#view-programs .pr-video:hover .pr-vplay { background:var(--teal); }
+#view-programs .pr-vtitle { font-size:14px; font-weight:800; color:var(--navy); line-height:1.3; margin:11px 0 3px; }
+#view-programs .pr-vwho { font-size:12.5px; color:var(--teal-dark); font-weight:700; }
+@media (max-width:900px){ #view-programs .pr-videos{ grid-template-columns:repeat(2,1fr); } #view-programs .pr-qgrid{ grid-template-columns:1fr; } }
 /* closing CTA */
 #view-programs .pr-cta { max-width:var(--wrap); margin:0 auto; padding:56px 32px; }
 #view-programs .pr-cta-band { background:linear-gradient(135deg, var(--teal-dark) 0%, var(--navy) 100%); border-radius:20px; padding:46px; text-align:center; color:#fff; }
@@ -1364,25 +1380,36 @@ footer strong { color:rgba(255,255,255,0.85); }
   </section>
   <div id="programCats" class="pr-cats"></div>
   <div id="programTracks"></div>
+  <section class="pr-watch">
+    <div class="pr-wlabel">Watch</div>
+    <h2>Innovation, from the people who practice it.</h2>
+    <p class="pr-wlead">Talks from the GIMI Think Tank, our weekly forum where innovation leaders share methods, standards, and real-world practice.</p>
+    <div class="pr-videos">
+      <a class="pr-video" href="https://www.youtube.com/watch?v=PYnjTqmZ-N0" target="_blank" rel="noopener"><div class="pr-vthumb"><img src="https://img.youtube.com/vi/PYnjTqmZ-N0/hqdefault.jpg" alt="" loading="lazy"><span class="pr-vplay"></span></div><div class="pr-vtitle">Taking the Guesswork Out of Innovation</div><div class="pr-vwho">Tony Ulwick</div></a>
+      <a class="pr-video" href="https://www.youtube.com/watch?v=TGsMEyBwjqg" target="_blank" rel="noopener"><div class="pr-vthumb"><img src="https://img.youtube.com/vi/TGsMEyBwjqg/hqdefault.jpg" alt="" loading="lazy"><span class="pr-vplay"></span></div><div class="pr-vtitle">Design Thinking for Innovation</div><div class="pr-vwho">Langdon Morris</div></a>
+      <a class="pr-video" href="https://www.youtube.com/watch?v=_T895WxO1_Q" target="_blank" rel="noopener"><div class="pr-vthumb"><img src="https://img.youtube.com/vi/_T895WxO1_Q/hqdefault.jpg" alt="" loading="lazy"><span class="pr-vplay"></span></div><div class="pr-vtitle">ISO 56001: Blueprint for Sustainable Innovation</div><div class="pr-vwho">Dr. Annika Steiber</div></a>
+      <a class="pr-video" href="https://www.youtube.com/watch?v=7hpa6PbOdPA" target="_blank" rel="noopener"><div class="pr-vthumb"><img src="https://img.youtube.com/vi/7hpa6PbOdPA/hqdefault.jpg" alt="" loading="lazy"><span class="pr-vplay"></span></div><div class="pr-vtitle">Developing 1,584 Leaders in Brazil</div><div class="pr-vwho">Patel · Mendes · Jonash</div></a>
+    </div>
+  </section>
   <section class="pr-quotes">
     <div class="pr-quotes-inner">
       <div class="pr-qlabel">Impact</div>
       <h2>What our community says.</h2>
       <div class="pr-qgrid">
         <div class="pr-quote">
-          <p class="pq-text">"The assessment gave us an honest baseline and a roadmap we could act on right away. A year later, we could actually measure the progress."</p>
-          <div class="pq-name">Head of Innovation</div>
-          <div class="pq-role">Global Manufacturer</div>
+          <p class="pq-text">"The CCIO certification heightened my innovation capabilities, required to help companies reach 10x results."</p>
+          <div class="pq-name">David Tesone</div>
+          <div class="pq-role">Principal, IXL Center (Colombia)</div>
         </div>
         <div class="pr-quote">
-          <p class="pq-text">"The masterclass turned innovation from a vague ambition into a process our teams now run themselves."</p>
-          <div class="pq-name">Chief Innovation Officer</div>
-          <div class="pq-role">Financial Services</div>
+          <p class="pq-text">"I believe this workshop should be attended by every CEO."</p>
+          <div class="pq-name">Dexter Ying-Chung Cheng</div>
+          <div class="pq-role">Managing Director, Momenta Group</div>
         </div>
         <div class="pr-quote">
-          <p class="pq-text">"GIMI's advisors helped us embed innovation into how we operate day to day, not just talk about it in workshops."</p>
-          <div class="pq-name">Director of Strategy</div>
-          <div class="pq-role">Public Sector</div>
+          <p class="pq-text">"Managing innovation is challenging, but it will be a long-lasting source of competitive advantage for our organization."</p>
+          <div class="pq-name">Dr. Cynthia Ee</div>
+          <div class="pq-role">Managing Director, Clarus Consulting</div>
         </div>
       </div>
     </div>
