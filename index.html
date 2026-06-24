@@ -1745,262 +1745,55 @@ footer strong { color:rgba(255,255,255,0.85); }
 </div><!-- /#view-member -->
 
 <div id="view-thought" style="display:none">
+  <style>
+  #view-thought .tl-hubgrid { max-width:1200px; margin:0 auto; padding:14px 32px 10px; display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+  #view-thought .tl-hubcard { display:block; text-decoration:none; background:#fff; border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:16px; padding:30px 32px; transition:all .2s; }
+  #view-thought .tl-hubcard:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(27,31,59,0.1); }
+  #view-thought .tl-hubcard .thk { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:8px; }
+  #view-thought .tl-hubcard h3 { font-size:22px; color:var(--navy); font-weight:800; margin-bottom:10px; line-height:1.2; }
+  #view-thought .tl-hubcard p { font-size:14.5px; color:var(--gray); line-height:1.6; margin-bottom:14px; }
+  #view-thought .tl-hubcard .thmore { font-size:13.5px; font-weight:700; color:var(--teal-dark); }
+  #view-thought .tl-hubnote { max-width:1200px; margin:0 auto; padding:0 32px 56px; }
+  @media(max-width:760px){ #view-thought .tl-hubgrid{ grid-template-columns:1fr; } }
+  </style>
   <section class="tl-hero">
     <div class="tl-hero-inner">
       <div class="tl-eyebrow">Thought Leadership</div>
       <h1>The ideas, recognition, and research <span>moving innovation forward</span>.</h1>
       <p>GIMI does more than certify. We celebrate the world's boldest innovators, convene a global community of practitioners, and publish the frameworks, books, and research that define the field. This is where the innovation conversation happens.</p>
       <div class="tl-ctas">
-        <a href="#tl-awards" class="tl-btn" onclick="document.getElementById('tl-awards').scrollIntoView({behavior:'smooth'});return false;">Explore the Awards</a>
-        <a href="#tl-thinktank" class="tl-btn ghost" onclick="document.getElementById('tl-thinktank').scrollIntoView({behavior:'smooth'});return false;">Join the Think Tank</a>
+        <a href="innovation-awards.html" class="tl-btn">Explore the Awards</a>
+        <a href="gimi-think-tank.html" class="tl-btn ghost">Join the Think Tank</a>
       </div>
     </div>
   </section>
 
-  <div class="tl-pillars">
-    <button class="tl-pillar" onclick="document.getElementById('tl-awards').scrollIntoView({behavior:'smooth'})"><div class="tp-k">01</div><h4>Innovation Awards</h4></button>
-    <button class="tl-pillar" onclick="document.getElementById('tl-thinktank').scrollIntoView({behavior:'smooth'})"><div class="tp-k">02</div><h4>GIMI Think Tank</h4></button>
-    <button class="tl-pillar" onclick="document.getElementById('tl-books').scrollIntoView({behavior:'smooth'})"><div class="tp-k">03</div><h4>Books &amp; Guides</h4></button>
-    <button class="tl-pillar" onclick="document.getElementById('tl-journal').scrollIntoView({behavior:'smooth'})"><div class="tp-k">04</div><h4>Journal of Innovation Science</h4></button>
-    <button class="tl-pillar" onclick="document.getElementById('tl-blog').scrollIntoView({behavior:'smooth'})"><div class="tp-k">05</div><h4>Blog: Innovation Insights</h4></button>
+  <div class="tl-hubgrid">
+    <a class="tl-hubcard" href="innovation-awards.html">
+      <div class="thk">01 · Recognition</div>
+      <h3>Innovation Awards</h3>
+      <p>Celebrating the boldest organizations and individuals across the public, private, and social sectors, judged against published criteria and honored at a global ceremony.</p>
+      <span class="thmore">Explore the Awards &rarr;</span>
+    </a>
+    <a class="tl-hubcard" href="gimi-think-tank.html">
+      <div class="thk">02 · Community</div>
+      <h3>GIMI Think Tank</h3>
+      <p>The world's weekly forum for innovation leaders. Every Wednesday, practitioners from 30+ countries share what is actually working, grounded in the ISO 56000 standards.</p>
+      <span class="thmore">Visit the Think Tank &rarr;</span>
+    </a>
+    <a class="tl-hubcard" href="knowledge.html">
+      <div class="thk">03 · Knowledge</div>
+      <h3>Books, Guides &amp; Journal</h3>
+      <p>GIMI's published body of knowledge: the bodies of knowledge behind our certifications, the innovation stories, and the peer-reviewed International Journal of Innovation Science.</p>
+      <span class="thmore">Browse the library &rarr;</span>
+    </a>
+    <a class="tl-hubcard" href="https://www.giminstitute.org/blog/" target="_blank" rel="noopener">
+      <div class="thk">04 · Perspectives</div>
+      <h3>Blog: Innovation Insights</h3>
+      <p>Practical articles, frameworks, and perspectives from the GIMI community and experts. Members can publish their own thought leadership.</p>
+      <span class="thmore">Read the blog &rarr;</span>
+    </a>
   </div>
-
-  <!-- ============ 1. INNOVATION AWARDS ============ -->
-  <section class="tl-section" id="tl-awards">
-    <div class="tl-intro-2col">
-      <div>
-        <div class="tl-label">Innovation Awards</div>
-        <h2>Recognizing the world's boldest innovators.</h2>
-        <p class="tl-intro" style="margin-bottom:22px;">The GIMI Innovation Awards recognize and celebrate the best organizations and individuals driving innovation across the public, private, and social sectors. Winners gain global recognition, credibility, media exposure, and a place in GIMI's worldwide network of innovators.</p>
-        <div class="tl-ctas" style="margin-top:0;">
-          <a href="https://11396.evalato.com/" target="_blank" rel="noopener" class="tl-btn sm" style="color:#fff;">Apply Now</a>
-          <a href="#tl-cats" class="tl-btn ghost sm" style="color:var(--navy);border-color:var(--border);" onclick="document.getElementById('tl-cats').scrollIntoView({behavior:'smooth'});return false;">See categories</a>
-        </div>
-      </div>
-      <div class="tl-awards-logo">
-        <img src="gimi-store-assets/v2/awards-org.png" alt="GIMI Innovation Awards">
-      </div>
-    </div>
-  </section>
-
-  <div class="tl-stats">
-    <div class="tl-stats-inner">
-      <div><strong>32</strong><span>2025 winners in Rio de Janeiro</span></div>
-      <div><strong>400+</strong><span>Attendees at the ceremony</span></div>
-      <div><strong>15+</strong><span>Countries represented</span></div>
-      <div><strong>15</strong><span>Industries, from energy to government</span></div>
-    </div>
-  </div>
-
-  <section class="tl-section" id="tl-cats">
-    <div class="tl-label">Awards Categories</div>
-    <h2>Ten categories. Eight organizational, two individual.</h2>
-    <p class="tl-intro">Every category is scored against published criteria so recognition reflects real, measurable innovation, not marketing. Each award is judged on a weighted rubric covering impact, novelty, scalability, and more.</p>
-
-    <div class="tl-grouphead">
-      <div class="tl-gh-ico org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg></div>
-      <div><div class="tl-gh-k">8 Categories</div><h3>Organizational Awards</h3></div>
-    </div>
-    <div class="tl-cats" id="tlOrgCats"></div>
-
-    <div class="tl-grouphead" style="margin-top:38px;">
-      <div class="tl-gh-ico ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <div><div class="tl-gh-k">2 Categories</div><h3>Individual Awards</h3></div>
-    </div>
-    <div class="tl-cats" id="tlIndCats"></div>
-  </section>
-
-  <section class="tl-section">
-    <div class="tl-label">Process &amp; Timeline</div>
-    <h2>How to apply for the 2026 awards.</h2>
-    <p class="tl-intro">Submit your application through the GIMI Awards portal before July 31, 2026. Select your categories, complete the registration form, and the GIMI jury takes it from there.</p>
-    <div class="tl-flow">
-      <div class="tl-step"><div class="ts-node">1</div><div class="ts-when">May 8 – Jul 31</div><div class="ts-what">Call for applications open</div></div>
-      <div class="tl-step"><div class="ts-node">2</div><div class="ts-when">Aug 3 – 6</div><div class="ts-what">Jury review phase</div></div>
-      <div class="tl-step"><div class="ts-node">3</div><div class="ts-when">Aug 7</div><div class="ts-what">Finalists announced</div></div>
-      <div class="tl-step"><div class="ts-node">4</div><div class="ts-when">Aug 13 – 18</div><div class="ts-what">Virtual finalist pitches</div></div>
-      <div class="tl-step"><div class="ts-node">5</div><div class="ts-when">Nov 5</div><div class="ts-what">Awards Ceremony, Cartagena</div></div>
-    </div>
-  </section>
-
-  <section class="tl-section">
-    <div class="tl-2col">
-      <div class="tl-card">
-        <h4>Application Fees</h4>
-        <ul>
-          <li><strong>Organizational application:</strong> $600</li>
-          <li><strong>Individual application:</strong> $200</li>
-          <li><strong>Additional category:</strong> $100 per extra submission</li>
-          <li>GIMI members apply <strong>free</strong>: Platinum (10 org + 2 tickets), Gold (5 org + 1 ticket), Silver (1 org + 1 ticket), Professional (1 individual)</li>
-        </ul>
-        <a href="https://11396.evalato.com/" target="_blank" rel="noopener" class="tl-btn sm" style="margin-top:18px;color:#fff;">Open Application Portal</a>
-      </div>
-      <div class="tl-card dark">
-        <h4>The Ceremony: Cartagena, Colombia</h4>
-        <ul>
-          <li>Held <strong>November 5, 2026</strong> inside <strong>Innova Latam</strong>, Latin America's leading corporate innovation summit</li>
-          <li>Recognition reaching <strong>5,000+ innovation leaders</strong> across the region, plus GIMI's global network</li>
-          <li>A curated room of C-level executives, leading corporations, and high-impact startups</li>
-        </ul>
-        <div class="tl-evstats">
-          <div><strong>25+</strong><span>Countries</span></div>
-          <div><strong>74%</strong><span>C-level</span></div>
-          <div><strong>5,000+</strong><span>Community leaders</span></div>
-          <div><strong>600+</strong><span>C-level expected</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="tl-section">
-    <div class="tl-label">The Jury</div>
-    <h2>Judged by global innovation authorities.</h2>
-    <p class="tl-intro">Applications are evaluated by a distinguished panel of innovation leaders from across industry, academia, and standards bodies.</p>
-    <div class="tl-jury">
-      <div class="tl-juror"><img src="gimi-store-assets/leadership/ron-jonash.jpg" alt="Ronald Jonash"><div><div class="tj-name">Ronald Jonash</div><div class="tj-role">GIMI Chairman</div></div></div>
-      <div class="tl-juror"><img src="gimi-store-assets/leadership/brett-trusko.jpg" alt="Brett Trusko"><div><div class="tj-name">Brett Trusko</div><div class="tj-role">Founder &amp; President, IAOIP</div></div></div>
-      <div class="tl-juror"><div class="tj-av ph">AS</div><div><div class="tj-name">Annika Steiber</div><div class="tj-role">ISO TC 279 Expert</div></div></div>
-      <div class="tl-juror"><div class="tj-av ph">AK</div><div><div class="tj-name">Ao Kong</div><div class="tj-role">UN Private Sector Lead</div></div></div>
-      <div class="tl-juror"><div class="tj-av ph">MC</div><div><div class="tj-name">Marla Capozzi</div><div class="tj-role">Partner, McKinsey</div></div></div>
-      <div class="tl-juror"><img src="gimi-store-assets/leadership/mark-fuller.jpg" alt="Mark Fuller"><div><div class="tj-name">Mark Fuller</div><div class="tj-role">IXL Center · Founder, Monitor Group</div></div></div>
-      <div class="tl-juror"><div class="tj-av ph">SS</div><div><div class="tj-name">Stephen Shapiro</div><div class="tj-role">FAST Innovation</div></div></div>
-    </div>
-  </section>
-
-  <section class="tl-section alt">
-    <div class="tl-inner">
-      <div class="tl-label">2025 Winners</div>
-      <h2>Recognizing innovation that delivers.</h2>
-      <p class="tl-intro">The 2025 awards in Rio de Janeiro honored 32 winners from more than 15 countries and 15 industries, from oil &amp; gas and banking to healthcare and government.</p>
-      <div class="tl-winners">
-        <span>Promigas</span><span>Bank of the Philippine Islands</span><span>PETRONAS</span><span>Dubai Police</span><span>ROSHN</span><span>Klabin</span><span>Bank of Africa Academy</span><span>Abu Dhabi Ports</span><span>Norwegian Police</span><span>Ministry of Digital Transformation of Ukraine</span><span>Center for BrainHealth</span>
-      </div>
-      <div class="tl-2col" style="margin-top:26px;">
-        <div class="tl-quote"><p>"Reaching the #1 Net Promoter Score in 2 years and double-digit growth in revenue."</p><div class="tq-who">Bank of the Philippine Islands</div></div>
-        <div class="tl-quote"><p>"Innovation is a core part of our strategy and one of the main enablers of our long-term vision."</p><div class="tq-who">Promigas</div></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="tl-cta">
-    <div class="tl-cta-band">
-      <h2>Ready to be recognized?</h2>
-      <p>Apply for the 2026 GIMI Innovation Awards before July 31, or talk to our team about which categories fit your work.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://11396.evalato.com/" target="_blank" rel="noopener" class="tl-btn">Apply Now</a>
-        <a href="mailto:info@giminstitute.org?subject=GIMI%20Innovation%20Awards" class="tl-btn ghost">Talk to GIMI</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ 2. GIMI THINK TANK ============ -->
-  <section class="tl-section alt" id="tl-thinktank">
-    <div class="tl-inner">
-      <img class="tl-tt-logo" src="gimi-store-assets/v2/thinktank-logo.png" alt="GIMI Think Tank">
-      <div class="tl-label">GIMI Think Tank</div>
-      <h2>A weekly forum for the world's innovators.</h2>
-      <p class="tl-intro">The GIMI Think Tank is a weekly virtual forum bringing together GIMI ambassadors, Certified Training Partners, and innovation experts to share knowledge and promote collaboration. It exists to build a fluid, agile, and solid community of innovators who help solve big and bold challenges, and to distribute cutting-edge knowledge from distinguished speakers worldwide.</p>
-      <div class="tl-sub-h">What we discuss</div>
-      <div class="tl-2col tt-2col">
-        <div class="tl-card tt-how">
-          <h4>How it works</h4>
-          <ul>
-            <li>Meets <strong>every Wednesday at 9:00 am EST</strong>, online and open to the community</li>
-            <li>Innovation leaders from <strong>industry, government, and academia</strong></li>
-            <li>Participants from <strong>5 continents and 25+ countries</strong></li>
-            <li>A flexible agenda spanning the full range of innovation topics</li>
-          </ul>
-          <a href="https://bit.ly/thinktank2025" target="_blank" rel="noopener" class="tl-btn sm" style="margin-top:auto;color:#fff;">Join the Think Tank</a>
-        </div>
-        <div class="tl-focus tt-focus">
-          <div class="tl-fcard"><div class="tf-num">01</div><h4>Trends</h4><p>Emerging trends in innovation and technology shaping what comes next.</p></div>
-          <div class="tl-fcard"><div class="tf-num">02</div><h4>Innovation Practice</h4><p>Innovation management methods, frameworks, and real-world practice.</p></div>
-          <div class="tl-fcard"><div class="tf-num">03</div><h4>State of Innovation</h4><p>How innovation is developing across countries and regions globally.</p></div>
-          <div class="tl-fcard"><div class="tf-num">04</div><h4>GIMI IP &amp; Progress</h4><p>GIMI's intellectual property and progress on organizational initiatives.</p></div>
-        </div>
-      </div>
-      <p class="tl-intro" style="margin-top:26px;">The Think Tank archive features <strong>100+ speakers</strong>, including executives, academics, and innovation experts from leading organizations and universities worldwide, on topics spanning AI, energy transition, fintech, healthcare, sustainability, and organizational innovation.</p>
-      <div class="tl-sub-h">Featured talks</div>
-      <div class="tl-videos">
-        <a class="tl-video" href="https://www.youtube.com/watch?v=BAR0abM84ow" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/BAR0abM84ow/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">The Merger of GIMI and IAOIP</div><div class="tv-who">Hitendra Patel</div></a>
-        <a class="tl-video" href="https://www.youtube.com/watch?v=q9vz3hDC9HY" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/q9vz3hDC9HY/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">IAOIP: Pioneering US ISO Standards</div><div class="tv-who">Brett Trusko</div></a>
-        <a class="tl-video" href="https://www.youtube.com/watch?v=PYnjTqmZ-N0" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/PYnjTqmZ-N0/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">Taking the Guesswork Out of Innovation</div><div class="tv-who">Tony Ulwick</div></a>
-        <a class="tl-video" href="https://www.youtube.com/watch?v=TGsMEyBwjqg" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/TGsMEyBwjqg/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">Design Thinking for Innovation</div><div class="tv-who">Langdon Morris</div></a>
-        <a class="tl-video" href="https://www.youtube.com/watch?v=_T895WxO1_Q" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/_T895WxO1_Q/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">ISO 56001: Blueprint for Sustainable Innovation</div><div class="tv-who">Dr. Annika Steiber</div></a>
-        <a class="tl-video" href="https://www.youtube.com/watch?v=X7c_5s2k2SQ" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/X7c_5s2k2SQ/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">Innovation 4.0</div><div class="tv-who">Ron Jonash</div></a>
-      </div>
-      <a href="https://www.youtube.com/channel/UCx1O0ECHQD9_az5JVGXbS_g" target="_blank" rel="noopener" class="tl-btn ghost sm" style="margin-top:22px;color:var(--navy);border-color:var(--border);">Watch all on YouTube</a>
-      <div class="tl-sub-h">What participants say</div>
-      <div class="tslider" id="thinkTesti"></div>
-    </div>
-  </section>
-
-  <!-- ============ 3. BOOKS & GUIDES ============ -->
-  <section class="tl-section" id="tl-books">
-    <div class="tl-label">Books &amp; Guides</div>
-    <h2>The reference library of innovation.</h2>
-    <p class="tl-intro">From the bodies of knowledge behind GIMI certifications to the innovation stories that bring the practice to life, our books and guides are written by leading practitioners and available in the GIMI Store.</p>
-
-    <div class="tl-books-group">
-      <div class="tl-sub-h" style="margin-top:0;">Bodies of Knowledge</div>
-      <div class="tl-books">
-        <div class="tl-book"><img src="gimi-store-assets/v2/imbok-1.png" alt="IMBOK Level 1"><div class="tb-title">IMBOK Level 1 Guide</div><div class="tb-price">$45</div></div>
-        <div class="tl-book"><img src="gimi-store-assets/v2/imbok-3.png" alt="IMBOK Level 3"><div class="tb-title">IMBOK Level 3 Guide</div><div class="tb-price">$45</div></div>
-        <div class="tl-book"><img src="gimi-store-assets/v2/ffbok-1.png" alt="Future Foresight BOK 1"><div class="tb-title">Future Foresight BOK – L1</div><div class="tb-price">$45</div></div>
-        <div class="tl-book"><img src="gimi-store-assets/v2/ffbok-2.png" alt="Future Foresight BOK 2"><div class="tb-title">Future Foresight BOK – L2</div><div class="tb-price">$45</div></div>
-        <div class="tl-book"><img src="gimi-store-assets/v2/iso-book.png" alt="ISO 56000 Series"><div class="tb-title">ISO Book – 56000 Series</div><div class="tb-price">$50</div></div>
-      </div>
-    </div>
-
-    <div class="tl-books-group">
-      <div class="tl-sub-h">Innovation Stories</div>
-      <div class="tl-books">
-        <div class="tl-book"><img src="gimi-store-assets/v2/game-changers.png" alt="Game Changers"><div class="tb-title">Game Changers</div><div class="tb-price">$20</div></div>
-        <div class="tl-book"><img src="gimi-store-assets/v2/connectivate.png" alt="Connectivate!"><div class="tb-title">Connectivate!</div><div class="tb-price">$20</div></div>
-        <div class="tl-book"><img src="gimi-store-assets/v2/healthovate.png" alt="Healthovate!"><div class="tb-title">Healthovate!</div><div class="tb-price">$20</div></div>
-        <div class="tl-book"><img src="gimi-store-assets/v2/greenovate.png" alt="Greenovate!"><div class="tb-title">Greenovate!</div><div class="tb-price">$20</div></div>
-        <div class="tl-book"><img src="gimi-store-assets/v2/squiggly.png" alt="Squiggly Lines"><div class="tb-title">Squiggly Lines</div><div class="tb-price">$25</div></div>
-      </div>
-    </div>
-
-    <div class="tl-books-group">
-      <div class="tl-sub-h">Practitioner Tools</div>
-      <div class="tl-books">
-        <div class="tl-book"><img src="gimi-store-assets/v2/idex.png" alt="GIMI iDeX"><div class="tb-title">GIMI iDeX</div><div class="tb-price">$15</div></div>
-        <div class="tl-book"><img src="gimi-store-assets/v2/technovate.png" alt="Technovate"><div class="tb-title">Technovate (Book + App)</div><div class="tb-price">$99</div></div>
-      </div>
-    </div>
-    <a href="#" class="tl-btn sm" style="margin-top:6px;color:#fff;" onclick="selectSection('store');setTrack('books',document.querySelector('[data-track=books]'));return false;">Shop all books in the Store</a>
-  </section>
-
-  <!-- ============ 4. INTERNATIONAL JOURNAL OF INNOVATION SCIENCE ============ -->
-  <section class="tl-section alt" id="tl-journal">
-    <div class="tl-inner">
-      <div class="tl-label">International Journal of Innovation Science</div>
-      <h2>Peer-reviewed research on the science of innovation.</h2>
-      <div class="tl-journal">
-        <img src="gimi-store-assets/v2/ijis.png" alt="International Journal of Innovation Science">
-        <div class="tj-body">
-          <p>The International Journal of Innovation Science is a peer-reviewed publication compiling work from innovation experts on the developments and applications of innovation science. It came to GIMI through the 2023 merger with IAOIP and is published in collaboration with Emerald Publishing.</p>
-          <p>GIMI members gain priority publishing and, at the academic level, faculty Associate Editor opportunities, making the Journal both a research resource and a platform to share your own thought leadership with a global audience.</p>
-          <a href="mailto:info@giminstitute.org?subject=International%20Journal%20of%20Innovation%20Science" class="tl-btn sm" style="color:#fff;">Inquire about publishing</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 5. BLOG: INNOVATION INSIGHTS ============ -->
-  <section class="tl-section" id="tl-blog">
-    <div class="tl-label">Blog: Innovation Insights</div>
-    <h2>Perspectives from the GIMI community.</h2>
-    <p class="tl-intro">Innovation Insights is the GIMI blog, where our team, partners, and members publish practical perspectives on innovation management, methodology, and what is changing in the field. Members can publish their own thought leadership here.</p>
-    <div class="tl-blog">
-      <div class="tl-post"><div class="tp-cat">Business Model</div><h4>How Purposeful Innovation Can Transform the Business Model</h4><p>Why anchoring innovation in purpose reshapes the way organizations create and capture value.</p><div class="tp-meta">Dec 2, 2025 · Anna</div><a href="https://www.giminstitute.org/how-purposeful-innovation-can-transform-the-business-model/" target="_blank" rel="noopener">Read article &rarr;</a></div>
-      <div class="tl-post"><div class="tp-cat">Inclusion</div><h4>Where Are the Women in Innovation?</h4><p>We're solving problems, just not for everyone. A look at who innovation leaves out, and how to fix it.</p><div class="tp-meta">Jun 23, 2025 · Vanessa</div><a href="https://www.giminstitute.org/where-are-the-women-in-innovation-were-solving-problems-just-not-for-everyone/" target="_blank" rel="noopener">Read article &rarr;</a></div>
-      <div class="tl-post"><div class="tp-cat">Assessments</div><h4>The Innovation Advantage: How Assessments Drive Growth</h4><p>How innovation assessments translate into measurable growth and global leadership for organizations.</p><div class="tp-meta">Jun 12, 2025 · Vanessa</div><a href="https://www.giminstitute.org/the-innovation-advantage-how-assessments-drive-growth-and-global-leadership-greater-than-your-organization/" target="_blank" rel="noopener">Read article &rarr;</a></div>
-    </div>
-    <a href="https://www.giminstitute.org/blog/" target="_blank" rel="noopener" class="tl-btn sm" style="margin-top:24px;color:#fff;">Visit the GIMI Blog</a>
-  </section>
 </div><!-- /#view-thought -->
 
 <div id="view-partner" style="display:none">
@@ -3415,6 +3208,14 @@ function renderNav() {
 function gotoSubIdx(secId, i) {
   const sec = SITE_NAV.find(s => s.id === secId);
   const label = sec.subs[i];
+  /* Some subsections open their own standalone landing page (or an external URL). */
+  const links = (typeof SUB_LINKS !== 'undefined') ? SUB_LINKS[secId] : null;
+  if (links && links[label]) {
+    const url = links[label];
+    if (/^https?:/i.test(url)) window.open(url, '_blank', 'noopener');
+    else window.location.href = url;
+    return;
+  }
   selectSection(secId);
   const anchors = SUB_ANCHORS[secId];
   if (anchors && anchors[label]) {
@@ -3443,10 +3244,16 @@ const SUB_ANCHORS = {
     'Membership Overview':'mr-overview', 'Professional':'mr-professional',
     'Organizational':'mr-corporate', 'Academia':'mr-academia'
   },
+};
+/* Thought Leadership subsections open their own standalone landing pages
+   (Books & Guides + the Journal share one merged page); Blog links to the live GIMI blog. */
+const SUB_LINKS = {
   thought: {
-    'Innovation Awards':'tl-awards', 'GIMI Think Tank':'tl-thinktank',
-    'Books & Guides':'tl-books', 'International Journal of Innovation Science':'tl-journal',
-    'Blog: Innovation Insights':'tl-blog'
+    'Innovation Awards':'innovation-awards.html',
+    'GIMI Think Tank':'gimi-think-tank.html',
+    'Books & Guides':'knowledge.html',
+    'International Journal of Innovation Science':'knowledge.html',
+    'Blog: Innovation Insights':'https://www.giminstitute.org/blog/'
   }
 };
 /* Built views toggle by section; other sections are highlight-only (not built yet). */
@@ -3515,8 +3322,10 @@ const awardCard = c =>
      <p>${c.desc}</p>
      <div class="tl-crit">${c.crit.map(([p,l]) => `<span>${p?`<b>${p}%</b> `:''}${l}</span>`).join('')}</div>
    </div>`;
-document.getElementById('tlOrgCats').innerHTML = AWARD_CATS.filter(c=>c.t==='org').map(awardCard).join('');
-document.getElementById('tlIndCats').innerHTML = AWARD_CATS.filter(c=>c.t==='ind').map(awardCard).join('');
+/* Award categories now live on the standalone innovation-awards.html page;
+   guard here so the hub (which omits these containers) does not error. */
+const _tlOrg = document.getElementById('tlOrgCats'); if (_tlOrg) _tlOrg.innerHTML = AWARD_CATS.filter(c=>c.t==='org').map(awardCard).join('');
+const _tlInd = document.getElementById('tlIndCats'); if (_tlInd) _tlInd.innerHTML = AWARD_CATS.filter(c=>c.t==='ind').map(awardCard).join('');
 
 /* ===== Certificates view: render track sections from the store PRODUCTS ===== */
 const CERT_TRACKS = [
