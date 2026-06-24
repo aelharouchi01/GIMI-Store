@@ -110,6 +110,13 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
    to match the left column height, so there is no empty space under the card. */
 .overview-aside .oa-foot { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--gimi-border); font-size: 13px; color: var(--gimi-gray); line-height: 1.5; }
 @media (max-width: 820px) { .overview-grid { grid-template-columns: 1fr; gap: 24px; } }
+/* Alternating layout: aside on the left, main on the right */
+.overview-grid.flip { grid-template-columns: 1fr 1.5fr; }
+.overview-grid.flip .ov-main { order: 2; }
+.overview-grid.flip .overview-aside { order: 1; border-left: 1px solid var(--gimi-border); border-right: 4px solid var(--gimi-teal); }
+@media (max-width: 820px) { .overview-grid.flip { grid-template-columns: 1fr; } .overview-grid.flip .ov-main { order: 1; } .overview-grid.flip .overview-aside { order: 2; } }
+/* Divider between deep-dive products */
+.dd-divider { border: 0; border-top: 1px solid var(--gimi-border); margin: 44px 0; }
 
 /* Course overviews (masterclasses, ISO, Design Thinking): let the intro text
    span the full content width so it lines up with the full-width cards below,
