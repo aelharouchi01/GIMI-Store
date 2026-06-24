@@ -655,7 +655,8 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-member .mr-type p { font-size:14px; color:var(--gray); line-height:1.55; }
 #view-member .mr-bgroups { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
 #view-member .mr-bgroup { background:var(--gray-light); border:1px solid var(--border); border-radius:14px; padding:24px 26px; }
-#view-member .mr-bgroup h4 { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:14px; }
+#view-member .mr-bgroup h4 { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal-dark); margin-bottom:6px; }
+#view-member .mr-bgroup .mr-bgsub { font-size:13px; color:var(--gray); line-height:1.45; margin-bottom:14px; }
 #view-member .mr-bgroup ul { list-style:none; }
 #view-member .mr-bgroup li { position:relative; padding-left:24px; font-size:14.5px; line-height:1.5; color:var(--text); margin-bottom:11px; }
 #view-member .mr-bgroup li:last-child { margin-bottom:0; }
@@ -674,6 +675,10 @@ footer strong { color:rgba(255,255,255,0.85); }
 #view-member .mr-pkg li::before { content:'✓'; position:absolute; left:0; top:1px; color:var(--teal); font-weight:800; font-size:12px; }
 #view-member .mr-pkg .mr-btn { margin-top:auto; text-align:center; font-size:13.5px; padding:10px; }
 #view-member .mr-acad { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+#view-member .mr-explore { display:flex; align-items:center; justify-content:space-between; gap:26px; flex-wrap:wrap; background:linear-gradient(135deg,#1E6E78 0%,var(--navy) 100%); border-radius:16px; padding:30px 34px; margin-top:26px; }
+#view-member .mr-explore h3 { color:#fff; font-size:20px; font-weight:800; margin-bottom:8px; }
+#view-member .mr-explore p { color:rgba(255,255,255,0.85); font-size:14.5px; line-height:1.6; max-width:780px; }
+#view-member .mr-explore .mr-btn { flex:none; }
 #view-member .mr-quotes { background:var(--gray-light); }
 #view-member .mr-qgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 #view-member .mr-quote { background:#fff; border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:12px; padding:22px 24px; display:flex; flex-direction:column; }
@@ -900,6 +905,22 @@ footer strong { color:rgba(255,255,255,0.85); }
   .cm-cols { grid-template-columns:1fr; gap:18px; }
   .cm-quote { flex-direction:column; text-align:center; }
 }
+/* ===== Reusable testimonial slider (sections with >3 testimonials) ===== */
+.tslider { position:relative; }
+.tslider .ts-track { display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 36px)/3); gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding:4px 2px 14px; scrollbar-width:thin; }
+.tslider .ts-track::-webkit-scrollbar { height:6px; }
+.tslider .ts-track::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+.ts-card { scroll-snap-align:start; background:#fff; border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:14px; padding:24px; display:flex; flex-direction:column; }
+.ts-card p { font-size:14px; color:var(--text); line-height:1.6; font-style:italic; margin-bottom:16px; flex:1; }
+.ts-card .ts-foot { display:flex; justify-content:space-between; align-items:flex-end; gap:12px; }
+.ts-card .ts-n { font-size:13px; font-weight:800; color:var(--navy); line-height:1.25; }
+.ts-card .ts-r { font-size:12px; color:var(--teal-dark); font-weight:600; margin-top:3px; line-height:1.35; }
+.ts-card .ts-logo { width:auto; height:42px; object-fit:contain; flex:none; }
+.ts-nav { display:flex; gap:10px; justify-content:flex-end; margin-top:6px; }
+.ts-arrow { width:40px; height:40px; border-radius:50%; border:1.5px solid var(--border); background:#fff; color:var(--navy); cursor:pointer; font-size:18px; line-height:1; display:flex; align-items:center; justify-content:center; transition:all .2s; font-family:inherit; }
+.ts-arrow:hover { background:var(--teal); border-color:var(--teal); color:#fff; }
+@media(max-width:900px){ .tslider .ts-track { grid-auto-columns:calc((100% - 18px)/2); } }
+@media(max-width:600px){ .tslider .ts-track { grid-auto-columns:88%; } }
 </style>
 </head>
 <body>
@@ -1540,24 +1561,46 @@ footer strong { color:rgba(255,255,255,0.85); }
   <section class="mr-section" id="mr-professional">
     <div class="mr-label">Professional · $200 / year</div>
     <h2>For the individual innovator.</h2>
-    <p class="mr-intro">Everything you need to build your innovation skills and get recognized in a global community.</p>
+    <p class="mr-intro">Join a global community of innovation leaders, practitioners, researchers, entrepreneurs, consultants, and change-makers shaping the future of innovation. Whether you are building your career, growing your expertise, expanding your network, or increasing your visibility, membership connects you to the people, insights, and opportunities that matter.</p>
     <div class="mr-bgroups">
       <div class="mr-bgroup">
-        <h4>Build Your Knowledge &amp; Skills</h4>
+        <h4>Learn</h4>
+        <p class="mr-bgsub">Stay ahead of emerging trends, methodologies, and best practices.</p>
         <ul>
-          <li><strong>40% discount</strong> on all certifications and courses</li>
-          <li><strong>1 coaching session</strong> + 20% off further support</li>
-          <li>Free <strong>GIMI Think Tank</strong> access: webinars and insight reports</li>
-          <li>Free <strong>Innovation Potential Assessment</strong> with personalized feedback</li>
+          <li>Free access to <strong>GIMI Think Tanks</strong> and Insight Reports</li>
+          <li>Innovation articles, research, and thought leadership</li>
+          <li><strong>Innovation Potential Assessment</strong> with personalized feedback</li>
+          <li><strong>40% discount</strong> on certifications</li>
         </ul>
       </div>
       <div class="mr-bgroup">
-        <h4>Connect &amp; Gain Recognition</h4>
+        <h4>Connect</h4>
+        <p class="mr-bgsub">Build meaningful relationships across industries and geographies.</p>
         <ul>
-          <li>Entries to multiple <strong>Innovation Challenges</strong></li>
-          <li>Free access to innovation articles and <strong>priority publishing</strong></li>
-          <li><strong>Tradewing platform</strong>: connect with 18,000+ innovators worldwide</li>
+          <li>Access to a global network of <strong>18,000+ innovation professionals</strong></li>
+          <li>Member networking and collaboration opportunities</li>
+          <li>Direct access to practitioners, consultants, academics, and leaders</li>
           <li><strong>Career Center</strong> access</li>
+        </ul>
+      </div>
+      <div class="mr-bgroup">
+        <h4>Build Your Reputation</h4>
+        <p class="mr-bgsub">Increase your visibility and establish yourself as a thought leader.</p>
+        <ul>
+          <li>Opportunities to publish articles and perspectives</li>
+          <li>Priority consideration for GIMI blogs, interviews, and member spotlights</li>
+          <li>Access to the <strong>International Journal of Innovation Science</strong> ecosystem</li>
+          <li>Speaking, judging, mentoring, and volunteer opportunities</li>
+        </ul>
+      </div>
+      <div class="mr-bgroup">
+        <h4>Advance Your Career</h4>
+        <p class="mr-bgsub">Turn connections and knowledge into tangible opportunities.</p>
+        <ul>
+          <li>Access innovation challenges and action-learning projects</li>
+          <li>Explore consulting, research, speaking, and collaboration opportunities</li>
+          <li>Receive coaching and professional development support</li>
+          <li>Gain globally recognized credentials and recognition</li>
         </ul>
       </div>
     </div>
@@ -1625,6 +1668,13 @@ footer strong { color:rgba(255,255,255,0.85); }
         <a href="mailto:info@giminstitute.org?subject=Platinum%20Plus%20Membership" class="mr-btn">Talk to GIMI</a>
       </div>
     </div>
+    <div class="mr-explore">
+      <div>
+        <h3>Explore Organizational Membership</h3>
+        <p>Every organization is different. Some want to develop innovation capabilities; others want benchmarking, recognition, executive education, certifications, innovation assessments, or support in building a complete innovation management system. Customizable membership packages can be tailored to your organization's priorities, size, industry, and strategic objectives.</p>
+      </div>
+      <a href="mailto:info@giminstitute.org?subject=Organizational%20Membership" class="mr-btn">Explore Membership Options</a>
+    </div>
   </section>
 
   <section class="mr-section" id="mr-academia">
@@ -1666,38 +1716,7 @@ footer strong { color:rgba(255,255,255,0.85); }
   <section class="mr-section mr-quotes">
     <div class="mr-label">Member Voices</div>
     <h2>Why members join GIMI &amp; IAOIP.</h2>
-    <div class="mr-qgrid">
-      <div class="mr-quote">
-        <p>"The GIMI-IAOIP Corporate Platinum Membership has been an innovation fix for our team. It's a transformative tool that's redefining how we approach innovation."</p>
-        <div class="mq-foot">
-          <div>
-            <div class="mq-who">Lesotho Revenue Authority</div>
-            <div class="mq-tier">Corporate · Platinum</div>
-          </div>
-          <img class="mq-logo" src="gimi-store-assets/v2/memb-plat.png?v=20260612-2" alt="Platinum">
-        </div>
-      </div>
-      <div class="mr-quote">
-        <p>"Being a corporate member of GIMI-IAOIP has been a transformative journey. This platform fuels our company's growth with unparalleled insights and collaborations."</p>
-        <div class="mq-foot">
-          <div>
-            <div class="mq-who">Haier Appliances</div>
-            <div class="mq-tier">Corporate · Gold</div>
-          </div>
-          <img class="mq-logo" src="gimi-store-assets/v2/memb-gold.png?v=20260612-2" alt="Gold">
-        </div>
-      </div>
-      <div class="mr-quote">
-        <p>"It was very helpful to be associated with IAOIP and have access to the network of practitioners. I gained valuable experience to learn more about innovation."</p>
-        <div class="mq-foot">
-          <div>
-            <div class="mq-who">Travis Kahle · University of Charleston</div>
-            <div class="mq-tier">Academia</div>
-          </div>
-          <img class="mq-logo" src="gimi-store-assets/v2/memb-academia.png?v=20260612-2" alt="Academia">
-        </div>
-      </div>
-    </div>
+    <div class="tslider" id="memberTesti"></div>
   </section>
 
   <div class="mr-cta">
@@ -3568,6 +3587,31 @@ function renderCertificates() {
   document.getElementById('certTracks').innerHTML = html;
 }
 renderCertificates();
+
+/* ===== Testimonial sliders (sections with >3 testimonials) ===== */
+function mountTesti(elId, items) {
+  const el = document.getElementById(elId);
+  if (!el || !items || !items.length) return;
+  const cards = items.map(t =>
+    `<div class="ts-card"><p>&ldquo;${t.q}&rdquo;</p>` +
+    `<div class="ts-foot"><div><div class="ts-n">${t.n}</div>${t.r?`<div class="ts-r">${t.r}</div>`:''}</div>` +
+    `${t.logo?`<img class="ts-logo" src="${t.logo}?v=${ASSET_VER}" alt="">`:''}</div></div>`).join('');
+  const nav = items.length > 3
+    ? `<div class="ts-nav"><button class="ts-arrow" data-d="-1" aria-label="Previous">&#8249;</button><button class="ts-arrow" data-d="1" aria-label="Next">&#8250;</button></div>` : '';
+  el.innerHTML = `<div class="ts-track">${cards}</div>${nav}`;
+  const track = el.querySelector('.ts-track');
+  const step = () => { const c = track.querySelector('.ts-card'); return c ? c.offsetWidth + 18 : 320; };
+  el.querySelectorAll('.ts-arrow').forEach(b => b.onclick = () => track.scrollBy({ left: step() * (+b.dataset.d), behavior:'smooth' }));
+}
+const TESTI_MEMBER = [
+  { q:"The GIMI-IAOIP Corporate Platinum Membership has been an innovation fix for our team at the Revenue Authority. It's a transformative tool that's redefining how we approach innovation.", n:"Lesotho Revenue Authority", r:"Corporate · Platinum", logo:"gimi-store-assets/v2/memb-plat.png" },
+  { q:"Being a corporate member of GIMI-IAOIP through Haier has been a transformative journey. This innovative platform fuels our company's growth, providing unparalleled insights and collaborations.", n:"Haier", r:"Corporate · Gold", logo:"gimi-store-assets/v2/memb-gold.png" },
+  { q:"Joining the GIMI-IAOIP Academia membership has been a game-changer, providing me with unparalleled access to cutting-edge resources, expert insights, and a vibrant community.", n:"Dr. Travis Kahle", r:"University of Charleston · Academia", logo:"gimi-store-assets/v2/memb-academia.png" },
+  { q:"The membership with GIMI-IAOIP has been pivotal in driving our innovation endeavors. The platform is a beacon for forward-thinking corporations, offering unparalleled insights and fostering transformative collaborations.", n:"Shiv Shakti Math", r:"Corporate Member" },
+  { q:"Participating in the organisation's conferences, seminars, and events has enabled me to remain current on the most recent developments and trends in innovation management.", n:"Solomon Addai", r:"CEO, Modern World Logistics · Ghana" },
+  { q:"It was very helpful to be associated with the IAOIP and have access to the network of practitioners. I have gained valuable experience and network to learn more about innovation.", n:"Otari Kakhizde", r:"Development Consultant & Legal Advisor" }
+];
+mountTesti('memberTesti', TESTI_MEMBER);
 
 /* ===== Programs view: curated program offerings, grouped ===== */
 const PROGRAMS = [
