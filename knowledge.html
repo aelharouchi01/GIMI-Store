@@ -6,6 +6,16 @@
 <title>Books, Guides &amp; Journal | GIMI</title>
 <link rel="stylesheet" href="gimi-landing.css?v=20260624c">
 <link rel="stylesheet" href="gimi-thought.css?v=20260624a">
+<style>
+  /* Books grid: balanced, centered rows (3 across) with a short description per book */
+  #kn-bok .tl-books { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+  #kn-bok .tl-book { flex: 0 0 calc(33.333% - 12px); display: flex; flex-direction: column; }
+  #kn-bok .tl-book .tb-title { margin-bottom: 4px; }
+  #kn-bok .tl-book .tb-desc { font-size: 12.5px; color: var(--gimi-gray); line-height: 1.45; margin: 2px 0 10px; }
+  #kn-bok .tl-book .tb-price { margin-top: auto; }
+  @media (max-width: 780px) { #kn-bok .tl-book { flex-basis: calc(50% - 9px); } }
+  @media (max-width: 480px) { #kn-bok .tl-book { flex-basis: 100%; } }
+</style>
 </head>
 <body>
 
@@ -49,30 +59,30 @@
   <div class="tl-books-group">
     <div class="tl-sub-h" style="margin-top:0;">Bodies of Knowledge</div>
     <div class="tl-books">
-      <div class="tl-book"><img src="gimi-store-assets/v2/imbok-1.png" alt="IMBOK Level 1"><div class="tb-title">IMBOK Level 1 Guide</div><div class="tb-price">$45</div></div>
-      <div class="tl-book"><img src="gimi-store-assets/v2/imbok-3.png" alt="IMBOK Level 3"><div class="tb-title">IMBOK Level 3 Guide</div><div class="tb-price">$45</div></div>
-      <div class="tl-book"><img src="gimi-store-assets/v2/ffbok-1.png" alt="Future Foresight BOK 1"><div class="tb-title">Future Foresight BOK – L1</div><div class="tb-price">$45</div></div>
-      <div class="tl-book"><img src="gimi-store-assets/v2/ffbok-2.png" alt="Future Foresight BOK 2"><div class="tb-title">Future Foresight BOK – L2</div><div class="tb-price">$45</div></div>
-      <div class="tl-book"><img src="gimi-store-assets/v2/iso-book.png" alt="ISO 56000 Series"><div class="tb-title">ISO Book – 56000 Series</div><div class="tb-price">$50</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/imbok-1.png" alt="IMBOK Level 1"><div class="tb-title">IMBOK Level 1 Guide</div><div class="tb-desc">Foundation-level guide to Innovation Strategy, Capacity, and Discipline.</div><div class="tb-price">$45</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/imbok-3.png" alt="IMBOK Level 3"><div class="tb-title">IMBOK Level 3 Guide</div><div class="tb-desc">Advanced innovation management for chief innovation officers and managers.</div><div class="tb-price">$45</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/ffbok-1.png" alt="Future Foresight BOK 1"><div class="tb-title">Future Foresight BOK – L1</div><div class="tb-desc">The reference text for Level 1 foresight professional certification.</div><div class="tb-price">$45</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/ffbok-2.png" alt="Future Foresight BOK 2"><div class="tb-title">Future Foresight BOK – L2</div><div class="tb-desc">The reference text for Level 2 foresight professional certification.</div><div class="tb-price">$45</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/iso-book.png" alt="ISO 56000 Series"><div class="tb-title">ISO Book – 56000 Series</div><div class="tb-desc">A consolidated reference to the ISO 56000 family of standards.</div><div class="tb-price">$50</div></div>
     </div>
   </div>
 
   <div class="tl-books-group" id="kn-stories">
     <div class="tl-sub-h">Innovation Stories</div>
     <div class="tl-books">
-      <div class="tl-book"><img src="gimi-store-assets/v2/game-changers.png" alt="Game Changers"><div class="tb-title">Game Changers</div><div class="tb-price">$20</div></div>
-      <div class="tl-book"><img src="gimi-store-assets/v2/connectivate.png" alt="Connectivate!"><div class="tb-title">Connectivate!</div><div class="tb-price">$20</div></div>
-      <div class="tl-book"><img src="gimi-store-assets/v2/healthovate.png" alt="Healthovate!"><div class="tb-title">Healthovate!</div><div class="tb-price">$20</div></div>
-      <div class="tl-book"><img src="gimi-store-assets/v2/greenovate.png" alt="Greenovate!"><div class="tb-title">Greenovate!</div><div class="tb-price">$20</div></div>
-      <div class="tl-book"><img src="gimi-store-assets/v2/squiggly.png" alt="Squiggly Lines"><div class="tb-title">Squiggly Lines</div><div class="tb-price">$25</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/game-changers.png" alt="Game Changers"><div class="tb-title">Game Changers</div><div class="tb-desc">Stories of how game-changing business concepts are built.</div><div class="tb-price">$20</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/connectivate.png" alt="Connectivate!"><div class="tb-title">Connectivate!</div><div class="tb-desc">Stories of 50+ companies whose breakthroughs are changing the world.</div><div class="tb-price">$20</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/healthovate.png" alt="Healthovate!"><div class="tb-title">Healthovate!</div><div class="tb-desc">Vignettes from companies transforming health and wellness.</div><div class="tb-price">$20</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/greenovate.png" alt="Greenovate!"><div class="tb-title">Greenovate!</div><div class="tb-desc">Stories of green innovation driving sustainable growth.</div><div class="tb-price">$20</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/squiggly.png" alt="Squiggly Lines"><div class="tb-title">Squiggly Lines</div><div class="tb-desc">Managing stakeholders through the messy journey of innovation.</div><div class="tb-price">$25</div></div>
     </div>
   </div>
 
   <div class="tl-books-group">
     <div class="tl-sub-h">Practitioner Tools</div>
     <div class="tl-books">
-      <div class="tl-book"><img src="gimi-store-assets/v2/idex.png" alt="GIMI iDeX"><div class="tb-title">GIMI iDeX</div><div class="tb-price">$15</div></div>
-      <div class="tl-book"><img src="gimi-store-assets/v2/technovate.png" alt="Technovate"><div class="tb-title">Technovate (Book + App)</div><div class="tb-price">$99</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/idex.png" alt="GIMI iDeX"><div class="tb-title">GIMI iDeX</div><div class="tb-desc">A practitioner reference of ideation techniques to generate and refine ideas.</div><div class="tb-price">$15</div></div>
+      <div class="tl-book"><img src="gimi-store-assets/v2/technovate.png" alt="Technovate"><div class="tb-title">Technovate (Book + App)</div><div class="tb-desc">Technology-driven innovation methods, with a companion app.</div><div class="tb-price">$99</div></div>
     </div>
   </div>
   <a href="index.html" class="tl-btn sm" style="margin-top:6px;">Shop all books in the Store</a>
