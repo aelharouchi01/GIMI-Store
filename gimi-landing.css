@@ -202,6 +202,14 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
 .lp-lvh:first-of-type { margin-top: 8px; }
 /* small uppercase sub-label (e.g. "What graduates say") */
 .lp-subh { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gimi-teal-dark); margin: 28px 0 14px; }
+/* two-column mini-card grid */
+.mini-card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .mini-card-grid.cols-2 { grid-template-columns: 1fr; } }
+/* mini-card with a logo/icon to the right of its text */
+.mini-card.with-logo { display: flex; align-items: flex-start; gap: 14px; }
+.mini-card.with-logo .ml-body { flex: 1; min-width: 0; }
+.mini-card.with-logo .ml-logo { width: 52px; height: 52px; object-fit: contain; flex: none; border-radius: 8px; }
+.mini-card.with-logo .ml-ico { width: 52px; height: 52px; flex: none; border-radius: 10px; background: var(--gimi-teal-light); color: var(--gimi-teal-dark); display: flex; align-items: center; justify-content: center; }
 
 /* ---------- Testimonial slider (sections with >3 testimonials) ---------- */
 .tslider { position: relative; }
