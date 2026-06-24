@@ -197,6 +197,22 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
 .lp-quote.with-photo > img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid var(--gimi-white); box-shadow: 0 5px 16px rgba(27,31,59,0.14); }
 .lp-quote.with-photo p { margin-bottom: 10px; }
 
+/* ---------- Testimonial slider (sections with >3 testimonials) ---------- */
+.tslider { position: relative; }
+.tslider .ts-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 4px 2px 14px; scrollbar-width: thin; }
+.tslider .ts-track::-webkit-scrollbar { height: 6px; }
+.tslider .ts-track::-webkit-scrollbar-thumb { background: var(--gimi-border); border-radius: 3px; }
+.ts-card { scroll-snap-align: start; background: var(--gimi-white); border: 1px solid var(--gimi-border); border-left: 4px solid var(--gimi-teal); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; }
+.ts-card p { font-size: 14px; color: var(--gimi-text); line-height: 1.6; font-style: italic; margin-bottom: 16px; flex: 1; }
+.ts-card .ts-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.ts-card .ts-n { font-size: 13px; font-weight: 800; color: var(--gimi-navy); line-height: 1.25; }
+.ts-card .ts-r { font-size: 12px; color: var(--gimi-teal-dark); font-weight: 600; margin-top: 3px; line-height: 1.35; }
+.ts-nav { display: flex; gap: 10px; justify-content: flex-end; margin-top: 6px; }
+.ts-arrow { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--gimi-border); background: var(--gimi-white); color: var(--gimi-navy); cursor: pointer; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center; transition: all .2s; font-family: inherit; }
+.ts-arrow:hover { background: var(--gimi-teal); border-color: var(--gimi-teal); color: #fff; }
+@media (max-width: 900px) { .tslider .ts-track { grid-auto-columns: calc((100% - 18px) / 2); } }
+@media (max-width: 600px) { .tslider .ts-track { grid-auto-columns: 88%; } }
+
 /* ---------- Multi-testimonial grid (cards with photos) ---------- */
 .lp-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
 .lp-qcard { background: var(--gimi-white); border: 1px solid var(--gimi-border); border-top: 3px solid var(--gimi-teal); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; }
