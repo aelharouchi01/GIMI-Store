@@ -34,9 +34,9 @@
   function mount(el, items) {
     if (!items || !items.length) return;
     var cards = items.map(function (t) {
-      return '<div class="ts-card"><p>“' + t.q + '”</p><div class="ts-foot"><div>' +
+      return '<div class="ts-card"><div class="ts-head"><div>' +
         '<div class="ts-n">' + t.n + '</div>' + (t.r ? '<div class="ts-r">' + t.r + '</div>' : '') +
-        '</div></div></div>';
+        '</div></div><p>“' + t.q + '”</p></div>';
     }).join('');
     var nav = items.length > 3
       ? '<div class="ts-nav"><button class="ts-arrow" data-d="-1" aria-label="Previous">‹</button><button class="ts-arrow" data-d="1" aria-label="Next">›</button></div>' : '';

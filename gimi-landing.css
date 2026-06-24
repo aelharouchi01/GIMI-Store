@@ -207,8 +207,8 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
 .tslider .ts-track::-webkit-scrollbar { height: 6px; }
 .tslider .ts-track::-webkit-scrollbar-thumb { background: var(--gimi-border); border-radius: 3px; }
 .ts-card { scroll-snap-align: start; background: var(--gimi-white); border: 1px solid var(--gimi-border); border-left: 4px solid var(--gimi-teal); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; }
-.ts-card p { font-size: 14px; color: var(--gimi-text); line-height: 1.6; font-style: italic; margin-bottom: 16px; flex: 1; }
-.ts-card .ts-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.ts-card .ts-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.ts-card p { font-size: 14px; color: var(--gimi-text); line-height: 1.6; font-style: italic; margin: 0; }
 .ts-card .ts-n { font-size: 13px; font-weight: 800; color: var(--gimi-navy); line-height: 1.25; }
 .ts-card .ts-r { font-size: 12px; color: var(--gimi-teal-dark); font-weight: 600; margin-top: 3px; line-height: 1.35; }
 .ts-nav { display: flex; gap: 10px; justify-content: flex-end; margin-top: 6px; }
