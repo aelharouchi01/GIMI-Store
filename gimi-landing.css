@@ -60,6 +60,12 @@ body { font-family: 'Calibri','Segoe UI',system-ui,-apple-system,sans-serif; col
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-badge { display: flex; align-items: center; justify-content: center; }
 .hero-badge img { max-width: 200px; max-height: 200px; width: auto; object-fit: contain; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.25)); }
+/* Hero: 2x2 grid of the four platform logos */
+.hero-logos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; max-width: 340px; }
+.hero-logos .hl-tile { background: #fff; border-radius: 16px; padding: 16px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.18); }
+.hero-logos .hl-tile img { max-width: 100%; max-height: 96px; width: auto; object-fit: contain; filter: none; }
+.hero-logos .hl-name { display: none; font-size: 14px; font-weight: 800; color: var(--gimi-navy); text-align: center; line-height: 1.25; }
+@media (max-width: 600px) { .hero-logos { max-width: 280px; gap: 12px; } .hero-logos .hl-tile img { max-height: 72px; } }
 
 /* ---------- Section base ---------- */
 section.tab-section { padding: 60px 0; scroll-margin-top: 84px; }
