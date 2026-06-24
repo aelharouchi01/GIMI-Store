@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gimi-store",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5500", "--directory", "C:/Users/aelha/OneDrive/Desktop/GIMI/GIMI Store Code"],
+      "port": 5500
+    }
+  ]
+}
