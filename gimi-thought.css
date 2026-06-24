@@ -1,0 +1,168 @@
+/* ============================================================
+   GIMI Thought Leadership shared styles (tl-*)
+   De-scoped from index.html #view-thought and mapped to the
+   gimi-landing.css design tokens. Used by the standalone
+   innovation-awards.html, gimi-think-tank.html, and
+   knowledge (books/guides/journal) landing pages.
+   ============================================================ */
+.tl-hero { background:linear-gradient(135deg, var(--gimi-navy) 0%, #263162 55%, #1E6E78 100%); padding:64px 0 68px; }
+.tl-hero-inner { max-width:1200px; margin:0 auto; padding:0 32px; }
+.tl-eyebrow { color:var(--gimi-yellow); font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
+.tl-hero h1 { font-size:42px; line-height:1.12; color:#fff; font-weight:800; letter-spacing:-0.6px; margin-bottom:16px; max-width:840px; }
+.tl-hero h1 span { color:var(--gimi-teal); }
+.tl-hero p { font-size:18px; color:rgba(255,255,255,0.82); max-width:780px; margin-bottom:26px; }
+.tl-ctas { display:flex; gap:14px; flex-wrap:wrap; }
+.tl-btn { display:inline-block; padding:13px 26px; border-radius:10px; font-size:15px; font-weight:700; text-decoration:none; cursor:pointer; border:2px solid var(--gimi-teal); background:var(--gimi-teal); color:#fff; font-family:inherit; transition:all .2s; }
+.tl-btn:hover { background:var(--gimi-teal-dark); border-color:var(--gimi-teal-dark); }
+.tl-btn.ghost { background:none; color:#fff; border-color:rgba(255,255,255,0.4); }
+.tl-btn.ghost:hover { border-color:#fff; }
+.tl-btn.sm { padding:10px 20px; font-size:13.5px; }
+/* Pillar quick-nav under hero */
+.tl-pillars { max-width:1200px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:-34px; position:relative; z-index:2; }
+.tl-pillar { background:#fff; border:1px solid var(--gimi-border); border-top:4px solid var(--gimi-teal); border-radius:12px; padding:16px 16px; cursor:pointer; text-align:left; font-family:inherit; transition:all .2s; }
+.tl-pillar:hover { transform:translateY(-3px); box-shadow:0 12px 28px rgba(27,31,59,0.1); }
+.tl-pillar .tp-k { font-size:11.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--gimi-teal-dark); margin-bottom:6px; }
+.tl-pillar h4 { font-size:14.5px; color:var(--gimi-navy); font-weight:800; line-height:1.25; }
+/* Generic section */
+.tl-section { max-width:1200px; margin:0 auto; padding:56px 32px; border-bottom:1px solid var(--gimi-border); }
+.tl-section.alt { max-width:none; padding:0; background:var(--gimi-gray-light); border-bottom:1px solid var(--gimi-border); }
+.tl-section.alt .tl-inner { max-width:1200px; margin:0 auto; padding:56px 32px; }
+.tl-label { font-size:13px; font-weight:800; color:var(--gimi-teal); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+.tl-section h2 { font-size:30px; color:var(--gimi-navy); font-weight:800; line-height:1.15; margin-bottom:10px; letter-spacing:-0.4px; }
+.tl-intro { font-size:17px; color:var(--gimi-gray); margin-bottom:28px; max-width:840px; line-height:1.6; }
+.tl-sub-h { font-size:18px; font-weight:800; color:var(--gimi-navy); margin:30px 0 16px; }
+/* Stats band */
+.tl-stats { background:var(--gimi-navy); padding:30px 0; }
+.tl-stats-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+.tl-stats strong { display:block; font-size:30px; font-weight:800; color:var(--gimi-yellow); line-height:1; margin-bottom:6px; }
+.tl-stats span { font-size:13px; color:rgba(255,255,255,0.82); }
+/* Awards category cards */
+.tl-cats { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.tl-cat { background:#fff; border:1px solid var(--gimi-border); border-left:4px solid var(--gimi-teal); border-radius:12px; padding:22px 24px; }
+.tl-cat.ind { border-left-color:var(--gimi-pink); }
+.tl-cat .tc-tag { font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--gimi-teal-dark); margin-bottom:8px; }
+.tl-cat.ind .tc-tag { color:var(--gimi-pink); }
+.tl-cat h3 { font-size:18px; color:var(--gimi-navy); font-weight:800; margin-bottom:8px; line-height:1.25; }
+.tl-cat p { font-size:14px; color:var(--gimi-gray); line-height:1.55; margin-bottom:14px; }
+.tl-crit { display:flex; flex-wrap:wrap; gap:7px; }
+.tl-crit span { font-size:12px; font-weight:700; color:var(--gimi-text); background:var(--gimi-gray-light); border:1px solid var(--gimi-border); border-radius:20px; padding:4px 11px; }
+.tl-crit span b { color:var(--gimi-teal-dark); }
+/* Timeline flow */
+.tl-flow { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+.tl-step { background:#fff; border:1px solid var(--gimi-border); border-radius:12px; padding:18px 16px; text-align:center; position:relative; }
+.tl-step .ts-node { width:30px; height:30px; border-radius:50%; background:var(--gimi-teal); color:#fff; font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; }
+.tl-step .ts-when { font-size:12.5px; font-weight:800; color:var(--gimi-teal-dark); margin-bottom:5px; }
+.tl-step .ts-what { font-size:13px; color:var(--gimi-text); line-height:1.4; }
+/* Two-col info (fees / event) */
+.tl-2col { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+.tl-card { background:#fff; border:1px solid var(--gimi-border); border-radius:14px; padding:26px 28px; }
+.tl-card.dark { background:linear-gradient(135deg,#1E6E78 0%,var(--gimi-navy) 100%); color:#fff; border:none; }
+.tl-card h4 { font-size:18px; font-weight:800; color:var(--gimi-navy); margin-bottom:14px; }
+.tl-card.dark h4 { color:#fff; }
+.tl-card ul { list-style:none; }
+.tl-card li { position:relative; padding-left:24px; font-size:14.5px; line-height:1.5; color:var(--gimi-text); margin-bottom:11px; }
+.tl-card li:last-child { margin-bottom:0; }
+.tl-card li::before { content:'✓'; position:absolute; left:0; top:0; color:var(--gimi-teal); font-weight:800; }
+.tl-card li strong { color:var(--gimi-navy); }
+.tl-card.dark li { color:rgba(255,255,255,0.9); }
+.tl-card.dark li::before { color:var(--gimi-yellow); }
+.tl-card.dark li strong { color:#fff; }
+.tl-evstats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:18px; }
+.tl-evstats div { text-align:center; }
+.tl-evstats strong { display:block; font-size:26px; font-weight:800; color:var(--gimi-yellow); line-height:1; }
+.tl-evstats span { font-size:11.5px; color:rgba(255,255,255,0.82); }
+/* Jury chips */
+.tl-jury { display:flex; flex-wrap:wrap; gap:10px; }
+.tl-juror { background:#fff; border:1px solid var(--gimi-border); border-radius:10px; padding:12px 16px; min-width:200px; flex:1 1 230px; }
+.tl-juror .tj-name { font-size:14px; font-weight:800; color:var(--gimi-navy); }
+.tl-juror .tj-role { font-size:12.5px; color:var(--gimi-gray); }
+/* Think Tank focus cards */
+.tl-focus { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.tl-fcard { background:#fff; border:1px solid var(--gimi-border); border-top:4px solid var(--gimi-teal); border-radius:14px; padding:22px 20px; }
+.tl-fcard .tf-num { font-size:12px; font-weight:800; color:var(--gimi-teal-dark); margin-bottom:8px; }
+.tl-fcard h4 { font-size:15.5px; color:var(--gimi-navy); font-weight:800; margin-bottom:8px; line-height:1.3; }
+.tl-fcard p { font-size:13.5px; color:var(--gimi-gray); line-height:1.5; }
+/* Books grid */
+.tl-books-group { margin-bottom:30px; }
+.tl-books-group:last-child { margin-bottom:0; }
+.tl-books { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; }
+.tl-book { background:#fff; border:1px solid var(--gimi-border); border-radius:12px; padding:18px 16px; text-align:center; }
+.tl-book img { width:100%; max-width:120px; height:130px; object-fit:contain; margin:0 auto 12px; display:block; }
+.tl-book .tb-title { font-size:13.5px; font-weight:800; color:var(--gimi-navy); line-height:1.3; margin-bottom:5px; }
+.tl-book .tb-price { font-size:12.5px; font-weight:700; color:var(--gimi-teal-dark); }
+/* Journal feature */
+.tl-journal { display:grid; grid-template-columns:230px 1fr; gap:52px; align-items:center; }
+.tl-journal img { width:200px; height:auto; border-radius:10px; box-shadow:0 14px 34px rgba(27,31,59,0.16); }
+.tl-journal .tj-body p { font-size:15px; color:var(--gimi-text); line-height:1.65; margin-bottom:14px; }
+/* Blog cards */
+.tl-blog { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.tl-post { background:#fff; border:1px solid var(--gimi-border); border-radius:14px; padding:24px; display:flex; flex-direction:column; }
+.tl-post .tp-cat { font-size:11.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--gimi-teal-dark); margin-bottom:10px; }
+.tl-post h4 { font-size:17px; color:var(--gimi-navy); font-weight:800; line-height:1.3; margin-bottom:10px; }
+.tl-post p { font-size:14px; color:var(--gimi-gray); line-height:1.55; margin-bottom:16px; }
+.tl-post a { margin-top:auto; font-size:13.5px; font-weight:700; color:var(--gimi-teal-dark); text-decoration:none; }
+.tl-post a:hover { text-decoration:underline; }
+/* CTA band */
+.tl-cta { max-width:1200px; margin:0 auto; padding:54px 32px; }
+.tl-cta-band { background:linear-gradient(135deg, #1E6E78 0%, var(--gimi-navy) 100%); border-radius:20px; padding:46px; text-align:center; color:#fff; }
+.tl-cta-band h2 { font-size:28px; font-weight:800; color:#fff; margin-bottom:10px; }
+.tl-cta-band p { font-size:16px; color:rgba(255,255,255,0.85); max-width:620px; margin:0 auto 22px; }
+/* Awards intro 2-col + logo */
+.tl-intro-2col { display:grid; grid-template-columns:1.3fr 1fr; gap:36px; align-items:center; }
+.tl-awards-logo { display:flex; justify-content:center; }
+.tl-awards-logo img { width:100%; max-width:340px; height:auto; border-radius:16px; }
+/* Award category group headers */
+.tl-grouphead { display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+.tl-gh-ico { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.tl-gh-ico svg { width:24px; height:24px; }
+.tl-gh-ico.org { background:var(--gimi-teal-light); color:var(--gimi-teal-dark); }
+.tl-gh-ico.ind { background:#FCE4EA; color:var(--gimi-pink); }
+.tl-gh-k { font-size:11.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--gimi-gray); }
+.tl-grouphead h3 { font-size:20px; color:var(--gimi-navy); font-weight:800; line-height:1.1; }
+/* Jury cards with avatars */
+.tl-juror { display:flex; align-items:center; gap:13px; }
+.tl-juror img, .tj-av { width:52px; height:52px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+.tj-av.ph { background:var(--gimi-navy); color:#fff; font-weight:800; font-size:16px; display:flex; align-items:center; justify-content:center; letter-spacing:0.5px; }
+/* Think Tank logo + balanced 2-col */
+.tl-tt-logo { height:62px; width:auto; display:block; margin-bottom:18px; }
+.tt-2col { align-items:stretch; }
+.tt-how { display:flex; flex-direction:column; }
+.tt-focus { grid-template-columns:1fr 1fr; height:100%; }
+.tt-focus .tl-fcard { display:flex; flex-direction:column; }
+/* Journal: clean transparent badge (no boxing) */
+.tl-journal img { width:230px; height:auto; border-radius:0; box-shadow:none; }
+/* Think Tank video gallery */
+.tl-videos { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.tl-video { text-decoration:none; display:block; }
+.tv-thumb { position:relative; border-radius:12px; overflow:hidden; aspect-ratio:16/9; background:var(--gimi-navy); }
+.tv-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s; }
+.tl-video:hover .tv-thumb img { transform:scale(1.05); }
+.tv-play { position:absolute; inset:0; margin:auto; width:54px; height:54px; border-radius:50%; background:rgba(27,31,59,0.78); }
+.tv-play::after { content:''; position:absolute; top:50%; left:54%; transform:translate(-50%,-50%); border-style:solid; border-width:9px 0 9px 15px; border-color:transparent transparent transparent #fff; }
+.tl-video:hover .tv-play { background:var(--gimi-teal); }
+.tv-title { font-size:14.5px; font-weight:800; color:var(--gimi-navy); line-height:1.3; margin:12px 0 3px; }
+.tv-who { font-size:13px; color:var(--gimi-teal-dark); font-weight:700; }
+/* 2025 winners chips + quotes */
+.tl-winners { display:flex; flex-wrap:wrap; gap:9px; }
+.tl-winners span { font-size:13.5px; font-weight:700; color:var(--gimi-navy); background:#fff; border:1px solid var(--gimi-border); border-radius:24px; padding:8px 16px; }
+.tl-quote { background:#fff; border:1px solid var(--gimi-border); border-left:4px solid var(--gimi-teal); border-radius:12px; padding:22px 26px; }
+.tl-quote p { font-size:16px; color:var(--gimi-text); line-height:1.6; font-style:italic; margin-bottom:12px; }
+.tl-quote .tq-who { font-size:13.5px; font-weight:800; color:var(--gimi-teal-dark); }
+/* Blog post meta */
+.tl-post .tp-meta { font-size:12.5px; color:var(--gimi-gray); font-weight:600; margin:-6px 0 14px; }
+@media (max-width:980px){
+  .tl-intro-2col{ grid-template-columns:1fr; }
+  .tl-awards-logo img{ max-width:300px; }
+  .tl-pillars{ grid-template-columns:repeat(2,1fr); margin-top:24px; }
+  .tl-cats,.tl-2col,.tl-journal{ grid-template-columns:1fr; }
+  .tl-flow,.tl-focus{ grid-template-columns:repeat(2,1fr); }
+  .tl-stats-inner{ grid-template-columns:repeat(2,1fr); }
+  .tl-books{ grid-template-columns:repeat(3,1fr); }
+  .tl-blog,.tl-videos{ grid-template-columns:repeat(2,1fr); }
+  .tl-journal img{ width:160px; margin:0 auto; }
+  .tl-hero h1{ font-size:32px; }
+  .tl-section h2{ font-size:25px; }
+}
+@media (max-width:560px){
+  .tl-pillars,.tl-flow,.tl-focus,.tl-books,.tl-evstats,.tl-videos,.tl-blog{ grid-template-columns:1fr 1fr; }
+}
