@@ -1753,6 +1753,9 @@ footer strong { color:rgba(255,255,255,0.85); }
   #view-thought .tl-hubcard h3 { font-size:22px; color:var(--navy); font-weight:800; margin-bottom:10px; line-height:1.2; }
   #view-thought .tl-hubcard p { font-size:14.5px; color:var(--gray); line-height:1.6; margin-bottom:14px; }
   #view-thought .tl-hubcard .thmore { font-size:13.5px; font-weight:700; color:var(--teal-dark); }
+  #view-thought .tl-hubcard .thlogo { height:54px; width:auto; max-width:180px; object-fit:contain; display:block; margin-bottom:18px; }
+  #view-thought .tl-hubcard .thlogo-ico { width:54px; height:54px; border-radius:13px; background:var(--teal-light); color:var(--teal-dark); display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+  #view-thought .tl-hubcard .thlogo-ico svg { width:28px; height:28px; }
   #view-thought .tl-hubnote { max-width:1200px; margin:0 auto; padding:0 32px 56px; }
   @media(max-width:760px){ #view-thought .tl-hubgrid{ grid-template-columns:1fr; } }
   </style>
@@ -1770,24 +1773,28 @@ footer strong { color:rgba(255,255,255,0.85); }
 
   <div class="tl-hubgrid">
     <a class="tl-hubcard" href="innovation-awards.html">
+      <img class="thlogo" src="gimi-store-assets/v2/awards-org.png?v=20260624" alt="GIMI Innovation Awards" onerror="this.style.display='none'">
       <div class="thk">01 · Recognition</div>
       <h3>Innovation Awards</h3>
       <p>Celebrating the boldest organizations and individuals across the public, private, and social sectors, judged against published criteria and honored at a global ceremony.</p>
       <span class="thmore">Explore the Awards &rarr;</span>
     </a>
     <a class="tl-hubcard" href="gimi-think-tank.html">
+      <img class="thlogo" src="gimi-store-assets/v2/thinktank-logo.png?v=20260624" alt="GIMI Think Tank" onerror="this.style.display='none'">
       <div class="thk">02 · Community</div>
       <h3>GIMI Think Tank</h3>
       <p>The world's weekly forum for innovation leaders. Every Wednesday, practitioners from 30+ countries share what is actually working, grounded in the ISO 56000 standards.</p>
       <span class="thmore">Visit the Think Tank &rarr;</span>
     </a>
     <a class="tl-hubcard" href="knowledge.html">
+      <img class="thlogo" src="gimi-store-assets/v2/imbok-1.png?v=20260624" alt="GIMI Books, Guides & Journal" onerror="this.style.display='none'">
       <div class="thk">03 · Knowledge</div>
       <h3>Books, Guides &amp; Journal</h3>
       <p>GIMI's published body of knowledge: the bodies of knowledge behind our certifications, the innovation stories, and the peer-reviewed International Journal of Innovation Science.</p>
       <span class="thmore">Browse the library &rarr;</span>
     </a>
     <a class="tl-hubcard" href="https://www.giminstitute.org/blog/" target="_blank" rel="noopener">
+      <div class="thlogo-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/></svg></div>
       <div class="thk">04 · Perspectives</div>
       <h3>Blog: Innovation Insights</h3>
       <p>Practical articles, frameworks, and perspectives from the GIMI community and experts. Members can publish their own thought leadership.</p>
