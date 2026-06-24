@@ -200,6 +200,8 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
 /* ---------- Level / step sub-heading (standardized) ---------- */
 .lp-lvh { font-size: 18px; font-weight: 800; color: var(--gimi-navy); margin: 32px 0 16px; padding-bottom: 9px; border-bottom: 2px solid var(--gimi-teal-light); }
 .lp-lvh:first-of-type { margin-top: 8px; }
+/* small uppercase sub-label (e.g. "What graduates say") */
+.lp-subh { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gimi-teal-dark); margin: 28px 0 14px; }
 
 /* ---------- Testimonial slider (sections with >3 testimonials) ---------- */
 .tslider { position: relative; }
