@@ -905,6 +905,16 @@ footer strong { color:rgba(255,255,255,0.85); }
   .cm-cols { grid-template-columns:1fr; gap:18px; }
   .cm-quote { flex-direction:column; text-align:center; }
 }
+/* Partner "Why Partner" benefit grid (Viola content) */
+#view-partner .wp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:8px; }
+#view-partner .wp-card { background:#fff; border:1px solid var(--border); border-top:3px solid var(--teal); border-radius:14px; padding:22px 24px; }
+#view-partner .wp-card h4 { font-size:15px; font-weight:800; color:var(--navy); margin-bottom:12px; line-height:1.25; }
+#view-partner .wp-card ul { list-style:none; margin:0; }
+#view-partner .wp-card li { position:relative; padding-left:22px; font-size:13.5px; line-height:1.5; color:var(--text); margin-bottom:9px; }
+#view-partner .wp-card li:last-child { margin-bottom:0; }
+#view-partner .wp-card li::before { content:'✓'; position:absolute; left:0; top:0; color:var(--teal); font-weight:800; }
+@media(max-width:900px){ #view-partner .wp-grid{ grid-template-columns:1fr; } }
+
 /* ===== Reusable testimonial slider (sections with >3 testimonials) ===== */
 .tslider { position:relative; }
 .tslider .ts-track { display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 36px)/3); gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding:4px 2px 14px; scrollbar-width:thin; }
@@ -2058,6 +2068,17 @@ footer strong { color:rgba(255,255,255,0.85); }
       </div>
     </div>
 
+    <div class="sub-h" style="margin-top:40px">Why organizations partner with GIMI</div>
+    <p class="lead" style="margin-bottom:24px">As knowledge becomes democratized and AI makes expertise more accessible, organizations face a new challenge: how to stand out, deliver measurable impact, and build trusted innovation capabilities. Whether you are a consulting firm, training provider, innovation hub, accelerator, chamber of commerce, economic development agency, or corporate innovation center, GIMI helps you expand your impact and accelerate your growth.</p>
+    <div class="wp-grid">
+      <div class="wp-card"><h4>Expand Your Service Portfolio</h4><ul><li>Launch a complete innovation practice without building methodologies from scratch</li><li>Add innovation services, certifications, assessments, and capability-building programs</li><li>Access proven frameworks, tools, templates, and IP developed over decades</li></ul></div>
+      <div class="wp-card"><h4>Increase Market Credibility</h4><ul><li>Leverage a globally recognized, ISO-aligned innovation management brand</li><li>Differentiate with internationally recognized certifications and methodologies</li><li>Build client confidence through structured, evidence-based approaches</li></ul></div>
+      <div class="wp-card"><h4>Accelerate Business Growth</h4><ul><li>Create new revenue through training, advisory, assessments, and coaching</li><li>Access joint proposals, strategic collaborations, and co-delivery</li><li>Enter new markets and industries with the support of a global network</li></ul></div>
+      <div class="wp-card"><h4>Deliver Greater Client Impact</h4><ul><li>Apply methodologies tested across corporations, governments, and startups</li><li>Help clients move beyond ideation to measurable outcomes</li><li>Access practical tools and platforms that support implementation</li></ul></div>
+      <div class="wp-card"><h4>Strengthen Your Ecosystem</h4><ul><li>Join a global network of practitioners, experts, partners, and researchers</li><li>Exchange best practices across industries, sectors, and geographies</li><li>Connect clients and stakeholders to a broader innovation ecosystem</li></ul></div>
+      <div class="wp-card"><h4>Future-Proof Your Organization</h4><ul><li>Stay at the forefront of innovation management and emerging technologies</li><li>Continuously evolve through new frameworks, research, and certifications</li><li>Build a competitive advantage based on capability, network, and execution</li></ul></div>
+    </div>
+
     <div class="sub-h" style="margin-top:40px">What you can do, and where you can focus</div>
     <p class="lead" style="margin-bottom:24px">As a Certified Partner you can deliver GIMI's full portfolio. Most partners focus on one of these three areas first, then expand:</p>
     <div class="work-grid">
@@ -2121,7 +2142,17 @@ footer strong { color:rgba(255,255,255,0.85); }
       <h2>Lead on innovation in academia.</h2>
       <p class="lead">For universities, business schools, and academic innovation centers that want to lead on innovation.</p>
 
-      <div class="sub-h">What you can do for your institution</div>
+      <div class="sub-h">Why universities partner with GIMI</div>
+      <p class="lead" style="margin-bottom:24px">Universities face a growing challenge: preparing students for a future where technologies, industries, and business models evolve faster than traditional curricula. GIMI helps institutions bridge the gap between academic knowledge and practical application through globally recognized frameworks, industry engagement, and real-world innovation experiences.</p>
+      <div class="wp-grid">
+        <div class="wp-card"><h4>Enhance Student Outcomes</h4><ul><li>Increase graduate employability through globally recognized innovation credentials</li><li>Equip students with practical innovation, entrepreneurship, and problem-solving skills</li><li>Provide access to real-world projects, challenges, and experiential learning</li></ul></div>
+        <div class="wp-card"><h4>Strengthen Industry Relevance</h4><ul><li>Connect students and faculty with corporations, governments, and startups</li><li>Bring current industry practices, tools, and methodologies into the classroom</li><li>Facilitate corporate-sponsored projects and applied research initiatives</li></ul></div>
+        <div class="wp-card"><h4>Elevate Faculty &amp; Academic Excellence</h4><ul><li>Give faculty access to globally recognized frameworks and certifications</li><li>Create opportunities for thought leadership, publishing, and speaking</li><li>Support curriculum modernization with methodologies tested across industries</li></ul></div>
+        <div class="wp-card"><h4>Grow Institutional Impact</h4><ul><li>Develop executive education and professional development offerings</li><li>Build innovation academies, centers of excellence, and capabilities</li><li>Access a global network of 18,000+ innovation professionals</li></ul></div>
+        <div class="wp-card"><h4>Lead in a Rapidly Changing World</h4><ul><li>Position the institution at the intersection of academia, industry, and innovation</li><li>Help students develop capabilities that stay relevant despite AI-driven change</li><li>Prepare graduates not just to adapt to the future, but to shape it</li></ul></div>
+      </div>
+
+      <div class="sub-h" style="margin-top:40px">What you can do for your institution</div>
       <p class="lead" style="margin-bottom:24px">Each of these directly addresses an academic need, from credentialing talent to elevating research and structuring your own innovation efforts:</p>
       <div class="work-grid-2">
         <div class="work-card">
@@ -2164,6 +2195,13 @@ footer strong { color:rgba(255,255,255,0.85); }
       <div class="marquee-head">Leading institutions worldwide</div>
       <div class="marquee" id="universities"></div>
     </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Partner Voices</div>
+    <h2>What our partners say.</h2>
+    <p class="lead" style="margin-bottom:20px">Certified Partners and collaborators from across the GIMI network.</p>
+    <div class="tslider" id="partnerTesti"></div>
   </section>
 
   <section class="section" id="partner-apply">
@@ -3612,6 +3650,15 @@ const TESTI_MEMBER = [
   { q:"It was very helpful to be associated with the IAOIP and have access to the network of practitioners. I have gained valuable experience and network to learn more about innovation.", n:"Otari Kakhizde", r:"Development Consultant & Legal Advisor" }
 ];
 mountTesti('memberTesti', TESTI_MEMBER);
+const TESTI_PARTNER = [
+  { q:"GIMI Institute and UCOTRA Institute seal a strategic partnership to support the profitable and sustainable growth of businesses in North and West Africa.", n:"Salim Berbache", r:"Partner, Ucotra Consulting & UC Design" },
+  { q:"This strategic partnership is the start of a global movement to teach innovation, compassion, and complex problem-solving for K-12 students around the world.", n:"Grayson Bass", r:"Manager, Smart Waterloo Region Innovation Lab" },
+  { q:"The Open Innovation Lab of Norway is proud to team up with GIMI on our mission to make innovation professionals the heroes of their corporations. Our partnership ensures Nordic innovation professionals have their skills acknowledged by GIMI's globally recognized standards and certification program.", n:"Truls Berg", r:"Partner, Open Innovation Lab of Norway" },
+  { q:"Discovering GIMI and the methodology was like discovering a perfectly fitting glove. In our projects we found an increasing need for innovation and improvement, and the GIMI methodology was the perfect answer to that need.", n:"Arvid Hendricks", r:"QManagement Consulting" },
+  { q:"We at the Enterprise Africa regional network are excited to be part of the GIMI community. We believe GIMI can accelerate the democratisation of innovation in South Africa, especially among the youth we so much believe in.", n:"Joshua Ngoma", r:"Partner, Earn International · South Africa" },
+  { q:"Our partnership with GIMI has helped us access a vast amount of knowledge on innovation. We have benefited from best practices, training materials, and certification products, with a strong sense of community across the GIMI family.", n:"Rafael Lemaitre", r:"Partner, Sia Partners · UAE" }
+];
+mountTesti('partnerTesti', TESTI_PARTNER);
 
 /* ===== Programs view: curated program offerings, grouped ===== */
 const PROGRAMS = [
