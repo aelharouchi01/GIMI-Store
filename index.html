@@ -1926,6 +1926,8 @@ footer strong { color:rgba(255,255,255,0.85); }
         <a class="tl-video" href="https://www.youtube.com/watch?v=X7c_5s2k2SQ" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/X7c_5s2k2SQ/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">Innovation 4.0</div><div class="tv-who">Ron Jonash</div></a>
       </div>
       <a href="https://www.youtube.com/channel/UCx1O0ECHQD9_az5JVGXbS_g" target="_blank" rel="noopener" class="tl-btn ghost sm" style="margin-top:22px;color:var(--navy);border-color:var(--border);">Watch all on YouTube</a>
+      <div class="tl-sub-h">What participants say</div>
+      <div class="tslider" id="thinkTesti"></div>
     </div>
   </section>
 
@@ -3666,6 +3668,10 @@ const TESTI_PARTNER = [
   { q:"Our partnership with GIMI has helped us access a vast amount of knowledge on innovation. We have benefited from best practices, training materials, and certification products, with a strong sense of community across the GIMI family.", n:"Rafael Lemaitre", r:"Partner, Sia Partners · UAE" }
 ];
 mountTesti('partnerTesti', TESTI_PARTNER);
+mountTesti('thinkTesti', [
+  { q:"GIMI Think Tank provides a platform for collaboration between GIMI ambassadors and other innovation experts, as a means to democratize innovation all over the world. The speakers through the webinars have given me concrete applications and confidence as an innovation professional.", n:"Kristanto Santosa", r:"Executive Director, Business Innovation Center · Indonesia" },
+  { q:"The GIMI Think Tank is about insightful and inspiring learning. What I value most is the diverse, in-depth range of evidence-based topics that provide real-life applications and evolving innovation practices, and access to experts with realistic perspectives on the field.", n:"Wanda Richardson", r:"Founder & Innovation Consultant, Innavise" }
+]);
 /* Cert-detail modal testimonial pools (shown as a slider when >3). */
 const CERT_TESTI = {
   cip: [
