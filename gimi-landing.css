@@ -197,6 +197,10 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
 .lp-quote.with-photo > img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid var(--gimi-white); box-shadow: 0 5px 16px rgba(27,31,59,0.14); }
 .lp-quote.with-photo p { margin-bottom: 10px; }
 
+/* ---------- Level / step sub-heading (standardized) ---------- */
+.lp-lvh { font-size: 18px; font-weight: 800; color: var(--gimi-navy); margin: 32px 0 16px; padding-bottom: 9px; border-bottom: 2px solid var(--gimi-teal-light); }
+.lp-lvh:first-of-type { margin-top: 8px; }
+
 /* ---------- Testimonial slider (sections with >3 testimonials) ---------- */
 .tslider { position: relative; }
 .tslider .ts-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 4px 2px 14px; scrollbar-width: thin; }
