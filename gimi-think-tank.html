@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIMI Think Tank | GIMI</title>
+<link rel="stylesheet" href="gimi-landing.css?v=20260624c">
+<link rel="stylesheet" href="gimi-thought.css?v=20260624a">
+<style>
+  /* Think Tank page-specific blocks (blueprint structure) */
+  .tt-proof { display:flex; flex-wrap:wrap; gap:34px; margin-top:24px; }
+  .tt-proof div { color:#fff; }
+  .tt-proof strong { display:block; font-size:30px; font-weight:800; color:var(--gimi-yellow); line-height:1; }
+  .tt-proof span { font-size:13px; color:rgba(255,255,255,0.82); }
+  .tt-next { max-width:1200px; margin:-30px auto 0; padding:0 32px; position:relative; z-index:3; }
+  .tt-next-band { background:linear-gradient(135deg,var(--gimi-teal) 0%,var(--gimi-teal-dark) 100%); border-radius:16px; padding:24px 30px; display:flex; align-items:center; justify-content:space-between; gap:22px; flex-wrap:wrap; box-shadow:0 16px 40px rgba(27,31,59,0.18); }
+  .tt-next-band .ttn-label { font-size:11.5px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.85); margin-bottom:6px; }
+  .tt-next-band h3 { color:#fff; font-size:20px; font-weight:800; line-height:1.25; }
+  .tt-next-band .ttn-when { color:#fff; font-size:14px; font-weight:700; margin-top:4px; }
+  .tt-pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .tt-ph { border:2px dashed var(--gimi-yellow); background:#FCFCEF; border-radius:14px; padding:22px 24px; color:var(--gimi-text); }
+  .tt-ph strong { display:block; color:var(--gimi-navy); font-size:15px; margin-bottom:6px; }
+  .tt-tabs { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+  .tt-tab { font-size:13px; font-weight:700; color:var(--gimi-navy); background:#fff; border:1px solid var(--gimi-border); border-radius:24px; padding:7px 16px; }
+  .tt-tab.on { background:var(--gimi-teal); color:#fff; border-color:var(--gimi-teal); }
+  .tt-compare { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  @media (max-width:980px){ .tt-pillars{ grid-template-columns:1fr; } .tt-compare{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Global Innovation Management Institute</span>
+    <a href="index.html">← Back to GIMI</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">GIMI<span>·</span>Thought Leadership</a>
+    <ul class="nav-tabs">
+      <li><a href="#tt-top" class="active">Overview</a></li>
+      <li><a href="#tt-why">Why It Exists</a></li>
+      <li><a href="#tt-archive">Archive</a></li>
+      <li><a href="#tt-reports">Insight Reports</a></li>
+      <li><a href="#tt-join">Join</a></li>
+      <li><a href="#tt-speak">Speak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BLOCK 1: HERO -->
+<section class="tl-hero" id="tt-top">
+  <div class="tl-hero-inner">
+    <img class="tl-tt-logo" src="gimi-store-assets/v2/thinktank-logo.png" alt="GIMI Think Tank">
+    <div class="tl-eyebrow">Thought Leadership · GIMI Think Tank</div>
+    <h1>The world's <span>weekly forum</span> for innovation leaders.</h1>
+    <p>Every Wednesday at 9 AM EST, the world's most accomplished innovation practitioners share what is actually working across industries, borders, and disciplines.</p>
+    <div class="tt-proof">
+      <div><strong>180+</strong><span>Sessions</span></div>
+      <div><strong>100+</strong><span>Thought leaders</span></div>
+      <div><strong>30+</strong><span>Countries</span></div>
+      <div><strong>180,000+</strong><span>Views</span></div>
+    </div>
+    <div class="tl-ctas" style="margin-top:24px;">
+      <a href="https://bit.ly/thinktank2025" target="_blank" rel="noopener" class="tl-btn">Register for the next session</a>
+      <a href="#tt-archive" class="tl-btn ghost">Explore all talks</a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 2: NEXT SESSION BANNER -->
+<div class="tt-next">
+  <div class="tt-next-band">
+    <div>
+      <div class="ttn-label">Next Session</div>
+      <h3>The Think Tank meets every Wednesday, 9:00 AM EST</h3>
+      <div class="ttn-when">Speaker and session title for the upcoming week are announced weekly.</div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="https://bit.ly/thinktank2025" target="_blank" rel="noopener" class="tl-btn sm">Register Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- BLOCK 3: WHY THE THINK TANK EXISTS -->
+<section class="tl-section" id="tt-why">
+  <div class="tl-label">Why the Think Tank Exists</div>
+  <h2>Where innovation standards meet real-world execution.</h2>
+  <p class="tl-intro">Innovation is widely discussed and rarely executed systematically. The Think Tank closes that gap, bringing global leaders together every week to share measurable, applicable insights grounded in the ISO 56000 standards for innovation management.</p>
+  <div class="tt-pillars">
+    <div class="tl-fcard"><div class="tf-num">01</div><h4>Global Community</h4><p>30+ countries, 7 continents, one conversation every Wednesday.</p></div>
+    <div class="tl-fcard"><div class="tf-num">02</div><h4>Standards-Based</h4><p>Sessions grounded in ISO 56000, the IMBOK, and GIMI's methodology.</p></div>
+    <div class="tl-fcard"><div class="tf-num">03</div><h4>Practitioner-First</h4><p>No theory without practice; every speaker has done the work.</p></div>
+  </div>
+
+  <div class="tl-sub-h">What we discuss</div>
+  <div class="tl-focus">
+    <div class="tl-fcard"><div class="tf-num">01</div><h4>Trends</h4><p>Emerging trends in innovation and technology shaping what comes next.</p></div>
+    <div class="tl-fcard"><div class="tf-num">02</div><h4>Innovation Practice</h4><p>Innovation management methods, frameworks, and real-world practice.</p></div>
+    <div class="tl-fcard"><div class="tf-num">03</div><h4>State of Innovation</h4><p>How innovation is developing across countries and regions globally.</p></div>
+    <div class="tl-fcard"><div class="tf-num">04</div><h4>GIMI IP &amp; Progress</h4><p>GIMI's intellectual property and progress on organizational initiatives.</p></div>
+  </div>
+</section>
+
+<!-- BLOCK 5: EXPLORE THE ARCHIVE -->
+<section class="tl-section alt" id="tt-archive">
+  <div class="tl-inner">
+    <div class="tl-label">Explore the Archive</div>
+    <h2>180+ sessions. 100+ thought leaders. One searchable library.</h2>
+    <p class="tl-intro">The Think Tank archive spans executives, academics, and innovation experts from leading organizations and universities worldwide, on topics from AI and energy transition to fintech, healthcare, sustainability, and organizational innovation.</p>
+    <div class="tt-tabs">
+      <span class="tt-tab on">All</span><span class="tt-tab">Gen AI</span><span class="tt-tab">Energy</span><span class="tt-tab">Longevity</span><span class="tt-tab">FoodTech</span><span class="tt-tab">Banking</span><span class="tt-tab">Innovation Management</span><span class="tt-tab">Innovation Trends</span><span class="tt-tab">Country Innovation</span><span class="tt-tab">Innovation in Action</span>
+    </div>
+    <div class="tl-videos">
+      <a class="tl-video" href="https://www.youtube.com/watch?v=BAR0abM84ow" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/BAR0abM84ow/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">The Merger of GIMI and IAOIP</div><div class="tv-who">Hitendra Patel</div></a>
+      <a class="tl-video" href="https://www.youtube.com/watch?v=q9vz3hDC9HY" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/q9vz3hDC9HY/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">IAOIP: Pioneering US ISO Standards</div><div class="tv-who">Brett Trusko</div></a>
+      <a class="tl-video" href="https://www.youtube.com/watch?v=PYnjTqmZ-N0" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/PYnjTqmZ-N0/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">Taking the Guesswork Out of Innovation</div><div class="tv-who">Tony Ulwick</div></a>
+      <a class="tl-video" href="https://www.youtube.com/watch?v=TGsMEyBwjqg" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/TGsMEyBwjqg/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">Design Thinking for Innovation</div><div class="tv-who">Langdon Morris</div></a>
+      <a class="tl-video" href="https://www.youtube.com/watch?v=_T895WxO1_Q" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/_T895WxO1_Q/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">ISO 56001: Blueprint for Sustainable Innovation</div><div class="tv-who">Dr. Annika Steiber</div></a>
+      <a class="tl-video" href="https://www.youtube.com/watch?v=X7c_5s2k2SQ" target="_blank" rel="noopener"><div class="tv-thumb"><img src="https://img.youtube.com/vi/X7c_5s2k2SQ/hqdefault.jpg" alt="" loading="lazy"><span class="tv-play"></span></div><div class="tv-title">Innovation 4.0</div><div class="tv-who">Ron Jonash</div></a>
+    </div>
+    <a href="https://www.youtube.com/channel/UCx1O0ECHQD9_az5JVGXbS_g" target="_blank" rel="noopener" class="tl-btn ghost sm" style="margin-top:22px;color:var(--gimi-navy);border-color:var(--gimi-border);">Watch all on YouTube</a>
+  </div>
+</section>
+
+<!-- BLOCK 6: INNOVATION INSIGHT REPORTS -->
+<section class="tl-section" id="tt-reports">
+  <div class="tl-label">Innovation Insight Reports</div>
+  <h2>Beyond the session. Every talk, distilled.</h2>
+  <p class="tl-intro">GIMI publishes structured insight reports that capture the key ideas from each session and translate them into recommendations your organization can act on, with a core insight, a key finding, and a recommendation per report.</p>
+  <div class="tt-ph">
+    <strong>Placeholder: Insight Report library</strong>
+    The featured insight-report cards (pull quote, speaker, session, and a Read Full Report link) will be wired here once the report archive is connected.
+  </div>
+</section>
+
+<!-- BLOCK 7: JOIN THE COMMUNITY -->
+<section class="tl-section alt" id="tt-join">
+  <div class="tl-inner">
+    <div class="tl-label">Join the Community</div>
+    <h2>Two ways to take part.</h2>
+    <div class="tt-compare">
+      <div class="tl-card">
+        <h4>Free Access</h4>
+        <ul>
+          <li>Live access to every Wednesday session</li>
+          <li>Weekly email reminders for upcoming talks</li>
+          <li>Open to the global innovation community</li>
+        </ul>
+        <a href="https://bit.ly/thinktank2025" target="_blank" rel="noopener" class="tl-btn sm" style="margin-top:18px;">Join for Free</a>
+      </div>
+      <div class="tl-card dark">
+        <h4>GIMI Member</h4>
+        <ul>
+          <li>Full archive access across 180+ sessions</li>
+          <li>Discounts on courses and masterclasses</li>
+          <li>Priority registration for sold-out sessions</li>
+          <li>Member-only sessions and roundtables</li>
+        </ul>
+        <a href="index.html#member" class="tl-btn sm" style="margin-top:18px;background:var(--gimi-yellow);border-color:var(--gimi-yellow);color:var(--gimi-navy);">Become a Member</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 8: SPEAK AT THE THINK TANK -->
+<section class="tl-section" id="tt-speak">
+  <div class="tl-2col">
+    <div>
+      <div class="tl-label">Speak at the Think Tank</div>
+      <h2>Share your expertise with 180+ innovation leaders.</h2>
+      <p class="tl-intro">The GIMI Think Tank hosts a new guest speaker every Wednesday. If you work at the frontier of innovation, as a practitioner, researcher, or executive, we want to hear from you.</p>
+      <div class="tl-ctas" style="margin-top:0;">
+        <a href="mailto:info@giminstitute.org?subject=Apply%20to%20Speak%20at%20the%20GIMI%20Think%20Tank" class="tl-btn sm">Apply to Speak</a>
+        <a href="speaker-bureau.html" class="tl-btn ghost sm" style="color:var(--gimi-navy);border-color:var(--gimi-border);">Browse the Speaker Bureau</a>
+      </div>
+    </div>
+    <div class="tl-quote">
+      <p>"The Think Tank is where innovation standards meet real-world execution, every single week."</p>
+      <div class="tq-who">GIMI Think Tank · Weekly since 2021</div>
+    </div>
+  </div>
+</section>
+
+<div class="tl-cta">
+  <div class="tl-cta-band">
+    <h2>Join the conversation this Wednesday.</h2>
+    <p>Register for the next GIMI Think Tank session, or explore the full archive of talks from innovation leaders worldwide.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://bit.ly/thinktank2025" target="_blank" rel="noopener" class="tl-btn">Register for the next session</a>
+      <a href="https://www.youtube.com/channel/UCx1O0ECHQD9_az5JVGXbS_g" target="_blank" rel="noopener" class="tl-btn ghost" style="border-color:rgba(255,255,255,0.4);">Explore all talks</a>
+    </div>
+  </div>
+</div>
+
+<footer class="lp-footer">
+  <p>© Global Innovation Management Institute · <a href="index.html">Back to GIMI</a> · <a href="mailto:info@giminstitute.org">info@giminstitute.org</a></p>
+</footer>
+
+<script>
+/* Nav scrollspy */
+(function () {
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-tabs a');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.id;
+        navLinks.forEach(function (link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
+      }
+    });
+  }, { rootMargin: '-84px 0px -55% 0px', threshold: 0 });
+  sections.forEach(function (s) { observer.observe(s); });
+})();
+</script>
+</body>
+</html>
