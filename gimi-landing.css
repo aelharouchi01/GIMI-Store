@@ -92,6 +92,10 @@ section.tab-section.alt { background: var(--gimi-gray-light); }
    so the aside is a true sidebar whose top aligns with the title. */
 .overview-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: stretch; margin-top: 18px; }
 .overview-grid .ov-main { min-width: 0; }
+/* Deep-dive heading with product badge */
+.dd-head { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+.dd-logo { height: 60px; width: auto; flex: none; }
+@media (max-width: 600px) { .dd-logo { height: 48px; } }
 .overview-grid .ov-main .section-title { margin-bottom: 14px; }
 .overview-grid .ov-main .section-lead { margin-bottom: 22px; }
 .overview-grid .prose p { margin-bottom: 16px; }
