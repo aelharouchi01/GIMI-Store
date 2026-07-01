@@ -29,8 +29,12 @@
   #kn-journal .tl-journal { align-items: start; }
   #kn-journal .ijis-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   #kn-journal .ijis-card { background: #fff; border: 1px solid var(--gimi-border); border-top: 3px solid var(--gimi-teal); border-radius: 12px; padding: 16px 18px; }
-  #kn-journal .ijis-card h4 { font-size: 13.5px; font-weight: 800; color: var(--gimi-navy); margin-bottom: 6px; line-height: 1.25; }
+  #kn-journal .ijis-card .ic-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  #kn-journal .ijis-card .ic-ico { width: 34px; height: 34px; border-radius: 9px; background: var(--gimi-teal-light); color: var(--gimi-teal-dark); display: flex; align-items: center; justify-content: center; flex: none; }
+  #kn-journal .ijis-card .ic-ico svg { width: 19px; height: 19px; }
+  #kn-journal .ijis-card h4 { font-size: 13.5px; font-weight: 800; color: var(--gimi-navy); margin: 0; line-height: 1.25; }
   #kn-journal .ijis-card p { font-size: 12.5px; color: var(--gimi-gray); line-height: 1.5; }
+  #kn-journal .ijis-inquire { margin-left: auto; }
   #kn-journal .ijis-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 26px; }
   #kn-journal .ijis-stat { background: #fff; border: 1px solid var(--gimi-border); border-radius: 12px; padding: 20px 16px; text-align: center; }
   #kn-journal .ijis-stat strong { display: block; font-size: 29px; font-weight: 800; color: var(--gimi-teal); line-height: 1; margin-bottom: 6px; }
@@ -122,16 +126,16 @@
       <img src="gimi-store-assets/v2/ijis-cover.png" alt="International Journal of Innovation Science cover">
       <div class="tj-body">
         <div class="ijis-cards">
-          <div class="ijis-card"><h4>Aims &amp; Scope</h4><p>Advanced knowledge in innovation: emerging technologies, best practices, tools, metrics, organizational design, change management, and leadership.</p></div>
-          <div class="ijis-card"><h4>Double-Anonymous Peer Review</h4><p>Every manuscript is evaluated under a rigorous double-anonymous review process.</p></div>
-          <div class="ijis-card"><h4>Bi-Monthly</h4><p>Six issues a year of fundamental and applied innovation research, read worldwide.</p></div>
-          <div class="ijis-card"><h4>Publish With IJIS</h4><p>Members gain priority publishing and, for academics, faculty Associate Editor opportunities.</p></div>
+          <div class="ijis-card"><div class="ic-head"><div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h4>Aims &amp; Scope</h4></div><p>Advanced knowledge in innovation: emerging technologies, best practices, tools, metrics, organizational design, change management, and leadership.</p></div>
+          <div class="ijis-card"><div class="ic-head"><div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h4>Double-Anonymous Peer Review</h4></div><p>Every manuscript is evaluated under a rigorous double-anonymous review process.</p></div>
+          <div class="ijis-card"><div class="ic-head"><div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h4>Bi-Monthly</h4></div><p>Six issues a year of fundamental and applied innovation research, read worldwide.</p></div>
+          <div class="ijis-card"><div class="ic-head"><div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3-3 3 3"/></svg></div><h4>Publish With IJIS</h4></div><p>Members gain priority publishing and, for academics, faculty Associate Editor opportunities.</p></div>
         </div>
         <div class="ijis-editors">
           <div class="ijis-editor"><img src="gimi-store-assets/v2/ijis-trusko.jpg" alt="Brett Trusko"><div><div class="ie-name">Brett Trusko</div><div class="ie-role">Co-Editor-in-Chief</div></div></div>
           <div class="ijis-editor"><img src="gimi-store-assets/v2/ijis-lobo.jpg" alt="Rodrigo Lobo"><div><div class="ie-name">Rodrigo Lobo</div><div class="ie-role">Co-Editor-in-Chief</div></div></div>
+          <a href="mailto:info@giminstitute.org?subject=International%20Journal%20of%20Innovation%20Science" class="tl-btn sm ijis-inquire">Inquire about publishing</a>
         </div>
-        <a href="mailto:info@giminstitute.org?subject=International%20Journal%20of%20Innovation%20Science" class="tl-btn sm">Inquire about publishing</a>
       </div>
     </div>
     <div class="ijis-stats">
