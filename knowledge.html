@@ -16,6 +16,26 @@
   #kn-bok .tl-book .tb-ph { width: 100%; max-width: 120px; height: 130px; margin: 0 auto 12px; border: 2px dashed var(--gimi-yellow); border-radius: 8px; background: #FCFCEF; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 11px; font-weight: 700; color: var(--gimi-gray); padding: 8px; line-height: 1.35; }
   @media (max-width: 780px) { #kn-bok .tl-book { flex-basis: calc(50% - 9px); } }
   @media (max-width: 480px) { #kn-bok .tl-book { flex-basis: 100%; } }
+  /* IJIS section: co-editors + affiliation logos */
+  #kn-journal .ijis-editors { display: flex; gap: 22px; flex-wrap: wrap; margin: 20px 0 20px; }
+  #kn-journal .ijis-editor { display: flex; align-items: center; gap: 11px; }
+  #kn-journal .ijis-editor img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex: none; }
+  #kn-journal .ijis-editor .ie-name { font-size: 14px; font-weight: 800; color: var(--gimi-navy); }
+  #kn-journal .ijis-editor .ie-role { font-size: 12.5px; color: var(--gimi-teal-dark); font-weight: 600; }
+  #kn-journal .ijis-pubs { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--gimi-border); }
+  #kn-journal .ijis-pubs .ijis-pubs-label { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gimi-gray); }
+  #kn-journal .ijis-pubs .ijis-logo { height: 42px; width: auto; background: #fff; border: 1px solid var(--gimi-border); border-radius: 8px; padding: 7px 14px; object-fit: contain; }
+  /* Top-align the cover with the body, highlight cards, and inline impact stats */
+  #kn-journal .tl-journal { align-items: start; }
+  #kn-journal .ijis-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  #kn-journal .ijis-card { background: #fff; border: 1px solid var(--gimi-border); border-top: 3px solid var(--gimi-teal); border-radius: 12px; padding: 16px 18px; }
+  #kn-journal .ijis-card h4 { font-size: 13.5px; font-weight: 800; color: var(--gimi-navy); margin-bottom: 6px; line-height: 1.25; }
+  #kn-journal .ijis-card p { font-size: 12.5px; color: var(--gimi-gray); line-height: 1.5; }
+  #kn-journal .ijis-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 26px; }
+  #kn-journal .ijis-stat { background: #fff; border: 1px solid var(--gimi-border); border-radius: 12px; padding: 20px 16px; text-align: center; }
+  #kn-journal .ijis-stat strong { display: block; font-size: 29px; font-weight: 800; color: var(--gimi-teal); line-height: 1; margin-bottom: 6px; }
+  #kn-journal .ijis-stat span { font-size: 12px; color: var(--gimi-gray); font-weight: 600; line-height: 1.35; }
+  @media (max-width: 560px) { #kn-journal .ijis-cards { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -96,14 +116,36 @@
 <section class="tl-section alt" id="kn-journal">
   <div class="tl-inner">
     <div class="tl-label">International Journal of Innovation Science</div>
-    <h2>Peer-reviewed research on the science of innovation.</h2>
+    <h2>A global, peer-reviewed authority on innovation science.</h2>
+    <p class="tl-intro">Published since 2007, IJIS is the official peer-reviewed journal of GIMI and the International Association of Innovation Professionals (IAOIP), produced in collaboration with Emerald Publishing: a global forum for advanced knowledge in innovation.</p>
     <div class="tl-journal">
-      <img src="gimi-store-assets/v2/ijis.png" alt="International Journal of Innovation Science">
+      <img src="gimi-store-assets/v2/ijis-cover.png" alt="International Journal of Innovation Science cover">
       <div class="tj-body">
-        <p>The International Journal of Innovation Science is a peer-reviewed publication compiling work from innovation experts on the developments and applications of innovation science. It came to GIMI through the 2023 merger with IAOIP and is published in collaboration with Emerald Publishing.</p>
-        <p>GIMI members gain priority publishing and, at the academic level, faculty Associate Editor opportunities, making the Journal both a research resource and a platform to share your own thought leadership with a global audience.</p>
+        <div class="ijis-cards">
+          <div class="ijis-card"><h4>Aims &amp; Scope</h4><p>Advanced knowledge in innovation: emerging technologies, best practices, tools, metrics, organizational design, change management, and leadership.</p></div>
+          <div class="ijis-card"><h4>Double-Anonymous Peer Review</h4><p>Every manuscript is evaluated under a rigorous double-anonymous review process.</p></div>
+          <div class="ijis-card"><h4>Bi-Monthly</h4><p>Six issues a year of fundamental and applied innovation research, read worldwide.</p></div>
+          <div class="ijis-card"><h4>Publish With IJIS</h4><p>Members gain priority publishing and, for academics, faculty Associate Editor opportunities.</p></div>
+        </div>
+        <div class="ijis-editors">
+          <div class="ijis-editor"><img src="gimi-store-assets/v2/ijis-trusko.jpg" alt="Brett Trusko"><div><div class="ie-name">Brett Trusko</div><div class="ie-role">Co-Editor-in-Chief</div></div></div>
+          <div class="ijis-editor"><img src="gimi-store-assets/v2/ijis-lobo.jpg" alt="Rodrigo Lobo"><div><div class="ie-name">Rodrigo Lobo</div><div class="ie-role">Co-Editor-in-Chief</div></div></div>
+        </div>
         <a href="mailto:info@giminstitute.org?subject=International%20Journal%20of%20Innovation%20Science" class="tl-btn sm">Inquire about publishing</a>
       </div>
+    </div>
+    <div class="ijis-stats">
+      <div class="ijis-stat"><strong>237</strong><span>Published articles</span></div>
+      <div class="ijis-stat"><strong>651</strong><span>Avg. annual citations</span></div>
+      <div class="ijis-stat"><strong>152k</strong><span>Downloads, top 10 countries</span></div>
+      <div class="ijis-stat"><strong>220</strong><span>Submissions a year</span></div>
+      <div class="ijis-stat"><strong>Since 2007</strong><span>Six issues a year</span></div>
+    </div>
+    <div class="ijis-pubs">
+      <span class="ijis-pubs-label">Official journal of GIMI &amp; IAOIP</span>
+      <img class="ijis-logo" src="gimi-store-assets/v2/iaoip-logo.png" alt="International Association of Innovation Professionals">
+      <span class="ijis-pubs-label">Published with</span>
+      <img class="ijis-logo" src="gimi-store-assets/v2/emerald-publishing.png" alt="Emerald Publishing">
     </div>
   </div>
 </section>
